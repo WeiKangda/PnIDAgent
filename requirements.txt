@@ -1,0 +1,105 @@
+# P&ID Processing Pipeline - Requirements
+# Install with: pip install -r requirements.txt
+
+# ============================================================================
+# Core Dependencies
+# ============================================================================
+numpy>=1.26,<3
+Pillow>=9
+matplotlib>=3.7.0
+scipy>=1.11.0
+tqdm>=4.65.0
+
+# ============================================================================
+# Deep Learning (PyTorch)
+# ============================================================================
+torch>=2.0.0
+torchvision>=0.15.0
+
+# ============================================================================
+# Segment Anything Model 2 (SAM2)
+# ============================================================================
+# Install SAM2 from GitHub:
+# pip install git+https://github.com/facebookresearch/segment-anything-2.git
+
+# Transformers for SAM2, CLIP, DINOv2, ViT
+transformers>=4.38.0
+
+# ============================================================================
+# OCR (Text Detection) - PaddleOCR
+# PaddleOCR stack (Python 3.9, GPU node)
+# ============================================================================
+paddleocr==2.7.3
+# paddlepaddle-gpu==2.6.2  # Uncomment for GPU support
+
+# PaddleOCR dependencies
+opencv-python-headless>=4.8,<4.13
+protobuf>=3.20,<7
+opt-einsum==3.3.0
+httpx>=0.27
+
+# ============================================================================
+# Clustering and Dimensionality Reduction
+# ============================================================================
+scikit-learn>=1.3.0
+hdbscan>=0.8.33
+umap-learn>=0.5.5
+# Note: If you have 'umap' installed, uninstall it first:
+#   pip uninstall umap
+#   pip install umap-learn
+
+# ============================================================================
+# Image Processing
+# ============================================================================
+scikit-image>=0.21.0
+
+# ============================================================================
+# YOLO Object Detection (for finetune_yolo_symbols.py)
+# ============================================================================
+ultralytics>=8.0.0
+PyYAML>=6.0
+
+# ============================================================================
+# GUI Backend (already included with Python)
+# ============================================================================
+# tkinter is included with most Python installations
+# If not available, install python3-tk:
+#   Ubuntu/Debian: sudo apt-get install python3-tk
+#   macOS: Should be included with Python installation
+
+# ============================================================================
+# Installation Notes
+# ============================================================================
+#
+# 1. Install PyTorch first with appropriate CUDA version:
+#    Visit: https://pytorch.org/get-started/locally/
+#    Example for CUDA 11.8:
+#      pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#    Example for CPU only:
+#      pip install torch torchvision
+#
+# 2. Install SAM2 from source:
+#    pip install git+https://github.com/facebookresearch/segment-anything-2.git
+#
+# 3. Install remaining requirements:
+#    pip install -r requirements.txt
+#
+# 4. For GPU acceleration (recommended):
+#    - Ensure CUDA is installed (CUDA 11.8 or 12.1)
+#    - Install appropriate PyTorch version with CUDA support
+#
+# ============================================================================
+# Troubleshooting
+# ============================================================================
+#
+# If you encounter import errors with UMAP:
+#   pip uninstall umap umap-learn
+#   pip install umap-learn
+#
+# If matplotlib backend errors occur:
+#   - Ensure tkinter is installed
+#   - Try setting: export MPLBACKEND=TkAgg
+#   - Or in code: matplotlib.use('TkAgg')
+
+# deps that commonly break on clusters if left floating
+numpy>=1.26,<2

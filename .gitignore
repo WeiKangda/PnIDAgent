@@ -1,0 +1,34 @@
+# Model files (too large for GitHub)
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Result/output directories
+result/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
