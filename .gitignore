@@ -4,9 +4,6 @@
 *.onnx
 *.weights
 
-# Result/output directories
-result/
-
 # Python
 __pycache__/
 *.py[cod]
