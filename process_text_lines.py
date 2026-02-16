@@ -581,496 +581,407 @@ def _step4_sample_hits(bw, x1, y1, x2, y2, step=1, half_width=2):
         hits.append(hit)
     return np.array(hits, dtype=np.uint8)
 
+# ==============================
+# Step 4 (SOLID ONLY): Multiscale Hough + solidness filter + conservative merge
+# ==============================
+SOLID_CFG = {
+    "target_max_dim": 2200,
+    "canny_low": 50,
+    "canny_high": 150,
+    "scales": [1.0, 0.75, 0.6],
+    "hough_threshold": 120,
+    "max_line_gap": 10,
+    "min_line_length_at_scale": {1.0: 90, 0.75: 70, 0.6: 55},
+    "frame_shrink_px": 28,
+    "notes_keep_ratio": 0.78,   #for our dataset
+    "merge_min_len": 30.0,
+    "merge_angle_thr_deg": 4.0,
+    "merge_end_dist_thr": 12.0,
+    "merge_gap_thr": 12.0,
+    "cont_samples": 80,
+    "min_density": 0.68,
+    "max_gap": 4,
+    "max_transitions": 6,
+}
 
-# ------------------------------------------------------------
-# Dash / solid classification helpers
-# ------------------------------------------------------------
+def find_inner_frame_mask(gray, shrink_px=12):
+    h, w = gray.shape
+    bw = cv2.adaptiveThreshold(
+        gray, 255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY_INV,
+        35, 10
+    )
+    bw = cv2.morphologyEx(bw, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8), iterations=2)
 
-def _runs_01(hits):
-    runs1, runs0 = [], []
-    if hits is None:
-        return runs1, runs0
+    cnts, _ = cv2.findContours(bw, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if not cnts:
+        return np.ones((h, w), dtype=np.uint8) * 255
 
-    # Normalize to 1D list of 0/1
-    if isinstance(hits, np.ndarray):
-        if hits.size == 0:
-            return runs1, runs0
-        h = (hits.reshape(-1) > 0).astype(np.uint8).tolist()
-    else:
-        if len(hits) == 0:
-            return runs1, runs0
-        h = [1 if int(v) > 0 else 0 for v in hits]
+    best = None
+    best_score = -1.0
+    for c in cnts:
+        x, y, ww, hh = cv2.boundingRect(c)
+        area = ww * hh
+        if area < 0.20 * w * h:
+            continue
+        peri = cv2.arcLength(c, True)
+        approx = cv2.approxPolyDP(c, 0.01 * peri, True)
+        rectish = 1.0 if len(approx) <= 8 else 0.0
+        edge_touch = (x < 0.08*w) + (y < 0.08*h) + ((x+ww) > 0.92*w) + ((y+hh) > 0.92*h)
+        score = area + rectish * 0.25 * area + edge_touch * 0.10 * area
+        if score > best_score:
+            best_score = score
+            best = (x, y, ww, hh)
 
-    cur = h[0]
-    ln = 1
-    for v in h[1:]:
-        if v == cur:
-            ln += 1
-        else:
-            (runs1 if cur == 1 else runs0).append(ln)
-            cur = v
-            ln = 1
-    (runs1 if cur == 1 else runs0).append(ln)
-    return runs1, runs0
+    if best is None:
+        return np.ones((h, w), dtype=np.uint8) * 255
 
-def _classify_dash_from_hits(hits, dash_min_bit=6):
-    """
-    Very simple and robust dashed vs solid classifier.
+    x, y, ww, hh = best
+    x1 = max(x + shrink_px, 0)
+    y1 = max(y + shrink_px, 0)
+    x2 = min(x + ww - shrink_px, w)
+    y2 = min(y + hh - shrink_px, h)
 
-    hits: 0/1 array sampled along the segment.
-          1 = ink, 0 = background.
+    mask = np.zeros((h, w), dtype=np.uint8)
+    mask[y1:y2, x1:x2] = 255
+    return mask
 
-    Returns:
-        "dashed" or "solid"
-    """
-    if hits is None:
-        return "solid"
+def remove_right_notes_block(gray, keep_ratio=0.78):
+    h, w = gray.shape
+    cut_x = int(w * keep_ratio)
+    mask = np.zeros((h, w), dtype=np.uint8)
+    mask[:, :cut_x] = 255
+    return mask
 
-    # Normalize to 0/1 list
-    if isinstance(hits, np.ndarray):
-        if hits.size == 0:
-            return "solid"
-        h = (hits.reshape(-1) > 0).astype(np.uint8).tolist()
-    else:
-        if len(hits) == 0:
-            return "solid"
-        h = [1 if int(v) > 0 else 0 for v in hits]
+def seg_len(s):
+    x1, y1, x2, y2 = s
+    return float(np.hypot(x2 - x1, y2 - y1))
 
-    if len(h) < dash_min_bit:
-        # too few samples to conclude "dashed"
-        return "solid"
+def seg_angle_deg(s):
+    x1, y1, x2, y2 = s
+    return float(np.degrees(np.arctan2(y2 - y1, x2 - x1)))
 
-    runs1, runs0 = _runs_01(h)
+def ang_diff_deg(a, b):
+    d = abs(a - b) % 360.0
+    d = min(d, 360.0 - d)
+    return min(d, abs(d - 180.0))
 
-    # Heuristic:
-    # - if we see at least 3 separate background runs (0-runs),
-    #   this looks like repeated gaps => dashed.
-    if len(runs0) >= 3:
-        return "dashed"
+def point_dist(p, q):
+    return float(np.hypot(p[0] - q[0], p[1] - q[1]))
 
-    return "solid"
+def point_line_perp_dist(px, py, x1, y1, x2, y2):
+    vx, vy = x2-x1, y2-y1
+    wx, wy = px-x1, py-y1
+    area2 = abs(vx*wy - vy*wx)
+    L = np.hypot(vx, vy) + 1e-9
+    return float(area2 / L)
 
-def _cv(vals):
-    if not vals:
-        return 999.0
-    v = np.array(vals, dtype=np.float32)
-    m = float(v.mean())
-    if m < 1e-6:
-        return 999.0
-    return float(v.std() / m)
+def unit_dir_from_angle_deg(a):
+    rad = np.radians(a)
+    return float(np.cos(rad)), float(np.sin(rad))
 
-def _step4_seg_angle(x1, y1, x2, y2):
-    """
-    Orientation of a single segment in degrees in [-180, 180].
-    """
-    return float(math.degrees(math.atan2((y2 - y1), (x2 - x1))))
+def project_scalar(pt, origin, ux, uy):
+    return (pt[0] - origin[0]) * ux + (pt[1] - origin[1]) * uy
 
-def _axis_aligned(x1, y1, x2, y2, tol_deg=4.0):
-    """
-    True if the segment is really close to horizontal or vertical.
+def detect_symbol_mask(gray, min_area=600, max_dim=260, max_ar=2.8, dilate=10):
+    # binary ink mask
+    bw = cv2.adaptiveThreshold(
+        gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 35, 10
+    )
+    bw = cv2.morphologyEx(bw, cv2.MORPH_OPEN, np.ones((3,3), np.uint8), iterations=1)
 
-    Instead of using only the angle, we also enforce that almost all
-    of the length lies along a single axis. This kills diagonal junk.
-    """
-    dx = abs(x2 - x1)
-    dy = abs(y2 - y1)
+    cnts, _ = cv2.findContours(bw, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-    # Ignore tiny segments – they’re usually noise
-    L = math.hypot(dx, dy)
-    if L < 8:
+    mask = np.zeros_like(gray, dtype=np.uint8)
+    for c in cnts:
+        x, y, w, h = cv2.boundingRect(c)
+        area = w * h
+        if area < min_area:
+            continue
+        if max(w, h) > max_dim:
+            continue
+        ar = max(w, h) / (min(w, h) + 1e-6)
+        if ar > max_ar:
+            continue
+        cv2.rectangle(mask, (x, y), (x+w, y+h), 255, -1)
+
+    if dilate > 0:
+        k = np.ones((dilate, dilate), np.uint8)
+        mask = cv2.dilate(mask, k, iterations=1)
+
+    return mask  # 255 where symbols are
+
+def merge_two_segments(a, b):
+    ax1, ay1, ax2, ay2 = a
+    bx1, by1, bx2, by2 = b
+
+    ang = seg_angle_deg(a)
+    ux, uy = unit_dir_from_angle_deg(ang)
+    origin = (ax1, ay1)
+
+    pts = [(ax1, ay1), (ax2, ay2), (bx1, by1), (bx2, by2)]
+    ts = [project_scalar(p, origin, ux, uy) for p in pts]
+
+    pmin = pts[int(np.argmin(ts))]
+    pmax = pts[int(np.argmax(ts))]
+    return [int(round(pmin[0])), int(round(pmin[1])), int(round(pmax[0])), int(round(pmax[1]))]
+
+def should_merge(a, b,
+                 angle_thr=4.0,
+                 end_dist_thr=12.0,
+                 gap_thr=12.0,
+                 perp_thr=6.0,
+                 max_seg_len=350.0):
+    la = seg_len(a)
+    lb = seg_len(b)
+    if la < SOLID_CFG["merge_min_len"] or lb < SOLID_CFG["merge_min_len"]:
+        return False
+    if max(la, lb) > max_seg_len:
         return False
 
-    # Main component (x or y) should carry almost all of the length
-    main = max(dx, dy)
-    off  = min(dx, dy)
+    aa = seg_angle_deg(a)
+    bb = seg_angle_deg(b)
+    if ang_diff_deg(aa, bb) > angle_thr:
+        return False
 
-    # How much "off-axis" component we allow based on tol_deg
-    # (for tol_deg=4, this is about 7% of the main component)
-    max_off = math.tan(math.radians(tol_deg)) * main
-    return off <= max_off
+    a_pts = [(a[0], a[1]), (a[2], a[3])]
+    b_pts = [(b[0], b[1]), (b[2], b[3])]
+    mind = min(point_dist(p, q) for p in a_pts for q in b_pts)
+    close_enough = (mind <= end_dist_thr)
 
-def _step4_merge_collinear(segments, angle_tol=6, dist_tol=18):
-    """
-    Greedy merge: group by angle similarity + endpoint proximity,
-    then merge by projecting endpoints along direction.
-    segments: list of [x1,y1,x2,y2]
-    """
-    if not segments:
-        return []
+    ux, uy = unit_dir_from_angle_deg(aa)
+    origin = a_pts[0]
 
-    segs = [list(map(float, s)) for s in segments]
-    used = [False] * len(segs)
-    out = []
+    def seg_proj(seg):
+        p1 = (seg[0], seg[1])
+        p2 = (seg[2], seg[3])
+        t1 = project_scalar(p1, origin, ux, uy)
+        t2 = project_scalar(p2, origin, ux, uy)
+        return (min(t1, t2), max(t1, t2))
 
-    def near(a, b):
-        ax1, ay1, ax2, ay2 = a
-        bx1, by1, bx2, by2 = b
-        d2 = min(
-            (ax1 - bx1) ** 2 + (ay1 - by1) ** 2,
-            (ax1 - bx2) ** 2 + (ay1 - by2) ** 2,
-            (ax2 - bx1) ** 2 + (ay2 - by1) ** 2,
-            (ax2 - bx2) ** 2 + (ay2 - by2) ** 2,
-        )
-        return d2 <= dist_tol * dist_tol
+    a0, a1 = seg_proj(a)
+    b0, b1 = seg_proj(b)
+    inter = min(a1, b1) - max(a0, b0)
+    overlap_or_small_gap = (inter >= -gap_thr)
 
-    for i, s in enumerate(segs):
-        if used[i]:
-            continue
-        used[i] = True
-        group = [s]
-        a0 = _step4_seg_angle(*s)
+    if not (close_enough and overlap_or_small_gap):
+        return False
 
-        changed = True
-        while changed:
-            changed = False
-            for j, t in enumerate(segs):
-                if used[j]:
-                    continue
-                a1 = _step4_seg_angle(*t)
-                da = abs(((a1 - a0 + 90) % 180) - 90)  # modulo 180
-                if da <= angle_tol and any(near(t, g) for g in group):
-                    used[j] = True
-                    group.append(t)
-                    changed = True
+    bmx, bmy = (b[0] + b[2]) / 2.0, (b[1] + b[3]) / 2.0
+    if point_line_perp_dist(bmx, bmy, a[0], a[1], a[2], a[3]) > perp_thr:
+        return False
 
-        ang = math.radians(a0)
-        ux, uy = math.cos(ang), math.sin(ang)
+    return True
 
-        pts = []
-        for x1, y1, x2, y2 in group:
-            pts.append((x1, y1))
-            pts.append((x2, y2))
+def merge_segments(segments, angle_thr=4.0, end_dist_thr=12.0, gap_thr=12.0):
+    segs = [list(map(int, s)) for s in segments]
+    segs = [s for s in segs if seg_len(s) >= SOLID_CFG["merge_min_len"]]
 
-        projs = [p[0] * ux + p[1] * uy for p in pts]
-        pmin = pts[int(np.argmin(projs))]
-        pmax = pts[int(np.argmax(projs))]
-        out.append([float(pmin[0]), float(pmin[1]), float(pmax[0]), float(pmax[1])])
-
-    return out
-
-def _point_to_seg_dist(px, py, x1, y1, x2, y2):
-    """
-    Euclidean distance from point (px,py) to line segment (x1,y1)-(x2,y2).
-    """
-    vx, vy = (x2 - x1), (y2 - y1)
-    wx, wy = (px - x1), (py - y1)
-    seg_len2 = vx * vx + vy * vy
-    if seg_len2 <= 1e-6:
-        # degenerate segment
-        return math.hypot(px - x1, py - y1)
-
-    t = (wx * vx + wy * vy) / seg_len2
-    t = max(0.0, min(1.0, t))
-    projx = x1 + t * vx
-    projy = y1 + t * vy
-    return math.hypot(px - projx, py - projy)
-
-
-def _remove_cross_short_artifacts(solid_segs, dashed_segs, len_th=55.0, end_tol=6.0):
-    """
-    Remove tiny 'cross-hair' artefacts:
-      - segment length < len_th
-      - BOTH endpoints lie very close to some other segment.
-    These are the little + shaped junk lines around symbols/junctions.
-
-    We use BOTH solid + dashed as neighbours so we don't miss mixed cases.
-    """
-    all_segs = list(solid_segs) + list(dashed_segs)
-    n = len(all_segs)
-    if n == 0:
-        return solid_segs, dashed_segs
-
-    keep = [True] * n
-
-    for i, (x1, y1, x2, y2) in enumerate(all_segs):
-        L = _step4_len(x1, y1, x2, y2)
-        if L >= len_th:
-            continue  # long pipes are always kept
-
-        p1 = (x1, y1)
-        p2 = (x2, y2)
-        min1 = 1e9
-        min2 = 1e9
-
-        for j, (u1, v1, u2, v2) in enumerate(all_segs):
-            if i == j:
+    changed = True
+    while changed:
+        changed = False
+        used = [False] * len(segs)
+        new_segs = []
+        for i in range(len(segs)):
+            if used[i]:
                 continue
-            d1 = _point_to_seg_dist(p1[0], p1[1], u1, v1, u2, v2)
-            d2 = _point_to_seg_dist(p2[0], p2[1], u1, v1, u2, v2)
-            if d1 < min1:
-                min1 = d1
-            if d2 < min2:
-                min2 = d2
+            cur = segs[i]
+            used[i] = True
+            merged_any = True
+            while merged_any:
+                merged_any = False
+                for j in range(len(segs)):
+                    if used[j]:
+                        continue
+                    if should_merge(cur, segs[j], angle_thr, end_dist_thr, gap_thr, perp_thr=6.0):
+                        cur = merge_two_segments(cur, segs[j])
+                        used[j] = True
+                        merged_any = True
+                        changed = True
+            new_segs.append(cur)
+        segs = new_segs
+    return segs
 
-        # both endpoints are essentially “sitting on” other segments → cross junk
-        if (min1 < end_tol) and (min2 < end_tol):
-            keep[i] = False
+def solid_stats(edge_img, x1, y1, x2, y2, samples=80):
+    xs = np.linspace(x1, x2, samples).astype(int)
+    ys = np.linspace(y1, y2, samples).astype(int)
 
-    # split back into solid / dashed
-    new_solid, new_dashed = [], []
-    for idx, seg in enumerate(all_segs):
-        if not keep[idx]:
-            continue
-        if idx < len(solid_segs):
-            new_solid.append(seg)
+    h, w = edge_img.shape
+    valid = (xs >= 0) & (xs < w) & (ys >= 0) & (ys < h)
+    xs, ys = xs[valid], ys[valid]
+    if len(xs) < 10:
+        return 0.0, 999, 999
+
+    hits = (edge_img[ys, xs] > 0).astype(np.uint8)
+    density = float(hits.mean())
+    transitions = int(np.sum(hits[1:] != hits[:-1]))
+
+    max_gap = 0
+    run = 0
+    for v in hits:
+        if v == 0:
+            run += 1
+            max_gap = max(max_gap, run)
         else:
-            new_dashed.append(seg)
+            run = 0
 
-    return new_solid, new_dashed
-    
-# ------------------------------------------------------------
-# Main step4
-# ------------------------------------------------------------
+    return density, max_gap, transitions
+
+def is_solid_line(edge_img, x1, y1, x2, y2,
+                  samples=80,
+                  min_density=0.68,
+                  max_gap=4,
+                  max_transitions=6):
+    density, mgap, trans = solid_stats(edge_img, x1, y1, x2, y2, samples=samples)
+    if density < min_density:
+        return False
+    if mgap > max_gap:
+        return False
+    if trans > max_transitions:
+        return False
+    return True
+
 def _step4_core(
     img_bgr, step2_data,
     suppress_text=False,
     suppress_pad=10,
     notes_right_frac=0.0,
-    sat_th=35,          # kept for compatibility; not used
-    v_keep_max=0.85,    # kept for compatibility; not used
-    kernel_pct=0.0010,  # kept for compatibility; not used
-    min_len=30,
-    merge_gap=18,
-    angle_tol=6,
-    canny1=50,
-    canny2=150,
-    hough_minlen_frac=0.03,
-    hough_maxgap=12,
-    dash_min_bit=6,
-    dash_close_gap=1,   # kept for compatibility; not used
     out_dir=None,
     suppress_symbols=False,
-    solid_only=False,   # <<< NEW: if True, drop dashed in final output
+    **kwargs
 ):
     """
-    Shared Step 4 core:
-
-      1) grayscale + equalize
-      2) build binary ink mask (bw_samp) for sampling / dash detection
-      3) optionally suppress text boxes & symbol blobs
-      4) thicken lines slightly, Canny on grayscale for Hough
-      5) Hough + LSD to get candidate segments
-      6) keep only axis-aligned candidates
-      7) classify solid vs dashed based on bw_samp hits
-      8) merge collinear fragments
-      9) if solid_only=True => discard dashed segments in final result
+    Solid-only Step 4.
+    Returns dict with:
+      solid: list[[x1,y1,x2,y2]]
+      dashed: []
+      notes_xmin: int or None
     """
-    H, W = img_bgr.shape[:2]
-    work = img_bgr.copy()
+    H0, W0 = img_bgr.shape[:2]
+    cfg = SOLID_CFG
 
-    # ----------------------------
-    # 0. Optional notes panel crop
-    # ----------------------------
+    # optional notes crop info (only for overlay; detector masks notes internally)
     notes_xmin = None
-    if notes_right_frac and float(notes_right_frac) > 0:
-        notes_xmin = int(W * (1.0 - float(notes_right_frac)))
-        work[:, notes_xmin:] = 255
-        _step4_write_dbg(out_dir, "dbg_crop_notes.png", work)
+    notes_keep_ratio = cfg["notes_keep_ratio"]
 
-    # ----------------------------
-    # 1. Grayscale + equalize (boost thin lines)
-    # ----------------------------
-    gray = cv2.cvtColor(work, cv2.COLOR_BGR2GRAY)
-    gray_eq = cv2.equalizeHist(gray)
-    _step4_write_dbg(out_dir, "dbg_gray_eq.png", gray_eq)
-
-    # ----------------------------
-    # 2. Binary ink mask (for sampling/dash detection)
-    # ----------------------------
-    bw_samp = cv2.adaptiveThreshold(
-        gray_eq, 255,
-        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-        cv2.THRESH_BINARY_INV,
-        35, 10
-    )
-    bw_samp = _ensure_uint8(bw_samp)
-
+    # cap scale (same as your final file)
+    gray0 = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+    cap_scale = cfg["target_max_dim"] / max(H0, W0)
+    if cap_scale < 1:
+        new_w = int(W0 * cap_scale)
+        new_h = int(H0 * cap_scale)
+        gray_cap = cv2.resize(gray0, (new_w, new_h), cv2.INTER_AREA)
+    else:
+        cap_scale = 1.0
+        gray_cap = gray0
+    symbol_mask_cap = None
     if suppress_symbols:
-        bw_samp = suppress_symbol_blobs_safe(bw_samp)
-    _step4_write_dbg(out_dir, "dbg_bw_samp_raw.png", bw_samp)
+        symbol_mask_cap = detect_symbol_mask(gray_cap)
+    inv_cap = 1.0 / cap_scale
 
-    # ----------------------------
-    # 3. Suppress text boxes from BOTH mask and grayscale
-    # ----------------------------
+    pred_all = []
+    text_mask_cap = None
     if suppress_text and isinstance(step2_data, dict):
         boxes = step2_data.get("boxes") or step2_data.get("merged_boxes") or []
         if boxes:
-            bw_s2 = bw_samp.copy()
-            gray2 = gray_eq.copy()
+            text_mask_cap = np.ones(gray_cap.shape, dtype=np.uint8) * 255
             for (x1, y1, x2, y2) in boxes:
-                x1 = max(0, int(x1) - int(suppress_pad))
-                y1 = max(0, int(y1) - int(suppress_pad))
-                x2 = min(W - 1, int(x2) + int(suppress_pad))
-                y2 = min(H - 1, int(y2) + int(suppress_pad))
-                bw_s2[y1:y2+1, x1:x2+1] = 0
-                gray2[y1:y2+1, x1:x2+1] = 255
-            bw_samp = bw_s2
-            gray_eq = gray2
-            _step4_write_dbg(out_dir, "dbg_bw_samp_notext.png", bw_samp)
-            _step4_write_dbg(out_dir, "dbg_gray_eq_notext.png", gray_eq)
+                cx1 = int(round((x1 - suppress_pad) * cap_scale))
+                cy1 = int(round((y1 - suppress_pad) * cap_scale))
+                cx2 = int(round((x2 + suppress_pad) * cap_scale))
+                cy2 = int(round((y2 + suppress_pad) * cap_scale))
+                cx1 = max(0, min(gray_cap.shape[1]-1, cx1))
+                cx2 = max(0, min(gray_cap.shape[1]-1, cx2))
+                cy1 = max(0, min(gray_cap.shape[0]-1, cy1))
+                cy2 = max(0, min(gray_cap.shape[0]-1, cy2))
+                text_mask_cap[cy1:cy2+1, cx1:cx2+1] = 0
+    for sc in cfg["scales"]:
+        if sc != 1.0:
+            gh, gw = gray_cap.shape
+            gray = cv2.resize(gray_cap, (int(gw * sc), int(gh * sc)), cv2.INTER_AREA)
+        else:
+            gray = gray_cap
+        
+        gray_blur = cv2.GaussianBlur(gray, (3, 3), 0)
+        edges = cv2.Canny(gray_blur, cfg["canny_low"], cfg["canny_high"], L2gradient=True)
 
-    # ----------------------------
-    # 4. Thicken lines slightly, then Canny on grayscale
-    # ----------------------------
-    gray_edges = gray_eq.copy()
-    gray_edges[bw_samp == 0] = 255
+        # keep-mask (frame + notes)
+        frame_mask = find_inner_frame_mask(gray, shrink_px=cfg["frame_shrink_px"])
+        notes_mask = remove_right_notes_block(gray, keep_ratio=notes_keep_ratio)
+        keep_mask = cv2.bitwise_and(frame_mask, notes_mask)
+        edges = cv2.bitwise_and(edges, edges, mask=keep_mask)
 
-    gray_thick = cv2.dilate(gray_edges, np.ones((2, 2), np.uint8), iterations=1)
-    gray_thick = cv2.GaussianBlur(gray_thick, (3, 3), 0)
+        # Optional text suppression (apply AFTER keep_mask)
+        if text_mask_cap is not None:
+            if sc != 1.0:
+                tm = cv2.resize(text_mask_cap, (edges.shape[1], edges.shape[0]), interpolation=cv2.INTER_NEAREST)
+            else:
+                tm = text_mask_cap
+            edges = cv2.bitwise_and(edges, edges, mask=tm)
 
-    edges = cv2.Canny(gray_thick, int(canny1), int(canny2))
-    _step4_write_dbg(out_dir, "dbg_gray_thick.png", gray_thick)
-    _step4_write_dbg(out_dir, "dbg_edges.png", edges)
+        # Optional symbol suppression
+        if symbol_mask_cap is not None:
+            if sc != 1.0:
+                sm = cv2.resize(symbol_mask_cap, (edges.shape[1], edges.shape[0]), interpolation=cv2.INTER_NEAREST)
+            else:
+                sm = symbol_mask_cap
+            edges = cv2.bitwise_and(edges, edges, mask=cv2.bitwise_not(sm))
+        
+        # sampling edges (for solidity stats)
+        edges_samp = cv2.dilate(edges, np.ones((3, 3), np.uint8), iterations=1)
 
-    # ----------------------------
-    # 5. Candidate segments: Hough + LSD
-    # ----------------------------
-    cand = []
-    minLineLength = int(max(int(min_len), float(hough_minlen_frac) * max(H, W)))
-    maxLineGap = int(hough_maxgap)
-
-    # 5a. Hough
-    hl = cv2.HoughLinesP(
-        edges, 1, np.pi / 180,
-        threshold=80,
-        minLineLength=minLineLength,
-        maxLineGap=maxLineGap
-    )
-    if hl is not None:
-        for x1, y1, x2, y2 in hl[:, 0]:
-            if _step4_len(x1, y1, x2, y2) >= float(min_len):
-                cand.append([float(x1), float(y1), float(x2), float(y2)])
-
-    # 5b. LSD on inverted ink mask
-    try:
-        lsd = cv2.createLineSegmentDetector(cv2.LSD_REFINE_STD)
-        lsd_lines = lsd.detect(255 - bw_samp)[0]
-        if lsd_lines is not None:
-            for l in lsd_lines:
-                x1, y1, x2, y2 = l[0]
-                if _step4_len(x1, y1, x2, y2) >= float(min_len):
-                    cand.append([float(x1), float(y1), float(x2), float(y2)])
-    except Exception:
-        pass
-
-    # Keep only near-axis-aligned pipes (0° / 90°)
-    cand_axis = []
-    for x1, y1, x2, y2 in cand:
-        if _axis_aligned(x1, y1, x2, y2, tol_deg=4.0):
-            cand_axis.append([x1, y1, x2, y2])
-    cand = cand_axis
-
-    if out_dir:
-        vis = work.copy()
-        for x1, y1, x2, y2 in cand:
-            cv2.line(vis, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 1)
-        _step4_write_dbg(out_dir, "dbg_candidates.png", vis)
-
-        # ----------------------------
-    # 6. Classify each segment: solid vs dashed
-    # ----------------------------
-    solid = []
-    dashed = []
-
-    for x1, y1, x2, y2 in cand:
-        L = _step4_len(x1, y1, x2, y2)
-
-        # sample on the raw binary ink mask (preserves dash gaps)
-        hits = _step4_sample_hits(
-            bw_samp, x1, y1, x2, y2,
-            step=1,
-            half_width=3
+        min_len = cfg["min_line_length_at_scale"].get(
+            sc, int(cfg["min_line_length_at_scale"][1.0] * sc)
         )
 
-        # use simple heuristic classifier
-        lab = _classify_dash_from_hits(hits, dash_min_bit=dash_min_bit)
+        lines = cv2.HoughLinesP(
+            edges,
+            rho=1,
+            theta=np.pi / 180,
+            threshold=cfg["hough_threshold"],
+            minLineLength=min_len,
+            maxLineGap=cfg["max_line_gap"],
+        )
+        if lines is None:
+            continue
 
-        # safety: dashed must be near-axis-aligned
-        if lab == "dashed" and not _axis_aligned(x1, y1, x2, y2, tol_deg=4.0):
-            lab = "solid"
+        inv_sc = 1.0 / sc
 
-        if lab == "solid":
-            solid.append([x1, y1, x2, y2])
-        else:  # "dashed"
-            # keep modest minimum to avoid tiny noise
-            if L >= max(0.4 * float(min_len), 10.0):
-                dashed.append([x1, y1, x2, y2])
+        for x1, y1, x2, y2 in lines[:, 0]:
+            if not is_solid_line(
+                edges_samp, x1, y1, x2, y2,
+                samples=cfg["cont_samples"],
+                min_density=cfg["min_density"],
+                max_gap=cfg["max_gap"],
+                max_transitions=cfg["max_transitions"]
+            ):
+                continue
 
-    # ----------------------------
-    # 7. Merge collinear fragments
-    # ----------------------------
-    solid_m = _step4_merge_collinear(
-        solid, angle_tol=float(angle_tol), dist_tol=float(merge_gap)
+            # scaled -> cap
+            cx1, cy1 = x1 * inv_sc, y1 * inv_sc
+            cx2, cy2 = x2 * inv_sc, y2 * inv_sc
+
+            # cap -> original resized image coords
+            ox1, oy1 = int(round(cx1 * inv_cap)), int(round(cy1 * inv_cap))
+            ox2, oy2 = int(round(cx2 * inv_cap)), int(round(cy2 * inv_cap))
+            pred_all.append([ox1, oy1, ox2, oy2])
+
+    merged = merge_segments(
+        pred_all,
+        angle_thr=cfg["merge_angle_thr_deg"],
+        end_dist_thr=cfg["merge_end_dist_thr"],
+        gap_thr=cfg["merge_gap_thr"],
     )
-    dashed_m = _step4_merge_collinear(
-        dashed, angle_tol=float(angle_tol), dist_tol=float(merge_gap) * 2.0
-    )
-
-    # ----------------------------
-    # 7.5 Remove tiny cross artefacts
-    # ----------------------------
-    solid_m, dashed_m = _remove_cross_short_artifacts(
-        solid_m, dashed_m,
-        len_th=55.0,   # you can tune between ~45–70 if needed
-        end_tol=6.0    # radius (in px) for "touching" another segment
-    )
-
-    # ----------------------------
-    # 8. Solid-only vs full mode
-    # ----------------------------
-    if solid_only:
-        # In AFW-style mode we just ignore dashed completely
-        dashed_m = []
-
-    # (IMPORTANT: no global DASH_MIN_KEEP here in full mode,
-    #  so dashed lines on SAMPLE diagrams are not wiped.)
-
-    # ----------------------------
-    # 9. Debug overlay
-    # ----------------------------
-    if out_dir:
-        ov = work.copy()
-        for x1, y1, x2, y2 in solid_m:
-            cv2.line(ov, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-        for x1, y1, x2, y2 in dashed_m:
-            cv2.line(ov, (int(x1), int(y1)), (int(x2), int(y2)), (0, 0, 255), 2)
-        _step4_write_dbg(out_dir, "dbg_step4_overlay_internal.png", ov)
-    # Final safety pass: drop anything that is not really axis-aligned
-    solid_lines = [s for s in solid_m if _axis_aligned(*s, tol_deg=2.0)]
-    dash_lines  = [d for d in dashed_m  if _axis_aligned(*d, tol_deg=5.0)]
 
     return {
-        "solid": solid_lines,
-        "dashed": dash_lines,
+        "solid": merged,
+        "dashed": [],          # dashed dependency removed
         "notes_xmin": notes_xmin,
     }
 
-
-def step4_extract_lines_solid_only(
-    img_bgr, step2_data, **kwargs
-):
-    """
-    Public API: detect only solid lines.
-    Any dashed segments found are dropped in the final output.
-    """
-    return _step4_core(
-        img_bgr, step2_data,
-        solid_only=True,
-        **kwargs
-    )
-
-
-def step4_extract_lines_solid_dashed(
-    img_bgr, step2_data, **kwargs
-):
-    """
-    Public API: detect both solid and dashed lines.
-    """
-    return _step4_core(
-        img_bgr, step2_data,
-        solid_only=False,
-        **kwargs
-    )
+def step4_extract_lines_solid_only(img_bgr, step2_data, **kwargs):
+    return _step4_core(img_bgr, step2_data, **kwargs)
 
 # ============================================================================
 # Visualization
@@ -1341,14 +1252,31 @@ def merge_items(items, img_w=None):
 
     return cleaned
 
-def suppress_symbol_blobs_safe(bw, min_area=1200, max_ar=2.2, max_dim=220):
-    """
-    Remove only large, compact-ish blobs (symbols).
-    Keeps small/broken pipe parts and dashed segments.
-    """
+def has_long_line(comp_mask, min_len=60):
+    # comp_mask is uint8 {0,255}
+    edges = cv2.Canny(comp_mask, 50, 150)
+    lines = cv2.HoughLinesP(edges, 1, np.pi/180, threshold=30,
+                            minLineLength=min_len, maxLineGap=8)
+    return lines is not None
+
+def suppress_symbol_blobs_safe(
+    bw,
+    min_area=1200,
+    max_ar=2.2,
+    max_dim=220,
+    extent_thr=0.25,
+    edge_touch_thr=0.10,
+    hough_min_len=80
+):
     num, lab, stats, _ = cv2.connectedComponentsWithStats(bw, connectivity=8)
     out = bw.copy()
     removed = 0
+
+    def has_long_line(comp_mask255):
+        edges = cv2.Canny(comp_mask255, 50, 150)
+        lines = cv2.HoughLinesP(edges, 1, np.pi/180, threshold=30,
+                                minLineLength=hough_min_len, maxLineGap=8)
+        return lines is not None
 
     for i in range(1, num):
         x, y, w, h, area = stats[i]
@@ -1356,15 +1284,35 @@ def suppress_symbol_blobs_safe(bw, min_area=1200, max_ar=2.2, max_dim=220):
             continue
 
         ar = max(w, h) / float(max(1, min(w, h)))
+        if ar > max_ar or max(w, h) > max_dim:
+            continue
 
-        # large + compact-ish + not too huge
-        if ar <= max_ar and max(w, h) <= max_dim:
-            out[lab == i] = 0
-            removed += 1
+        extent = area / float(max(1, w*h))
+        if extent < extent_thr:
+            continue  # too sparse -> likely line-ish
+
+        # Edge-touch veto: likely a line/junction, not an isolated symbol
+        comp = (lab == i).astype(np.uint8)
+        roi = comp[y:y+h, x:x+w]
+        band = 2
+        top = roi[:band, :].sum()
+        bot = roi[-band:, :].sum()
+        lef = roi[:, :band].sum()
+        rig = roi[:, -band:].sum()
+        touch_score = max(top, bot, lef, rig) / float(max(1, area))
+        if touch_score > edge_touch_thr:
+            continue
+
+        # Long-line veto: don’t remove components containing a long straight segment
+        comp255 = roi * 255
+        if has_long_line(comp255):
+            continue
+
+        out[lab == i] = 0
+        removed += 1
 
     print(f"  suppress_symbol_blobs_safe: removed={removed}")
     return out
-
 def neighbors8(y, x):
     for dy in (-1, 0, 1):
         for dx in (-1, 0, 1):
@@ -1372,6 +1320,104 @@ def neighbors8(y, x):
                 continue
             yield y + dy, x + dx
 
+def detect_symbol_boxes(img_bgr, text_boxes_xyxy=None, pad=6, min_area=60, max_area=50000):
+    """
+    Returns symbol candidate bboxes in XYXY (x1,y1,x2,y2) in the SAME space as img_bgr.
+    text_boxes_xyxy: list of [x1,y1,x2,y2] (optional) to erase text before symbol detection.
+    """
+    H, W = img_bgr.shape[:2]
+    gray = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2GRAY)
+
+    # binarize dark ink
+    _, bw = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY_INV)
+
+    # erase text regions so we don't treat text as symbols
+    if text_boxes_xyxy:
+        for x1,y1,x2,y2 in text_boxes_xyxy:
+            x1 = max(0, int(x1-pad)); y1 = max(0, int(y1-pad))
+            x2 = min(W-1, int(x2+pad)); y2 = min(H-1, int(y2+pad))
+            bw[y1:y2, x1:x2] = 0
+
+    # clean
+    bw = cv2.morphologyEx(bw, cv2.MORPH_OPEN, np.ones((3,3), np.uint8), iterations=1)
+
+    # connected components => boxes
+    num, labels, stats, _ = cv2.connectedComponentsWithStats(bw, connectivity=8)
+    boxes = []
+    for i in range(1, num):
+        x, y, w, h, area = stats[i]
+        if area < min_area or area > max_area:
+            continue
+        # avoid full-width/height junk
+        if w > 0.8*W or h > 0.8*H:
+            continue
+        boxes.append([float(x), float(y), float(x+w), float(y+h)])
+    return boxes
+
+def segment_coverage_in_box(seg, box, step=4):
+    """
+    Returns fraction of segment length that lies inside the box.
+    """
+    x1, y1, x2, y2 = seg
+    bx1, by1, bx2, by2 = box
+
+    L = ((x2-x1)**2 + (y2-y1)**2) ** 0.5
+    if L < 1e-6:
+        return 0.0
+
+    n = max(5, int(L / step))
+    inside = 0
+
+    for i in range(n + 1):
+        t = i / n
+        px = x1 + t * (x2 - x1)
+        py = y1 + t * (y2 - y1)
+
+        if bx1 <= px <= bx2 and by1 <= py <= by2:
+            inside += 1
+
+    return inside / (n + 1)
+
+def post_filter_lines_strict(
+    lines,
+    text_boxes=None,
+    symbol_boxes=None,
+    text_cov_thr=0.15,
+    symbol_cov_thr=0.20,
+    pad=10,
+):
+    text_boxes = text_boxes or []
+    symbol_boxes = symbol_boxes or []
+
+    kept = []
+
+    for seg in lines:
+        reject = False
+
+        # text suppression
+        for b in text_boxes:
+            bx1, by1, bx2, by2 = b
+            box = [bx1-pad, by1-pad, bx2+pad, by2+pad]
+            if segment_coverage_in_box(seg, box) >= text_cov_thr:
+                reject = True
+                break
+
+        if reject:
+            continue
+
+        # symbol suppression
+        for b in symbol_boxes:
+            bx1, by1, bx2, by2 = b
+            box = [bx1-pad, by1-pad, bx2+pad, by2+pad]
+            if segment_coverage_in_box(seg, box) >= symbol_cov_thr:
+                reject = True
+                break
+
+        if not reject:
+            kept.append(seg)
+
+    return kept
+    
 # ============================================================================
 # Main Pipeline
 # ============================================================================
@@ -1413,39 +1459,6 @@ def main():
                     help="Remove text regions before line detection")
     parser.add_argument("--suppress-pad", type=int, default=2,
                        help="Padding for text suppression")
-    parser.add_argument("--notes-right-frac", type=float, default=0.0,
-                       help="Fraction of right side to ignore (e.g., 0.23)")
-    parser.add_argument("--sat-th", type=int, default=70,
-                       help="Saturation threshold for ink isolation")
-    parser.add_argument("--v-keep-max", type=int, default=245,
-                       help="Max value to keep in HSV for ink isolation")
-    parser.add_argument("--kernel-pct", type=float, default=0.0012,
-                       help="Morphology kernel size as fraction of image")
-    parser.add_argument("--min-len", type=int, default=22,
-                       help="Minimum line segment length")
-    parser.add_argument("--merge-gap", type=int, default=12,
-                       help="Max gap to merge collinear segments")
-    parser.add_argument("--angle-tol", type=float, default=5.5,
-                       help="Angle tolerance for axis alignment")
-    parser.add_argument("--canny1", type=int, default=35,
-                       help="Canny edge detection threshold 1")
-    parser.add_argument("--canny2", type=int, default=85,
-                       help="Canny edge detection threshold 2")
-    parser.add_argument("--hough-minlen-frac", type=float, default=0.022,
-                       help="Hough min line length as fraction of image")
-    parser.add_argument("--hough-maxgap", type=int, default=7,
-                       help="Hough max gap between segments")
-    parser.add_argument("--dash-min-bit", type=int, default=9,
-                       help="Minimum dash segment length")
-    parser.add_argument("--dash-close-gap", type=int, default=10,
-                       help="Max gap between dashes to join")
-    parser.add_argument(
-        "--line-mode",
-        choices=["solid", "solid_dashed"],
-        default="solid",
-        help="solid: detect only solid lines (AFW-style); "
-             "solid_dashed: detect both solid and dashed lines"
-    )
     
 
     args = parser.parse_args()
@@ -1576,50 +1589,31 @@ def main():
     draw_text_overlay(img_resized, step3_data, text_overlay)
     print(f"  Saved: {text_overlay}")
 
-    # STEP 4: Extract lines
+    # STEP 4: Extract SOLID lines
     step4_kwargs = dict(
         suppress_text=args.suppress_text,
         suppress_pad=args.suppress_pad,
-        notes_right_frac=args.notes_right_frac,
-        sat_th=args.sat_th,
-        v_keep_max=args.v_keep_max,
-        kernel_pct=args.kernel_pct,
-        min_len=args.min_len,
-        merge_gap=args.merge_gap,
-        angle_tol=args.angle_tol,
-        canny1=args.canny1,
-        canny2=args.canny2,
-        hough_minlen_frac=args.hough_minlen_frac,
-        hough_maxgap=args.hough_maxgap,
-        dash_min_bit=args.dash_min_bit,
-        dash_close_gap=args.dash_close_gap,
-        out_dir=args.out,
-        suppress_symbols=args.suppress_symbols,
     )
-
-    if args.line_mode == "solid":
-        step4_data = step4_extract_lines_solid_only(
-            img_resized, step2_data, **step4_kwargs
-        )
-    else:
-        step4_data = step4_extract_lines_solid_dashed(
-            img_resized, step2_data, **step4_kwargs
-        )
-
+    
+    step4_data = step4_extract_lines_solid_only(img_resized, step2_data, **step4_kwargs)
+    
     step4_data["image_path"] = args.image
     step4_data["target_width"] = args.target_width
     step4_data["scale"] = float(scale)
-
-    # Save Step 4 output
+    
     step4_json = os.path.join(args.out, f"{img_name}_step4_lines.json")
     with open(step4_json, "w", encoding="utf-8") as f:
         json.dump(step4_data, f, ensure_ascii=False, indent=2)
     print(f"\n  Saved: {step4_json}")
-
-    # Draw line overlay
+    
     line_overlay = os.path.join(args.out, f"{img_name}_step4_lines_overlay.png")
-    draw_line_overlay(img_resized, step4_data["solid"], step4_data["dashed"],
-                     line_overlay, notes_xmin=step4_data.get("notes_xmin"))
+    draw_line_overlay(
+        img_resized,
+        step4_data["solid"],
+        step4_data.get("dashed", []),
+        line_overlay,
+        notes_xmin=step4_data.get("notes_xmin"),
+    )
     print(f"  Saved: {line_overlay}")
 
     # Interactive editing (if requested)
