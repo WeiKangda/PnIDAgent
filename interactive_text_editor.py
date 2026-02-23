@@ -107,8 +107,8 @@ class TextEditor:
         # Try to find the resized image used for processing
         # Expected pattern: {name}_step3_text.json -> look for resized image
         # First check if there's an image_path in a related JSON
-        step2_json = json_dir / json_path.name.replace('_step3_text.json', '_step2_merged.json')
-        step1_json = json_dir / json_path.name.replace('_step3_text.json', '_step1_dets.json')
+        step2_json = json_dir / json_path.name.replace('_step3_text.json', '_step2_boxes.json')
+        step1_json = json_dir / json_path.name.replace('_step3_text.json', '_step1_paddleocr.json')
 
         image_path = None
         scale = 1.0

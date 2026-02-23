@@ -103,3 +103,4 @@ PyYAML>=6.0
 
 # deps that commonly break on clusters if left floating
 numpy>=1.26,<2
+setuptools

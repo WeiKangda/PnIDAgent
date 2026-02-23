@@ -489,10 +489,7 @@ def main():
             {"--gpu" if args.gpu else ""} \
             --nms-iou {args.nms_iou} \
             {"--suppress-text" if args.suppress_text else ""} \
-            {"--suppress-symbols" if args.suppress_symbols else ""} \
-            --line-mode {args.line_mode} \
-            --notes-right-frac {args.notes_right_frac} \
-            --min-len {args.min_len}"""
+            {"--suppress-symbols" if args.suppress_symbols else ""}"""
         os.system(cmd)
 
         if os.path.exists(text_json):
