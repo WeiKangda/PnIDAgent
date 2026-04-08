@@ -423,11 +423,12 @@ def digitize_pnid(classification_path: str,
     resized_shape = lines_data.get('resized_shape')  # [height, width]
     scale_factor = lines_data.get('scale')  # Scale factor used for resizing
 
-    if resized_shape and symbols:
+    if (resized_shape or scale_factor) and symbols:
         # Get average symbol bbox coordinate magnitude
         avg_symbol_coord = np.mean([np.mean(s.get('bbox', [0])) for s in symbols if s.get('bbox')])
         # Get average line coordinate magnitude (extract 'line' from dict)
-        avg_line_coord = np.mean([np.mean(line_item['line']) for line_item in all_lines[:10] if line_item]) if all_lines else resized_shape[1] / 2
+        fallback_coord = resized_shape[1] / 2 if resized_shape else 3500
+        avg_line_coord = np.mean([np.mean(line_item['line']) for line_item in all_lines[:10] if line_item]) if all_lines else fallback_coord
 
         # If lines have much larger coordinates, we need to scale symbols
         if avg_line_coord > avg_symbol_coord * 2:
@@ -465,24 +466,57 @@ def digitize_pnid(classification_path: str,
             print(f"  Scaled {len(symbols)} symbol bboxes")
 
 
-    # Build nodes (symbols with nearby text as captions)
+    # Assign each text detection to the closest symbol (exclusive assignment)
+    # First, collect valid symbols with bboxes
+    valid_symbols = []
+    for idx, symbol in enumerate(symbols):
+        bbox = symbol.get('bbox')
+        if bbox:
+            valid_symbols.append((idx, symbol))
+
+    # For each text, find the closest symbol
+    symbol_texts = {idx: [] for idx, _ in valid_symbols}  # symbol_idx -> list of (text_info, distance)
+
+    for text_det in text_detections:
+        text_bbox = text_det.get('bbox')
+        text_content = text_det.get('text', '').strip()
+        if not text_bbox or not text_content:
+            continue
+
+        best_dist = float('inf')
+        best_sym_idx = None
+
+        for sym_idx, symbol in valid_symbols:
+            sym_center = compute_bbox_center(symbol['bbox'])
+            dist = point_to_bbox_distance(sym_center, text_bbox)
+            if dist < best_dist:
+                best_dist = dist
+                best_sym_idx = sym_idx
+
+        if best_sym_idx is not None and best_dist <= max_text_distance:
+            symbol_texts[best_sym_idx].append({
+                'text': text_content,
+                'distance': best_dist,
+                'bbox': text_bbox,
+                'confidence': text_det.get('confidence', text_det.get('score', 1.0)),
+            })
+
+    # Sort each symbol's texts by distance
+    for idx in symbol_texts:
+        symbol_texts[idx].sort(key=lambda x: x['distance'])
+
+    # Build nodes
     nodes_full = []
     nodes_llm = []
 
-    for idx, symbol in enumerate(symbols):
-        symbol_id = idx  # Assign sequential ID
+    for sym_idx, symbol in valid_symbols:
+        symbol_id = sym_idx
         category = symbol.get('category', 'unknown')
-        bbox = symbol.get('bbox')
+        bbox = symbol['bbox']
 
-        if not bbox:
-            print(f"Warning: Symbol {idx} has no bbox, skipping")
-            continue
-
-        # Find nearby text
-        nearby_texts = find_nearby_text(bbox, text_detections, max_text_distance)
+        nearby_texts = symbol_texts.get(sym_idx, [])
         captions = [t['text'] for t in nearby_texts]
 
-        # Full node (all features)
         node_full = {
             'id': symbol_id,
             'category': category,
@@ -492,11 +526,11 @@ def digitize_pnid(classification_path: str,
             'nearby_text_details': nearby_texts,
             'confidence': symbol.get('confidence'),
             'cluster_id': symbol.get('cluster_id'),
-            'original_index': idx
+            'mask_id': symbol.get('mask_id'),
+            'original_index': sym_idx
         }
         nodes_full.append(node_full)
 
-        # LLM node (essential only)
         node_llm = {
             'id': symbol_id,
             'category': category,
@@ -504,193 +538,247 @@ def digitize_pnid(classification_path: str,
         }
         nodes_llm.append(node_llm)
 
-    print(f"Created {len(nodes_full)} nodes")
+    assigned_texts = sum(len(v) for v in symbol_texts.values())
+    print(f"Created {len(nodes_full)} nodes, assigned {assigned_texts} text detections as captions")
 
-    # Build links (lines connecting symbols)
+    # ---- Pre-processing: chain connected lines into paths ----
+    # Two lines whose endpoints are close form a single path.
+    # A path that passes through intermediate symbols connects them all.
+
+    def _endpoint_dist(p1, p2):
+        return np.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
+
+    def _line_endpoints(line_item):
+        c = line_item['line']
+        return (c[0], c[1]), (c[2], c[3])
+
+    num_solid = len(solid_lines)
+    def _line_type_by_idx(idx):
+        return 'solid' if idx < num_solid else 'dashed'
+
+    # Build chains: group lines whose endpoints are within chain_dist
+    chain_dist = max_line_distance * 0.5  # endpoints must be close to chain
+
+    used = [False] * len(all_lines)
+    chains = []  # each chain is a list of line_item indices in order
+
+    for i in range(len(all_lines)):
+        if used[i]:
+            continue
+        # Start a new chain with line i
+        chain = [i]
+        used[i] = True
+        # Try to extend from both ends
+        changed = True
+        while changed:
+            changed = False
+            head_start, head_end = _line_endpoints(all_lines[chain[0]])
+            tail_start, tail_end = _line_endpoints(all_lines[chain[-1]])
+
+            for j in range(len(all_lines)):
+                if used[j]:
+                    continue
+                # Only chain lines of the same type (solid with solid, dashed with dashed)
+                if _line_type_by_idx(j) != _line_type_by_idx(chain[0]):
+                    continue
+                js, je = _line_endpoints(all_lines[j])
+
+                # Try to attach j to the front of the chain
+                if _endpoint_dist(js, head_start) < chain_dist:
+                    # j's end → chain start: reverse j so je connects to head_start
+                    chain.insert(0, j); used[j] = True; changed = True; break
+                if _endpoint_dist(je, head_start) < chain_dist:
+                    chain.insert(0, j); used[j] = True; changed = True; break
+
+                # Try to attach j to the back of the chain
+                if _endpoint_dist(js, tail_end) < chain_dist:
+                    chain.append(j); used[j] = True; changed = True; break
+                if _endpoint_dist(je, tail_end) < chain_dist:
+                    chain.append(j); used[j] = True; changed = True; break
+
+        chains.append(chain)
+
+    multi_chains = sum(1 for c in chains if len(c) > 1)
+    print(f"Chained {len(all_lines)} lines into {len(chains)} paths ({multi_chains} multi-line chains)")
+
+    # Build node lookup by ID for fast access
+    node_by_id = {n['id']: n for n in nodes_full}
+
+    # For each chain, find ALL symbols that are near any line segment in the chain.
+    # Order symbols along the chain direction (by projection onto the chain's path).
+
+    def _find_symbols_along_chain(chain_indices):
+        """Find all symbols whose bbox is close to any line in the chain."""
+        symbol_hits = {}  # symbol_id -> min_distance
+
+        for li in chain_indices:
+            line_coords = all_lines[li]['line']
+            for node in nodes_full:
+                nid = node['id']
+                bbox = node.get('bbox')
+                if not bbox:
+                    continue
+                center = compute_bbox_center(bbox)
+                dist = point_to_line_distance(center, line_coords)
+                # Also check bbox-to-endpoint distance for endpoint connections
+                ep_dist = min(
+                    point_to_bbox_distance((line_coords[0], line_coords[1]), bbox),
+                    point_to_bbox_distance((line_coords[2], line_coords[3]), bbox),
+                )
+                d = min(dist, ep_dist)
+                if d <= max_line_distance:
+                    if nid not in symbol_hits or d < symbol_hits[nid]:
+                        symbol_hits[nid] = d
+
+        if not symbol_hits:
+            return []
+
+        # Order symbols by their position along the chain
+        # Use cumulative projection along the chain's segments
+        seg_lengths = []
+        seg_starts = []
+        cum = 0.0
+        for li in chain_indices:
+            c = all_lines[li]['line']
+            seg_starts.append(cum)
+            length = np.sqrt((c[2]-c[0])**2 + (c[3]-c[1])**2)
+            seg_lengths.append(length)
+            cum += length
+
+        def _project_along_chain(point):
+            """Project a point onto the chain, return cumulative distance along it."""
+            best_proj = 0.0
+            best_dist = float('inf')
+            px, py = point
+            for k, li in enumerate(chain_indices):
+                c = all_lines[li]['line']
+                dx, dy = c[2]-c[0], c[3]-c[1]
+                l2 = dx*dx + dy*dy
+                if l2 == 0:
+                    t = 0
+                else:
+                    t = max(0, min(1, ((px-c[0])*dx + (py-c[1])*dy) / l2))
+                cx = c[0] + t*dx
+                cy = c[1] + t*dy
+                d = np.sqrt((px-cx)**2 + (py-cy)**2)
+                if d < best_dist:
+                    best_dist = d
+                    best_proj = seg_starts[k] + t * seg_lengths[k]
+            return best_proj
+
+        ordered = []
+        for nid, dist in symbol_hits.items():
+            node = node_by_id.get(nid)
+            if node is None:
+                continue
+            center = compute_bbox_center(node['bbox'])
+            proj = _project_along_chain(center)
+            ordered.append((nid, proj, dist))
+
+        ordered.sort(key=lambda x: x[1])
+        return ordered  # list of (symbol_id, projection, distance)
+
+    # Build links from chains
     links_full = []
     links_llm = []
-
-    # Statistics counters
     skipped_no_connection = 0
     skipped_self_loops = 0
 
-    for idx, line_item in enumerate(all_lines):
-        # Extract line coordinates and direction
-        line_coords = line_item['line']
-        line_direction = line_item['direction']
-        line_type = 'solid' if line_item in solid_lines else 'dashed'
+    for chain in chains:
+        line_type = _line_type_by_idx(chain[0])
+        # Use direction from the first line with a direction, or 'none'
+        chain_direction = 'none'
+        for li in chain:
+            d = all_lines[li].get('direction', 'none')
+            if d != 'none':
+                chain_direction = d
+                break
 
-        # Handle coming_in and going_out directions specially - they create multiple connections
-        if line_direction == 'coming_in' or line_direction == 'going_out':
-            # Find all symbols near this line
-            connected_symbols = find_multiple_connected_symbols(
-                line_coords, nodes_full, max_line_distance
-            )
+        # Get the overall chain line coords (first point of first line, last point of last line)
+        first_line = all_lines[chain[0]]['line']
+        last_line = all_lines[chain[-1]]['line']
 
-            if not connected_symbols:
+        # Find all symbols along this chain
+        symbols_along = _find_symbols_along_chain(chain)
+
+        if len(symbols_along) < 2:
+            if len(symbols_along) == 0:
                 skipped_no_connection += 1
+            else:
+                skipped_no_connection += 1  # only one symbol, no link
+            continue
+
+        # Create links between consecutive symbols along the chain
+        for k in range(len(symbols_along) - 1):
+            src_id = symbols_along[k][0]
+            tgt_id = symbols_along[k+1][0]
+
+            if src_id == tgt_id:
+                skipped_self_loops += 1
                 continue
 
-            # Separate symbols by endpoint
-            start_symbols = [s for s in connected_symbols if s[1] == 'start']
-            end_symbols = [s for s in connected_symbols if s[1] == 'end']
+            # Determine direction for this segment
+            seg_direction = chain_direction
+            if chain_direction == 'backward':
+                # Reverse: the chain goes backward, so swap
+                src_id, tgt_id = tgt_id, src_id
+                seg_direction = 'forward'
 
-            if line_direction == 'coming_in':
-                # Multiple branches merge into one: start symbols → end symbol
-                # Multiple sources connecting to one target
-                if not end_symbols:
-                    skipped_no_connection += 1
-                    continue
+            conn_info = {
+                'source_distance': symbols_along[k][2],
+                'target_distance': symbols_along[k+1][2],
+                'connection_type': 'full',
+                'direction_used': chain_direction,
+                'source_confidence': max(0, 1 - (symbols_along[k][2] / max_line_distance)),
+                'target_confidence': max(0, 1 - (symbols_along[k+1][2] / max_line_distance)),
+            }
 
-                # Use the closest end symbol as the merge point
-                target_id = end_symbols[0][0]
+            # Determine representative line coords for this segment
+            link_line = [first_line[0], first_line[1], last_line[2], last_line[3]]
 
-                # Create a separate connection for each start symbol to the target
-                for source_id, _, distance in start_symbols:
-                    if source_id == target_id:  # Skip self-loops
-                        skipped_self_loops += 1
-                        continue
+            link_full = {
+                'id': len(links_full),
+                'source': src_id,
+                'target': tgt_id,
+                'type': line_type,
+                'direction': seg_direction,
+                'line': link_line,
+                'length': np.sqrt((link_line[2]-link_line[0])**2 + (link_line[3]-link_line[1])**2),
+                'connection_quality': conn_info,
+            }
+            links_full.append(link_full)
 
-                    conn_info = {
-                        'source_distance': distance,
-                        'target_distance': end_symbols[0][2],
-                        'connection_type': 'full',
-                        'direction_used': line_direction,
-                        'source_confidence': max(0, 1 - (distance / max_line_distance)),
-                        'target_confidence': max(0, 1 - (end_symbols[0][2] / max_line_distance))
-                    }
+            # LLM link
+            llm_from, llm_to = src_id, tgt_id
+            if chain_direction == 'bidirectional':
+                pass  # keep as-is
+            link_llm = {
+                'from': llm_from,
+                'to': llm_to,
+                'type': line_type,
+            }
+            if chain_direction == 'bidirectional':
+                link_llm['bidirectional'] = True
+            links_llm.append(link_llm)
 
-                    # Full link
-                    link_full = {
-                        'id': len(links_full),
-                        'source': source_id,
-                        'target': target_id,
-                        'type': line_type,
-                        'direction': line_direction,
-                        'line': line_coords,
-                        'length': np.sqrt((line_coords[2]-line_coords[0])**2 + (line_coords[3]-line_coords[1])**2),
-                        'connection_quality': conn_info
-                    }
-                    links_full.append(link_full)
-
-                    # LLM link
-                    link_llm = {
-                        'from': source_id,
-                        'to': target_id,
-                        'type': line_type
-                    }
-                    links_llm.append(link_llm)
-
-                continue  # Skip normal processing
-
-            elif line_direction == 'going_out':
-                # One line branches to multiple: start symbol → end symbols
-                # One source connecting to multiple targets
-                if not start_symbols:
-                    skipped_no_connection += 1
-                    continue
-
-                # Use the closest start symbol as the branch point
-                source_id = start_symbols[0][0]
-
-                # Create a separate connection from the source to each end symbol
-                for target_id, _, distance in end_symbols:
-                    if source_id == target_id:  # Skip self-loops
-                        skipped_self_loops += 1
-                        continue
-
-                    conn_info = {
-                        'source_distance': start_symbols[0][2],
-                        'target_distance': distance,
-                        'connection_type': 'full',
-                        'direction_used': line_direction,
-                        'source_confidence': max(0, 1 - (start_symbols[0][2] / max_line_distance)),
-                        'target_confidence': max(0, 1 - (distance / max_line_distance))
-                    }
-
-                    # Full link
-                    link_full = {
-                        'id': len(links_full),
-                        'source': source_id,
-                        'target': target_id,
-                        'type': line_type,
-                        'direction': line_direction,
-                        'line': line_coords,
-                        'length': np.sqrt((line_coords[2]-line_coords[0])**2 + (line_coords[3]-line_coords[1])**2),
-                        'connection_quality': conn_info
-                    }
-                    links_full.append(link_full)
-
-                    # LLM link
-                    link_llm = {
-                        'from': source_id,
-                        'to': target_id,
-                        'type': line_type
-                    }
-                    links_llm.append(link_llm)
-
-                continue  # Skip normal processing
-
-        # Normal processing for other directions
-        # Find connected symbols (improved matching with direction)
-        source_id, target_id, conn_info = find_connected_symbols(
-            line_coords, nodes_full, line_direction, max_line_distance
-        )
-
-        # Filter out invalid connections
-        if source_id is None or target_id is None:
-            # Line doesn't connect to symbols at both ends (skip partial connections)
-            skipped_no_connection += 1
+    # Deduplicate links (same source-target pair)
+    seen_pairs = set()
+    deduped_full = []
+    deduped_llm = []
+    for lf, ll in zip(links_full, links_llm):
+        pair = (min(lf['source'], lf['target']), max(lf['source'], lf['target']))
+        if pair in seen_pairs:
             continue
+        seen_pairs.add(pair)
+        lf['id'] = len(deduped_full)
+        deduped_full.append(lf)
+        deduped_llm.append(ll)
 
-        # Skip self-loops (source and target are the same symbol)
-        if source_id == target_id:
-            skipped_self_loops += 1
-            continue
-
-        # Full link (all features including connection quality info)
-        link_full = {
-            'id': idx,
-            'source': source_id,
-            'target': target_id,
-            'type': line_type,
-            'direction': line_direction,  # Include direction info
-            'line': line_coords,  # [x1, y1, x2, y2]
-            'length': np.sqrt((line_coords[2]-line_coords[0])**2 + (line_coords[3]-line_coords[1])**2),
-            'connection_quality': conn_info  # Add connection quality information
-        }
-        links_full.append(link_full)
-
-        # LLM link (essential only - use direction to determine from/to relationship)
-        # If direction is 'backward', reverse the from/to relationship
-        # If 'bidirectional', we could create two links or just use from/to
-        # If 'none' or 'forward', use normal from/to
-
-        if line_direction == 'backward':
-            # Reverse: flow goes from target to source
-            llm_from = target_id
-            llm_to = source_id
-        elif line_direction == 'bidirectional':
-            # For bidirectional, keep original order but we could also create two separate links
-            # For now, just use from/to to represent the physical connection
-            llm_from = source_id
-            llm_to = target_id
-        else:
-            # 'forward' or 'none': normal direction
-            llm_from = source_id
-            llm_to = target_id
-
-        link_llm = {
-            'from': llm_from,
-            'to': llm_to,
-            'type': line_type
-        }
-
-        # For bidirectional, optionally add a note or create a second reverse link
-        if line_direction == 'bidirectional':
-            link_llm['bidirectional'] = True
-
-        links_llm.append(link_llm)
+    deduped_count = len(links_full) - len(deduped_full)
+    links_full = deduped_full
+    links_llm = deduped_llm
+    if deduped_count > 0:
+        print(f"Deduplicated {deduped_count} duplicate links")
 
     # Connection statistics
     # All connections in links_full are now full connections (both endpoints required)

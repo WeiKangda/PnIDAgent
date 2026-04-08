@@ -594,10 +594,12 @@ SOLID_CFG = {
     "min_line_length_at_scale": {1.0: 90, 0.75: 70, 0.6: 55},
     "frame_shrink_px": 28,
     "notes_keep_ratio": 0.78,   #for our dataset
-    "merge_min_len": 30.0,
-    "merge_angle_thr_deg": 4.0,
-    "merge_end_dist_thr": 12.0,
-    "merge_gap_thr": 12.0,
+    "merge_min_len": 15.0,
+    "merge_angle_thr_deg": 5.0,
+    "merge_end_dist_thr": 25.0,
+    "merge_gap_thr": 30.0,
+    "merge_perp_thr": 20.0,
+    "dedup_dist": 25.0,
     "cont_samples": 80,
     "min_density": 0.68,
     "max_gap": 4,
@@ -713,94 +715,118 @@ def detect_symbol_mask(gray, min_area=600, max_dim=260, max_ar=2.8, dilate=10):
     return mask  # 255 where symbols are
 
 def merge_two_segments(a, b):
-    ax1, ay1, ax2, ay2 = a
-    bx1, by1, bx2, by2 = b
-
+    """Merge two collinear segments into one by taking the extreme endpoints."""
     ang = seg_angle_deg(a)
     ux, uy = unit_dir_from_angle_deg(ang)
-    origin = (ax1, ay1)
+    origin = (a[0], a[1])
 
-    pts = [(ax1, ay1), (ax2, ay2), (bx1, by1), (bx2, by2)]
+    pts = [(a[0], a[1]), (a[2], a[3]), (b[0], b[1]), (b[2], b[3])]
     ts = [project_scalar(p, origin, ux, uy) for p in pts]
 
     pmin = pts[int(np.argmin(ts))]
     pmax = pts[int(np.argmax(ts))]
     return [int(round(pmin[0])), int(round(pmin[1])), int(round(pmax[0])), int(round(pmax[1]))]
 
-def should_merge(a, b,
-                 angle_thr=4.0,
-                 end_dist_thr=12.0,
-                 gap_thr=12.0,
-                 perp_thr=6.0,
-                 max_seg_len=350.0):
+def should_merge(a, b, angle_thr=5.0, gap_thr=30.0, perp_thr=20.0):
+    """Check if two line segments are collinear/parallel and overlapping or close enough to merge."""
     la = seg_len(a)
     lb = seg_len(b)
-    if la < SOLID_CFG["merge_min_len"] or lb < SOLID_CFG["merge_min_len"]:
-        return False
-    if max(la, lb) > max_seg_len:
+    if la < 1 or lb < 1:
         return False
 
+    # Angle check
     aa = seg_angle_deg(a)
     bb = seg_angle_deg(b)
     if ang_diff_deg(aa, bb) > angle_thr:
         return False
 
-    a_pts = [(a[0], a[1]), (a[2], a[3])]
-    b_pts = [(b[0], b[1]), (b[2], b[3])]
-    mind = min(point_dist(p, q) for p in a_pts for q in b_pts)
-    close_enough = (mind <= end_dist_thr)
-
-    ux, uy = unit_dir_from_angle_deg(aa)
-    origin = a_pts[0]
-
-    def seg_proj(seg):
-        p1 = (seg[0], seg[1])
-        p2 = (seg[2], seg[3])
-        t1 = project_scalar(p1, origin, ux, uy)
-        t2 = project_scalar(p2, origin, ux, uy)
-        return (min(t1, t2), max(t1, t2))
-
-    a0, a1 = seg_proj(a)
-    b0, b1 = seg_proj(b)
-    inter = min(a1, b1) - max(a0, b0)
-    overlap_or_small_gap = (inter >= -gap_thr)
-
-    if not (close_enough and overlap_or_small_gap):
+    # Perpendicular distance: check all 4 endpoints against the other line
+    perp_b1 = point_line_perp_dist(b[0], b[1], a[0], a[1], a[2], a[3])
+    perp_b2 = point_line_perp_dist(b[2], b[3], a[0], a[1], a[2], a[3])
+    perp_a1 = point_line_perp_dist(a[0], a[1], b[0], b[1], b[2], b[3])
+    perp_a2 = point_line_perp_dist(a[2], a[3], b[0], b[1], b[2], b[3])
+    min_perp = min(perp_b1, perp_b2, perp_a1, perp_a2)
+    if min_perp > perp_thr:
         return False
 
-    bmx, bmy = (b[0] + b[2]) / 2.0, (b[1] + b[3]) / 2.0
-    if point_line_perp_dist(bmx, bmy, a[0], a[1], a[2], a[3]) > perp_thr:
+    # Project both segments onto a common axis to check overlap or small gap
+    ux, uy = unit_dir_from_angle_deg(aa)
+    origin = (a[0], a[1])
+
+    a_t1 = project_scalar((a[0], a[1]), origin, ux, uy)
+    a_t2 = project_scalar((a[2], a[3]), origin, ux, uy)
+    b_t1 = project_scalar((b[0], b[1]), origin, ux, uy)
+    b_t2 = project_scalar((b[2], b[3]), origin, ux, uy)
+    a_min, a_max = min(a_t1, a_t2), max(a_t1, a_t2)
+    b_min, b_max = min(b_t1, b_t2), max(b_t1, b_t2)
+
+    # Gap between projections (negative means overlap)
+    gap = max(a_min, b_min) - min(a_max, b_max)
+    if gap > gap_thr:
         return False
 
     return True
 
-def merge_segments(segments, angle_thr=4.0, end_dist_thr=12.0, gap_thr=12.0):
-    segs = [list(map(int, s)) for s in segments]
-    segs = [s for s in segs if seg_len(s) >= SOLID_CFG["merge_min_len"]]
+def _dedup_lines(lines, dist_thresh):
+    """Remove near-duplicate lines (both endpoints within threshold)."""
+    if len(lines) <= 1:
+        return lines
 
+    keep = [True] * len(lines)
+    for i in range(len(lines)):
+        if not keep[i]:
+            continue
+        for j in range(i + 1, len(lines)):
+            if not keep[j]:
+                continue
+            a, b = lines[i], lines[j]
+            # Check both orientation matchings
+            d1 = max(point_dist((a[0],a[1]), (b[0],b[1])),
+                     point_dist((a[2],a[3]), (b[2],b[3])))
+            d2 = max(point_dist((a[0],a[1]), (b[2],b[3])),
+                     point_dist((a[2],a[3]), (b[0],b[1])))
+            if min(d1, d2) < dist_thresh:
+                # Keep the longer one
+                if seg_len(a) >= seg_len(b):
+                    keep[j] = False
+                else:
+                    keep[i] = False
+                    break
+
+    return [l for l, k in zip(lines, keep) if k]
+
+def merge_segments(segments, angle_thr=5.0, gap_thr=30.0, perp_thr=20.0, dedup_dist=25.0):
+    """Deduplicate and iteratively merge collinear line segments."""
+    cfg = SOLID_CFG
+    segs = [list(map(int, s)) for s in segments]
+
+    # Step 1: Remove very short lines
+    segs = [s for s in segs if seg_len(s) >= cfg["merge_min_len"]]
+
+    # Step 2: Deduplicate near-identical lines
+    segs = _dedup_lines(segs, dedup_dist)
+
+    # Step 3: Iteratively merge collinear/overlapping segments
     changed = True
     while changed:
         changed = False
-        used = [False] * len(segs)
+        used = set()
         new_segs = []
         for i in range(len(segs)):
-            if used[i]:
+            if i in used:
                 continue
             cur = segs[i]
-            used[i] = True
-            merged_any = True
-            while merged_any:
-                merged_any = False
-                for j in range(len(segs)):
-                    if used[j]:
-                        continue
-                    if should_merge(cur, segs[j], angle_thr, end_dist_thr, gap_thr, perp_thr=6.0):
-                        cur = merge_two_segments(cur, segs[j])
-                        used[j] = True
-                        merged_any = True
-                        changed = True
+            for j in range(i + 1, len(segs)):
+                if j in used:
+                    continue
+                if should_merge(cur, segs[j], angle_thr, gap_thr, perp_thr):
+                    cur = merge_two_segments(cur, segs[j])
+                    used.add(j)
+                    changed = True
             new_segs.append(cur)
+            used.add(i)
         segs = new_segs
+
     return segs
 
 def solid_stats(edge_img, x1, y1, x2, y2, samples=80):
@@ -970,8 +996,9 @@ def _step4_core(
     merged = merge_segments(
         pred_all,
         angle_thr=cfg["merge_angle_thr_deg"],
-        end_dist_thr=cfg["merge_end_dist_thr"],
         gap_thr=cfg["merge_gap_thr"],
+        perp_thr=cfg["merge_perp_thr"],
+        dedup_dist=cfg["dedup_dist"],
     )
 
     return {
