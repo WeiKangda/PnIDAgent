@@ -30,6 +30,7 @@ transformers>=4.38.0
 # PaddleOCR stack (Python 3.9, GPU node)
 # ============================================================================
 paddleocr==2.7.3
+paddlepaddle==3.3.0
 # paddlepaddle-gpu==2.6.2  # Uncomment for GPU support
 
 # PaddleOCR dependencies
