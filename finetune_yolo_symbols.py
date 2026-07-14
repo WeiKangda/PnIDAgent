@@ -338,7 +338,9 @@ class YOLOSymbolDetector:
                conf_threshold: float = 0.25,
                iou_threshold: float = 0.45,
                max_det: int = 1000,
-               agnostic_nms: bool = False) -> List[SymbolDetection]:
+               agnostic_nms: bool = False,
+               imgsz: int = 1280,
+               augment: bool = False) -> List[SymbolDetection]:
         """
         Detect symbols in an image and return center points.
 
@@ -353,8 +355,12 @@ class YOLOSymbolDetector:
             List of SymbolDetection objects with center points
         """
         # Run inference
+        # imgsz: high-res P&IDs need larger inference size (default 640 collapses
+        # on small symbols; ~1280 matches this model's trained scale). augment=TTA.
         results = self.model.predict(
             image,
+            imgsz=imgsz,
+            augment=augment,
             conf=conf_threshold,
             iou=iou_threshold,
             max_det=max_det,
