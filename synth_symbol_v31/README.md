@@ -21,9 +21,9 @@ directory must contain:
 │   ├── yolo_quality/                 # created by step 1
 │   ├── yolo_quality_x2/              # a copy of yolo_quality (you make this, see step 2)
 │   ├── yolo_real31/                  # created by step 3
-│   ├── yolo_apr26/                   # provide these three (APR-family, synthetic, real)
-│   ├── yolo_dpid_nuke/
-│   └── yolo_pseudo_v3_union/
+│   ├── yolo_apr26/                   # built by datasets_prep/ (APR-family synthesis)
+│   ├── yolo_dpid_nuke/               # built by datasets_prep/ (programmatic pages)
+│   └── yolo_pseudo_v3_union/         # built by datasets_prep/ (real-page pseudo-labels)
 │
 ├── runs/detect/unsupervised_symbol_recognition/runs/
 │   └── <base>/weights/best.pt        # the base model you start from (provide this)
@@ -43,9 +43,11 @@ directory must contain:
     └── eval.py                       # F1 metric
 ```
 
-The symbol bank, background drawings, base model and the three provided datasets are not
-in this repo (they are several GB). Cloning the repo alone will not run end to end — you
-need those assets in place first. The four evaluation drawings are excluded from all
+The symbol bank, background drawings and base model are not in this repo (they are several
+GB). The three `yolo_apr26 / yolo_dpid_nuke / yolo_pseudo_v3_union` datasets aren't external
+either — you build them from the symbol bank and backgrounds with the scripts in
+`datasets_prep/` (see `datasets_prep/README.md`). Cloning the repo alone will not run end to
+end — you need those assets in place first. The four evaluation drawings are excluded from all
 synthesis, so nothing you train on overlaps with what you test on.
 
 ## Requirements
@@ -54,6 +56,11 @@ synthesis, so nothing you train on overlaps with what you test on.
 - `pip install ultralytics torch opencv-python Pillow numpy PyMuPDF`
 
 ## How to run
+
+### Step 0 — build the datasets that get mixed in
+
+Steps 2 and 3 mix in `yolo_apr26`, `yolo_dpid_nuke` and `yolo_pseudo_v3_union`. Build them
+first with the scripts in `datasets_prep/` (see `datasets_prep/README.md`).
 
 ### Step 1 — synthesize and train
 
