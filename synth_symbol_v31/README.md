@@ -1,139 +1,130 @@
-# v31 — zero-annotation symbol detector
+# Zero-annotation symbol detector
 
-A single-class P&ID symbol detector trained without any hand-labeled data. The idea
-is to paste symbol crops onto real drawing backgrounds in a way that actually looks
-real, take the paste locations as free bounding boxes, and fine-tune from the previous
-checkpoint at a low learning rate.
+A single-class P&ID symbol detector trained without any hand-labeled data. Symbol crops
+are pasted onto real drawing backgrounds so they look real, the paste locations become
+free bounding boxes, and each training round starts from the previous model's weights.
 
-On the four held-out real drawings it scores macro-F1 0.883, which beats the supervised
-baseline (0.821) by about 6 points:
+On the four held-out real drawings it reaches macro-F1 0.883, versus 0.821 for a
+supervised baseline.
+
+There are three training steps. Each one synthesizes pages, then fine-tunes from the
+previous checkpoint. Run everything from the project root.
+
+## Where the data goes
+
+The scripts read and write paths relative to the directory you run them from. That
+directory must contain:
 
 ```
-                       NorthANA  AFW_Surry  CVCS_Surry  APR1400   macro-F1
-supervised baseline      0.899     0.917       0.678      0.789     0.821
-v31 (best single ckpt)   0.915     0.931       0.873      0.813     0.883
-v31 re-run (this code)   0.915     0.931       0.873      0.813     0.883
-soup5 (weight-avg of 5)  0.922     0.932       0.873      0.824     0.888
+<project root>/
+├── datasets/                         # datasets live here (created/read by the scripts)
+│   ├── yolo_quality/                 # created by step 1
+│   ├── yolo_quality_x2/              # a copy of yolo_quality (you make this, see step 2)
+│   ├── yolo_real31/                  # created by step 3
+│   ├── yolo_apr26/                   # provide these three (APR-family, synthetic, real)
+│   ├── yolo_dpid_nuke/
+│   └── yolo_pseudo_v3_union/
+│
+├── runs/detect/unsupervised_symbol_recognition/runs/
+│   └── <base>/weights/best.pt        # the base model you start from (provide this)
+│
+├── PID_merged/Symbol - Legend/extracted/
+│   ├── *.json                        # legend entries
+│   └── sym600/                       # high-res symbol crops (the symbol bank)
+│
+├── unsupervised_symbol_recognition/
+│   └── realcrop_pool/*.png           # symbol crops taken from real pages
+│
+├── All PID Diagram/*.pdf             # background drawings (300 dpi rendered)
+├── PID_merged_organized/png/*/*.png  # more background drawings
+│
+└── gpt_detect/llm_baseline/
+    ├── config.py                     # defines the 4 evaluation drawings + their labels
+    └── eval.py                       # F1 metric
 ```
 
-The re-run row is a full retrain from scratch with these scripts — it lands on the
-exact same per-drawing numbers, so 0.883 isn't luck.
-
-v31 fine-tunes from an earlier checkpoint (v28b) that came from a long chain of models,
-all trained without hand labels. Two companion docs:
-
-- [FLOW.md](FLOW.md) — the runnable chain `v16 -> v25 -> v28b -> v31`, in order, with the
-  exact command, output and expected score for each step. Start here to reproduce.
-- [PIPELINE.md](PIPELINE.md) — the narrative: symbol mining, how the synthesis evolved,
-  the model soup, and the system on top of the single model.
-
-This README covers the v31 step itself.
-
-## Why the synthesis is the way it is
-
-Naively pasting a symbol PNG onto a drawing leaves it looking obviously fake — wrong
-line weight, a white patch behind it, a hard edge — and the model just learns those
-artifacts instead of the symbol. v31 fixes that with a few tricks (all in
-`synth_and_train.py`):
-
-- Match stroke weight: binarize the symbol and dilate it to the background line width
-  so it's as thick as the surrounding lines (`render_symbol`).
-- Orient along the pipe: rotate the symbol 90° on vertical runs so its long axis
-  follows the line.
-- Fill with paper color: before pasting, fill the box with the page's own paper color
-  (90th-percentile pixel) instead of white.
-- Blend, don't overwrite: paste with `np.minimum(background, symbol)` so it darkens
-  onto the drawing rather than covering it.
-- Reconnect the pipe: draw short stubs at both ends at the background line width so the
-  symbol sits on the line instead of floating.
-- Degrade together: after everything is pasted, blur and add noise to the whole page at
-  once, so the symbol goes through the same scan degradation as the drawing.
-
-A couple of things that matter:
-
-- Paste locations come from the previous model (v28b) running on the real drawing — it
-  finds the pipes, so symbols end up on pipes. This is the bootstrap step.
-- Where you paste is the label, so annotation is free.
-- The four evaluation drawings are excluded everywhere via the `BAN` list — they never
-  touch training data.
-- The symbol bank is filtered by `enhance()` to drop text, fragments and solid blobs.
+The symbol bank, background drawings, base model and the three provided datasets are not
+in this repo (they are several GB). Cloning the repo alone will not run end to end — you
+need those assets in place first. The four evaluation drawings are excluded from all
+synthesis, so nothing you train on overlaps with what you test on.
 
 ## Requirements
 
-- Python 3.9, a CUDA GPU. Training at imgsz 1280 / batch 4 uses ~15 GB.
-- Packages: `ultralytics`, `torch`, `opencv-python`, `Pillow`, `numpy`, `PyMuPDF`.
-- For evaluation: `config.py` and `eval.py` from `gpt_detect/llm_baseline` in the main
-  repo (they define the four eval drawings and the F1 metric).
+- Python 3.9, a CUDA GPU (training uses ~15 GB at imgsz 1280 / batch 4).
+- `pip install ultralytics torch opencv-python Pillow numpy PyMuPDF`
 
-This is the important caveat: the scripts read data assets that are **not** in this repo
-and are several GB. You need all of them to reproduce 0.883:
+## How to run
 
-- Symbol bank: `sym600/` (legend crops) and `realcrop_pool/`.
-- Backgrounds: `All PID Diagram/*.pdf` and `PID_merged_organized/png/` (with the four
-  eval drawings excluded).
-- Base model: the previous checkpoint `v28b_rebalance/weights/best.pt`.
-- Joint datasets to keep old skills: `yolo_quality`, `yolo_apr26`, `yolo_dpid_nuke`,
-  `yolo_pseudo_v3_union`.
-
-Cloning this branch alone will not run end to end without those.
-
-## Running it
-
-Run everything from the project root (`PnIDAgent_project`).
-
-Full pipeline — synthesize 1600 pages, fine-tune 12 epochs from v28b, then evaluate:
+### Step 1 — synthesize and train
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/synth_and_train.py
+CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/step1_synthesize.py
 ```
 
-One gotcha: the v28b model used during synthesis holds GPU memory, and if it isn't freed
-before training starts you can OOM. The safer path is to synthesize once, then train in a
-separate process on a clean GPU:
+Builds a symbol pool from the legend crops and real crops, detects the pipes on each
+background with the base model, pastes symbols onto those pipes (white out the center,
+leave a small interface, blend it in), adds tag numbers, degrades the page. Writes 1600
+pages to `datasets/yolo_quality/`, then fine-tunes for 12 epochs.
+
+### Step 2 — rebalance and train
+
+First make the 2x oversample copy the script expects:
+
+```bash
+cp -r datasets/yolo_quality datasets/yolo_quality_x2
+```
+
+Then:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/step2_rebalance.py
+```
+
+No new synthesis here. It trains on all the datasets together (with `yolo_quality`
+counted twice, to give that family more weight) and fine-tunes from step 1's checkpoint
+for 12 epochs.
+
+### Step 3 — synthesize and train (final)
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/step3_synthesize.py
+```
+
+Same idea as step 1 but with more careful compositing: symbols are matched to the
+background line width, the box is filled with the page's paper color instead of white,
+symbols are blended (not pasted over), short stubs reconnect them to the pipe, and the
+whole page is degraded together after pasting. Writes 1600 pages to `datasets/yolo_real31/`
+and fine-tunes from step 2's checkpoint. This is the 0.883 model.
+
+If the data is already synthesized and you only want to retrain (this avoids a GPU
+out-of-memory issue when synthesis and training share a card):
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
-  python PnIDAgent/synth_symbol_v31/train_from_synth.py
+  python PnIDAgent/synth_symbol_v31/step3_train_only.py
 ```
 
-Training settings (deliberately gentle, since we're fine-tuning a converged model and
-don't want it to drift):
+### Evaluate
 
-```
-start from v28b | SGD | lr0=0.0004 | cos_lr | epochs=12 | imgsz=1280 | batch=4
-single_cls=True | mosaic=0.3 close_mosaic=3 | scale=0.25 degrees=2 | patience=5
-```
-
-The light augmentation is on purpose — P&IDs are clean line drawings and heavy augmentation
-hurts.
-
-Evaluation uses a fixed protocol; you have to follow it or the numbers aren't comparable:
-predict at `imgsz=1280, conf=0.10, iou=0.5, max_det=400`, keep boxes with `score >= 0.65`,
-then average per-drawing F1@IoU0.5 across the four drawings.
+The protocol is fixed — follow it or the numbers aren't comparable: predict at
+`imgsz=1280, conf=0.10, iou=0.5, max_det=400`, keep boxes with `score >= 0.65`, then
+average per-drawing F1 at IoU 0.5 across the four drawings.
 
 ```bash
-python PnIDAgent/synth_symbol_v31/eval_standard.py \
+python PnIDAgent/synth_symbol_v31/evaluate.py \
   --weights runs/detect/unsupervised_symbol_recognition/runs/v31_realism/weights/best.pt \
   --baseline-dir gpt_detect/llm_baseline
 ```
 
-Expect 0.883.
+Expected: 0.883, per-drawing 0.915 / 0.931 / 0.873 / 0.813.
 
-## Files
+## Training settings (same at every step)
 
-Docs:
+```
+start from previous checkpoint | SGD | lr0=0.0004 | cos_lr | epochs=12
+imgsz=1280 | batch=4 | single_cls=True | mosaic=0.3 close_mosaic=3
+scale=0.25 degrees=2 | patience=5-6
+```
 
-- `FLOW.md` — the full runnable chain, step by step (start here).
-- `PIPELINE.md` — the end-to-end narrative behind the numbers.
-
-Scripts, in chain order:
-
-- `v25_quality_synth.py` — step 1: quality synthesis, fine-tune from v16. Produces
-  `yolo_quality` and the v25 checkpoint (~0.866).
-- `v28b_rebalance.py` — step 2: joint retrain with Surry oversampled 2x, from v25. No new
-  synthesis. Produces the v28b checkpoint that v31 builds on.
-- `synth_and_train.py` — step 3: realism synthesis (1600 pages) plus fine-tuning from v28b,
-  with a self-eval at the end. Produces the 0.883 v31 checkpoint.
-- `train_from_synth.py` — the v31 training step only, reusing already-synthesized data on a
-  clean GPU (OOM-safe).
-- `eval_standard.py` — standalone evaluation using the standard protocol.
+Low learning rate and light augmentation are deliberate: these are gentle fine-tunes of a
+model that already works, and P&IDs are clean line drawings where heavy augmentation hurts.
