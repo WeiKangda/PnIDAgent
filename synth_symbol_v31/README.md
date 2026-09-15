@@ -10,6 +10,11 @@ supervised baseline.
 There are three training steps. Each one synthesizes pages, then fine-tunes from the
 previous checkpoint. Run everything from the project root.
 
+**To reproduce, you need the asset bundle from the authors** (data + base model
+checkpoints, ~1 GB — not in this repo). See **[ASSETS.md](ASSETS.md)** for the exact list,
+where each file goes, and the full command sequence. With the bundle in place, the pipeline
+reproduces 0.883.
+
 ## Where the data goes
 
 The scripts read and write paths relative to the directory you run them from. That
