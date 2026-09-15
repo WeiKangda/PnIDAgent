@@ -21,15 +21,19 @@ datasets/yolo_pseudo_v2/                        # 65 real pages, source for the 
 
 ## 2. Base model checkpoints
 
-These are the models the pipeline starts from. They come from earlier work that predates
-this repo, so they must be shipped in the bundle — you cannot rebuild them from what's here.
+These three checkpoints come from earlier work that predates this repo, so they must be
+shipped in the bundle — you cannot rebuild them from what's here.
 
 ```
-runs/detect/unsupervised_symbol_recognition/runs/v16_union/weights/best.pt      # base for step 1
-runs/pid_combined/pseudo_v2_clean/weights/best.pt                               # teacher 1 (pseudo set)
-runs/detect/unsupervised_symbol_recognition/runs/synth_det_v2/weights/best.pt   # teacher 2 (pseudo set)
-runs/pid_combined/y11x_heavyaug_final/weights/best.pt                           # student base (pseudo set)
+runs/pid_combined/pseudo_v2_clean/weights/best.pt                               # teacher 1
+runs/detect/unsupervised_symbol_recognition/runs/synth_det_v2/weights/best.pt   # teacher 2
+runs/pid_combined/y11x_heavyaug_final/weights/best.pt                           # student base
 ```
+
+Note: the pipeline's own base model, `v16_union`, is **not** shipped — it is produced by
+`datasets_prep/make_yolo_pseudo_v3_union.py` (it trains the student base on the pseudo set
+for 50 epochs and saves it as `v16_union`). Step 1 then starts from that. So run the pseudo
+step before step 1.
 
 ## 3. Evaluation data + metric code
 
@@ -72,15 +76,34 @@ runs/.../{v25_quality,v28b_rebalance,v31_realism}/weights/best.pt   # trained by
 
 ## Once everything is in place
 
+The order matters: some data-prep steps depend on checkpoints that earlier training steps
+produce (e.g. `make_yolo_apr26` needs the step-1 model), so prep and training interleave.
+
 ```bash
-# from the project root, in order:
-python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_apr26.py
+# from the project root, in this exact order:
+
+# 1. programmatic pages (needs only the symbol bank)
 python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_dpid_nuke.py
+
+# 2. pseudo-label set — also produces the v16_union base that step 1 needs
 python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_pseudo_v3_union.py
+
+# 3. step 1: quality synthesis + train (needs v16_union) -> produces the v25 model
 python PnIDAgent/synth_symbol_v31/step1_synthesize.py
+
+# 4. APR-family set (needs the v25 model from step 1)
+python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_apr26.py
+
+# 5. the 2x oversample copy
 cp -r datasets/yolo_quality datasets/yolo_quality_x2
+
+# 6. step 2: rebalance + train
 python PnIDAgent/synth_symbol_v31/step2_rebalance.py
+
+# 7. step 3: realism synthesis + train -> the 0.883 model
 python PnIDAgent/synth_symbol_v31/step3_synthesize.py
+
+# 8. evaluate
 python PnIDAgent/synth_symbol_v31/evaluate.py \
   --weights runs/detect/unsupervised_symbol_recognition/runs/v31_realism/weights/best.pt \
   --baseline-dir gpt_detect/llm_baseline
