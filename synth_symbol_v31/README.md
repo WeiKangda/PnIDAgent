@@ -20,9 +20,14 @@ The re-run row is a full retrain from scratch with these scripts — it lands on
 exact same per-drawing numbers, so 0.883 isn't luck.
 
 v31 fine-tunes from an earlier checkpoint (v28b) that came from a long chain of models,
-all trained without hand labels. For the full start-to-finish story — symbol mining,
-how the synthesis evolved, the checkpoint chain, the model soup, and the system on top —
-see [PIPELINE.md](PIPELINE.md). This README covers the v31 step itself.
+all trained without hand labels. Two companion docs:
+
+- [FLOW.md](FLOW.md) — the runnable chain `v16 -> v25 -> v28b -> v31`, in order, with the
+  exact command, output and expected score for each step. Start here to reproduce.
+- [PIPELINE.md](PIPELINE.md) — the narrative: symbol mining, how the synthesis evolved,
+  the model soup, and the system on top of the single model.
+
+This README covers the v31 step itself.
 
 ## Why the synthesis is the way it is
 
@@ -116,7 +121,19 @@ Expect 0.883.
 
 ## Files
 
-- `synth_and_train.py` — synthesis (1600 pages) plus fine-tuning from v28b, with a
-  self-eval at the end.
-- `train_from_synth.py` — training only, reusing already-synthesized data on a clean GPU.
+Docs:
+
+- `FLOW.md` — the full runnable chain, step by step (start here).
+- `PIPELINE.md` — the end-to-end narrative behind the numbers.
+
+Scripts, in chain order:
+
+- `v25_quality_synth.py` — step 1: quality synthesis, fine-tune from v16. Produces
+  `yolo_quality` and the v25 checkpoint (~0.866).
+- `v28b_rebalance.py` — step 2: joint retrain with Surry oversampled 2x, from v25. No new
+  synthesis. Produces the v28b checkpoint that v31 builds on.
+- `synth_and_train.py` — step 3: realism synthesis (1600 pages) plus fine-tuning from v28b,
+  with a self-eval at the end. Produces the 0.883 v31 checkpoint.
+- `train_from_synth.py` — the v31 training step only, reusing already-synthesized data on a
+  clean GPU (OOM-safe).
 - `eval_standard.py` — standalone evaluation using the standard protocol.
