@@ -19,6 +19,11 @@ soup5 (weight-avg of 5)  0.922     0.932       0.873      0.824     0.888
 The re-run row is a full retrain from scratch with these scripts — it lands on the
 exact same per-drawing numbers, so 0.883 isn't luck.
 
+v31 fine-tunes from an earlier checkpoint (v28b) that came from a long chain of models,
+all trained without hand labels. For the full start-to-finish story — symbol mining,
+how the synthesis evolved, the checkpoint chain, the model soup, and the system on top —
+see [PIPELINE.md](PIPELINE.md). This README covers the v31 step itself.
+
 ## Why the synthesis is the way it is
 
 Naively pasting a symbol PNG onto a drawing leaves it looking obviously fake — wrong
