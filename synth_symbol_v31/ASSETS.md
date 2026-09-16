@@ -3,7 +3,9 @@
 The code is in this repo; the data and the base model checkpoints are not (they're private
 and several GB). Ask the authors for the asset bundle. Once every item below is in place at
 the exact path shown — all paths relative to the project root you run from — the pipeline
-reproduces macro-F1 0.883.
+runs end to end. A full from-scratch rebuild measured **macro-F1 ≈ 0.853** (above the 0.821
+supervised baseline); the original best checkpoint is 0.883. See the reproducibility note in
+the main README for why a rebuild doesn't land exactly on 0.883.
 
 Total bundle is roughly 1 GB.
 
@@ -107,5 +109,5 @@ python PnIDAgent/synth_symbol_v31/step3_synthesize.py
 python PnIDAgent/synth_symbol_v31/evaluate.py \
   --weights runs/detect/unsupervised_symbol_recognition/runs/v31_realism/weights/best.pt \
   --baseline-dir gpt_detect/llm_baseline
-# expect 0.883
+# from-scratch rebuild: ~0.853  |  original checkpoint: 0.883
 ```

@@ -1,19 +1,29 @@
 # Zero-annotation symbol detector
 
-A single-class P&ID symbol detector trained without any hand-labeled data. Symbol crops
-are pasted onto real drawing backgrounds so they look real, the paste locations become
-free bounding boxes, and each training round starts from the previous model's weights.
+A single-class P&ID symbol detector trained with **no human-labeled bounding boxes**. It is
+a pseudo-label + synthesis self-training pipeline: teacher models auto-label real pages,
+symbol crops are pasted onto real backgrounds (paste locations give exact labels), and each
+model is trained from the previous one — a bootstrap where every generation both labels data
+for and initializes the next.
 
-On the four held-out real drawings it reaches macro-F1 0.883, versus 0.821 for a
-supervised baseline.
+The best single checkpoint reaches macro-F1 0.883 on the four held-out real drawings, versus
+0.821 for a supervised baseline.
 
-There are three training steps. Each one synthesizes pages, then fine-tunes from the
-previous checkpoint. Run everything from the project root.
+**On reproducibility (measured).** Because the pipeline generates its own training data with
+its own models, a full rebuild from scratch does not land exactly on 0.883. A clean-room run
+of the whole chain measured **macro-F1 ≈ 0.853** (per-drawing 0.921 / 0.931 / 0.776 / 0.784)
+— still well above the 0.821 supervised baseline. The early stages reproduce closely (the
+step-1 model came back at 0.866, matching the original); the gap is nondeterminism compounding
+over five sequential fine-tunes and landing on CVCS_Surry, the smallest/most sensitive drawing
+(37 symbols). The exact 0.883 depends on the original intermediate checkpoints. So: expect
+~0.85 from a from-scratch rebuild, 0.883 only if you start from the original checkpoints.
 
-**To reproduce, you need the asset bundle from the authors** (data + base model
-checkpoints, ~1 GB — not in this repo). See **[ASSETS.md](ASSETS.md)** for the exact list,
-where each file goes, and the full command sequence. With the bundle in place, the pipeline
-reproduces 0.883.
+There are three training steps, interleaved with three data-prep steps (some prep needs a
+checkpoint an earlier training step produces). Run everything from the project root.
+
+**To reproduce, you need the asset bundle from the authors** (data + base model checkpoints,
+~1 GB — not in this repo). See **[ASSETS.md](ASSETS.md)** for the exact list, where each file
+goes, and the full command sequence in the correct order.
 
 ## Where the data goes
 
@@ -30,8 +40,11 @@ directory must contain:
 │   ├── yolo_dpid_nuke/               # built by datasets_prep/ (programmatic pages)
 │   └── yolo_pseudo_v3_union/         # built by datasets_prep/ (real-page pseudo-labels)
 │
-├── runs/detect/unsupervised_symbol_recognition/runs/
-│   └── <base>/weights/best.pt        # the base model you start from (provide this)
+├── runs/                             # three teacher/base checkpoints go here (see ASSETS.md)
+│   ├── pid_combined/pseudo_v2_clean/weights/best.pt            # teacher 1
+│   ├── detect/.../synth_det_v2/weights/best.pt                 # teacher 2
+│   └── pid_combined/y11x_heavyaug_final/weights/best.pt        # student base
+│                                      # (v16_union, the step-1 base, is GENERATED, not provided)
 │
 ├── PID_merged/Symbol - Legend/extracted/
 │   ├── *.json                        # legend entries
@@ -62,10 +75,25 @@ synthesis, so nothing you train on overlaps with what you test on.
 
 ## How to run
 
-### Step 0 — build the datasets that get mixed in
+The order matters and is interleaved — some data-prep steps need a checkpoint that an
+earlier training step produces (`make_yolo_apr26` needs the step-1 model). Full command
+sequence is in [ASSETS.md](ASSETS.md); the summary:
 
-Steps 2 and 3 mix in `yolo_apr26`, `yolo_dpid_nuke` and `yolo_pseudo_v3_union`. Build them
-first with the scripts in `datasets_prep/` (see `datasets_prep/README.md`).
+```
+dpid_nuke → pseudo_v3_union → step 1 → apr26 → (copy x2) → step 2 → step 3 → evaluate
+```
+
+### Prep A — programmatic pages + pseudo-labels
+
+```bash
+python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_dpid_nuke.py
+python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_pseudo_v3_union.py
+```
+
+`make_yolo_dpid_nuke` draws whole synthetic pages (labels exact by construction).
+`make_yolo_pseudo_v3_union` pseudo-labels 65 real pages with two teachers **and trains the
+`v16_union` base that step 1 starts from** (so it must run before step 1). See
+`datasets_prep/README.md`.
 
 ### Step 1 — synthesize and train
 
@@ -74,9 +102,17 @@ CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/step1_synthesize.py
 ```
 
 Builds a symbol pool from the legend crops and real crops, detects the pipes on each
-background with the base model, pastes symbols onto those pipes (white out the center,
-leave a small interface, blend it in), adds tag numbers, degrades the page. Writes 1600
-pages to `datasets/yolo_quality/`, then fine-tunes for 12 epochs.
+background with the base model, pseudo-labels any symbols already on the background, pastes
+new symbols onto the pipes (white out the center, leave a small interface, blend it in),
+adds tag numbers, degrades the page. Each page's labels = pseudo-labels (existing symbols) +
+exact labels (pasted symbols). Writes 1600 pages to `datasets/yolo_quality/`, then fine-tunes
+for 12 epochs. Produces the v25 model.
+
+### Prep B — APR-family set (needs the step-1 model)
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python PnIDAgent/synth_symbol_v31/datasets_prep/make_yolo_apr26.py
+```
 
 ### Step 2 — rebalance and train
 
@@ -106,7 +142,8 @@ Same idea as step 1 but with more careful compositing: symbols are matched to th
 background line width, the box is filled with the page's paper color instead of white,
 symbols are blended (not pasted over), short stubs reconnect them to the pipe, and the
 whole page is degraded together after pasting. Writes 1600 pages to `datasets/yolo_real31/`
-and fine-tunes from step 2's checkpoint. This is the 0.883 model.
+and fine-tunes from step 2's checkpoint. This is the final model (0.883 for the original
+checkpoint; ~0.85 for a from-scratch rebuild — see the reproducibility note at the top).
 
 If the data is already synthesized and you only want to retrain (this avoids a GPU
 out-of-memory issue when synthesis and training share a card):
@@ -128,7 +165,8 @@ python PnIDAgent/synth_symbol_v31/evaluate.py \
   --baseline-dir gpt_detect/llm_baseline
 ```
 
-Expected: 0.883, per-drawing 0.915 / 0.931 / 0.873 / 0.813.
+Expected: 0.883 (per-drawing 0.915 / 0.931 / 0.873 / 0.813) from the original checkpoint;
+~0.853 (0.921 / 0.931 / 0.776 / 0.784) from a full from-scratch rebuild.
 
 ## Training settings (same at every step)
 
