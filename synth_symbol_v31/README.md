@@ -9,6 +9,10 @@ for and initializes the next.
 The best single checkpoint reaches macro-F1 0.883 on the four held-out real drawings, versus
 0.821 for a supervised baseline.
 
+The four held-out real drawings and their human-annotated labels (274 symbols, YOLO format)
+are published in [`../nuclear_pid_real4_dataset/`](../nuclear_pid_real4_dataset/) — the test
+set the numbers on this page are measured against.
+
 **On reproducibility (measured).** Because the pipeline generates its own training data with
 its own models, a full rebuild from scratch does not land exactly on 0.883. A clean-room run
 of the whole chain measured **macro-F1 ≈ 0.853** (per-drawing 0.921 / 0.931 / 0.776 / 0.784)
