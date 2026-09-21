@@ -207,18 +207,29 @@ def step1_paddleocr(
     use_tiling=True,
     tile=1400,
     stride=900,
-    preprocess="clahe",     # "clahe" is best default for P&IDs
-    scales=(1.0, 1.35),     # multi-scale: helps tiny text a lot
+    preprocess="none",      # CLAHE/denoise not needed on clean drawings (see below)
+    scales=(1.0,),          # the 1.35x pass read tags *worse* with higher confidence
     min_conf=0.25,          # allow weaker text; filter later in your step2 anyway
     nms_iou=0.35,
+    rotations=(0, 90),      # 90 reads vertical (bottom-to-top) pipe labels
+    drop_border=4,          # px: drop boxes touching a tile border (another tile sees them whole)
+    tag_correct=True,       # tag_grammar.correct() on every text
     debug=False
 ):
     """
     Outcome-driven PaddleOCR step:
       - optional preprocessing (clahe / adaptive binary)
-      - multi-scale OCR
-      - (optional) tiling + overlap merge
-      - NMS dedup
+      - multi-scale OCR, optional 90-degree pass
+      - (optional) tiling + overlap merge, border-clipped boxes dropped
+      - NMS dedup, tag-grammar correction
+
+    Defaults measured on 56 Dataset-P&ID sheets (all-word detection F1 /
+    exact match / read rate): shipped CLAHE + scales (1.0, 1.35) 0.754 / 0.760
+    / 0.682; single scale without CLAHE 0.827 / 0.768 / 0.727; + border drop
+    + 90-degree pass 0.894 / 0.823 / 0.797; + tag correction 0.894 / 0.848 /
+    0.819.  The 1.35x scale reads pipe labels without their inch mark at
+    *higher* confidence than the correct native-scale reading, so NMS keeps
+    the wrong one.
     Returns:
       boxes: [x1,y1,x2,y2]
       scores: float
@@ -230,7 +241,7 @@ def step1_paddleocr(
     H0, W0 = img_resized.shape[:2]
     all_items = []
 
-    for sc in scales:
+    for rot, sc in [(r, s) for r in rotations for s in scales]:
         if abs(sc - 1.0) < 1e-6:
             img_sc = img_resized
             sc_factor = 1.0
@@ -241,6 +252,13 @@ def step1_paddleocr(
                 interpolation=cv2.INTER_CUBIC
             )
             sc_factor = sc
+
+        # Vertical pipe tags read bottom-to-top; rotating the sheet 90 deg
+        # clockwise makes them ordinary left-to-right lines.  Boxes from this
+        # pass are mapped back with _rot90cw_box_to_0.
+        if rot == 90:
+            img_sc = cv2.rotate(img_sc, cv2.ROTATE_90_CLOCKWISE)
+        Hs_unrot = int(round(H0 * sc_factor))     # height of the unrotated scaled image
 
         img_sc = _preprocess_for_ocr(img_sc, mode=preprocess)
 
@@ -276,8 +294,29 @@ def step1_paddleocr(
                 if conf < min_conf:
                     continue
 
+                # A box cut by a tile border is a clipped duplicate of one that
+                # a neighbouring tile sees whole (overlap = win - stride = 500px);
+                # keeping it lets a truncated reading ("ELETED") win the NMS.
+                if drop_border:
+                    bq = quad_to_bbox(quad)
+                    if ((x0 > 0 and bq[0] <= drop_border) or (y0 > 0 and bq[1] <= drop_border)
+                            or (x0 + ww < W and bq[2] >= ww - drop_border)
+                            or (y0 + hh < H and bq[3] >= hh - drop_border)):
+                        continue
                 # quad in patch coords -> image_sc coords
                 quad_xy = [[float(px + x0), float(py + y0)] for (px, py) in quad]
+                if rot == 90:
+                    # only text that is a *line* in the rotated frame belongs
+                    # to this pass; upright text re-detected sideways is noise
+                    bq = quad_to_bbox(quad_xy)
+                    if (bq[2] - bq[0]) < 1.5 * (bq[3] - bq[1]):
+                        continue
+                    quad_xy = [_rot90cw_pt_to_0(px, py, Hs_unrot) for (px, py) in quad_xy]
+                elif len(rotations) > 1:
+                    # with a 90-degree pass available, leave tall boxes to it
+                    bq = quad_to_bbox(quad_xy)
+                    if (bq[3] - bq[1]) > 1.5 * (bq[2] - bq[0]):
+                        continue
                 b = quad_to_bbox(quad_xy)
 
                 # map back to original img_resized coords
@@ -314,6 +353,11 @@ def step1_paddleocr(
     
     all_items = filtered
     all_items = merge_close_text(all_items)
+
+    if tag_correct:
+        from tag_grammar import correct as _tag_correct
+        for it in all_items:
+            it["text"] = _tag_correct(it["text"])
 
     # Pack outputs in your existing format
     boxes  = [it["bbox"] for it in all_items]
@@ -377,6 +421,14 @@ def nms_merge(boxes, scores, iou_thr=0.3):
         used.update(group)
 
     return merged
+
+def _rot90cw_pt_to_0(xr, yr, H_unrot):
+    """Point in an image rotated 90 deg clockwise -> point in the unrotated image.
+
+    cv2.ROTATE_90_CLOCKWISE maps (x, y) -> (H - 1 - y, x); this inverts it.
+    """
+    return [float(yr), float(H_unrot - 1 - xr)]
+
 
 def map_boxes_90_to_0(boxes90, W0):
     """Map boxes from 90° rotation back to 0° coordinates."""
@@ -585,25 +637,38 @@ def _step4_sample_hits(bw, x1, y1, x2, y2, step=1, half_width=2):
 # Step 4 (SOLID ONLY): Multiscale Hough + solidness filter + conservative merge
 # ==============================
 SOLID_CFG = {
-    "target_max_dim": 2200,
+    # Working resolution.  2200 loses 1px pipes in the downscale; 4096 is the
+    # knee (7168 is worse at every min_line_length tried).  min_line_length is
+    # in capped-image pixels, so it scales with the cap: 90/70/55 at 2200 ->
+    # 168/130/102 at 4096.  Measured on Dataset-P&ID: all-GT count F1 0.819 ->
+    # 0.924 together with max_transitions=30 below.
+    "target_max_dim": 4096,
     "canny_low": 50,
     "canny_high": 150,
     "scales": [1.0, 0.75, 0.6],
     "hough_threshold": 120,
     "max_line_gap": 10,
-    "min_line_length_at_scale": {1.0: 90, 0.75: 70, 0.6: 55},
+    "min_line_length_at_scale": {1.0: 168, 0.75: 130, 0.6: 102},
     "frame_shrink_px": 28,
-    "notes_keep_ratio": 0.78,   #for our dataset
+    # "auto" detects the ruled notes / title-block column (detect_notes_boundary)
+    # and falls back to no crop; a fixed ratio (e.g. 0.78) is still accepted.
+    "notes_keep_ratio": "auto",
     "merge_min_len": 15.0,
     "merge_angle_thr_deg": 5.0,
     "merge_end_dist_thr": 25.0,
     "merge_gap_thr": 30.0,
     "merge_perp_thr": 20.0,
     "dedup_dist": 25.0,
+    # is_solid_line: measured on 56 Dataset-P&ID sheets (all-GT count F1),
+    # max_transitions=6 as shipped 0.814, =30 0.924, filter off 0.929, band
+    # sampler 0.890.  The sampled map is a dilated Canny image, so a solid
+    # stroke reads as two flanks and alternates; min_density / max_gap never
+    # bind.  Off by default; the values below apply when it is enabled.
+    "solidity_filter": False,
     "cont_samples": 80,
     "min_density": 0.68,
     "max_gap": 4,
-    "max_transitions": 6,
+    "max_transitions": 30,
 }
 
 def find_inner_frame_mask(gray, shrink_px=12):
@@ -649,9 +714,73 @@ def find_inner_frame_mask(gray, shrink_px=12):
     mask[y1:y2, x1:x2] = 255
     return mask
 
-def remove_right_notes_block(gray, keep_ratio=0.78):
+def find_inner_frame_rect(gray):
+    """Bounding rect (x, y, w, h) of the inner drawing frame, or the whole image."""
     h, w = gray.shape
-    cut_x = int(w * keep_ratio)
+    m = find_inner_frame_mask(gray, shrink_px=0)
+    ys, xs = np.where(m > 0)
+    if xs.size == 0:
+        return 0, 0, w, h
+    return int(xs.min()), int(ys.min()), int(xs.max() - xs.min() + 1), int(ys.max() - ys.min() + 1)
+
+
+def detect_notes_boundary(gray, min_rulings=3, min_frac=0.5):
+    """x (in `gray` pixels) where the right-hand notes / title-block column starts.
+
+    A notes column is a ruled table: its horizontal rulings all start on one
+    vertical line and run to the right frame edge, and that vertical line spans
+    most of the frame height.  Process pipes never share those two properties
+    at once.  Returns None when no such column is found, in which case nothing
+    should be cropped.
+    """
+    h, w = gray.shape
+    fx, fy, fw, fh = find_inner_frame_rect(gray)
+    bw = cv2.adaptiveThreshold(gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+                               cv2.THRESH_BINARY_INV, 35, 10)
+    # long horizontal rulings that end at the right frame edge
+    kh = max(20, int(0.03 * fw))
+    hor = cv2.morphologyEx(bw, cv2.MORPH_OPEN, np.ones((1, kh), np.uint8))
+    n, _, st, _ = cv2.connectedComponentsWithStats(hor, connectivity=8)
+    right_edge = fx + fw
+    lefts = []
+    for i in range(1, n):
+        x, y, ww, hh = st[i, :4]
+        if x + ww >= right_edge - 0.01 * fw and x > fx + min_frac * fw and ww < 0.6 * fw:
+            lefts.append(x)
+    if len(lefts) < min_rulings:
+        return None
+    # long vertical lines in the right half
+    kv = max(20, int(0.25 * fh))
+    ver = cv2.morphologyEx(bw, cv2.MORPH_OPEN, np.ones((kv, 1), np.uint8))
+    n, _, st, _ = cv2.connectedComponentsWithStats(ver, connectivity=8)
+    cands = [st[i, 0] + st[i, 2] // 2 for i in range(1, n)
+             if st[i, 3] >= 0.5 * fh and fx + min_frac * fw < st[i, 0] < right_edge - 0.02 * fw]
+    if not cands:
+        return None
+    hist = {}
+    for x in lefts:
+        hist[x // 8] = hist.get(x // 8, 0) + 1
+    mode = max(hist, key=hist.get) * 8 + 4
+    if hist[max(hist, key=hist.get)] < min_rulings:
+        return None
+    best = min(cands, key=lambda x: abs(x - mode))
+    if abs(best - mode) > 0.02 * fw:
+        return None
+    return int(best)
+
+
+def remove_right_notes_block(gray, keep_ratio=0.78, margin_px=6):
+    """Mask keeping everything left of the notes column.
+
+    keep_ratio: fraction of width to keep, or "auto" to detect the column
+    boundary from the drawing (falls back to keeping everything).
+    """
+    h, w = gray.shape
+    if keep_ratio == "auto":
+        b = detect_notes_boundary(gray)
+        cut_x = w if b is None else max(0, b - margin_px)
+    else:
+        cut_x = int(w * keep_ratio)
     mask = np.zeros((h, w), dtype=np.uint8)
     mask[:, :cut_x] = 255
     return mask
@@ -906,6 +1035,11 @@ def _step4_core(
         symbol_mask_cap = detect_symbol_mask(gray_cap)
     inv_cap = 1.0 / cap_scale
 
+    # notes / title-block crop, detected once at cap scale and reused per scale
+    notes_mask_cap = remove_right_notes_block(gray_cap, keep_ratio=notes_keep_ratio)
+    _cut = np.where(notes_mask_cap[0] == 0)[0]
+    notes_xmin = int(round(_cut[0] * inv_cap)) if _cut.size else None
+
     pred_all = []
     text_mask_cap = None
     if suppress_text and isinstance(step2_data, dict):
@@ -934,7 +1068,9 @@ def _step4_core(
 
         # keep-mask (frame + notes)
         frame_mask = find_inner_frame_mask(gray, shrink_px=cfg["frame_shrink_px"])
-        notes_mask = remove_right_notes_block(gray, keep_ratio=notes_keep_ratio)
+        notes_mask = (notes_mask_cap if sc == 1.0 else
+                      cv2.resize(notes_mask_cap, (gray.shape[1], gray.shape[0]),
+                                 interpolation=cv2.INTER_NEAREST))
         keep_mask = cv2.bitwise_and(frame_mask, notes_mask)
         edges = cv2.bitwise_and(edges, edges, mask=keep_mask)
 
@@ -975,7 +1111,7 @@ def _step4_core(
         inv_sc = 1.0 / sc
 
         for x1, y1, x2, y2 in lines[:, 0]:
-            if not is_solid_line(
+            if cfg.get("solidity_filter", True) and not is_solid_line(
                 edges_samp, x1, y1, x2, y2,
                 samples=cfg["cont_samples"],
                 min_density=cfg["min_density"],
@@ -1529,10 +1665,8 @@ def main():
         use_tiling=True,
         tile=1400,
         stride=900,
-        preprocess="clahe",
-        scales=(1.0, 1.35),
         min_conf=0.22,
-        nms_iou=0.35
+        nms_iou=0.35,
     )
     step1_data["image_path"] = args.image
     step1_data["target_width"] = args.target_width

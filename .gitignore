@@ -29,3 +29,7 @@ Thumbs.db
 
 # Jupyter
 .ipynb_checkpoints/
+
+# training artifacts (finetune_yolo_symbols.py)
+runs/
+yolo_tiles/

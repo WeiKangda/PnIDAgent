@@ -321,7 +321,10 @@ def digitize_pnid(classification_path: str,
                   lines_path: str,
                   sam2_path: Optional[str] = None,
                   max_text_distance: float = 100.0,
-                  max_line_distance: float = 50.0) -> Tuple[Dict, Dict]:
+                  max_line_distance: float = 50.0,
+                  assembler: str = "topology",
+                  snap_tol: int = 12,
+                  symbol_pad: int = 6) -> Tuple[Dict, Dict]:
     """
     Digitize P&ID into graph structure
 
@@ -331,7 +334,16 @@ def digitize_pnid(classification_path: str,
         lines_path: Path to line detection JSON
         sam2_path: Optional path to SAM2 results JSON (for correct bbox coordinates)
         max_text_distance: Max distance for text-to-symbol association
-        max_line_distance: Max distance for line-to-symbol connection (lenient)
+        max_line_distance: Max distance for line-to-symbol connection (lenient;
+            only used by the legacy "chains" assembler)
+        assembler: "topology" (default) builds the pipe graph with junction
+            nodes via pnid_graph.build_topology; "chains" is the previous
+            endpoint-chaining code, kept for comparison.  With perfect inputs
+            on Dataset-P&ID the chains recover 7.7% of true pipe runs, the
+            topology 100%.
+        snap_tol: endpoint snapping radius in px (topology)
+        symbol_pad: how far outside its box a symbol still claims a dead-end
+            segment, px (topology)
 
     Returns:
         Tuple of (full_json, llm_json)
@@ -541,232 +553,276 @@ def digitize_pnid(classification_path: str,
     assigned_texts = sum(len(v) for v in symbol_texts.values())
     print(f"Created {len(nodes_full)} nodes, assigned {assigned_texts} text detections as captions")
 
-    # ---- Pre-processing: chain connected lines into paths ----
-    # Two lines whose endpoints are close form a single path.
-    # A path that passes through intermediate symbols connects them all.
+    if assembler == "topology":
+        from pnid_graph import build_topology
 
-    def _endpoint_dist(p1, p2):
-        return np.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
+        num_solid = len(solid_lines)
+        segs = [(tuple(int(round(v)) for v in li['line']),
+                 'solid' if i < num_solid else 'dashed') for i, li in enumerate(all_lines)]
+        syms = [(n['id'], tuple(n['bbox'])) for n in nodes_full]
+        g_nodes, g_edges = build_topology(segs, syms, tol=snap_tol, pad=symbol_pad)
 
-    def _line_endpoints(line_item):
-        c = line_item['line']
-        return (c[0], c[1]), (c[2], c[3])
+        # junctions become nodes too: a header with 20 branch valves is a star
+        # through its junctions, not a 20-way clique
+        jmap = {}
+        for key, (x, y) in g_nodes.items():
+            if key[0] != 'jct':
+                continue
+            jid = f"J{len(jmap)}"
+            jmap[key] = jid
+            nodes_full.append({
+                'id': jid, 'category': 'junction',
+                'bbox': [x - 1, y - 1, x + 1, y + 1], 'position': [x, y],
+                'area': None, 'captions': [], 'nearby_text_details': [],
+                'confidence': None, 'cluster_id': None, 'mask_id': None,
+                'original_index': None,
+            })
+            nodes_llm.append({'id': jid, 'category': 'junction', 'captions': []})
 
-    num_solid = len(solid_lines)
-    def _line_type_by_idx(idx):
-        return 'solid' if idx < num_solid else 'dashed'
+        def _nid(key):
+            return key[1] if key[0] == 'sym' else jmap[key]
 
-    # Build chains: group lines whose endpoints are within chain_dist
-    chain_dist = max_line_distance * 0.5  # endpoints must be close to chain
+        links_full, links_llm = [], []
+        for u, v, kind in g_edges:
+            (ux, uy), (vx, vy) = g_nodes[u], g_nodes[v]
+            links_full.append({
+                'id': len(links_full), 'source': _nid(u), 'target': _nid(v),
+                'type': kind, 'direction': 'none',
+                'line': [ux, uy, vx, vy],
+                'length': float(np.hypot(vx - ux, vy - uy)),
+                'connection_quality': {'connection_type': 'full'},
+            })
+            links_llm.append({'from': _nid(u), 'to': _nid(v), 'type': kind})
+        skipped_no_connection = skipped_self_loops = 0
+        print(f"Topology: {len(jmap)} junction nodes, {len(links_full)} pipe runs "
+              f"from {len(all_lines)} segments")
+    else:
+        # ---- Pre-processing: chain connected lines into paths ----
+        # Two lines whose endpoints are close form a single path.
+        # A path that passes through intermediate symbols connects them all.
 
-    used = [False] * len(all_lines)
-    chains = []  # each chain is a list of line_item indices in order
+        def _endpoint_dist(p1, p2):
+            return np.sqrt((p1[0]-p2[0])**2 + (p1[1]-p2[1])**2)
 
-    for i in range(len(all_lines)):
-        if used[i]:
-            continue
-        # Start a new chain with line i
-        chain = [i]
-        used[i] = True
-        # Try to extend from both ends
-        changed = True
-        while changed:
-            changed = False
-            head_start, head_end = _line_endpoints(all_lines[chain[0]])
-            tail_start, tail_end = _line_endpoints(all_lines[chain[-1]])
+        def _line_endpoints(line_item):
+            c = line_item['line']
+            return (c[0], c[1]), (c[2], c[3])
 
-            for j in range(len(all_lines)):
-                if used[j]:
-                    continue
-                # Only chain lines of the same type (solid with solid, dashed with dashed)
-                if _line_type_by_idx(j) != _line_type_by_idx(chain[0]):
-                    continue
-                js, je = _line_endpoints(all_lines[j])
+        num_solid = len(solid_lines)
+        def _line_type_by_idx(idx):
+            return 'solid' if idx < num_solid else 'dashed'
 
-                # Try to attach j to the front of the chain
-                if _endpoint_dist(js, head_start) < chain_dist:
-                    # j's end → chain start: reverse j so je connects to head_start
-                    chain.insert(0, j); used[j] = True; changed = True; break
-                if _endpoint_dist(je, head_start) < chain_dist:
-                    chain.insert(0, j); used[j] = True; changed = True; break
+        # Build chains: group lines whose endpoints are within chain_dist
+        chain_dist = max_line_distance * 0.5  # endpoints must be close to chain
 
-                # Try to attach j to the back of the chain
-                if _endpoint_dist(js, tail_end) < chain_dist:
-                    chain.append(j); used[j] = True; changed = True; break
-                if _endpoint_dist(je, tail_end) < chain_dist:
-                    chain.append(j); used[j] = True; changed = True; break
+        used = [False] * len(all_lines)
+        chains = []  # each chain is a list of line_item indices in order
 
-        chains.append(chain)
+        for i in range(len(all_lines)):
+            if used[i]:
+                continue
+            # Start a new chain with line i
+            chain = [i]
+            used[i] = True
+            # Try to extend from both ends
+            changed = True
+            while changed:
+                changed = False
+                head_start, head_end = _line_endpoints(all_lines[chain[0]])
+                tail_start, tail_end = _line_endpoints(all_lines[chain[-1]])
 
-    multi_chains = sum(1 for c in chains if len(c) > 1)
-    print(f"Chained {len(all_lines)} lines into {len(chains)} paths ({multi_chains} multi-line chains)")
+                for j in range(len(all_lines)):
+                    if used[j]:
+                        continue
+                    # Only chain lines of the same type (solid with solid, dashed with dashed)
+                    if _line_type_by_idx(j) != _line_type_by_idx(chain[0]):
+                        continue
+                    js, je = _line_endpoints(all_lines[j])
 
-    # Build node lookup by ID for fast access
-    node_by_id = {n['id']: n for n in nodes_full}
+                    # Try to attach j to the front of the chain
+                    if _endpoint_dist(js, head_start) < chain_dist:
+                        # j's end → chain start: reverse j so je connects to head_start
+                        chain.insert(0, j); used[j] = True; changed = True; break
+                    if _endpoint_dist(je, head_start) < chain_dist:
+                        chain.insert(0, j); used[j] = True; changed = True; break
 
-    # For each chain, find ALL symbols that are near any line segment in the chain.
-    # Order symbols along the chain direction (by projection onto the chain's path).
+                    # Try to attach j to the back of the chain
+                    if _endpoint_dist(js, tail_end) < chain_dist:
+                        chain.append(j); used[j] = True; changed = True; break
+                    if _endpoint_dist(je, tail_end) < chain_dist:
+                        chain.append(j); used[j] = True; changed = True; break
 
-    def _find_symbols_along_chain(chain_indices):
-        """Find all symbols whose bbox is close to any line in the chain."""
-        symbol_hits = {}  # symbol_id -> min_distance
+            chains.append(chain)
 
-        for li in chain_indices:
-            line_coords = all_lines[li]['line']
-            for node in nodes_full:
-                nid = node['id']
-                bbox = node.get('bbox')
-                if not bbox:
-                    continue
-                center = compute_bbox_center(bbox)
-                dist = point_to_line_distance(center, line_coords)
-                # Also check bbox-to-endpoint distance for endpoint connections
-                ep_dist = min(
-                    point_to_bbox_distance((line_coords[0], line_coords[1]), bbox),
-                    point_to_bbox_distance((line_coords[2], line_coords[3]), bbox),
-                )
-                d = min(dist, ep_dist)
-                if d <= max_line_distance:
-                    if nid not in symbol_hits or d < symbol_hits[nid]:
-                        symbol_hits[nid] = d
+        multi_chains = sum(1 for c in chains if len(c) > 1)
+        print(f"Chained {len(all_lines)} lines into {len(chains)} paths ({multi_chains} multi-line chains)")
 
-        if not symbol_hits:
-            return []
+        # Build node lookup by ID for fast access
+        node_by_id = {n['id']: n for n in nodes_full}
 
-        # Order symbols by their position along the chain
-        # Use cumulative projection along the chain's segments
-        seg_lengths = []
-        seg_starts = []
-        cum = 0.0
-        for li in chain_indices:
-            c = all_lines[li]['line']
-            seg_starts.append(cum)
-            length = np.sqrt((c[2]-c[0])**2 + (c[3]-c[1])**2)
-            seg_lengths.append(length)
-            cum += length
+        # For each chain, find ALL symbols that are near any line segment in the chain.
+        # Order symbols along the chain direction (by projection onto the chain's path).
 
-        def _project_along_chain(point):
-            """Project a point onto the chain, return cumulative distance along it."""
-            best_proj = 0.0
-            best_dist = float('inf')
-            px, py = point
-            for k, li in enumerate(chain_indices):
+        def _find_symbols_along_chain(chain_indices):
+            """Find all symbols whose bbox is close to any line in the chain."""
+            symbol_hits = {}  # symbol_id -> min_distance
+
+            for li in chain_indices:
+                line_coords = all_lines[li]['line']
+                for node in nodes_full:
+                    nid = node['id']
+                    bbox = node.get('bbox')
+                    if not bbox:
+                        continue
+                    center = compute_bbox_center(bbox)
+                    dist = point_to_line_distance(center, line_coords)
+                    # Also check bbox-to-endpoint distance for endpoint connections
+                    ep_dist = min(
+                        point_to_bbox_distance((line_coords[0], line_coords[1]), bbox),
+                        point_to_bbox_distance((line_coords[2], line_coords[3]), bbox),
+                    )
+                    d = min(dist, ep_dist)
+                    if d <= max_line_distance:
+                        if nid not in symbol_hits or d < symbol_hits[nid]:
+                            symbol_hits[nid] = d
+
+            if not symbol_hits:
+                return []
+
+            # Order symbols by their position along the chain
+            # Use cumulative projection along the chain's segments
+            seg_lengths = []
+            seg_starts = []
+            cum = 0.0
+            for li in chain_indices:
                 c = all_lines[li]['line']
-                dx, dy = c[2]-c[0], c[3]-c[1]
-                l2 = dx*dx + dy*dy
-                if l2 == 0:
-                    t = 0
+                seg_starts.append(cum)
+                length = np.sqrt((c[2]-c[0])**2 + (c[3]-c[1])**2)
+                seg_lengths.append(length)
+                cum += length
+
+            def _project_along_chain(point):
+                """Project a point onto the chain, return cumulative distance along it."""
+                best_proj = 0.0
+                best_dist = float('inf')
+                px, py = point
+                for k, li in enumerate(chain_indices):
+                    c = all_lines[li]['line']
+                    dx, dy = c[2]-c[0], c[3]-c[1]
+                    l2 = dx*dx + dy*dy
+                    if l2 == 0:
+                        t = 0
+                    else:
+                        t = max(0, min(1, ((px-c[0])*dx + (py-c[1])*dy) / l2))
+                    cx = c[0] + t*dx
+                    cy = c[1] + t*dy
+                    d = np.sqrt((px-cx)**2 + (py-cy)**2)
+                    if d < best_dist:
+                        best_dist = d
+                        best_proj = seg_starts[k] + t * seg_lengths[k]
+                return best_proj
+
+            ordered = []
+            for nid, dist in symbol_hits.items():
+                node = node_by_id.get(nid)
+                if node is None:
+                    continue
+                center = compute_bbox_center(node['bbox'])
+                proj = _project_along_chain(center)
+                ordered.append((nid, proj, dist))
+
+            ordered.sort(key=lambda x: x[1])
+            return ordered  # list of (symbol_id, projection, distance)
+
+        # Build links from chains
+        links_full = []
+        links_llm = []
+        skipped_no_connection = 0
+        skipped_self_loops = 0
+
+        for chain in chains:
+            line_type = _line_type_by_idx(chain[0])
+            # Use direction from the first line with a direction, or 'none'
+            chain_direction = 'none'
+            for li in chain:
+                d = all_lines[li].get('direction', 'none')
+                if d != 'none':
+                    chain_direction = d
+                    break
+
+            # Get the overall chain line coords (first point of first line, last point of last line)
+            first_line = all_lines[chain[0]]['line']
+            last_line = all_lines[chain[-1]]['line']
+
+            # Find all symbols along this chain
+            symbols_along = _find_symbols_along_chain(chain)
+
+            if len(symbols_along) < 2:
+                if len(symbols_along) == 0:
+                    skipped_no_connection += 1
                 else:
-                    t = max(0, min(1, ((px-c[0])*dx + (py-c[1])*dy) / l2))
-                cx = c[0] + t*dx
-                cy = c[1] + t*dy
-                d = np.sqrt((px-cx)**2 + (py-cy)**2)
-                if d < best_dist:
-                    best_dist = d
-                    best_proj = seg_starts[k] + t * seg_lengths[k]
-            return best_proj
-
-        ordered = []
-        for nid, dist in symbol_hits.items():
-            node = node_by_id.get(nid)
-            if node is None:
-                continue
-            center = compute_bbox_center(node['bbox'])
-            proj = _project_along_chain(center)
-            ordered.append((nid, proj, dist))
-
-        ordered.sort(key=lambda x: x[1])
-        return ordered  # list of (symbol_id, projection, distance)
-
-    # Build links from chains
-    links_full = []
-    links_llm = []
-    skipped_no_connection = 0
-    skipped_self_loops = 0
-
-    for chain in chains:
-        line_type = _line_type_by_idx(chain[0])
-        # Use direction from the first line with a direction, or 'none'
-        chain_direction = 'none'
-        for li in chain:
-            d = all_lines[li].get('direction', 'none')
-            if d != 'none':
-                chain_direction = d
-                break
-
-        # Get the overall chain line coords (first point of first line, last point of last line)
-        first_line = all_lines[chain[0]]['line']
-        last_line = all_lines[chain[-1]]['line']
-
-        # Find all symbols along this chain
-        symbols_along = _find_symbols_along_chain(chain)
-
-        if len(symbols_along) < 2:
-            if len(symbols_along) == 0:
-                skipped_no_connection += 1
-            else:
-                skipped_no_connection += 1  # only one symbol, no link
-            continue
-
-        # Create links between consecutive symbols along the chain
-        for k in range(len(symbols_along) - 1):
-            src_id = symbols_along[k][0]
-            tgt_id = symbols_along[k+1][0]
-
-            if src_id == tgt_id:
-                skipped_self_loops += 1
+                    skipped_no_connection += 1  # only one symbol, no link
                 continue
 
-            # Determine direction for this segment
-            seg_direction = chain_direction
-            if chain_direction == 'backward':
-                # Reverse: the chain goes backward, so swap
-                src_id, tgt_id = tgt_id, src_id
-                seg_direction = 'forward'
+            # Create links between consecutive symbols along the chain
+            for k in range(len(symbols_along) - 1):
+                src_id = symbols_along[k][0]
+                tgt_id = symbols_along[k+1][0]
 
-            conn_info = {
-                'source_distance': symbols_along[k][2],
-                'target_distance': symbols_along[k+1][2],
-                'connection_type': 'full',
-                'direction_used': chain_direction,
-                'source_confidence': max(0, 1 - (symbols_along[k][2] / max_line_distance)),
-                'target_confidence': max(0, 1 - (symbols_along[k+1][2] / max_line_distance)),
-            }
+                if src_id == tgt_id:
+                    skipped_self_loops += 1
+                    continue
 
-            # Determine representative line coords for this segment
-            link_line = [first_line[0], first_line[1], last_line[2], last_line[3]]
+                # Determine direction for this segment
+                seg_direction = chain_direction
+                if chain_direction == 'backward':
+                    # Reverse: the chain goes backward, so swap
+                    src_id, tgt_id = tgt_id, src_id
+                    seg_direction = 'forward'
 
-            link_full = {
-                'id': len(links_full),
-                'source': src_id,
-                'target': tgt_id,
-                'type': line_type,
-                'direction': seg_direction,
-                'line': link_line,
-                'length': np.sqrt((link_line[2]-link_line[0])**2 + (link_line[3]-link_line[1])**2),
-                'connection_quality': conn_info,
-            }
-            links_full.append(link_full)
+                conn_info = {
+                    'source_distance': symbols_along[k][2],
+                    'target_distance': symbols_along[k+1][2],
+                    'connection_type': 'full',
+                    'direction_used': chain_direction,
+                    'source_confidence': max(0, 1 - (symbols_along[k][2] / max_line_distance)),
+                    'target_confidence': max(0, 1 - (symbols_along[k+1][2] / max_line_distance)),
+                }
 
-            # LLM link
-            llm_from, llm_to = src_id, tgt_id
-            if chain_direction == 'bidirectional':
-                pass  # keep as-is
-            link_llm = {
-                'from': llm_from,
-                'to': llm_to,
-                'type': line_type,
-            }
-            if chain_direction == 'bidirectional':
-                link_llm['bidirectional'] = True
-            links_llm.append(link_llm)
+                # Determine representative line coords for this segment
+                link_line = [first_line[0], first_line[1], last_line[2], last_line[3]]
+
+                link_full = {
+                    'id': len(links_full),
+                    'source': src_id,
+                    'target': tgt_id,
+                    'type': line_type,
+                    'direction': seg_direction,
+                    'line': link_line,
+                    'length': np.sqrt((link_line[2]-link_line[0])**2 + (link_line[3]-link_line[1])**2),
+                    'connection_quality': conn_info,
+                }
+                links_full.append(link_full)
+
+                # LLM link
+                llm_from, llm_to = src_id, tgt_id
+                if chain_direction == 'bidirectional':
+                    pass  # keep as-is
+                link_llm = {
+                    'from': llm_from,
+                    'to': llm_to,
+                    'type': line_type,
+                }
+                if chain_direction == 'bidirectional':
+                    link_llm['bidirectional'] = True
+                links_llm.append(link_llm)
 
     # Deduplicate links (same source-target pair)
     seen_pairs = set()
     deduped_full = []
     deduped_llm = []
     for lf, ll in zip(links_full, links_llm):
-        pair = (min(lf['source'], lf['target']), max(lf['source'], lf['target']))
+        pair = tuple(sorted([str(lf['source']), str(lf['target'])]))
         if pair in seen_pairs:
             continue
         seen_pairs.add(pair)
@@ -795,7 +851,9 @@ def digitize_pnid(classification_path: str,
         'nodes': nodes_full,
         'links': links_full,
         'metadata': {
-            'total_symbols': len(nodes_full),
+            'assembler': assembler,
+            'total_symbols': sum(1 for n in nodes_full if n.get('category') != 'junction'),
+            'total_junctions': sum(1 for n in nodes_full if n.get('category') == 'junction'),
             'total_connections': len(links_full),
             'full_connections': full_connections,
             'total_text_detections': len(text_detections),
@@ -1258,6 +1316,12 @@ def main():
                        help="Maximum distance (pixels) for text-to-symbol association")
     parser.add_argument("--max-line-distance", type=float, default=50.0,
                        help="Maximum distance (pixels) for line-to-symbol connection (lenient)")
+    parser.add_argument("--assembler", default="topology", choices=["topology", "chains"],
+                       help="graph assembly: junction-aware topology (default) or legacy endpoint chains")
+    parser.add_argument("--snap-tol", type=int, default=12,
+                       help="topology: endpoint snapping radius in px")
+    parser.add_argument("--symbol-pad", type=int, default=6,
+                       help="topology: px outside its box a symbol still claims a dead-end segment")
     parser.add_argument("--image", required=False,
                        help="Path to original P&ID image (for visualization)")
     parser.add_argument("--vis-output", required=False,
@@ -1278,7 +1342,10 @@ def main():
         args.lines,
         args.sam2,
         args.max_text_distance,
-        args.max_line_distance
+        args.max_line_distance,
+        assembler=args.assembler,
+        snap_tol=args.snap_tol,
+        symbol_pad=args.symbol_pad,
     )
 
     # Save outputs
@@ -1313,7 +1380,8 @@ def main():
     print("\n" + "="*80)
     print("DIGITIZATION SUMMARY")
     print("="*80)
-    print(f"Nodes (symbols):           {len(full_json['nodes'])}")
+    print(f"Nodes (symbols):           {full_json['metadata']['total_symbols']}")
+    print(f"Nodes (junctions):         {full_json['metadata']['total_junctions']}")
     print(f"Links (connections):       {len(full_json['links'])}")
     print(f"Skipped (no/partial):      {full_json['metadata']['skipped_no_partial_connection']}")
     print(f"Skipped (self-loops):      {full_json['metadata']['skipped_self_loops']}")

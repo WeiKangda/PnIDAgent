@@ -57,8 +57,16 @@ def main():
                        help="Confidence threshold for symbol detection")
 
     # YOLO Symbol Detection
-    parser.add_argument("--yolo_model", default="/scratch/user/u.kw178339/INL/PID_Agent/runs/train/pid_symbols_20251204_110352/weights/best.pt",
-                       help="Path to trained YOLO model checkpoint (required if --detector=yolo)")
+    parser.add_argument("--yolo_model", default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                             "weights", "private_soup5_best.pt"),
+                       help="Path to trained YOLO model checkpoint (required if --detector=yolo). Default: the "
+                            "single-class real-drawing model from the yolo-model-v1 release (macro-F1 0.888 on real4)")
+    parser.add_argument("--yolo_keep", type=float, default=0.65,
+                       help="YOLO: keep detections with score >= this after predicting at conf 0.10 / imgsz 1280 "
+                            "(the release's evaluation protocol)")
+    parser.add_argument("--yolo_tile", type=int, default=0,
+                       help="YOLO: 0 = whole image at 1280 (private model); 1280 = native-resolution tiles "
+                            "(the 32-class Dataset-P&ID model)")
 
     # Symbol Classification
     parser.add_argument("--embedding_model", type=str, default='clip',
@@ -74,6 +82,11 @@ def main():
                        help="Clustering sensitivity")
 
     # Text Detection (from process_text_lines.py)
+    parser.add_argument("--ocr_python", default=sys.executable,
+                       help="interpreter used to run process_text_lines.py (PaddleOCR 2.7.3 cannot share an env "
+                            "with torch/ultralytics; point this at the paddle env, e.g. .../envs/pnid_ocr/bin/python)")
+    parser.add_argument("--assembler", default="topology", choices=["topology", "chains"],
+                       help="graph assembly in digitize_pnid (topology = junction-aware, default)")
     parser.add_argument("--target-width", type=int, default=7168,
                        help="Resize image to this width for text detection")
     parser.add_argument("--lang", default="en",
@@ -261,8 +274,11 @@ def main():
 
             # Run YOLO detection
             print(f"Running YOLO detection for: {args.image}")
-            detections = detector.detect(image, conf_threshold=args.confidence)
-            print(f"Detected {len(detections)} symbols")
+            # Protocol of the released single-class model: predict low, then hard-filter.
+            detections = detector.detect(image, conf_threshold=0.10, iou_threshold=0.5, imgsz=1280,
+                                         tile=args.yolo_tile, max_det=400, agnostic_nms=True)
+            detections = [d for d in detections if d.confidence >= args.yolo_keep]
+            print(f"Detected {len(detections)} symbols (score >= {args.yolo_keep})")
 
             # Convert YOLO detections to masks (rectangular masks from bboxes)
             # This matches the output format of SAM2 for compatibility
@@ -481,7 +497,7 @@ def main():
     else:
         # Run text detection from process_text_lines.py
         print("Running text and line detection pipeline...")
-        cmd = f"""python process_text_lines.py \
+        cmd = f"""{args.ocr_python} {os.path.join(os.path.dirname(os.path.abspath(__file__)), "process_text_lines.py")} \
             --image {args.image} \
             --out {args.out} \
             --target-width {args.target_width} \
@@ -583,6 +599,30 @@ def main():
     else:
         print("Combining symbols, text, and lines into graph structure...")
 
+        # Non-interactive runs have no classification JSON (the classifier is an
+        # interactive tool), so build one from the detector output.  Symbol boxes
+        # are in original-image pixels; text and lines are in the resized
+        # (--target-width) space, so scale the boxes by the factor the line
+        # stage recorded instead of relying on digitize_pnid's magnitude guess.
+        if not os.path.exists(classification_json):
+            with open(results_json) as f:
+                det = json.load(f)
+            scale = 1.0
+            if os.path.exists(lines_json):
+                with open(lines_json) as f:
+                    scale = float(json.load(f).get("scale") or 1.0)
+            syms = [{"id": m["id"], "mask_id": m["id"],
+                     "bbox": [int(round(v * scale)) for v in m["bbox"]],
+                     "bbox_scaled": scale != 1.0,
+                     "category": "symbol", "confidence": m.get("score")}
+                    for m in det.get("masks_info", [])]
+            with open(classification_json, "w") as f:
+                json.dump({"symbols": syms, "source": "detector", "scale": scale}, f, indent=2)
+            print(f"  No classification JSON; wrote {len(syms)} detector boxes (x{scale:.2f}) to {classification_json}")
+            sam2_for_digitize = None          # results_json boxes are unscaled; do not override
+        else:
+            sam2_for_digitize = results_json
+
         # Import the digitization function
         try:
             from digitize_pnid import digitize_pnid as digitize_func
@@ -597,9 +637,10 @@ def main():
                 classification_path=classification_json,
                 text_path=text_json,
                 lines_path=lines_json,
-                sam2_path=results_json,
+                sam2_path=sam2_for_digitize,
                 max_text_distance=args.max_text_distance,
-                max_line_distance=args.max_line_distance
+                max_line_distance=args.max_line_distance,
+                assembler=args.assembler,
             )
 
             # Save outputs
@@ -613,9 +654,10 @@ def main():
 
             # Print summary
             print(f"\nDigitization Summary:")
-            print(f"  Nodes (symbols):     {len(full_json['nodes'])}")
+            md = full_json['metadata']
+            print(f"  Nodes (symbols):     {md.get('total_symbols', len(full_json['nodes']))}")
+            print(f"  Nodes (junctions):   {md.get('total_junctions', 0)}")
             print(f"  Links (connections): {len(full_json['links'])}")
-            print(f"  Unconnected lines:   {full_json['metadata']['unconnected_lines']}")
 
         except Exception as e:
             print(f"Error during digitization: {e}")
@@ -695,7 +737,7 @@ def main():
             llm_data = json.load(f)
 
         print(f"\nFinal Results:")
-        print(f"  Nodes (symbols):     {len(llm_data.get('nodes', []))}")
+        print(f"  Nodes (symbols):     {full_json['metadata'].get('total_symbols', len(full_json['nodes']))}  junctions: {full_json['metadata'].get('total_junctions', 0)}")
         print(f"  Links (connections): {len(llm_data.get('links', []))}")
 
         # Show category breakdown
