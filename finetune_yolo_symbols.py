@@ -347,8 +347,8 @@ class YOLOSymbolDetector:
         half-visible clip has IoU ~0.5 with the full box and survives NMS, so
         such boxes are dropped (`border` px).
 
-        tile = 0: whole image resized to `imgsz` -- the protocol of the private
-        single-class real-drawing model (imgsz 1280, conf 0.10, then keep
+        tile = 0: whole image resized to `imgsz` -- the protocol of Xinqi's
+        single-class real-drawing model (release yolo-model-v1) (imgsz 1280, conf 0.10, then keep
         score >= 0.65; macro-F1 0.888 on real4).
         """
         img = cv2.imread(str(image)) if isinstance(image, (str, Path)) else image
@@ -482,7 +482,7 @@ def main():
     p.add_argument("--epochs", type=int, default=60)
     p.add_argument("--batch_size", type=int, default=64)
     p.add_argument("--imgsz", type=int, default=1280)
-    p.add_argument("--tile", type=int, default=1280, help="tile size; 0 = whole image at --imgsz (private real-drawing model protocol)")
+    p.add_argument("--tile", type=int, default=1280, help="tile size; 0 = whole image at --imgsz (protocol of Xinqi's real-drawing model)")
     p.add_argument("--overlap", type=int, default=256)
     p.add_argument("--min_vis", type=float, default=0.5, help="min visible box fraction at tile border")
     p.add_argument("--neg_keep", type=float, default=0.1, help="fraction of empty train tiles kept")

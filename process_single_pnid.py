@@ -58,14 +58,14 @@ def main():
 
     # YOLO Symbol Detection
     parser.add_argument("--yolo_model", default=os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                                             "weights", "private_soup5_best.pt"),
+                                                             "weights", "xinqi_soup5_best.pt"),
                        help="Path to trained YOLO model checkpoint (required if --detector=yolo). Default: the "
-                            "single-class real-drawing model from the yolo-model-v1 release (macro-F1 0.888 on real4)")
+                            "single-class real-drawing model by Xinqi (release yolo-model-v1, macro-F1 0.888 on real4)")
     parser.add_argument("--yolo_keep", type=float, default=0.65,
                        help="YOLO: keep detections with score >= this after predicting at conf 0.10 / imgsz 1280 "
                             "(the release's evaluation protocol)")
     parser.add_argument("--yolo_tile", type=int, default=0,
-                       help="YOLO: 0 = whole image at 1280 (private model); 1280 = native-resolution tiles "
+                       help="YOLO: 0 = whole image at 1280 (Xinqi's real-drawing model); 1280 = native-resolution tiles "
                             "(the 32-class Dataset-P&ID model)")
 
     # Symbol Classification

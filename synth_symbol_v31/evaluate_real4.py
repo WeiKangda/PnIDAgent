@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Standard-protocol real4 evaluation without the private gpt_detect/llm_baseline module.
+"""Standard-protocol real4 evaluation without the gpt_detect/llm_baseline module (not in this repo).
 
 Same protocol as evaluate.py: predict the whole drawing at imgsz=1280, conf=0.10,
 iou=0.5, max_det=400; keep boxes with score >= 0.65; per-drawing F1 at IoU 0.5;
@@ -80,7 +80,7 @@ def main():
     for n, f, npred, ngt in per:
         print(f"  {n:14s} F1 = {f:.3f}   (pred {npred}, gt {ngt})")
     print(f"  >> macro-F1 = {macro:.4f}")
-    print("  reference: private v31 0.883 (0.915/0.931/0.873/0.813); rebuild ~0.853; supervised baseline 0.821")
+    print("  reference (Xinqi): v31 0.883 (0.915/0.931/0.873/0.813); release soup5 0.888; rebuild ~0.853; supervised baseline 0.821")
 
 
 if __name__ == "__main__":
