@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Learned pipe-centreline extractor: a small U-Net over native-resolution tiles.
 
+Default line stage of the pipeline since 2026-09-22 (PnIDAgent/pnid_lineseg.py
+holds the model and inference; this file trains it).
+
 The classical path tops out at Hough recall 0.852 (max_dim 4096) because a 1px
 pipe survives the downscale only as a faint anti-aliased trace, and symbols and
 text on the pipe break Canny continuity.  This trains a 3-class segmenter
@@ -90,46 +93,11 @@ class TileDataset:
 
 
 # ---------------------------------------------------------------------------
-# model
+# model and inference live in the repo module (default line stage since 2026-09-22)
 # ---------------------------------------------------------------------------
-
-def build_model(base: int = 32, n_classes: int = 3):
-    import torch
-    import torch.nn as nn
-
-    def block(i, o):
-        return nn.Sequential(nn.Conv2d(i, o, 3, padding=1, bias=False), nn.BatchNorm2d(o), nn.ReLU(inplace=True),
-                             nn.Conv2d(o, o, 3, padding=1, bias=False), nn.BatchNorm2d(o), nn.ReLU(inplace=True))
-
-    class UNet(nn.Module):
-        def __init__(self):
-            super().__init__()
-            c = [base, base * 2, base * 4, base * 8, base * 16]
-            self.enc = nn.ModuleList([block(1, c[0])] + [block(c[i], c[i + 1]) for i in range(4)])
-            self.pool = nn.MaxPool2d(2)
-            self.up = nn.ModuleList([nn.ConvTranspose2d(c[i + 1], c[i], 2, stride=2) for i in range(4)])
-            self.dec = nn.ModuleList([block(c[i] * 2, c[i]) for i in range(4)])
-            self.head = nn.Conv2d(c[0], n_classes, 1)
-
-        def forward(self, x):
-            skips = []
-            for i, e in enumerate(self.enc):
-                x = e(x)
-                if i < 4:
-                    skips.append(x)
-                    x = self.pool(x)
-            for i in range(3, -1, -1):
-                x = self.up[i](x)
-                x = self.dec[i](torch.cat([x, skips[i]], 1))
-            return self.head(x)
-
-    return UNet()
-
-
-def _to_tensor(x: np.ndarray, device):
-    import torch
-    t = torch.from_numpy(x.astype(np.float32) / 255.0).unsqueeze(1)   # N,1,H,W
-    return (1.0 - t).to(device, non_blocking=True)                     # ink = 1
+_REPO_DIR = os.path.join(_ROOT, "PnIDAgent")
+sys.path.insert(0, _REPO_DIR)
+from pnid_lineseg import build_model, _to_tensor  # noqa: E402
 
 
 # ---------------------------------------------------------------------------
@@ -220,43 +188,7 @@ def train(args) -> None:
 # predict
 # ---------------------------------------------------------------------------
 
-def predict_mask(model, gray: np.ndarray, device, tile: int = 1024, overlap: int = 96,
-                 batch: int = 8) -> np.ndarray:
-    """Full-sheet argmax mask by tiled inference (centre crops of overlapping tiles)."""
-    import torch
-    H, W = gray.shape
-    stride = tile - overlap
-    ys = list(range(0, max(1, H - tile), stride)) + [max(0, H - tile)]
-    xs = list(range(0, max(1, W - tile), stride)) + [max(0, W - tile)]
-    ys, xs = sorted(set(ys)), sorted(set(xs))
-    prob = np.zeros((3, H, W), np.float32)
-    cnt = np.zeros((H, W), np.float32)
-    coords = [(y, x) for y in ys for x in xs]
-    pad_img = np.full((max(H, tile), max(W, tile)), 255, np.uint8)
-    pad_img[:H, :W] = gray
-    with torch.no_grad(), torch.autocast("cuda", dtype=torch.bfloat16):
-        for k in range(0, len(coords), batch):
-            chunk = coords[k:k + batch]
-            xb = np.stack([pad_img[y:y + tile, x:x + tile] for y, x in chunk])
-            p = model(_to_tensor(xb, device).contiguous(memory_format=torch.channels_last)).float().softmax(1).cpu().numpy()
-            for (y, x), pp in zip(chunk, p):
-                h_, w_ = min(tile, H - y), min(tile, W - x)
-                prob[:, y:y + h_, x:x + w_] += pp[:, :h_, :w_]
-                cnt[y:y + h_, x:x + w_] += 1
-    return (prob / np.maximum(cnt, 1)).argmax(0).astype(np.uint8)
-
-
-def mask_to_segments(mask: np.ndarray, cls: int, min_len: int = 100, hough_thr: int = 60,
-                     max_gap: int = 8) -> List[Seg]:
-    import graph_assembly as GA
-    m = (mask == cls).astype(np.uint8) * 255
-    if not m.any():
-        return []
-    lines = cv2.HoughLinesP(m, 1, np.pi / 180, hough_thr, minLineLength=min_len, maxLineGap=max_gap)
-    if lines is None:
-        return []
-    segs = [tuple(int(v) for v in l) for l in lines.reshape(-1, 4)]
-    return GA.merge_collinear(segs, ang_tol=2.0, perp_tol=4.0, gap_tol=max_gap)
+from pnid_lineseg import predict_mask, mask_to_segments  # noqa: E402
 
 
 def predict(args) -> None:

@@ -151,6 +151,9 @@ def run_sheet(job) -> Dict:
     elif variant == "repo":
         pred = [tuple(int(v) for v in s[:4])
                 for s in ptl._step4_core(img, None)["solid"]]
+    elif variant == "unet":
+        out = ptl.step4_extract_lines(img, None, method="unet")
+        pred = [tuple(int(v) for v in s[:4]) for s in out["solid"] + out["dashed"]]
     else:
         pred = LV.detect(ptl, img, solid_source=variant)["merged"]
 
@@ -199,8 +202,9 @@ def main() -> None:
     ap.add_argument("--hough", type=int, default=None,
                     help="override hough_threshold (baseline 120)")
     ap.add_argument("--variant", default="repo",
-                    choices=("repo", "canny", "ink", "band", "none"),
-                    help="solidity test source; 'repo' calls _step4_core, "
+                    choices=("repo", "unet", "canny", "ink", "band", "none"),
+                    help="line source; 'repo' = classical _step4_core, 'unet' = the default "
+                         "learned stage (needs torch), "
                          "'canny' mirrors it, 'ink' samples an ink mask, "
                          "'none' skips the filter")
     ap.add_argument("--min-density", type=float, default=None,

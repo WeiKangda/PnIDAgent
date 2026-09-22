@@ -85,6 +85,8 @@ def main():
     parser.add_argument("--ocr_python", default=sys.executable,
                        help="interpreter used to run process_text_lines.py (PaddleOCR 2.7.3 cannot share an env "
                             "with torch/ultralytics; point this at the paddle env, e.g. .../envs/pnid_ocr/bin/python)")
+    parser.add_argument("--line-method", default="unet", choices=["unet", "classical"],
+                       help="line detector in process_text_lines.py (U-Net default)")
     parser.add_argument("--assembler", default="topology", choices=["topology", "chains"],
                        help="graph assembly in digitize_pnid (topology = junction-aware, default)")
     parser.add_argument("--target-width", type=int, default=7168,
@@ -502,6 +504,8 @@ def main():
             --out {args.out} \
             --target-width {args.target_width} \
             --lang {args.lang} \
+            --line-method {args.line_method} \
+            --line-python {sys.executable} \
             {"--gpu" if args.gpu else ""} \
             --nms-iou {args.nms_iou} \
             {"--suppress-text" if args.suppress_text else ""} \

@@ -1144,7 +1144,53 @@ def _step4_core(
     }
 
 def step4_extract_lines_solid_only(img_bgr, step2_data, **kwargs):
+    """Classical Hough line stage (kept as the fallback)."""
     return _step4_core(img_bgr, step2_data, **kwargs)
+
+
+def step4_extract_lines(img_bgr, step2_data, method="unet", line_python=None,
+                        ckpt=None, **kwargs):
+    """Line stage entry point.  method: "unet" (default) or "classical".
+
+    The U-Net (pnid_lineseg.py) needs torch.  If torch imports here it runs in
+    process; otherwise it is run through `line_python` (an interpreter of an env
+    that has torch) as a subprocess; if that fails too, the classical stage runs
+    and the result is marked method="classical".  Measured on 50 held-out
+    Dataset-P&ID sheets: classical 0.931, U-Net 0.986 count F1.
+    """
+    if method == "classical":
+        out = _step4_core(img_bgr, step2_data, **kwargs)
+        out["method"] = "classical"
+        return out
+    here = os.path.dirname(os.path.abspath(__file__))
+    try:
+        import torch  # noqa: F401
+        sys.path.insert(0, here)
+        import pnid_lineseg
+        out = pnid_lineseg.detect_lines(img_bgr, ckpt or pnid_lineseg.DEFAULT_CKPT)
+        out["notes_xmin"] = None
+        return out
+    except ImportError:
+        pass
+    import subprocess, tempfile
+    py = line_python or sys.executable
+    with tempfile.TemporaryDirectory() as td:
+        ip, op = os.path.join(td, "in.png"), os.path.join(td, "lines.json")
+        cv2.imwrite(ip, img_bgr)
+        cmd = [py, os.path.join(here, "pnid_lineseg.py"), "--image", ip, "--out", op]
+        if ckpt:
+            cmd += ["--ckpt", ckpt]
+        r = subprocess.run(cmd, capture_output=True, text=True)
+        if r.returncode == 0 and os.path.exists(op):
+            with open(op) as fh:
+                out = json.load(fh)
+            out["notes_xmin"] = None
+            return out
+    print(f"  WARNING: U-Net line stage unavailable ({py}: {r.stderr.strip().splitlines()[-1] if r.stderr else 'no torch'}); "
+          "falling back to the classical Hough stage")
+    out = _step4_core(img_bgr, step2_data, **kwargs)
+    out["method"] = "classical (fallback)"
+    return out
 
 # ============================================================================
 # Visualization
@@ -1622,6 +1668,12 @@ def main():
                     help="Remove text regions before line detection")
     parser.add_argument("--suppress-pad", type=int, default=2,
                        help="Padding for text suppression")
+    parser.add_argument("--line-method", default="unet", choices=["unet", "classical"],
+                       help="line detector: U-Net (default, pnid_lineseg.py) or classical Hough")
+    parser.add_argument("--line-python", default=None,
+                       help="interpreter with torch to run the U-Net when this env lacks it "
+                            "(PaddleOCR and torch cannot share an env)")
+    parser.add_argument("--line-ckpt", default=None, help="U-Net weights (default weights/lineseg_unet_450.pt)")
     
 
     args = parser.parse_args()
@@ -1756,7 +1808,10 @@ def main():
         suppress_pad=args.suppress_pad,
     )
     
-    step4_data = step4_extract_lines_solid_only(img_resized, step2_data, **step4_kwargs)
+    step4_data = step4_extract_lines(img_resized, step2_data, method=args.line_method,
+                                     line_python=args.line_python, ckpt=args.line_ckpt,
+                                     **step4_kwargs)
+    print(f"  Line method: {step4_data.get('method')}")
     
     step4_data["image_path"] = args.image
     step4_data["target_width"] = args.target_width
@@ -1836,7 +1891,7 @@ def main():
     print(f"\nResults summary:")
     print(f"  Text regions detected: {len(step2_data['boxes'])}")
     # print(f"  Text boxes with OCR: {len(step3_data)}")
-    print(f"  Solid lines: {len(step4_data['solid'])}")
+    print(f"  Solid lines: {len(step4_data['solid'])}  ({step4_data.get('method')})")
     print(f"  Dashed lines: {len(step4_data['dashed'])}")
     print(f"\nAll outputs saved to: {args.out}")
     print(f"  - {img_name}_step1_paddleocr.json (raw PaddleOCR detections)")
