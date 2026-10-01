@@ -46,8 +46,15 @@ around 0.50 at 0.712.
 
 The clean real4 number (0.888) overstates generalization. On this broader, messier set
 (different plants, resolutions, scan quality) soup5 is ~0.71, missing roughly a quarter of
-the symbols (recall ~0.77). A few pages collapse (CCWS p4 = 0.00: soup5 detected none of its
-6 symbols above threshold). Caveat: this GT was seeded from soup5 prelabels and then human-
-corrected, so it is somewhat anchored to what soup5 already found; true difficulty may be a
-little higher. This is why real labeled data (this set) is the lever for improving real-page
-performance.
+the symbols (recall ~0.77).
+
+The near-zero pages are **not a soup5 malfunction** — they are a category mismatch. soup5 is a
+small-symbol detector (valves, instruments, ~30-80 px). The pages it scores ~0 on (CCWS p4 =
+0.00, EPS p2 = 0.33) consist almost entirely of **large equipment** — tanks, heat exchangers,
+coolers at 150-500 px — which soup5 is not built to detect (big-equipment detection is a known
+open weakness of this pipeline). On pages dominated by normal small symbols it scores 0.80-0.96.
+
+Caveat: this GT was seeded from soup5 prelabels and then human-corrected, so it is somewhat
+anchored to what soup5 already found. The takeaway: small-symbol detection on real pages is
+usable (~0.8+), large-equipment detection is the gap, and real labeled data (this set) is the
+lever for closing it.
