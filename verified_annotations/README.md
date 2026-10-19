@@ -1,13 +1,16 @@
 # Human-verified annotations
 
-Symbol boxes and pipe lines on real nuclear P&ID pages, pre-labeled by the detectors
-(symbols: soup5; lines: lineseg U-Net) and then manually verified/corrected in a browser
-editor.
+Symbol boxes, pipe lines and text on real nuclear P&ID pages, pre-labeled automatically
+(symbols: soup5; lines: lineseg U-Net; text: PP-OCRv5) and then manually verified/corrected in a
+browser editor.
 
 - `labels/<page>.txt`: symbols, YOLO format `0 cx cy w h` (normalized, single class).
 - `lines/<page>.json`: pipes, `{"solid": [[x1,y1,x2,y2],...], "dashed": [...]}` in image pixels.
 - `overlay/<page>.jpg`: the verified result drawn on the page (red = symbol, green = solid
   pipe, orange = dashed), **for quick visual review**.
+- `text/<page>.json`: text lines, `{"name", "width", "height", "items": [{"id", "box": [x0,y0,x1,y1], "text", "rot"}]}`,
+  boxes in image pixels (see "Text" below).
+- `text_overlay/<page>.jpg`: the text boxes drawn on the page (blue), for quick visual review.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
 
@@ -24,6 +27,22 @@ Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 s
 
 The 35 pages marked † below were labeled with the last two rules in place. The first 30 pages were
 verified before those rules, so some of their lines still run through symbols (and one page has a dashed line).
+
+## Text
+
+6064 text lines on the 65 pages, one box per line of text.
+
+- `text` is copied exactly as printed (case, punctuation, spacing; printed typos are kept).
+  `###` marks text that is visible but unreadable (7 lines, all faded handwriting in title blocks).
+- `rot` is how the line has to be turned to read it upright: `0` normal, `cw` the text runs bottom-to-top
+  (rotate the crop 90° clockwise), `ccw` top-to-bottom, `180` upside down.
+- Included: labels, tags, line numbers, notes, captions, title-block text, and letters inside symbols
+  (M, LO, FC, EH, ...). Not included: symbol strokes, arrows and hatching.
+
+How it was made: PP-OCRv5 (server det + rec) at two scales and three orientations, merged; then every
+line was checked and corrected by hand against an upright crop, missing text was added, and non-text
+boxes were removed. Pages that have a vector PDF with a text layer were also compared word by word
+against that layer.
 
 ## Best symbol model measured against these pages
 
