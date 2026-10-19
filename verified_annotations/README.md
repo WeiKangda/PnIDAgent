@@ -11,6 +11,7 @@ browser editor.
 - `text/<page>.json`: text lines, `{"name", "width", "height", "items": [{"id", "box": [x0,y0,x1,y1], "text", "rot"}]}`,
   boxes in image pixels (see "Text" below).
 - `text_overlay/<page>.jpg`: the text boxes drawn on the page (blue), for quick visual review.
+- `eval_soup5_f1.py`: computes the per-page symbol F1 table below for a YOLO model on these pages.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
 
