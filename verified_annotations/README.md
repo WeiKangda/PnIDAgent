@@ -12,6 +12,8 @@ browser editor.
   boxes in image pixels (see "Text" below).
 - `text_overlay/<page>.jpg`: the text boxes drawn on the page (blue), for quick visual review.
 - `eval_soup5_f1.py`: computes the per-page symbol F1 table below for a YOLO model on these pages.
+- `topology/<page>.json`: which symbols are connected by pipes (**unverified**, see "Connectivity" below).
+- `topology_overlay/<page>.jpg`: the connections drawn on the page, one colour per connection.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
 
@@ -44,6 +46,30 @@ How it was made: PP-OCRv5 (server det + rec) at two scales and three orientation
 line was checked and corrected by hand against an upright crop, missing text was added, and non-text
 boxes were removed. Pages that have a vector PDF with a text layer were also compared word by word
 against that layer.
+
+## Connectivity (unverified)
+
+**Status: unverified.** Built automatically from the verified symbols and lines, then reviewed page by page
+by AI agents. The uncertain points (10 on 6 pages) were confirmed by a human, but a full human check
+of every connection has not been done yet. Every file carries `"status": "unverified"`.
+
+Each `topology/<page>.json` has:
+
+- `symbols`: `{"id", "bbox"}`. `id` is the line number (0-based) in `labels/<page>.txt`; `bbox` is in pixels.
+- `junctions`: branch and corner points on the pipes, `{"id": "J0", "xy": [x, y]}`.
+- `links`: pipe runs, `{"source", "target", "path"}`. Source/target are a symbol id or a junction id;
+  `path` is the list of pipe pieces `[x1,y1,x2,y2]` the run follows.
+- `neighbors`: for each symbol, the symbols it reaches through pipes (passing junctions, not passing
+  other symbols). This is the easiest field to use.
+- `crossings`: places where two pipes cross, with `connected` true/false.
+- `notes`: points that were uncertain during review, with the reason.
+
+Rules used: a valve in a line connects to what is on both sides of it. At a crossing, the drawing's own
+convention decides (a hop or gap means not connected; on drawings that mark junctions with dots, a plain
+crossing without a dot is not connected). Dashed signal lines, area boundaries and pump-turbine shafts
+are not pipes. Symbols that no pipe reaches (mostly instrument bubbles and legend items) have no neighbors.
+
+Totals: 3522 symbols, 6202 links, 2468 junctions, 205 symbols with no pipe connection.
 
 ## Best symbol model measured against these pages
 
