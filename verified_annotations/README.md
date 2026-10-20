@@ -4,6 +4,8 @@ Symbol boxes, pipe lines and text on real nuclear P&ID pages, pre-labeled automa
 (symbols: soup5; lines: lineseg U-Net; text: PP-OCRv5) and then manually verified/corrected in a
 browser editor.
 
+**Browse the pages:** [`pages/`](pages/README.md) has one page per drawing with the symbols, pipe lines and text drawn on the drawing, next to the label data (symbol list with connections, text list) and links to the raw files.
+
 - `labels/<page>.txt`: symbols, YOLO format `0 cx cy w h` (normalized, single class).
 - `lines/<page>.json`: pipes, `{"solid": [[x1,y1,x2,y2],...], "dashed": [...]}` in image pixels.
 - `overlay/<page>.jpg`: the verified result drawn on the page (red = symbol, green = solid
@@ -15,6 +17,7 @@ browser editor.
 - `topology/<page>.json`: which symbols are connected by pipes (5 pages **verified**, the rest **unverified**; see "Connectivity" below).
 - `topology_verified/`: everything for the 5 pages whose connectivity is verified: drawings, symbols, pipe lines, text, connectivity, review images, method and code.
 - `symbol_detection/`: symbol detection, original method (soup5) vs new method (cascade relational re-scoring). Code, per-page results on all 65 pages, test-set (B half) predictions and comparison images. B-half macro F1: soup5 0.728 → new method 0.863.
+- `pages/`: one browsable page per drawing (annotations drawn on the drawing + label lists).
 - `topology_overlay/<page>.jpg`: the connections drawn on the page, one colour per connection.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
