@@ -12,7 +12,8 @@ browser editor.
   boxes in image pixels (see "Text" below).
 - `text_overlay/<page>.jpg`: the text boxes drawn on the page (blue), for quick visual review.
 - `eval_soup5_f1.py`: computes the per-page symbol F1 table below for a YOLO model on these pages.
-- `topology/<page>.json`: which symbols are connected by pipes (**unverified**, see "Connectivity" below).
+- `topology/<page>.json`: which symbols are connected by pipes (5 pages **verified**, the rest **unverified**; see "Connectivity" below).
+- `topology_verified/`: the 5 verified connectivity pages with overlay images.
 - `topology_overlay/<page>.jpg`: the connections drawn on the page, one colour per connection.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
@@ -47,11 +48,27 @@ line was checked and corrected by hand against an upright crop, missing text was
 boxes were removed. Pages that have a vector PDF with a text layer were also compared word by word
 against that layer.
 
+## Connectivity: verified pages
+
+**5 pages are verified** (`"status": "verified"`). Their files are also collected in [`topology_verified/`](topology_verified/) together with an overlay image.
+
+| Page | Symbols | Connections | Data | Overlay |
+|---|---|---|---|---|
+| AFW Davis-Besse reliability analysis, p7 (Third Train Configuration) | 25 | 32 | [json](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) | [overlay](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.jpg) |
+| CSS (APR1400) | 72 | 94 | [json](topology_verified/pseudo_CSS%20%28APR1400%29.json) | [overlay](topology_verified/pseudo_CSS%20%28APR1400%29.jpg) |
+| AFW (Seabrook) | 47 | 56 | [json](topology_verified/pseudo_AFW%20%28Seabrook%29.json) | [overlay](topology_verified/pseudo_AFW%20%28Seabrook%29.jpg) |
+| RHR (Surry) FSAR | 14 | 40 | [json](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.json) | [overlay](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.jpg) |
+| AFW (San Onofre) design review | 60 | 98 | [json](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.json) | [overlay](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.jpg) |
+
+How they were verified: every connection was cross-checked against this page's human-verified symbol boxes and pipe lines. All verified pipe segments are covered by connections, no connection runs off a verified pipe, every pipe end at a symbol has a connection at that symbol, all branch points are real T-junctions, crossing decisions match the drawing (a dot means connected), and there are no uncertain points, isolated symbols or unjoined pipe corners. No errors were found, and each page was also inspected visually.
+
+The other 60 pages are still unverified (see below).
+
 ## Connectivity (unverified)
 
 **Status: unverified.** Built automatically from the verified symbols and lines, then reviewed page by page
 by AI agents. The uncertain points (10 on 6 pages) were confirmed by a human, but a full human check
-of every connection has not been done yet. Every file carries `"status": "unverified"`.
+of every connection has not been done yet. Every unverified file carries `"status": "unverified"`; the 5 verified files carry `"status": "verified"`.
 
 Each `topology/<page>.json` has:
 
