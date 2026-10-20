@@ -1,0 +1,60 @@
+{
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
+  "added_lines": [],
+  "crossing_decisions": []
+ },
+ "pseudo_CSS (APR1400)": {
+  "added_lines": [],
+  "crossing_decisions": []
+ },
+ "pseudo_AFW (Seabrook)": {
+  "added_lines": [
+   [
+    2027.0,
+    780.0,
+    2057.0,
+    782.0
+   ]
+  ],
+  "crossing_decisions": []
+ },
+ "pseudo_RHR_(Surry) FSAR": {
+  "added_lines": [],
+  "crossing_decisions": [
+   {
+    "x": 1917.0,
+    "y": 666.0,
+    "connected": false
+   }
+  ]
+ },
+ "pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation": {
+  "added_lines": [
+   [
+    2055.0,
+    578.0,
+    2067.0,
+    590.0
+   ],
+   [
+    1800.0,
+    1220.0,
+    1832.0,
+    1220.0
+   ],
+   [
+    1880.0,
+    1877.0,
+    1903.0,
+    1877.0
+   ]
+  ],
+  "crossing_decisions": [
+   {
+    "x": 1645.0,
+    "y": 1375.0,
+    "connected": false
+   }
+  ]
+ }
+}

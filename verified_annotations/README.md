@@ -13,7 +13,7 @@ browser editor.
 - `text_overlay/<page>.jpg`: the text boxes drawn on the page (blue), for quick visual review.
 - `eval_soup5_f1.py`: computes the per-page symbol F1 table below for a YOLO model on these pages.
 - `topology/<page>.json`: which symbols are connected by pipes (5 pages **verified**, the rest **unverified**; see "Connectivity" below).
-- `topology_verified/`: the 5 verified connectivity pages with overlay images.
+- `topology_verified/`: everything for the 5 pages whose connectivity is verified: drawings, symbols, pipe lines, text, connectivity, review images, method and code.
 - `symbol_detection/`: symbol detection, original method (soup5) vs new method (cascade relational re-scoring). Code, per-page results on all 65 pages, test-set (B half) predictions and comparison images. B-half macro F1: soup5 0.728 → new method 0.863.
 - `topology_overlay/<page>.jpg`: the connections drawn on the page, one colour per connection.
 
@@ -51,7 +51,7 @@ against that layer.
 
 ## Connectivity: verified pages
 
-**5 pages are verified** (`"status": "verified"`). Their files are also collected in [`topology_verified/`](topology_verified/) together with an overlay image.
+**5 pages are verified** (`"status": "verified"`). [`topology_verified/`](topology_verified/) has everything for these 5 pages in one place: the drawings, all four annotation layers (symbols, pipe lines, text, connectivity), review images for each layer, the method used to build and verify the connectivity, and code that rebuilds the connectivity from the annotations and re-runs the checks.
 
 | Page | Symbols | Connections | Data | Overlay | Explained view |
 |---|---|---|---|---|---|
@@ -61,9 +61,9 @@ against that layer.
 | RHR (Surry) FSAR | 14 | 40 | [json](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.json) | [overlay](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.jpg) | [explained](topology_verified/pseudo_RHR_%28Surry%29%20FSAR_explained.png) |
 | AFW (San Onofre) design review | 60 | 98 | [json](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.json) | [overlay](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.jpg) | [explained](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation_explained.png) |
 
-**Easiest way to look at them:** open the *explained* images. Each shows the drawing on the left (pipes coloured by connected network) and the extracted pipe network on the right (coloured dot = symbol, small black dot = branch point, line = one pipe segment); the numbers match on both sides. [`how_to_read.png`](topology_verified/how_to_read.png) explains how to read them with one example, and [`topology_5pages_verified.pptx`](topology_verified/topology_5pages_verified.pptx) has all of it as slides.
+**Easiest way to look at them:** open the *explained* images. Each shows the drawing on the left (pipes coloured by connected network) and the extracted pipe network on the right (coloured dot = symbol, small black dot = junction, line = one pipe segment); the numbers match on both sides. [`how_to_read.png`](topology_verified/how_to_read.png) explains how to read them with one example, and [`topology_5pages_verified.pptx`](topology_verified/topology_5pages_verified.pptx) has all of it as slides.
 
-How they were verified: every connection was cross-checked against this page's human-verified symbol boxes and pipe lines. All verified pipe segments are covered by connections, no connection runs off a verified pipe, every pipe end at a symbol has a connection at that symbol, all branch points are real T-junctions, crossing decisions match the drawing (a dot means connected), and there are no uncertain points, isolated symbols or unjoined pipe corners. No errors were found, and each page was also inspected visually.
+How they were verified: every connection was cross-checked against this page's human-verified symbol boxes and pipe lines. All verified pipe segments are covered by connections (on AFW (Seabrook) one 54 px segment is covered only by a short diagonal to the corner, a drawing artifact), no connection runs off a verified pipe, every pipe end at a symbol has a connection at that symbol, all junctions are real T-junctions or open pipe ends, crossing decisions match the drawing (a dot means connected), and there are no uncertain points, isolated symbols or unjoined pipe corners. No wrong connections were found, and each page was also inspected visually. The checks and their exact output are described in [`topology_verified/README.md`](topology_verified/README.md#how-the-5-pages-were-verified).
 
 The other 60 pages are still unverified (see below).
 
