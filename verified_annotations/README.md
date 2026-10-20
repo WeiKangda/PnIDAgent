@@ -53,13 +53,15 @@ against that layer.
 
 **5 pages are verified** (`"status": "verified"`). Their files are also collected in [`topology_verified/`](topology_verified/) together with an overlay image.
 
-| Page | Symbols | Connections | Data | Overlay |
-|---|---|---|---|---|
-| AFW Davis-Besse reliability analysis, p7 (Third Train Configuration) | 25 | 32 | [json](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) | [overlay](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.jpg) |
-| CSS (APR1400) | 72 | 94 | [json](topology_verified/pseudo_CSS%20%28APR1400%29.json) | [overlay](topology_verified/pseudo_CSS%20%28APR1400%29.jpg) |
-| AFW (Seabrook) | 47 | 56 | [json](topology_verified/pseudo_AFW%20%28Seabrook%29.json) | [overlay](topology_verified/pseudo_AFW%20%28Seabrook%29.jpg) |
-| RHR (Surry) FSAR | 14 | 40 | [json](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.json) | [overlay](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.jpg) |
-| AFW (San Onofre) design review | 60 | 98 | [json](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.json) | [overlay](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.jpg) |
+| Page | Symbols | Connections | Data | Overlay | Explained view |
+|---|---|---|---|---|---|
+| AFW Davis-Besse reliability analysis, p7 (Third Train Configuration) | 25 | 32 | [json](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) | [overlay](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.jpg) | [explained](topology_verified/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7_explained.png) |
+| CSS (APR1400) | 72 | 94 | [json](topology_verified/pseudo_CSS%20%28APR1400%29.json) | [overlay](topology_verified/pseudo_CSS%20%28APR1400%29.jpg) | [explained](topology_verified/pseudo_CSS%20%28APR1400%29_explained.png) |
+| AFW (Seabrook) | 47 | 56 | [json](topology_verified/pseudo_AFW%20%28Seabrook%29.json) | [overlay](topology_verified/pseudo_AFW%20%28Seabrook%29.jpg) | [explained](topology_verified/pseudo_AFW%20%28Seabrook%29_explained.png) |
+| RHR (Surry) FSAR | 14 | 40 | [json](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.json) | [overlay](topology_verified/pseudo_RHR_%28Surry%29%20FSAR.jpg) | [explained](topology_verified/pseudo_RHR_%28Surry%29%20FSAR_explained.png) |
+| AFW (San Onofre) design review | 60 | 98 | [json](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.json) | [overlay](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.jpg) | [explained](topology_verified/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation_explained.png) |
+
+**Easiest way to look at them:** open the *explained* images. Each shows the drawing on the left (pipes coloured by connected network) and the extracted pipe network on the right (coloured dot = symbol, small black dot = branch point, line = one pipe segment); the numbers match on both sides. [`how_to_read.png`](topology_verified/how_to_read.png) explains how to read them with one example, and [`topology_5pages_verified.pptx`](topology_verified/topology_5pages_verified.pptx) has all of it as slides.
 
 How they were verified: every connection was cross-checked against this page's human-verified symbol boxes and pipe lines. All verified pipe segments are covered by connections, no connection runs off a verified pipe, every pipe end at a symbol has a connection at that symbol, all branch points are real T-junctions, crossing decisions match the drawing (a dot means connected), and there are no uncertain points, isolated symbols or unjoined pipe corners. No errors were found, and each page was also inspected visually.
 
