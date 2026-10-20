@@ -1,15 +1,15 @@
-"""高分辨率切块数据集: 整页按原分辨率切 640x640 (步长 480, 重叠 160), 让小符号保持原始像素大小 (整页检测时被缩到 ~0.39 倍).
-- 被切断的符号: 可见部分 >=60% 的裁到块内当标注; <60% 的把块内那部分涂白 (不让模型把半个符号当背景学)
-- 每块再存一份 90 度旋转版 (符号横竖都会出现; 上下/左右翻转交给训练时的增强)
-- 没有符号的块只留 30%
-数据集: exp65_tile_A (A 全部 40 页), exp65_tile_A1 / A2 (A 按文档分两半, 用于交叉拟合: 互相预测对方, 给二次打分当 A 侧特征)
+"""High-resolution tile dataset: cut full pages at native resolution into 640x640 tiles (stride 480, overlap 160) so small symbols keep their original pixel size (full-page detection shrinks them to ~0.39x).
+- Cut symbols: if >=60% visible, clip to the tile as a label; if <60%, paint that part of the tile white (so the model does not learn half symbols as background)
+- Each tile is also saved rotated by 90 degrees (symbols appear both horizontal and vertical; up-down/left-right flips are left to training augmentation)
+- Keep only 30% of tiles without symbols
+Datasets: exp65_tile_A (all 40 A pages), exp65_tile_A1 / A2 (A split in two halves by document, for cross-fitting: each predicts the other, giving A-side features for rescoring)
   python tiles.py"""
 import glob, json, os, re, random
 import cv2, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 R = "/home/suxinqi666/code/PnIDAgent_project"; LAB = f"{R}/line_results/labels_verified"; SRC = f"{R}/datasets/yolo_pseudo_v2/images/train"
 sp = json.load(open(f"{HERE}/split.json")); T, STEP = 640, 480
-VAL = sp["A_train"][::8]          # 大设备模型用过的 5 页验证页, 这里也只当训练过程的监控
+VAL = sp["A_train"][::8]          # the 5 validation pages used by the large-equipment model; here also only for monitoring training
 
 
 def doc(n): return re.sub(r"_p\d+$", "", n).replace("SCS2_", "SCS_")
@@ -43,7 +43,7 @@ def make(name, train_pages, val_pages):
                         else: t[int(iy0 - y0):int(np.ceil(iy1 - y0)), int(ix0 - x0):int(np.ceil(ix1 - x0))] = 255
                     if not labs and rnd.random() > 0.3: continue
                     vs = [(t, labs)]
-                    if split == "train":    # 90 度旋转 (逆时针): (x, y) -> (y, T - x)
+                    if split == "train":    # 90-degree rotation (counterclockwise): (x, y) -> (y, T - x)
                         vs.append((np.ascontiguousarray(np.rot90(t)), [[b[1], T - b[2], b[3], T - b[0]] for b in labs]))
                     for k, (img, bl) in enumerate(vs):
                         stem = f"{n}__{x0}_{y0}_r{k}"
@@ -64,6 +64,6 @@ if __name__ == "__main__":
         (A1 if sum(nsym[n] for n in A1) <= sum(nsym[n] for n in A2) else A2).extend(groups[g])
     json.dump({"A1": sorted(A1), "A2": sorted(A2)}, open(f"{HERE}/tile_folds.json", "w"), indent=1)
     print("A1", len(A1), sum(nsym[n] for n in A1), "| A2", len(A2), sum(nsym[n] for n in A2))
-    make("A1", A1, [n for n in VAL if n in A2] or A2[:3])    # 监控用对方半的页 (没见过的)
+    make("A1", A1, [n for n in VAL if n in A2] or A2[:3])    # monitor with pages from the other half (unseen)
     make("A2", A2, [n for n in VAL if n in A1] or A1[:3])
     make("A", A, VAL)

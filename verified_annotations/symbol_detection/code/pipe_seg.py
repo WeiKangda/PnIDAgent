@@ -1,9 +1,9 @@
-"""方向 2: 学习式管线分割. 目标 = A 页人工核验管线 (lines_verified, 实线) 经过的墨迹像素; 只在墨迹像素上算损失 (空白像素天然不是管线).
-网络: ResNet18 编码器 + U-Net 解码器, 原分辨率 512 块训练, 整页滑窗推理.
-交叉拟合: A1 模型预测 A2 页, A2 模型预测 A1 页, B 用两者平均.  输出 results/pipe_seg/<page>.png (管线概率 x255, 只在墨迹上非零)
+"""Direction 2: learned pipe segmentation. Target = ink pixels on human-verified pipes of A pages (lines_verified, solid); loss only on ink pixels (blank pixels are trivially not pipe).
+Network: ResNet18 encoder + U-Net decoder, trained on 512 tiles at native resolution, full-page sliding-window inference.
+Cross-fitting: A1 model predicts A2 pages, A2 model predicts A1 pages, B uses the average of both.  Output results/pipe_seg/<page>.png (pipe prob x255, nonzero only on ink)
   python pipe_seg.py train <A1|A2> <gpu>
   python pipe_seg.py predict <gpu>
-  python pipe_seg.py check            # 和人工管线比 (留出半), 对照规则提取"""
+  python pipe_seg.py check            # compare with human pipes (held-out half), vs rule-based extraction"""
 import glob, json, os, sys, random
 import cv2, numpy as np, torch, torch.nn as nn, torch.nn.functional as Fn, torchvision
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -37,7 +37,7 @@ def target(n, g, ink):
     return m & ink
 
 
-def to_in(g):   # 灰度 -> 3 通道 [0,1] 张量
+def to_in(g):   # gray -> 3-channel [0,1] tensor
     a = 1 - g.astype(np.float32) / 255; return np.stack([a, a, a])
 
 
@@ -52,7 +52,7 @@ def train(name, dev):
         xs, ys, ws = [], [], []
         for _ in range(bs):
             g, ink, t = random.choice(D); H, W = g.shape
-            for _ in range(20):          # 偏向有墨迹的块
+            for _ in range(20):          # prefer tiles with ink
                 y0, x0 = random.randint(0, H - T), random.randint(0, W - T)
                 if ink[y0:y0 + T, x0:x0 + T].mean() > 0.01: break
             a, b, c = g[y0:y0 + T, x0:x0 + T], ink[y0:y0 + T, x0:x0 + T], t[y0:y0 + T, x0:x0 + T]
@@ -92,14 +92,14 @@ if __name__ == "__main__":
         print("PIPE_PRED_DONE", flush=True)
     else:
         from structure import segments
-        res = {"学习式": [], "规则": []}
+        res = {"learned": [], "rule": []}
         for n in sp["A_train"]:
             g, ink = page(n); t = target(n, g, ink); pr = cv2.imread(f"{OUT}/{n}.png", 0) >= 128; sc = 3300 / max(g.shape)
             H_, V_, _ = segments(g, sc); rule = np.zeros_like(ink)
             for x0, x1, y, th in H_: rule[int(y - th / 2):int(y + th / 2) + 1, int(x0):int(x1) + 1] = 1
             for y0, y1, x, th in V_: rule[int(y0):int(y1) + 1, int(x - th / 2):int(x + th / 2) + 1] = 1
             rule &= ink
-            for k, p in (("学习式", pr), ("规则", rule.astype(bool))):
+            for k, p in (("learned", pr), ("rule", rule.astype(bool))):
                 tp = (p & (t > 0)).sum(); res[k].append((tp / max(1, p.sum()), tp / max(1, (t > 0).sum())))
         for k, v in res.items():
-            P, R = np.mean([a for a, b in v]), np.mean([b for a, b in v]); print(f"{k}: 管线像素 精度 {P:.3f} 召回 {R:.3f} F1 {2 * P * R / max(1e-6, P + R):.3f}")
+            P, R = np.mean([a for a, b in v]), np.mean([b for a, b in v]); print(f"{k}: pipe pixels precision {P:.3f} recall {R:.3f} F1 {2 * P * R / max(1e-6, P + R):.3f}")

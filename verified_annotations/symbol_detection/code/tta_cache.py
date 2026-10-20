@@ -1,4 +1,4 @@
-"""多视角检测缓存 (给二次打分当一致性特征): 1.25x / 0.8x 分辨率, 左右翻转, 上下翻转. conf 0.05.
+"""Multi-view detection cache (consistency features for rescoring): 1.25x / 0.8x resolution, left-right flip, up-down flip. conf 0.05.
   python tta_cache.py <gpu> <name> <weights>"""
 import glob, json, os, sys
 import cv2, numpy as np

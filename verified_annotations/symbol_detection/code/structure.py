@@ -1,9 +1,9 @@
-"""管线结构线索 (不用任何标注, 只看图像):
-  1. 管线提取: 墨迹做横/竖长核开运算 -> 连通块 -> 横/竖线段 (端点, 粗细).
-  2. 结构特征 (每个候选框): 有几个线段端点正对着框边终止 / 有几条边被线接上 / 左右或上下是否被一对共线线段夹住 (串联符号)
-     / 有没有线直接穿过框 (标注习惯 "线不穿符号": 穿过 -> 多半不是符号) / 框内被线占的比例.
-  3. 断点候选: 两条共线线段面对面断开, 断口里有图形墨迹 -> 在断口处生成候选框 (补检测器漏掉的串联符号).
-A 半的人工管线标注只用来检查提取质量, 不参与特征."""
+"""Pipe structure cues (no annotations used, image only):
+  1. Pipe extraction: open ink with long horizontal/vertical kernels -> connected components -> horizontal/vertical segments (end points, thickness).
+  2. Structure features (per candidate box): how many segment end points stop facing a box edge / how many edges are joined by lines / whether a pair of collinear segments clamps it left-right or top-bottom (in-line symbol)
+     / whether a line passes straight through the box (annotation convention "lines do not cross symbols": crossing -> likely not a symbol) / fraction of the box covered by lines.
+  3. Gap proposals: two collinear segments face each other across a gap that contains graphic ink -> generate a candidate box at the gap (recovers in-line symbols the detector missed).
+Human pipe annotations of the A half are only used to check extraction quality, not in the features."""
 import glob, json, os, sys
 import cv2, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -11,8 +11,8 @@ from selfsim import SRC, sp
 
 
 def segments(g, sc, Lmm=30, maxth=12, ink=None):
-    """返回 (H, V): 横线段 [x0, x1, y, 粗细], 竖线段 [y0, y1, x, 粗细] (原图像素). Lmm: 最短线长 (3300 口径像素).
-    ink: 可传入学习式管线分割的掩码 (pipe_seg.py), 只从管线像素里提线段."""
+    """Return (H, V): horizontal segments [x0, x1, y, thickness], vertical segments [y0, y1, x, thickness] (original pixels). Lmm: minimum line length (pixels at 3300 scale).
+    ink: optional mask from learned pipe segmentation (pipe_seg.py); segments are taken only from pipe pixels."""
     ink = (g < 160).astype(np.uint8) if ink is None else ink.astype(np.uint8); L = max(12, int(Lmm / sc)); th = maxth / sc
     out = []
     for k, ax in (((1, L), 0), ((L, 1), 1)):
@@ -28,22 +28,22 @@ def segments(g, sc, Lmm=30, maxth=12, ink=None):
 
 
 def struct_feats(B, H, V, sc):
-    """B: N x 4 框. 返回 N x 9 结构特征."""
+    """B: N x 4 boxes. Returns N x 9 structure features."""
     B = np.asarray(B, float).reshape(-1, 4); N = len(B)
     if N == 0: return np.zeros((0, 9))
     w, h = B[:, 2] - B[:, 0], B[:, 3] - B[:, 1]; m = np.maximum(3 / sc, 0.15 * np.minimum(w, h))[:, None]
     def touch(S, lo, hi, cross0, cross1, near_lo):
-        """S 的线段在 [lo, hi] (沿线方向) , 位置 c (垂直方向). 返回: 端点贴在框的 '低侧'(进入框) / '高侧' 的个数, 以及穿过的个数."""
+        """Segments of S span [lo, hi] (along the line) at position c (perpendicular). Returns: counts of end points at the box's 'low side' (entering the box) / 'high side', and the count passing through."""
         if not len(S): z = np.zeros(N); return z, z, z
         s0, s1, c = S[:, 0][None], S[:, 1][None], S[:, 2][None]
-        inc = (c >= cross0[:, None] - m) & (c <= cross1[:, None] + m)            # 线在框的横截范围内
+        inc = (c >= cross0[:, None] - m) & (c <= cross1[:, None] + m)            # line within the box's cross-section range
         inner = (c >= cross0[:, None] + 0.2 * (cross1 - cross0)[:, None]) & (c <= cross1[:, None] - 0.2 * (cross1 - cross0)[:, None])
-        end_lo = inc & (np.abs(s1 - lo[:, None]) <= m + 0.25 * (hi - lo)[:, None]) & (s0 < lo[:, None] - m)   # 从低侧来, 终止在低侧边附近
-        end_hi = inc & (np.abs(s0 - hi[:, None]) <= m + 0.25 * (hi - lo)[:, None]) & (s1 > hi[:, None] + m)   # 从高侧来
+        end_lo = inc & (np.abs(s1 - lo[:, None]) <= m + 0.25 * (hi - lo)[:, None]) & (s0 < lo[:, None] - m)   # comes from the low side, ends near the low-side edge
+        end_hi = inc & (np.abs(s0 - hi[:, None]) <= m + 0.25 * (hi - lo)[:, None]) & (s1 > hi[:, None] + m)   # comes from the high side
         thru = inner & (s0 < lo[:, None] - m) & (s1 > hi[:, None] + m)
         return end_lo.sum(1), end_hi.sum(1), thru.sum(1)
-    hl, hr, ht = touch(H, B[:, 0], B[:, 2], B[:, 1], B[:, 3], True)           # 横线: 沿 x, 截面 y
-    vt, vb, vt2 = touch(V, B[:, 1], B[:, 3], B[:, 0], B[:, 2], True)          # 竖线: 沿 y, 截面 x
+    hl, hr, ht = touch(H, B[:, 0], B[:, 2], B[:, 1], B[:, 3], True)           # horizontal lines: along x, cross-section y
+    vt, vb, vt2 = touch(V, B[:, 1], B[:, 3], B[:, 0], B[:, 2], True)          # vertical lines: along y, cross-section x
     sides = (hl > 0).astype(int) + (hr > 0) + (vt > 0) + (vb > 0)
     inline = ((hl > 0) & (hr > 0)) | ((vt > 0) & (vb > 0))
     return np.column_stack([hl + hr + vt + vb, sides, inline, ht + vt2, (hl > 0) & (hr > 0), (vt > 0) & (vb > 0),
@@ -51,7 +51,7 @@ def struct_feats(B, H, V, sc):
 
 
 def gap_proposals(H, V, ink, sc, tol=3, gmin=8, gmax=260, minink=12):
-    """共线面对面的两段线之间的断口 -> 候选框. 断口里 (去掉线本身) 要有足够墨迹."""
+    """Gap between two collinear segments facing each other -> candidate box. The gap (excluding the line itself) must have enough ink."""
     out = []; Hh, Ww = ink.shape; tol, gmin, gmax, minink = tol / sc, gmin / sc, gmax / sc, minink / sc / sc
     for S, horiz in ((H, True), (V, False)):
         if len(S) < 2: continue
@@ -73,9 +73,9 @@ def gap_proposals(H, V, ink, sc, tol=3, gmin=8, gmax=260, minink=12):
             if best is None: continue
             gap, p, q = best; c = (p[2] + q[2]) / 2; s0, s1 = int(p[1]) + 1, int(q[0])
             R = int(max(gap, 20 / sc)); c0, c1 = int(max(0, c - R)), int(c + R + 1)
-            reg = ink[c0:c1, s0:s1] if horiz else ink[s0:s1, c0:c1].T          # 行 = 截面方向, 列 = 沿线方向
+            reg = ink[c0:c1, s0:s1] if horiz else ink[s0:s1, c0:c1].T          # rows = cross-section direction, columns = along the line
             if reg.size == 0: continue
-            prof = reg.sum(1)                                                   # 截面方向每行的墨迹
+            prof = reg.sum(1)                                                   # ink of each row in the cross-section direction
             mid = int(round(c - c0)); lo = hi = min(max(mid, 0), len(prof) - 1)
             while lo > 0 and prof[lo - 1] > 0: lo -= 1
             while hi < len(prof) - 1 and prof[hi + 1] > 0: hi += 1
@@ -88,7 +88,7 @@ def gap_proposals(H, V, ink, sc, tol=3, gmin=8, gmax=260, minink=12):
 
 
 if __name__ == "__main__":
-    # 检查: (1) 提取的线 vs A 半人工管线 (像素级召回/精度); (2) 断点候选对标注符号的召回 (IoU>=0.5), 尤其是现有候选池没覆盖的
+    # Check: (1) extracted lines vs A-half human pipes (pixel-level recall/precision); (2) recall of labeled symbols by gap proposals (IoU>=0.5), especially those the current candidate pool misses
     import pickle
     from selfsim import gt_of, CACHE
     from rescore_pool import iou_mat
@@ -111,6 +111,6 @@ if __name__ == "__main__":
             ip = iou_mat(G, Bp)[0].max(1) >= 0.5 if len(Bp) else np.zeros(len(G), bool)
             ig = iou_mat(G, gp)[0].max(1) >= 0.5 if len(gp) else np.zeros(len(G), bool)
             cov_pool += ip.sum(); cov_gap += ig.sum(); cov_new += (ig & ~ip).sum()
-        msg = f"{part}: 标注 {tot} | 现候选池覆盖 {cov_pool / tot:.3f} | 断点候选 {ngap} 个, 覆盖 {cov_gap / tot:.3f}, 其中池里没有的 {cov_new} 个"
-        if lr: msg += f" | 提取线 vs 人工管线: 精度 {np.mean([a for a, b in lr]):.3f} 召回 {np.mean([b for a, b in lr]):.3f}"
+        msg = f"{part}: labels {tot} | current pool coverage {cov_pool / tot:.3f} | gap proposals {ngap}, coverage {cov_gap / tot:.3f}, of which not in pool {cov_new} boxes"
+        if lr: msg += f" | extracted lines vs human pipes: precision {np.mean([a for a, b in lr]):.3f} recall {np.mean([b for a, b in lr]):.3f}"
         print(msg, flush=True)

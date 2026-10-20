@@ -1,4 +1,4 @@
-"""高分辨率切块检测器: 从 soup5 (yolo11x) 微调, 640 切块, 原分辨率. batch 6 (和正在跑的重训链共用显卡).
+"""High-resolution tile detector: fine-tuned from soup5 (yolo11x), 640 tiles, native resolution. batch 6 (shares the GPU with the running retraining chain).
   python train_tile.py <A|A1|A2> <gpu> [epochs]"""
 import os, sys
 R = "/home/suxinqi666/code/PnIDAgent_project"; os.chdir(R)

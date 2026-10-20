@@ -1,9 +1,9 @@
-"""候选框图块分类 CNN (第二阶段): 判断"这个框是不是一个标得对的符号框".
-输入: 以框为中心的正方形图块 (边长 = 1.5 x 框长边 + 8, 带上下文), 缩到 64x64; 3 通道 = [灰度, 框位置掩码, 灰度].
-训练样本 (只用 A 的页): 候选池里的框 (和标注 IoU>=0.5 为正), 标注框本身 + IoU>=0.7 的小抖动 (正),
-  IoU 0.1-0.45 的偏移/缩放框 (难负样本, 教它看框准不准). 增强: 翻转 / 90 度旋转.
-模型: ResNet18 (ImageNet 预训练), CPU 训练.
-交叉拟合: cnn_A1 (只用 A1 页训练) 给 A2 页打分, cnn_A2 给 A1 页, cnn_A (全 A) 给 B.
+"""Candidate-box crop classifier CNN (stage 2): decides "is this box a correctly labeled symbol box".
+Input: square crop centered on the box (side = 1.5 x box long side + 8, with context), resized to 64x64; 3 channels = [gray, box-position mask, gray].
+Training samples (A pages only): boxes in the candidate pool (positive if IoU>=0.5 with a label), label boxes themselves + small jitters with IoU>=0.7 (positive),
+  shifted/scaled boxes with IoU 0.1-0.45 (hard negatives, teach it whether a box is accurate). Augmentation: flips / 90-degree rotation.
+Model: ResNet18 (ImageNet pretrained), trained on CPU.
+Cross-fitting: cnn_A1 (trained on A1 pages only) scores A2 pages, cnn_A2 scores A1 pages, cnn_A (all of A) scores B.
   python crop_cnn.py train <A1|A2|A>"""
 import glob, json, os, sys, pickle, random
 import cv2, numpy as np, torch, torchvision
@@ -11,7 +11,7 @@ HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from selfsim import SRC, CACHE, sp, gt_of
 from rescore_pool import iou_mat
 torch.set_num_threads(16); S = int(os.environ.get("CNN_S", 64)); EPOCHS = int(os.environ.get("CNN_EP", 12))
-TAG = (f"r{S}" if S != 64 else "") + os.environ.get("CNN_TAGX", "")    # CNN_TAGX: 额外的名字后缀 (如 q = 伪标签来自最好的流程)
+TAG = (f"r{S}" if S != 64 else "") + os.environ.get("CNN_TAGX", "")    # CNN_TAGX: extra name suffix (e.g. q = pseudo labels from the best pipeline)
 DEV = os.environ.get("CNN_DEV", "cpu"); SEED = int(os.environ.get("SEED", 0)); SUF = f"s{SEED}" if SEED else ""
 torch.manual_seed(SEED); random.seed(SEED)
 NEGAGREE = os.environ.get("NEGAGREE") == "1"; NEGAGREE_T = 0.3 if NEGAGREE else 9
@@ -54,7 +54,7 @@ def build(pages, R):
 
 def model():
     m = torchvision.models.resnet18(weights="IMAGENET1K_V1"); m.fc = torch.nn.Linear(512, 1)
-    if os.environ.get("CNN_INIT"): m.load_state_dict(torch.load(os.environ["CNN_INIT"], map_location="cpu"))   # 弱监督预训练权重 (pretrain_cnn.py)
+    if os.environ.get("CNN_INIT"): m.load_state_dict(torch.load(os.environ["CNN_INIT"], map_location="cpu"))   # weakly supervised pretrained weights (pretrain_cnn.py)
     return m
 
 
@@ -80,14 +80,14 @@ def score(m, g, boxes, bs=256):
     if not len(boxes): return np.zeros(0)
     X = torch.tensor(np.array([crop(g, b) for b in boxes])); out = []
     for i in range(0, len(X), bs):
-        x = X[i:i + bs]   # 4 个方向平均 (旋转不变)
+        x = X[i:i + bs]   # average over 4 orientations (rotation invariant)
         out.append(torch.stack([torch.sigmoid(m(torch.rot90(x, k, (2, 3))).squeeze(1)) for k in range(4)]).mean(0))
     return torch.cat(out).numpy()
 
 
 @torch.no_grad()
 def score_embed(m, g, boxes, bs=256):
-    """概率 + 倒数第二层特征 (512 维, 4 个方向平均), 给页内传播用."""
+    """Probability + penultimate-layer features (512-d, averaged over 4 orientations), for within-page propagation."""
     if not len(boxes): return np.zeros(0), np.zeros((0, 512))
     feat = {}
     h = m.fc.register_forward_hook(lambda mod, i, o: feat.__setitem__("e", i[0]))
@@ -105,7 +105,7 @@ def load(name):
 
 
 def det_score(n, B):
-    """候选框的检测器分数: soup5 五个视角里和它 IoU>=0.8 的最高分 (和候选池合并规则一致)."""
+    """Detector score of candidate boxes: highest score among the five soup5 views with IoU>=0.8 to it (same as the candidate pool merge rule)."""
     from rescore_pool import iou_mat as _iou
     d = json.load(open(f"{CACHE}/soup5.json"))[n]; t = json.load(open(f"{CACHE}/soup5_tta.json"))[n]
     D = np.array([x for v in [d] + list(t.values()) for x in v]).reshape(-1, 5)
@@ -115,8 +115,8 @@ def det_score(n, B):
 
 
 def build_pseudo(pages, R, pk, hi=0.6, lo=0.05):
-    """B 页伪标签 (直推式自训练, 不用 B 标注): 当前流程保留下来且概率>=hi 的框为正 (加 IoU>=0.7 抖动),
-    概率<=lo 且不和任何伪正框重叠 (IoU<0.3) 的候选为负."""
+    """Pseudo labels for B pages (transductive self-training, no B labels): boxes kept by the current pipeline with prob>=hi are positive (plus IoU>=0.7 jitter),
+    candidates with prob<=lo that overlap no pseudo-positive box (IoU<0.3) are negative."""
     from rescore_pool import select
     rnd = random.Random(1); X, Y = [], []
     for n in pages:
@@ -128,7 +128,7 @@ def build_pseudo(pages, R, pk, hi=0.6, lo=0.05):
             X.append(crop(g, b)); Y.append(1.0); nb = jitter(b, rnd, 0.7, 1.01)
             if nb is not None: X.append(crop(g, nb)); Y.append(1.0)
         io = iou_mat(np.array(B), np.array(pos))[0].max(1) if pos else np.zeros(len(B))
-        # NEGAGREE: 伪负样本要求多方一致 (流程概率低 且 检测器分数也低), 检测器认为像符号的不拿去当负样本 (防止自训练把没见过的真符号压下去)
+        # NEGAGREE: pseudo negatives need agreement (low pipeline prob AND low detector score); boxes the detector finds symbol-like are not used as negatives (keeps self-training from suppressing unseen true symbols)
         ds = det_score(n, B) if NEGAGREE else np.zeros(len(B))
         for b, pp, o, d in zip(B, p, io, ds):
             if pp <= lo and o < 0.3 and d < NEGAGREE_T: X.append(crop(g, b)); Y.append(0.0)
@@ -137,25 +137,25 @@ def build_pseudo(pages, R, pk, hi=0.6, lo=0.05):
 
 if __name__ == "__main__":
     name = sys.argv[2]; folds = json.load(open(f"{HERE}/tile_folds.json"))
-    if name.startswith("K"):     # K0..K4: 关系模型第 k 折的图块编码器预训练 (只用该折训练页的真标注, 含抖动难负样本)
+    if name.startswith("K"):     # K0..K4: crop-encoder pretraining for fold k of the relation model (only true labels of that fold's training pages, with jittered hard negatives)
         from rel_model import folds5
         k = int(name[1:]); pages = [n for n in sp["A_train"] if n not in folds5()[k]]
         R = pickle.load(open(f"{CACHE}/soup5_rescore_pool_one2one.pkl", "rb"))["R"]
-        X, Y = build(pages, R); print(name, "样本", len(X), "正", int(Y.sum()), flush=True)
+        X, Y = build(pages, R); print(name, "samples", len(X), "pos", int(Y.sum()), flush=True)
         m = train(X, Y); torch.save(m.state_dict(), f"{HERE}/results/cnn_{name}{TAG}{SUF}.pt"); print("CNN_DONE", name + TAG + SUF, flush=True); sys.exit()
-    if "p" in name:     # A1p / A2p (第 1 轮), A1p2 (第 2 轮)...: 该折真标注 + B 伪标签 (来自上一轮流程的结果)
+    if "p" in name:     # A1p / A2p (round 1), A1p2 (round 2)...: this fold's true labels + B pseudo labels (from the previous round's pipeline results)
         base, rd = name.split("p")[0], int(name.split("p")[1] or 1)
-        f4 = json.load(open(f"{HERE}/folds4.json"))   # F0..F3: 训练 = A 去掉第 k 折 (30 页左右)
+        f4 = json.load(open(f"{HERE}/folds4.json"))   # F0..F3: train = A minus fold k (about 30 pages)
         pages = {"A1": folds["A1"], "A2": folds["A2"], **{k: [n for n in sp["A_train"] if n not in v] for k, v in f4.items()}}[base]
         R = pickle.load(open(f"{CACHE}/soup5_rescore_pool_one2one.pkl", "rb"))["R"]
         src = "_cnn" if rd == 1 else ("_cnnp" if rd == 2 else f"_cnnp{rd - 1}")
-        src = os.environ.get("PSEUDO_SRC", src)     # 预训练版本的伪标签来自预训练版本自己的第 0 轮流程
-        pk = pickle.load(open(f"{CACHE}/soup5_rescore_pool_one2one{src}.pkl", "rb")); print("伪标签来源", src, flush=True)
+        src = os.environ.get("PSEUDO_SRC", src)     # pseudo labels for the pretrained variant come from its own round-0 pipeline
+        pk = pickle.load(open(f"{CACHE}/soup5_rescore_pool_one2one{src}.pkl", "rb")); print("pseudo label source", src, flush=True)
         X, Y = build(pages, R); Xp, Yp = build_pseudo(sp["B_test"], pk["R"], pk)
-        print(name, "真标注样本", len(X), "正", int(Y.sum()), "| B 伪标签样本", len(Xp), "正", int(Yp.sum()), flush=True)
+        print(name, "true-label samples", len(X), "pos", int(Y.sum()), "| B pseudo-label samples", len(Xp), "pos", int(Yp.sum()), flush=True)
         m = train(torch.cat([X, Xp]), torch.cat([Y, Yp])); torch.save(m.state_dict(), f"{HERE}/results/cnn_{name}{TAG}{SUF}.pt"); print("CNN_DONE", name + TAG + SUF, flush=True)
         sys.exit()
     pages = {"A1": folds["A1"], "A2": folds["A2"], "A": sp["A_train"]}[name]
     R = pickle.load(open(f"{CACHE}/soup5_rescore_pool_one2one.pkl", "rb"))["R"]
-    X, Y = build(pages, R); print(name, "样本", len(X), "正", int(Y.sum()), flush=True)
+    X, Y = build(pages, R); print(name, "samples", len(X), "pos", int(Y.sum()), flush=True)
     m = train(X, Y); torch.save(m.state_dict(), f"{HERE}/results/cnn_{name}{TAG}{SUF}.pt"); print("CNN_DONE", name + TAG + SUF, flush=True)

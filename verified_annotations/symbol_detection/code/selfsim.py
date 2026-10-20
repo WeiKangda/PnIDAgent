@@ -1,14 +1,14 @@
-"""页内自相似补检 (不用训练的算法改进).
-P&ID 一页里同一种符号会重复出现很多次 (例如单线图里几十个断路器). 检测器对其中一部分很有把握, 对另一部分分数偏低或漏掉.
-做法:
-  1. 检测器低阈值 (0.05) 出框.
-  2. 高分框 (>= SEED) 作为模板; 按外观聚类, 每类取几个代表.
-  3. 用模板在整页做归一化互相关 (同尺度, 加 90/180/270 度旋转), 相关度 >= MATCH 的位置:
-     - 若已有低分检测框和它重合 -> 把这个低分框"救回来";
-     - 若没有任何框 -> 新增一个框 (大小 = 模板大小).
-参数只在 A 半上选, 在 B 半上报告.
-  python selfsim.py cache <gpu> <name=weights>...     # 先缓存检测结果
-  python selfsim.py tune  <name>                      # 在 A 上调参, B 上报告
+"""Within-page self-similarity recovery (training-free algorithmic improvement).
+The same symbol repeats many times on a P&ID page (e.g. dozens of breakers in a single-line diagram). The detector is confident on some, and scores others low or misses them.
+Method:
+  1. Detector outputs boxes at a low threshold (0.05).
+  2. High-scoring boxes (>= SEED) serve as templates; cluster by appearance, keep a few representatives per cluster.
+  3. Run normalized cross-correlation of templates over the whole page (same scale, plus 90/180/270 degree rotations); where correlation >= MATCH:
+     - if a low-score detection overlaps it -> "rescue" that low-score box;
+     - if there is no box -> add a new box (size = template size).
+Parameters are chosen on the A half only and reported on the B half.
+  python selfsim.py cache <gpu> <name=weights>...     # cache detection results first
+  python selfsim.py tune  <name>                      # tune on A, report on B
 """
 import glob, json, os, sys, itertools, pickle
 import cv2, numpy as np
@@ -52,7 +52,7 @@ def cache(dev, models):
 
 
 def ink_img(n, L=25):
-    """墨迹图去掉长直线 (管线/母线), 只留符号自身的笔画, 避免模板沿着管线滑动也能匹配上."""
+    """Ink image with long straight lines (pipes/buses) removed, keeping only symbol strokes, so templates cannot match by sliding along pipes."""
     g = cv2.imread(glob.glob(f"{SRC}/{glob.escape(n)}.*")[0], 0)
     ink = (g < 160).astype(np.uint8)
     lines = cv2.morphologyEx(ink, cv2.MORPH_OPEN, np.ones((1, L), np.uint8)) | cv2.morphologyEx(ink, cv2.MORPH_OPEN, np.ones((L, 1), np.uint8))
@@ -60,12 +60,12 @@ def ink_img(n, L=25):
 
 
 def propagate(n, dets, seed=0.6, match=0.75, keep=0.5, maxt=24, ink=None):
-    """返回最终框列表. dets: [x0,y0,x1,y1,score]."""
+    """Return the final box list. dets: [x0,y0,x1,y1,score]."""
     ink = ink_img(n) if ink is None else ink; H, W = ink.shape
     final = [d for d in dets if d[4] >= keep]
     seeds = sorted([d for d in dets if d[4] >= seed], key=lambda d: -d[4])
     if not seeds: return [d[:4] for d in final]
-    # 模板: 按大小+外观去重, 最多 maxt 个
+    # templates: de-duplicate by size + appearance, at most maxt
     temps = []
     for d in seeds:
         x0, y0, x1, y1 = [int(round(v)) for v in d[:4]]
@@ -93,7 +93,7 @@ def propagate(n, dets, seed=0.6, match=0.75, keep=0.5, maxt=24, ink=None):
             for i in order:
                 x, y = int(xs[i]), int(ys[i]); box = [x, y, x + tw, y + th]
                 if any(iou(box, f) > 0.3 for f in final) or any(iou(box, a) > 0.3 for a in added): continue
-                # 优先救回重合的低分检测框 (框的位置/大小更可信)
+                # prefer rescuing an overlapping low-score detection (its position/size is more reliable)
                 cand = [a for a in low if iou(box, a) > 0.5]
                 added.append(max(cand, key=lambda a: a[4])[:4] if cand else box)
     return [d[:4] for d in final] + added
@@ -124,14 +124,14 @@ def tune(mn, workers=24):
             H, W = cv2.imread(glob.glob(f"{SRC}/{glob.escape(n)}.*")[0], 0).shape
             v.append(f1([d[:4] for d in dets[n] if d[4] >= 0.5], gt_of(n, W, H)))
         base[p] = float(np.mean(v))
-    print(f"{mn} 基线 keep0.5: A {base['A_train']:.4f} B {base['B_test']:.4f}", flush=True)
+    print(f"{mn} baseline keep0.5: A {base['A_train']:.4f} B {base['B_test']:.4f}", flush=True)
     rows = []
     for seed, match, keep in itertools.product([0.4, 0.5, 0.6, 0.7], [0.7, 0.75, 0.8, 0.85], [0.5]):
         a = score("A_train", seed=seed, match=match, keep=keep); rows.append((a, seed, match, keep))
         print(f"  seed {seed} match {match} keep {keep}: A {a:.4f}", flush=True)
     best = max(rows)
     b = score("B_test", seed=best[1], match=best[2], keep=best[3])
-    print(f"{mn} 按 A 选: seed {best[1]} match {best[2]} keep {best[3]} -> A {best[0]:.4f} B {b:.4f} (基线 A {base['A_train']:.4f} B {base['B_test']:.4f})", flush=True)
+    print(f"{mn} selected on A: seed {best[1]} match {best[2]} keep {best[3]} -> A {best[0]:.4f} B {b:.4f} (baseline A {base['A_train']:.4f} B {base['B_test']:.4f})", flush=True)
     json.dump({"base": base, "rows": rows, "best": best, "B": b}, open(f"{HERE}/results/selfsim_{mn}.json", "w"), indent=1)
 
 

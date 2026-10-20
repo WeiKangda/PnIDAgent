@@ -1,4 +1,4 @@
-"""大设备检测器整页推理 (imgsz 1280, conf 0.1), 写 selfsim_cache/<name>.json (已有就合并).
+"""Full-page inference of the large-equipment detector (imgsz 1280, conf 0.1), writes selfsim_cache/<name>.json (merged if it exists).
   python big_predict.py <gpu> <name> <weights> <A1|A2|A|B>"""
 import glob, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)

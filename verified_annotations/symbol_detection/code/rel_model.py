@@ -1,10 +1,10 @@
-"""页面关系模型 (Page Relational Transformer): 端到端取代 二次打分里的手工特征 + 梯度提升 + 去重 + 框回归.
-一页 = 一组 token: 符号候选 (64px 图块 -> ResNet18 编码, 与整个模型端到端训练; + 各检测器分数 + 几何),
-                  管线线段 (自动提取, 几何), OCR 文字框 (几何 + 字符数).
-几何关系注意力: 任意两 token 的相对位置 / 相对大小 / 重叠 / 包含 / 边距 -> 每个注意力头一个偏置 (类似 Relation Network).
-输出: 候选是不是 "标对的符号" (一一对应目标, 让模型自己学去重) + 框四边修正; 辅助: 线段是不是管线 (A 页人工管线监督).
-  python rel_model.py fold <k> <gpu> <tag> [noline] [notext] [nocnn] [det] [mt] [pre|wpre] [pu=<上一轮 tag>]    # 第 k 折 (A 按文档 5 折), 存折外预测 + B 预测
-  python rel_model.py eval <tag>                                         # 在 A 折外预测上选阈值, B 报告"""
+"""Page Relational Transformer (PRT): end-to-end replacement for the hand-crafted features + gradient boosting + de-duplication + box regression of re-scoring.
+One page = a set of tokens: symbol candidates (64px crop -> ResNet18 encoder, trained end-to-end with the whole model; + per-detector scores + geometry),
+                  pipe segments (auto-extracted, geometry), OCR text boxes (geometry + character count).
+Geometric relation attention: relative position / relative size / overlap / containment / gap of any two tokens -> one bias per attention head (like Relation Network).
+Output: whether a candidate is a "correctly boxed symbol" (one-to-one target, so the model learns de-duplication itself) + four-side box refinement; auxiliary: whether a segment is a pipe (human pipe supervision on A pages).
+  python rel_model.py fold <k> <gpu> <tag> [noline] [notext] [nocnn] [det] [mt] [pre|wpre] [pu=<previous-round tag>]    # fold k (A split into 5 folds by document), saves out-of-fold predictions + B predictions
+  python rel_model.py eval <tag>                                         # pick thresholds on A out-of-fold predictions, report B"""
 import glob, json, os, re, sys, time, random
 import numpy as np, torch, torch.nn as nn, torch.nn.functional as Fn, torchvision
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -21,13 +21,13 @@ def folds5():
 def load(n):
     z = np.load(f"{DATA}/{n}.npz"); d = {k: z[k] for k in z.files}
     p = f"{HERE}/results/rel_data_det/{n}.npy"
-    if os.path.exists(p): d["det"] = np.load(p).astype(np.float32)      # soup5 颈部 ROI 特征 (rel_detfeat.py)
+    if os.path.exists(p): d["det"] = np.load(p).astype(np.float32)      # soup5 neck ROI features (rel_detfeat.py)
     return d
 
 
-# ---------------- 模型 ----------------
+# ---------------- Model ----------------
 def pair_feats(bx, sc):
-    """bx: N x 4 (原图像素), sc: 3300 口径缩放. 返回 N x N x 8 关系特征 (i = 查询, j = 键)."""
+    """bx: N x 4 (original image pixels), sc: scale to the 3300 reference. Returns N x N x 8 relation features (i = query, j = key)."""
     cx, cy = (bx[:, 0] + bx[:, 2]) / 2, (bx[:, 1] + bx[:, 3]) / 2; w = (bx[:, 2] - bx[:, 0]).clamp(min=1); h = (bx[:, 3] - bx[:, 1]).clamp(min=1)
     dx = (cx[None] - cx[:, None]) * sc / 100; dy = (cy[None] - cy[:, None]) * sc / 100
     ix = (torch.minimum(bx[None, :, 2], bx[:, None, 2]) - torch.maximum(bx[None, :, 0], bx[:, None, 0])).clamp(min=0)
@@ -84,7 +84,7 @@ class PRT(nn.Module):
         return s.out_c(xc).squeeze(1), s.out_r(xc), (s.out_l(xl).squeeze(1) if nl else None)
 
 
-# ---------------- 数据 -> 张量 (含增强) ----------------
+# ---------------- Data -> tensors (with augmentation) ----------------
 def make_mask(B):
     w, h = B[:, 2] - B[:, 0], B[:, 3] - B[:, 1]; L = 1.5 * np.maximum(w, h) + 8; k = 64 / L
     xs = np.arange(64) + 0.5; mx = (np.abs(xs[None] - 32) <= (w * k / 2)[:, None]); my = (np.abs(xs[None] - 32) <= (h * k / 2)[:, None])
@@ -96,7 +96,7 @@ def to_tensors(z, dev, aug=False):
     keep = np.ones(len(B), bool); lk = np.ones(len(L), bool); tk = np.ones(len(TX), bool); fx = fy = False
     if aug:
         fx, fy = random.random() < 0.5, random.random() < 0.5
-        if random.random() < 0.5:     # 随机子窗口
+        if random.random() < 0.5:     # random sub-window
             ww, hh = W * random.uniform(0.55, 1), H * random.uniform(0.55, 1); x0, y0 = random.uniform(0, W - ww), random.uniform(0, H - hh)
             inw = lambda b: ((b[:, 0] + b[:, 2]) / 2 >= x0) & ((b[:, 0] + b[:, 2]) / 2 <= x0 + ww) & ((b[:, 1] + b[:, 3]) / 2 >= y0) & ((b[:, 1] + b[:, 3]) / 2 <= y0 + hh)
             keep, lk, tk = inw(B), inw(L) if len(L) else lk, inw(TX) if len(TX) else tk
@@ -127,7 +127,7 @@ def apply_deltas(B, d):
 @torch.no_grad()
 def predict(model, z, dev):
     model.eval(); P = to_tensors(z, dev); outs = []
-    for fx in (False, True):        # 测试时左右翻转平均
+    for fx in (False, True):        # test-time horizontal-flip averaging
         Q = to_tensors(z, dev)
         if fx:
             W = float(z["WH"][0]); Q["B"] = torch.stack([W - Q["B"][:, 2], Q["B"][:, 1], W - Q["B"][:, 0], Q["B"][:, 3]], 1); Q["img"] = Q["img"].flip(3)
@@ -144,22 +144,22 @@ def train_fold(k, dev, tag, flags):
     F5 = folds5(); tr = [n for i, f in enumerate(F5) if i != k for n in f]; te = F5[k]
     Z = {n: load(n) for n in tr + te + sp["B_test"]}
     model = PRT(d=int(os.environ.get("REL_D", 256)), L=int(os.environ.get("REL_L", 4)), use_line="noline" not in flags, use_text="notext" not in flags, use_cnn="nocnn" not in flags, use_det="det" in flags).to(dev)
-    if "wpre" in flags:  # 图块编码器用 P&ID 大规模弱监督预训练的外观网络初始化 (pretrain_cnn.py, 不含人工标注, 各折相同)
+    if "wpre" in flags:  # init crop encoder from the appearance network pretrained with large-scale weak supervision on P&IDs (pretrain_cnn.py, no human annotations, same for all folds)
         sd = torch.load(f"{HERE}/results/{os.environ.get('REL_PRE', 'cnn_weakpre')}.pt", map_location=dev); sd = {kk: v for kk, v in sd.items() if not kk.startswith("fc.")}
-        print("弱监督预训练编码器:", model.cnn.load_state_dict(sd, strict=False), flush=True)
-    elif "pre" in flags:   # 图块编码器用本折预训练的 crop CNN 初始化 (crop_cnn.py train K<k>)
+        print("Weakly supervised pretrained encoder:", model.cnn.load_state_dict(sd, strict=False), flush=True)
+    elif "pre" in flags:   # init crop encoder from this fold's pretrained crop CNN (crop_cnn.py train K<k>)
         sd = torch.load(f"{HERE}/results/cnn_K{k}.pt", map_location=dev); sd = {kk: v for kk, v in sd.items() if not kk.startswith("fc.")}
-        print("预训练编码器:", model.cnn.load_state_dict(sd, strict=False), flush=True)
+        print("Pretrained encoder:", model.cnn.load_state_dict(sd, strict=False), flush=True)
     cnn_p = [p for n_, p in model.named_parameters() if n_.startswith("cnn.")]; rest = [p for n_, p in model.named_parameters() if not n_.startswith("cnn.")]
     EP = int(os.environ.get("REL_EP", 60)); steps = EP * len(tr)
     opt = torch.optim.AdamW([{"params": cnn_p, "lr": 2e-4}, {"params": rest, "lr": 4e-4}], weight_decay=1e-4)
     sch = torch.optim.lr_scheduler.OneCycleLR(opt, [2e-4, 4e-4], total_steps=steps, pct_start=0.08)
     PU = [f.split("=", 1)[1] for f in flags if f.startswith("pu=")]
-    if PU:   # nnPU 自适应: 目标页 (本折留出 A 页 + B 页) 上, 上一轮模型 p>=0.6 的候选当正样本, 其余全部当 "无标签" (不当负样本)
+    if PU:   # nnPU adaptation: on target pages (this fold's held-out A pages + B pages), candidates with previous-round p>=0.6 are positives, all others "unlabeled" (not negatives)
         srcp = np.load(f"{OUTD}/{PU[0]}_fold{k}.npy", allow_pickle=True).item()
         tgt_pages = te + sp["B_test"]; posm = {n: srcp[n][0] >= 0.6 for n in tgt_pages}
-        prior = {n: float(np.clip(srcp[n][0].mean(), 0.02, 0.6)) for n in tgt_pages}     # 每页正样本比例 = 上一轮的期望命中数 / 候选数
-    MT = "mt" in flags; unl = te + sp["B_test"]        # Mean Teacher: 无标签页 = 本折留出的 A 页 + B 页 (两者条件相同, 折外评估公平)
+        prior = {n: float(np.clip(srcp[n][0].mean(), 0.02, 0.6)) for n in tgt_pages}     # per-page positive ratio = previous round's expected hits / number of candidates
+    MT = "mt" in flags; unl = te + sp["B_test"]        # Mean Teacher: unlabeled pages = this fold's held-out A pages + B pages (same conditions for both, so out-of-fold evaluation is fair)
     if MT:
         import copy; teacher = copy.deepcopy(model).eval()
         for p in teacher.parameters(): p.requires_grad_(False)
@@ -180,7 +180,7 @@ def train_fold(k, dev, tag, flags):
                 if pm.any():
                     rp_pos = Fn.softplus(-cu[pm]).mean(); rp_neg = Fn.softplus(cu[pm]).mean(); ru_neg = Fn.softplus(cu).mean()
                     loss = loss + ramp * (pi * rp_pos + torch.clamp(ru_neg - pi * rp_neg, min=0))
-            if MT:   # 一致性: 教师看原页, 学生看增强后的同一页, 学生的概率要贴近教师的软概率
+            if MT:   # consistency: teacher sees the original page, student the same page augmented; student probabilities should match the teacher's soft probabilities
                 u = random.choice(unl); Ps = to_tensors(Z[u], dev, aug=True)
                 with torch.no_grad(): pt = torch.sigmoid(teacher(to_tensors(Z[u], dev))[0])[torch.tensor(Ps["keep"], device=dev)]
                 cs, _, _ = model(Ps); ramp = min(1.0, step / (0.3 * steps))
@@ -214,9 +214,9 @@ def evaluate(tag):
     for ur in (False, True):
         acc = [np.mean([run(n, *R[n], g, ur) for n in sp["A_train"]]) for g in grid]; i = int(np.argmax(acc))
         b = np.mean([run(n, *pb[n], grid[i], ur) for n in sp["B_test"]])
-        print(f"{tag} {'+框修正' if ur else '不修正框'}: A 折外 {acc[i]:.4f} {grid[i]} -> B {b:.4f}", flush=True)
+        print(f"{tag} {'+box refine' if ur else 'no box refine'}: A out-of-fold {acc[i]:.4f} {grid[i]} -> B {b:.4f}", flush=True)
         if best is None or acc[i] > best[0]: best = (acc[i], ur, grid[i], b)
-    print(f"{tag} 按 A 选: A {best[0]:.4f} -> B {best[3]:.4f}  (框修正 {best[1]}, {best[2]})")
+    print(f"{tag} selected on A: A {best[0]:.4f} -> B {best[3]:.4f}  (box refine {best[1]}, {best[2]})")
     json.dump({"A": best[0], "B": best[3], "reg": best[1], "cfg": best[2]}, open(f"{OUTD}/{tag}_eval.json", "w"))
 
 

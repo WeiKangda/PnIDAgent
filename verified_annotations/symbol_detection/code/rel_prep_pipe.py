@@ -1,5 +1,5 @@
-"""关系模型数据的管线 token 换成学习式管线分割 (pipe_seg.py, 交叉拟合) 提取的线段; 其余 token 不变.
-输出 results/rel_data_pipe/<page>.npz  (rel_model.py 用环境变量 REL_DATA=rel_data_pipe 选用)"""
+"""Replace the pipe tokens of the relational model data with segments extracted by learned pipe segmentation (pipe_seg.py, cross-fitted); other tokens unchanged.
+Output results/rel_data_pipe/<page>.npz  (selected in rel_model.py via env var REL_DATA=rel_data_pipe)"""
 import glob, json, os, sys
 import cv2, numpy as np
 from multiprocessing import Pool
@@ -29,4 +29,4 @@ def work(n):
 
 if __name__ == "__main__":
     with Pool(12) as p: r = np.array(p.map(work, sp["A_train"] + sp["B_test"]))
-    print("线段", r[:, 0].sum(), "其中 A 页对得上人工管线的", r[:, 1].sum())
+    print("Segments", r[:, 0].sum(), "of which match human pipes on A pages", r[:, 1].sum())

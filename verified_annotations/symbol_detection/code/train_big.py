@@ -1,4 +1,4 @@
-"""大设备专用检测器: 只学 A 半里 >=150px 的大符号, 整页缩到 1280 输入, yolo11s (占显存小, 能和正在跑的训练共用一张卡)."""
+"""Dedicated large-equipment detector: learns only large symbols >=150px in the A half, full page resized to 1280 input, yolo11s (small GPU memory, can share a GPU with running training)."""
 import sys, os
 os.chdir("/home/suxinqi666/code/PnIDAgent_project")
 from ultralytics import YOLO

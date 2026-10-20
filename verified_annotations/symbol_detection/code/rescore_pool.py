@@ -1,9 +1,9 @@
-"""多视角候选池 + 页面上下文二次打分.
-候选池: 原图 + 1.25x + 0.8x + 左右翻转 + 上下翻转 五个视角的检测框 (conf>=0.05) 合在一起,
-       IoU>=0.8 的近重合框并成一个候选 (框取最高分成员), 记录它在每个视角下的分数.
-特征: 各视角分数 / 几个视角检出 + rescore.py 的上下文特征 (尺寸, 文字占比, 重复关系, 页内同类一致性, 页面统计).
-A 半按文档重复 5 折交叉验证 (5 次) 选阈值, 全 A 训练, B 只报告.
-  python rescore_pool.py <cache name> [one2one] [views=a,b] [cnn|cnnp] [seed2] [prop] [deep]     (需要 <name>.json 和 <name>_tta.json)"""
+"""Multi-view candidate pool + page-context re-scoring.
+Candidate pool: detections (conf>=0.05) from five views (original + 1.25x + 0.8x + horizontal flip + vertical flip) are merged,
+       near-coincident boxes with IoU>=0.8 become one candidate (box = highest-scoring member), recording its score in each view.
+Features: per-view scores / number of views detecting it + rescore.py context features (size, text ratio, duplicates, within-page same-class consistency, page stats).
+A half: thresholds chosen by document-grouped 5-fold cross-validation (repeated 5 times), train on all of A, B is only reported.
+  python rescore_pool.py <cache name> [one2one] [views=a,b] [cnn|cnnp] [seed2] [prop] [deep]     (requires <name>.json and <name>_tta.json)"""
 import glob, json, os, sys, re, pickle
 import cv2, numpy as np
 from multiprocessing import Pool
@@ -19,13 +19,13 @@ RAW = "/home/suxinqi666/code/PnIDAgent_project/ft_verified/text_ocr/raw"
 
 
 def line_mask(ink, sc):
-    """长直线 (管线/母线): 横竖方向长度 >= 40px (按 3300 宽折算) 的墨迹."""
+    """Long straight lines (pipes/buses): ink with horizontal or vertical length >= 40px (scaled to 3300 width)."""
     L = max(15, int(40 / sc))
     return cv2.morphologyEx(ink, cv2.MORPH_OPEN, np.ones((1, L), np.uint8)) | cv2.morphologyEx(ink, cv2.MORPH_OPEN, np.ones((L, 1), np.uint8))
 
 
 def port_feats(b, lm, sc):
-    """框外一圈窄带里有几段长直线 (接口数), 几条边有接口, 以及有没有线横穿整个框."""
+    """Number of long line segments in a narrow band around the box (port count), how many sides have ports, and whether a line crosses the whole box."""
     H, W = lm.shape; m = max(2, int(4 / sc)); x0, y0, x1, y1 = [int(round(v)) for v in b]
     x0, y0, x1, y1 = max(0, x0), max(0, y0), min(W, x1), min(H, y1)
     if x1 - x0 < 2 or y1 - y0 < 2: return [0, 0, 0]
@@ -37,7 +37,7 @@ def port_feats(b, lm, sc):
 
 
 def text_feats(b, texts):
-    """和框重叠的 OCR 文字条数, 总字符数, 最长一条的字符数."""
+    """Number of OCR text items overlapping the box, total character count, and character count of the longest one."""
     hit = [t for t in texts if min(b[2], t[2]) - max(b[0], t[0]) > 0 and min(b[3], t[3]) - max(b[1], t[1]) > 0 and
            (min(b[2], t[2]) - max(b[0], t[0])) * (min(b[3], t[3]) - max(b[1], t[1])) >= 0.5 * (t[2] - t[0]) * (t[3] - t[1])]
     return [len(hit), sum(t[4] for t in hit), max([t[4] for t in hit], default=0)]
@@ -47,7 +47,7 @@ def iou_mat(a, b):
     ix = np.clip(np.minimum(a[:, None, 2], b[None, :, 2]) - np.maximum(a[:, None, 0], b[None, :, 0]), 0, None)
     iy = np.clip(np.minimum(a[:, None, 3], b[None, :, 3]) - np.maximum(a[:, None, 1], b[None, :, 1]), 0, None)
     inter = ix * iy; aa = (a[:, 2] - a[:, 0]) * (a[:, 3] - a[:, 1]); ab = (b[:, 2] - b[:, 0]) * (b[:, 3] - b[:, 1])
-    return inter / np.maximum(aa[:, None] + ab[None] - inter, 1e-6), inter / np.maximum(aa[:, None], 1e-6)   # iou, a 被 b 覆盖比例
+    return inter / np.maximum(aa[:, None] + ab[None] - inter, 1e-6), inter / np.maximum(aa[:, None], 1e-6)   # iou, fraction of a covered by b
 
 
 def build_pool(views):
@@ -81,9 +81,9 @@ def page_feats(args):
     w, h = B[:, 2] - B[:, 0], B[:, 3] - B[:, 1]; L, Sh = np.maximum(w, h), np.maximum(np.minimum(w, h), 1)
     szok = (np.abs(np.log(L[:, None] / L[None])) < 0.25) & (np.abs(np.log(Sh[:, None] / Sh[None])) < 0.3) & (io < 0.3)
     np.fill_diagonal(szok, False); sim = np.where(szok, sim, -1)
-    hi = np.tril(np.ones((N, N), bool), -1)                      # j < i: 分数更高的候选
+    hi = np.tril(np.ones((N, N), bool), -1)                      # j < i: higher-scoring candidates
     dup_iou = np.where(hi, io, 0).max(1); dup_s = np.where(hi & (io > 0.3), S[None], 0).max(1); covered = np.where(hi, cov, 0).max(1)
-    ins = (cov.T > 0.8) & (io < 0.5)                              # ins[i,j]: j 被 i 包住
+    ins = (cov.T > 0.8) & (io < 0.5)                              # ins[i,j]: j is contained in i
     n_in = ins.sum(1); s_in = np.where(ins, S[None], 0).max(1)
     def nsim(t): return (sim >= t).sum(1)
     def smax(t): return np.where(sim >= t, S[None], 0).max(1)
@@ -96,15 +96,15 @@ def page_feats(args):
                          dup_iou, dup_s, covered, n_in, s_in, nsim(0.7), nsim(0.8), nsim(0.9), smax(0.8), smax(0.9), stop3, simhi,
                          np.full(N, (S >= 0.5).sum()), np.full(N, np.quantile(S, 0.9)), (S[None] > S[:, None]).mean(1),
                          np.array([port_feats(b, lm, sc) + text_feats(b, texts) for b in B])])
-    if STRUCT:   # 管线结构特征 (structure.py, 只看图像): 端点正对框边 / 被共线线段夹住 / 线穿过框
+    if STRUCT:   # pipe structure features (structure.py, image only): endpoints facing box edges / flanked by collinear segments / line through box
         from structure import segments, struct_feats
-        pm = cv2.imread(f"{HERE}/results/pipe_seg/{n}.png", 0) >= 128 if PIPE else None     # pipe: 用学习式管线分割 (交叉拟合) 代替规则
+        pm = cv2.imread(f"{HERE}/results/pipe_seg/{n}.png", 0) >= 128 if PIPE else None     # pipe: use learned pipe segmentation (cross-fitted) instead of rules
         Hs, Vs, _ = segments(g, sc, ink=pm); F = np.column_stack([F, struct_feats(B, Hs, Vs, sc)])
     return n, F.astype(np.float32), [list(b) for b in B], G
 
 
 def nms(boxes, p, thr, ct=1.01):
-    """IoU >= thr, 或者一个框被另一个包住 >= ct, 都算重复, 留概率高的."""
+    """IoU >= thr, or one box contained in another by >= ct, counts as a duplicate; keep the higher probability."""
     if not len(boxes): return []
     order = np.argsort(-p); B = np.array(boxes)[order]; io, cov = iou_mat(B, B); keep = []
     for i in range(len(order)):
@@ -113,8 +113,8 @@ def nms(boxes, p, thr, ct=1.01):
 
 
 def select(B, probs, t, nt, ct=1.01):
-    """t 是数字: 全局阈值. t == "ef1": 逐页期望 F1 最优截断 (不看标注):
-    NMS 后按概率排序, 取 k 使 2*sum(p_1..k) / (k + sum(p_all)) 最大 (期望命中数 / 期望 F1 分母)."""
+    """t is a number: global threshold. t == "ef1": per-page expected-F1-optimal cutoff (no labels used):
+    after NMS, sort by probability and take k maximizing 2*sum(p_1..k) / (k + sum(p_all)) (expected hits / expected F1 denominator)."""
     if t == "ef1":
         idx = np.where(probs >= 0.02)[0]; k = nms([B[i] for i in idx], probs[idx], nt, ct)
         p = np.array([probs[idx[i]] for i in k]); o = np.argsort(-p)
@@ -133,25 +133,25 @@ def page_f1(R, probs, t, nt, ct=1.01):
 if __name__ == "__main__":
     from sklearn.ensemble import HistGradientBoostingClassifier
     mn = sys.argv[1]; dets = json.load(open(f"{CACHE}/{mn}.json")); tta = json.load(open(f"{CACHE}/{mn}_tta.json"))
-    # 额外视角: views=名1,名2 (selfsim_cache/<名>.json; A 页必须是没训练过该页的模型出的, 即交叉拟合结果)
+    # extra views: views=name1,name2 (selfsim_cache/<name>.json; A pages must come from a model not trained on that page, i.e. cross-fitted results)
     EXTRA = [a.split("=", 1)[1].split(",") for a in sys.argv[2:] if a.startswith("views=")]; EXTRA = EXTRA[0] if EXTRA else []
     ex = {v: json.load(open(f"{CACHE}/{v}.json")) for v in EXTRA}; VIEWS.extend(EXTRA)
     FEATS[FEATS.index("nview"):FEATS.index("nview")] = [f"v_{v}" for v in EXTRA]
-    CV = ([a[3:] for a in sys.argv[2:] if a.startswith("cnnp")] or [""])[0]      # cnnp / cnnp2 ...: 用加了 B 伪标签自训练 (第 1/2.. 轮) 的 CNN
+    CV = ([a[3:] for a in sys.argv[2:] if a.startswith("cnnp")] or [""])[0]      # cnnp / cnnp2 ...: use the CNN self-trained with B pseudo labels (round 1/2..)
     USE_CNN = "cnn" in sys.argv[2:] or bool(CV); PROP = "prop" in sys.argv[2:]
-    SEEDS = [""] + [f"s{a[4:]}" for a in sys.argv[2:] if a.startswith("seed")]     # seedN: 再加一组不同随机种子的 CNN 做平均
-    TAGC = (f"r{os.environ['CNN_S']}" if os.environ.get("CNN_S", "64") != "64" else "") + os.environ.get("CNN_TAGX", "")     # CNN_S=96: 96 像素输入的 CNN; CNN_TAGX: 其它变体
+    SEEDS = [""] + [f"s{a[4:]}" for a in sys.argv[2:] if a.startswith("seed")]     # seedN: also average in CNNs with a different random seed
+    TAGC = (f"r{os.environ['CNN_S']}" if os.environ.get("CNN_S", "64") != "64" else "") + os.environ.get("CNN_TAGX", "")     # CNN_S=96: CNN with 96-pixel input; CNN_TAGX: other variants
     fsuf = TAGC and f"_{TAGC}"; fsuf += "".join(f"_{v}" for v in EXTRA) + ("_cnn" if "cnn" in sys.argv[2:] else "") + (f"_cnn{CV}" if CV else "") + "".join(f"_s{x}" for x in SEEDS if x) + ("_prop" if PROP else "") + ("_cnn4" if "cnn4" in sys.argv[2:] else "") + ("_struct" if STRUCT else "") + ("_pipe" if PIPE else "")
     fcache = f"{CACHE}/feat_{mn}{fsuf}.pkl"
     if os.path.exists(fcache):
-        R = pickle.load(open(fcache, "rb")); print("特征缓存", fcache, flush=True)
+        R = pickle.load(open(fcache, "rb")); print("feature cache", fcache, flush=True)
     else:
         with Pool(24) as pool: R = {n: (F, B, G) for n, F, B, G in pool.map(page_feats, [(n, {"base": dets[n], **tta[n], **{v: ex[v][n] for v in EXTRA}}) for n in sp["A_train"] + sp["B_test"]])}
         if USE_CNN:
-            # 图块 CNN 概率当特征 (交叉拟合: A1 页用只在 A2 上训练的 CNN, A2 页反之; B 用两个折模型平均)
+            # crop CNN probability as a feature (cross-fitted: A1 pages use the CNN trained only on A2, and vice versa; B averages both fold models)
             import cv2 as _cv2
             from crop_cnn import load as cnn_load, score_embed
-            if "cnn4" in sys.argv[2:]:   # 4 折 CNN: 第 k 折的页用没见过它的 F{k} 模型, B 用 4 个平均
+            if "cnn4" in sys.argv[2:]:   # 4-fold CNN: pages in fold k use the F{k} model that never saw them, B averages all 4
                 f4 = json.load(open(f"{HERE}/folds4.json")); who = {**{n: [k] for k, v in f4.items() for n in v}, **{n: list(f4) for n in sp["B_test"]}}
                 nets = {k: [cnn_load(k + CV + sd) for sd in SEEDS] for k in f4}
             else:
@@ -165,14 +165,14 @@ if __name__ == "__main__":
                 cols = []
                 for m in [m for k in who[n] for m in nets[k]]:
                     p, e = score_embed(m, g, B); c = [p]
-                    if PROP:   # 页内传播: 外观 (CNN 特征) 相似的候选应该同类
+                    if PROP:   # within-page propagation: candidates with similar appearance (CNN features) should be the same class
                         e = e / (np.linalg.norm(e, axis=1, keepdims=True) + 1e-6); sim = np.where(io > 0.3, -1, e @ e.T)
                         strong = (p >= 0.7)[None]; top = np.argsort(-sim, 1)[:, :5]
                         c += [np.where(strong, sim, -1).max(1), p[top].mean(1), (sim >= 0.9).sum(1), S[top].mean(1),
                               (np.where(sim >= 0.85, p[None], 0).sum(1) + p) / ((sim >= 0.85).sum(1) + 1)]
                     cols.append(np.column_stack(c))
                 R[n] = (np.column_stack([F, np.mean(cols, 0)]).astype(np.float32), B, G)
-            FEATS.append("cnn"); print("CNN 特征已加" + (" (+页内传播)" if PROP else ""), flush=True)
+            FEATS.append("cnn"); print("CNN features added" + (" (+within-page propagation)" if PROP else ""), flush=True)
         pickle.dump(R, open(fcache, "wb"))
     ONE = "one2one" in sys.argv[2:]
     def lab(n):
@@ -180,7 +180,7 @@ if __name__ == "__main__":
         if not len(B) or not G: return np.zeros(len(B), int)
         io = iou_mat(np.array(B), np.array(G))[0]
         if not ONE: return (io.max(1) >= 0.5).astype(int)
-        y = np.zeros(len(B), int)                       # 一一对应: 每个标注只认 IoU 最高的那个候选
+        y = np.zeros(len(B), int)                       # one-to-one: each annotation matches only its highest-IoU candidate
         for gi in np.argsort(-io.max(0)):
             j = int(np.argmax(np.where(y == 1, -1, io[:, gi])))
             if io[j, gi] >= 0.5: y[j] = 1
@@ -203,11 +203,11 @@ if __name__ == "__main__":
         acc += [np.mean([page_f1(R[n], pr[n], *g) for n in A]) for g in grid]
     acc /= 5; i = int(np.argmax(acc)); a_oof, (t, nt, ct) = float(acc[i]), grid[i]
     ig = int(np.argmax([a if g[0] != "ef1" else -1 for a, g in zip(acc, grid)])); ie = int(np.argmax([a if g[0] == "ef1" else -1 for a, g in zip(acc, grid)]))
-    print(f"  A 交叉验证: 全局阈值最好 {acc[ig]:.4f} {grid[ig]} | 逐页期望F1 最好 {acc[ie]:.4f} {grid[ie]}", flush=True)
+    print(f"  A cross-validation: best global threshold {acc[ig]:.4f} {grid[ig]} | best per-page expected F1 {acc[ie]:.4f} {grid[ie]}", flush=True)
     clf = mk().fit(X, y); pb = {n: clf.predict_proba(R[n][0])[:, 1] if len(R[n][0]) else np.zeros(0) for n in Bt}
     b = float(np.mean([page_f1(R[n], pb[n], t, nt, ct) for n in Bt]))
     suf = ("_one2one" if ONE else "") + fsuf + ("_deep" if "deep" in sys.argv[2:] else "")
-    print(f"{mn}{suf} 多视角候选池+二次打分: A 交叉验证 {a_oof:.4f} (t {t}, nms {nt}, 包含 {ct}) -> B {b:.4f}", flush=True)
+    print(f"{mn}{suf} multi-view pool + re-scoring: A cross-validation {a_oof:.4f} (t {t}, nms {nt}, containment {ct}) -> B {b:.4f}", flush=True)
     per = {n: round(page_f1(R[n], pb[n], t, nt, ct), 3) for n in Bt}
     pickle.dump({"R": {n: (R[n][1], R[n][2]) for n in R}, "pB": pb, "pA_oof": po, "t": t, "nt": nt, "ct": ct}, open(f"{CACHE}/{mn}_rescore_pool{suf}.pkl", "wb"))
     json.dump({"A_oof": a_oof, "t": str(t), "nt": nt, "ct": ct, "B": b, "per": per, "acc": acc.tolist(), "grid": [list(map(str, g)) for g in grid]}, open(f"{HERE}/results/rescore_pool_{mn}{suf}.json", "w"), indent=1)

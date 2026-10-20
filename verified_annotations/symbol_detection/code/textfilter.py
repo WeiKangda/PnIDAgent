@@ -1,6 +1,6 @@
-"""文字误检过滤 (测试时只用 OCR 原始结果, 不用人工标注):
-预测框里的墨迹, 如果绝大部分都落在 OCR 文字框里 (框里几乎只有字, 没有圆圈/阀门等图形), 就判为文字误检删掉.
-在 A 半上选阈值, B 半上报告.  python textfilter.py <cache name> [selfsim参数json]"""
+"""Text false-positive filter (at test time uses only raw OCR results, no human annotations):
+if most of the ink in a predicted box falls inside OCR text boxes (almost only text, no circles/valves or other graphics), it is a text false positive and is removed.
+Threshold chosen on the A half, reported on the B half.  python textfilter.py <cache name> [selfsim params json]"""
 import glob, json, os, sys
 import cv2, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -36,4 +36,4 @@ if __name__ == "__main__":
     rows = [(score("A_train", t), t) for t in (0.6, 0.7, 0.8, 0.85, 0.9, 0.95)]
     for a, t in rows: print(f"  t {t}: A {a:.4f}")
     a, t = max(rows)
-    print(f"{mn} 文字过滤: 基线 A {base['A_train']:.4f} B {base['B_test']:.4f} | 按A选 t={t}: A {a:.4f} B {score('B_test', t):.4f}")
+    print(f"{mn} text filter: baseline A {base['A_train']:.4f} B {base['B_test']:.4f} | selected on A t={t}: A {a:.4f} B {score('B_test', t):.4f}")

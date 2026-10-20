@@ -1,6 +1,6 @@
-"""切块推理: 原分辨率 640 块, 步长 480; 贴着块内侧边缘 (不是页面边缘) 的框丢掉 (符号被切了, 相邻块里是完整的);
-合并后 NMS (IoU 0.5 或被高分框包住 >=80%). 缓存到 selfsim_cache/<name>.json.
-  python tile_predict.py <gpu> <name> <weights> <pages: A1|A2|A|B|all> [rot]   (rot: 再加 90 度旋转推理一起合并)"""
+"""Tiled inference: 640 tiles at native resolution, stride 480; boxes touching an inner tile edge (not a page edge) are dropped (the symbol is cut, it is whole in a neighboring tile);
+NMS after merging (IoU 0.5 or >=80% covered by a higher-scoring box). Cached to selfsim_cache/<name>.json.
+  python tile_predict.py <gpu> <name> <weights> <pages: A1|A2|A|B|all> [rot]   (rot: also merge in 90-degree rotated inference)"""
 import glob, json, os, sys
 import cv2, numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
@@ -36,7 +36,7 @@ def predict_page(m, path, dev, rot=False):
         rs = m.predict(tiles[i:i + 16], imgsz=T, conf=0.05, iou=0.5, max_det=300, verbose=False, device=dev)
         for r, (x0, y0, k) in zip(rs, org[i:i + 16]):
             for b, c in zip(r.boxes.xyxy.cpu().numpy(), r.boxes.conf.cpu().numpy()):
-                if k: b = np.array([T - b[3], b[0], T - b[1], b[2]])          # 旋转回来: rot90 逆时针的逆变换
+                if k: b = np.array([T - b[3], b[0], T - b[1], b[2]])          # rotate back: inverse of counterclockwise rot90
                 if (b[0] < EDGE and x0 > 0) or (b[1] < EDGE and y0 > 0) or (b[2] > T - EDGE and x0 + T < W) or (b[3] > T - EDGE and y0 + T < H): continue
                 out.append([b[0] + x0, b[1] + y0, min(W, b[2] + x0), min(H, b[3] + y0), float(c)])
     return merge(out)

@@ -1,7 +1,7 @@
-"""外观网络的大规模弱监督预训练 (方向 1, 阶段 1):
-数据 = soup5 训练用过的 5 个数据集 (yolo_quality / apr26 / real31 / notation34 / dpid_nuke, 1280 图块, 自动伪标签, 不含人工核验标注).
-样本: 正 = 符号框 + IoU>=0.7 抖动; 负 = IoU 0.1-0.45 的偏框 (学框准不准) + 远离符号的随机框 (文字/线/边框/空白, 学是不是符号).
-图块格式和 crop_cnn.crop 完全一样 (64px, [墨迹, 框掩码, 墨迹]), 预训练好的网络直接当 crop_cnn 的初始化.
+"""Large-scale weakly supervised pretraining of the appearance network (direction 1, stage 1):
+Data = the 5 datasets used to train soup5 (yolo_quality / apr26 / real31 / notation34 / dpid_nuke, 1280px tiles, automatic pseudo labels, no human-verified annotations).
+Samples: positive = symbol box + IoU>=0.7 jitter; negative = offset boxes with IoU 0.1-0.45 (learn box accuracy) + random boxes far from symbols (text/lines/borders/blank, learn symbol vs. not).
+Crop format is identical to crop_cnn.crop (64px, [ink, box mask, ink]); the pretrained network directly initializes crop_cnn.
   python pretrain_cnn.py <gpu>   -> results/cnn_weakpre.pt"""
 import glob, os, sys, random
 import cv2, numpy as np, torch
@@ -25,7 +25,7 @@ def work(args):
         for lo, hi, y in ((0.7, 1.01, 1), (0.1, 0.45, 0)):
             nb = jitter(b, rnd, lo, hi)
             if nb is not None: X.append(crop(g, nb)); Y.append(y)
-        w, h = b[2] - b[0], b[3] - b[1]                          # 同尺寸随机框, 远离所有符号且有墨迹
+        w, h = b[2] - b[0], b[3] - b[1]                          # same-size random box, far from all symbols and containing ink
         for _ in range(10):
             x0, y0 = rnd.uniform(0, W - w), rnd.uniform(0, H - h); nb = [x0, y0, x0 + w, y0 + h]
             if iou_mat(np.array([nb]), G)[0].max() < 0.1 and (g[int(y0):int(y0 + h), int(x0):int(x0 + w)] < 160).mean() > 0.02:
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         f = sorted(glob.glob(f"{DS}/{s}/images/train/*.png")); ims += random.Random(1).sample(f, min(int(os.environ.get("PRE_N", 650)), len(f)))
     with Pool(24) as p: res = p.map(work, [(ip, i) for i, ip in enumerate(ims)])
     X = np.array([x for r in res for x in r[0]]); Y = np.array([y for r in res for y in r[1]], np.float32)
-    print("预训练样本", len(X), "正", int(Y.sum()), flush=True)
+    print("Pretraining samples", len(X), "positive", int(Y.sum()), flush=True)
     EP = int(os.environ.get("PRE_EP", 6)); bs = 256; ARCH = os.environ.get("PRE_ARCH", "resnet18")
     if ARCH == "resnet18": m = model()
     else:
