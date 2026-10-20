@@ -1,0 +1,66 @@
+page,half,gt_symbols,soup5_tp,soup5_fp,soup5_fn,soup5_f1,new_tp,new_fp,new_fn,new_f1
+AFW (Farley),"A (train, 5-fold out-of-fold)",73,70,11,3,0.9091,71,2,2,0.9726
+AFW (Haddam Neck),"A (train, 5-fold out-of-fold)",51,46,18,5,0.8,42,7,9,0.84
+AFW (SALEM),"A (train, 5-fold out-of-fold)",64,59,11,5,0.8806,63,0,1,0.9921
+AFW (Seabrook),"A (train, 5-fold out-of-fold)",47,44,8,3,0.8889,46,0,1,0.9892
+AFW (South Texas),"A (train, 5-fold out-of-fold)",60,53,8,7,0.876,54,0,6,0.9474
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,"A (train, 5-fold out-of-fold)",52,44,34,8,0.6769,37,7,15,0.7708
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,"A (train, 5-fold out-of-fold)",27,19,36,8,0.4634,21,7,6,0.7636
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,"A (train, 5-fold out-of-fold)",54,43,35,11,0.6515,39,4,15,0.8041
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,"A (train, 5-fold out-of-fold)",26,16,41,10,0.3855,19,12,7,0.6667
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,"A (train, 5-fold out-of-fold)",36,29,28,7,0.6237,27,4,9,0.806
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,"A (train, 5-fold out-of-fold)",27,20,31,7,0.5128,22,13,5,0.7097
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,"A (train, 5-fold out-of-fold)",25,19,33,6,0.4935,19,1,6,0.8444
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,"A (train, 5-fold out-of-fold)",54,43,36,11,0.6466,40,9,14,0.7767
+AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,"A (train, 5-fold out-of-fold)",37,31,30,6,0.6327,26,8,11,0.7324
+AFW_(San Onofre) AFW Design Review and Reliability Evaluation,"A (train, 5-fold out-of-fold)",60,49,16,11,0.784,49,0,11,0.8991
+AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,"A (train, 5-fold out-of-fold)",76,59,5,17,0.8429,70,3,6,0.9396
+Battery system_(Surry) FSAR,"A (train, 5-fold out-of-fold)",22,1,6,21,0.069,7,4,15,0.4242
+Boron recovery system_(Surry) FSAR_p1,"A (train, 5-fold out-of-fold)",25,18,5,7,0.75,20,3,5,0.8333
+Boron recovery system_(Surry) FSAR_p2,"A (train, 5-fold out-of-fold)",9,6,4,3,0.6316,9,1,0,0.9474
+Boron recovery system_(Surry) FSAR_p3,"A (train, 5-fold out-of-fold)",30,27,5,3,0.871,30,1,0,0.9836
+Boron recovery system_(Surry) FSAR_p4,"A (train, 5-fold out-of-fold)",17,11,10,6,0.5789,13,1,4,0.8387
+CCWS_(Surry) FSAR_p1,"A (train, 5-fold out-of-fold)",19,18,17,1,0.6667,18,0,1,0.973
+CCWS_(Surry) FSAR_p2,"A (train, 5-fold out-of-fold)",9,7,3,2,0.7368,7,3,2,0.7368
+CCWS_(Surry) FSAR_p3,"A (train, 5-fold out-of-fold)",7,3,12,4,0.2727,6,0,1,0.9231
+CCWS_(Surry) FSAR_p4,"A (train, 5-fold out-of-fold)",6,0,10,6,0.0,3,1,3,0.6
+CCWS_(Surry) FSAR_p5,"A (train, 5-fold out-of-fold)",11,8,12,3,0.5161,9,2,2,0.8182
+"CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I","A (train, 5-fold out-of-fold)",41,37,4,4,0.9024,39,2,2,0.9512
+CSS (APR1400),"A (train, 5-fold out-of-fold)",72,32,57,40,0.3975,51,14,21,0.7445
+Condensate and Feedwater system_APR1400,"A (train, 5-fold out-of-fold)",42,37,7,5,0.8605,36,3,6,0.8889
+Control room HVAC_APR1400,"A (train, 5-fold out-of-fold)",97,76,20,21,0.7876,65,30,32,0.6771
+Feedwater system_(Surry) FSAR,"A (train, 5-fold out-of-fold)",90,62,10,28,0.7654,75,4,15,0.8876
+HVAC_APR1400_p1,"A (train, 5-fold out-of-fold)",19,15,3,4,0.8108,16,0,3,0.9143
+HVAC_APR1400_p2,"A (train, 5-fold out-of-fold)",23,14,6,9,0.6512,21,0,2,0.9545
+HVAC_APR1400_p3,"A (train, 5-fold out-of-fold)",115,51,26,64,0.5312,69,27,46,0.654
+Main Steam System_APR1400,"A (train, 5-fold out-of-fold)",66,36,19,30,0.595,58,3,8,0.9134
+Main Steam system_(Surry) FSAR,"A (train, 5-fold out-of-fold)",8,3,17,5,0.2143,6,3,2,0.7059
+SCS2_APR1400,"A (train, 5-fold out-of-fold)",104,93,23,11,0.8455,40,26,64,0.4706
+SCS_APR1400,"A (train, 5-fold out-of-fold)",21,17,5,4,0.7907,21,2,0,0.9545
+SI (APR1400),"A (train, 5-fold out-of-fold)",93,60,44,33,0.6091,74,16,19,0.8087
+"SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un","A (train, 5-fold out-of-fold)",44,43,5,1,0.9348,44,0,0,1.0
+AC Power_APR1400,B (test),177,30,12,147,0.274,107,26,70,0.6903
+AFW (Brain Wood),B (test),67,48,8,19,0.7805,55,0,12,0.9016
+AFW (Cristal River)_p1,B (test),36,31,13,5,0.775,34,0,2,0.9714
+AFW (Cristal River)_p2,B (test),58,49,9,9,0.8448,56,2,2,0.9655
+AFW (Davis -Besse),B (test),57,56,4,1,0.9573,56,0,1,0.9912
+AFW (ST. LUCIE),B (test),55,54,13,1,0.8852,54,0,1,0.9908
+AFW (Turkey Point),B (test),174,146,19,28,0.8614,151,0,23,0.9292
+AFW (Vogtle),B (test),76,71,2,5,0.953,65,4,11,0.8966
+AFW_APR1400,B (test),75,65,3,10,0.9091,61,0,14,0.8971
+AFW_INL_System Study,B (test),49,31,5,18,0.7294,44,2,5,0.9263
+CCWS_APR1400,B (test),85,53,21,32,0.6667,68,6,17,0.8553
+"CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",B (test),24,18,9,6,0.7059,23,2,1,0.9388
+Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F,B (test),91,85,7,6,0.929,82,1,9,0.9425
+Compressed Air system_(Surry) FSAR,B (test),37,18,22,19,0.4675,34,2,3,0.9315
+ECWS_APR1400,B (test),62,37,2,25,0.7327,41,1,21,0.7885
+"EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p1",B (test),71,31,9,40,0.5586,40,14,31,0.64
+"EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",B (test),12,4,8,8,0.3333,5,2,7,0.5263
+ESW_APR1400,B (test),48,34,4,14,0.7907,25,6,23,0.6329
+Instrument Air (APR1400),B (test),68,50,15,18,0.7519,55,6,13,0.8527
+"LPI-LPR_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit ",B (test),42,40,5,2,0.9195,41,0,1,0.988
+Power conversion system (NuScale),B (test),45,35,56,10,0.5147,40,3,5,0.9091
+RCS-POSRV (APR1400),B (test),135,92,30,43,0.716,76,17,59,0.6667
+RHR_(Surry) FSAR,B (test),14,12,21,2,0.5106,13,0,1,0.963
+SWS_(Surry) FSAR,B (test),65,54,5,11,0.871,52,1,13,0.8814
+Steam and Power Conversion System_GE-Hitachi ABWR Design Control Document Tier 1,B (test),140,109,42,31,0.7491,115,2,25,0.8949

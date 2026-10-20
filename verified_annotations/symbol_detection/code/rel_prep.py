@@ -1,0 +1,57 @@
+"""页面关系模型的数据准备: 每页三类元素 (token)
+  候选: 7 个视角 (soup5 x5, 大设备 big4, 切块 tile4; A 侧都是交叉拟合结果) 的检测框合并成候选池, 每个候选存 64x64 图块 + 各视角分数 + 框
+  线段: 图像自动提取的横/竖线段 (structure.segments); A 页另存 "是不是人工核验的管线" 标签 (辅助任务)
+  文字: OCR 原始结果 (score>=0.5) 的框 + 字符数
+标签 (只有算损失时用): 候选的一一对应正样本 + 回归目标 (匹配的标注框).
+输出: results/rel_data/<page>.npz"""
+import glob, json, os, sys
+import cv2, numpy as np
+from multiprocessing import Pool
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+from selfsim import SRC, CACHE, sp, gt_of
+import rescore_pool as rp
+from rescore_pool import build_pool, iou_mat
+from structure import segments
+from crop_cnn import crop
+OUT = f"{HERE}/results/rel_data"; os.makedirs(OUT, exist_ok=True)
+RAW = "/home/suxinqi666/code/PnIDAgent_project/ft_verified/text_ocr/raw"; LV = "/home/suxinqi666/code/PnIDAgent_project/line_results/lines_verified"
+EXTRA = ["big4", "tile4"]; rp.VIEWS.extend(EXTRA)
+D = json.load(open(f"{CACHE}/soup5.json")); T = json.load(open(f"{CACHE}/soup5_tta.json")); X = {v: json.load(open(f"{CACHE}/{v}.json")) for v in EXTRA}
+
+
+def one2one(B, G):
+    y = np.zeros(len(B), np.float32); tgt = np.zeros((len(B), 4), np.float32); has = np.zeros(len(B), np.float32)
+    if not len(B) or not len(G): return y, tgt, has
+    io = iou_mat(B, G)[0]
+    for gi in np.argsort(-io.max(0)):
+        j = int(np.argmax(np.where(y == 1, -1, io[:, gi])))
+        if io[j, gi] >= 0.5: y[j] = 1
+    j = io.argmax(1); ok = io.max(1) >= 0.3; tgt[ok] = G[j[ok]]; has[ok] = 1     # 回归目标: IoU>=0.3 的最近标注框
+    return y, tgt, has
+
+
+def work(n):
+    g = cv2.imread(glob.glob(f"{SRC}/{glob.escape(n)}.*")[0], 0); H, W = g.shape; sc = 3300 / max(H, W)
+    B, V = build_pool({"base": D[n], **T[n], **{v: X[v][n] for v in EXTRA}})
+    G = np.array(gt_of(n, W, H), float).reshape(-1, 4)
+    crops = np.array([(crop(g, b)[0] * 255).astype(np.uint8) for b in B]) if len(B) else np.zeros((0, 64, 64), np.uint8)
+    y, tgt, has = one2one(B, G)
+    Hs, Vs, _ = segments(g, sc)
+    L = np.concatenate([np.column_stack([Hs[:, 0], Hs[:, 2] - Hs[:, 3] / 2, Hs[:, 1], Hs[:, 2] + Hs[:, 3] / 2, np.zeros(len(Hs))]),
+                        np.column_stack([Vs[:, 2] - Vs[:, 3] / 2, Vs[:, 0], Vs[:, 2] + Vs[:, 3] / 2, Vs[:, 1], np.ones(len(Vs))])]) if len(Hs) + len(Vs) else np.zeros((0, 5))
+    ly = np.full(len(L), -1, np.float32)                                    # -1 = 没有管线标注 (B 页)
+    if os.path.exists(f"{LV}/{n}.json") and n in sp["A_train"]:
+        mg = np.zeros_like(g, np.uint8)
+        for x0, y0, x1, y1 in json.load(open(f"{LV}/{n}.json"))["solid"]: cv2.line(mg, (int(x0), int(y0)), (int(x1), int(y1)), 1, max(5, int(8 / sc)))
+        ly = np.array([mg[int(max(0, (b + d) / 2 - 1)):int((b + d) / 2 + 2), int(a):int(c) + 1].mean() if t == 0 else
+                       mg[int(b):int(d) + 1, int(max(0, (a + c) / 2 - 1)):int((a + c) / 2 + 2)].mean() for a, b, c, d, t in L], np.float32)
+        ly = (ly >= 0.5).astype(np.float32)
+    tx = [t["box"] + [sum(ch.isalnum() for ch in t["text"]), sum(ch.isdigit() for ch in t["text"])] for t in json.load(open(f"{RAW}/{n}.json")) if t["score"] >= 0.5]
+    TX = np.array(tx, float).reshape(-1, 6)
+    np.savez_compressed(f"{OUT}/{n}.npz", B=np.asarray(B, float).reshape(-1, 4), V=V, crops=crops, y=y, tgt=tgt, has=has, L=L, ly=ly, TX=TX, G=G, WH=np.array([W, H]))
+    return n, len(B), int(y.sum()), len(G), len(L), int((ly == 1).sum()), len(TX)
+
+
+if __name__ == "__main__":
+    with Pool(20) as p: res = p.map(work, sp["A_train"] + sp["B_test"])
+    a = np.array([r[1:] for r in res]); print("候选/正/标注/线段/管线线段/文字 合计:", a.sum(0), "| 每页最大 token:", (a[:, 0] + a[:, 3] + a[:, 5]).max())

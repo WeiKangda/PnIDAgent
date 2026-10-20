@@ -1,0 +1,48 @@
+{
+ "A_train_40_pages_out_of_fold": {
+  "soup5_macro_f1": 0.6464,
+  "new_method_macro_f1": 0.8264,
+  "soup5_tp_fp_fn": [
+   1319,
+   711,
+   440
+  ],
+  "new_method_tp_fp_fn": [
+   1382,
+   223,
+   377
+  ],
+  "gt_symbols": 1759
+ },
+ "B_test_25_pages": {
+  "soup5_macro_f1": 0.7275,
+  "new_method_macro_f1": 0.8629,
+  "soup5_tp_fp_fn": [
+   1253,
+   344,
+   510
+  ],
+  "new_method_tp_fp_fn": [
+   1393,
+   97,
+   370
+  ],
+  "gt_symbols": 1763,
+  "finetune_soup5_on_A_macro_f1": 0.742
+ },
+ "all_65_pages": {
+  "soup5_macro_f1": 0.6776,
+  "new_method_macro_f1": 0.8405,
+  "soup5_tp_fp_fn": [
+   2572,
+   1055,
+   950
+  ],
+  "new_method_tp_fp_fn": [
+   2775,
+   320,
+   747
+  ],
+  "gt_symbols": 3522
+ }
+}

@@ -14,6 +14,7 @@ browser editor.
 - `eval_soup5_f1.py`: computes the per-page symbol F1 table below for a YOLO model on these pages.
 - `topology/<page>.json`: which symbols are connected by pipes (5 pages **verified**, the rest **unverified**; see "Connectivity" below).
 - `topology_verified/`: the 5 verified connectivity pages with overlay images.
+- `symbol_detection/`: symbol detection, original method (soup5) vs new method (cascade relational re-scoring). Code, per-page results on all 65 pages, test-set (B half) predictions and comparison images. B-half macro F1: soup5 0.728 → new method 0.863.
 - `topology_overlay/<page>.jpg`: the connections drawn on the page, one colour per connection.
 
 Pages are the real sheets from `datasets/yolo_pseudo_v2`. **65 pages** (all 65 sheets of that set, 3522 symbols).
