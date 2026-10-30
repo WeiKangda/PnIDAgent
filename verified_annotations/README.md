@@ -1,5 +1,7 @@
 # Human-verified annotations
 
+> **Second release:** [`../verified_annotations_v2/`](../verified_annotations_v2/README.md) has the same 65 pages with tight symbol and text boxes and pipe lines that stop at the symbols, verified again by a human. This directory is the first release, kept unchanged.
+
 Symbol boxes, pipe lines and text on real nuclear P&ID pages, pre-labeled automatically
 (symbols: soup5; lines: lineseg U-Net; text: PP-OCRv5) and then manually verified/corrected in a
 browser editor.
