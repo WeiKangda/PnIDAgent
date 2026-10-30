@@ -7,6 +7,19 @@ legend on their page; they are reviewed first.
 
 ## Files
 
+- `evidence/<page>[_<part>].png`: **where each label comes from**, one tile per symbol box (48 per image, so pages with more
+  symbols have several parts; 106 images for the 65 pages). Each tile shows the symbol as drawn on the page, the entry of
+  the AP1000 / APR1400 P&ID legend PDF it corresponds to (symbol image, PDF page and entry number, printed description), the
+  legend entry of its operator for powered valves, and the evidence written out: the page's own legend, the drawing text
+  inside or next to the box, source documents (NUREG/CR-4550, INL and Davis-Besse reports), and the labeler's note.
+  The header colour gives the evidence level:
+  - **A** (1625): the label is confirmed by the drawing itself (its own legend or text such as "MOV", "M", "DIESEL GEN.")
+    or by a source document;
+  - **B** (1755): the label rests on the symbol shape matching the legend PDF entry shown;
+  - **C** (108): uncertain (`uncertain = yes`), check first.
+  3447 of the 3488 boxes are tied to a legend PDF entry; the other 41 (OTHER, BLOCK, ENGINE, SUMP, PRESSURIZER) have no
+  legend entry and rest on the drawing text and note shown in the tile.
+
 - `overlay/<page>.jpg`: check image of each page. Every box is drawn on the drawing with its box id and a short class tag
   (colour = class group); the panel on the right lists every id with its class, actuator and fault-tree type. `*` = uncertain.
 - `symbol_classes.csv`: one row per symbol box. Columns: `page`, `box_id` (line index in `../labels/<page>.txt`),
