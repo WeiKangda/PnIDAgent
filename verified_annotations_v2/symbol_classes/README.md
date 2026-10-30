@@ -5,6 +5,8 @@ labeled by eye page by page and checked a second time class by class. A human re
 until it is done these labels are not verified. Rows marked `uncertain = yes` (108) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
 
+**Start here: [index.md](index.md)**, one row per page with links to its overview and evidence images.
+
 ## Files
 
 - `evidence/<page>[_<part>].png`: **where each label comes from**, one tile per symbol box (48 per image, so pages with more
