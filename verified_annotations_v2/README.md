@@ -84,5 +84,12 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 
 ## Connectivity
 
-The connectivity files in `../verified_annotations/topology/` and `../verified_annotations/topology_verified/` were
-built from the first release and have not been rebuilt from these annotations yet.
+[`topology_verified/`](topology_verified/README.md) has the pipe connectivity of 15 pages, built from these annotations and verified
+(automatic checks against the symbols and pipe lines, plus a visual inspection of every connection): the five verified pages of the
+first release, rebuilt, and ten new pages. The connectivity files in `../verified_annotations/topology/` were built from the first
+release and are not used here.
+
+## Symbol classes
+
+[`symbol_classes/`](symbol_classes/README.md) has a class and an actuator for every symbol box, plus the derived fault-tree
+component type (MOV, AOV, CKV, MDP, ...). These are pre-labels: a human review of every row is in progress.

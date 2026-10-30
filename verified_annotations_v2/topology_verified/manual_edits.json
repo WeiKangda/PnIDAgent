@@ -1,0 +1,363 @@
+{
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_RHR_(Surry) FSAR": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [
+   {
+    "x": 1917.0,
+    "y": 666.0,
+    "connected": false
+   }
+  ],
+  "cuts": [
+   [
+    815,
+    782
+   ]
+  ],
+  "unlinks": []
+ },
+ "pseudo_AFW (Seabrook)": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_CSS (APR1400)": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": [
+   [
+    71,
+    1830,
+    884
+   ]
+  ]
+ },
+ "pseudo_AFW_APR1400": {
+  "added_lines": [],
+  "removed_lines": [
+   [
+    2223.5,
+    706.0,
+    2223.5,
+    753.0
+   ],
+   [
+    2223.5,
+    809.0,
+    2223.5,
+    1015.0
+   ],
+   [
+    2223.5,
+    1070.0,
+    2223.5,
+    1117.0
+   ],
+   [
+    2224.0,
+    1528.0,
+    2224.0,
+    1575.0
+   ],
+   [
+    2224.0,
+    1630.0,
+    2224.0,
+    1836.0
+   ],
+   [
+    2224.0,
+    1892.0,
+    2224.0,
+    1938.0
+   ],
+   [
+    2535.0,
+    1526.5,
+    2668.0,
+    1526.5
+   ],
+   [
+    2731.0,
+    1526.5,
+    2797.0,
+    1526.5
+   ],
+   [
+    2536.0,
+    704.5,
+    2668.0,
+    704.5
+   ],
+   [
+    2732.0,
+    704.5,
+    2797.0,
+    704.5
+   ]
+  ],
+  "crossing_decisions": [
+   {
+    "x": 463.0,
+    "y": 1288.0,
+    "connected": false
+   },
+   {
+    "x": 526.0,
+    "y": 1288.0,
+    "connected": false
+   },
+   {
+    "x": 1084.0,
+    "y": 1077.0,
+    "connected": false
+   },
+   {
+    "x": 1084.0,
+    "y": 1899.0,
+    "connected": false
+   },
+   {
+    "x": 928.0,
+    "y": 2031.0,
+    "connected": false
+   }
+  ],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_Condensate and Feedwater system_APR1400": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_ECWS_APR1400": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_SCS_APR1400": {
+  "added_lines": [
+   [
+    884.0,
+    1216.0,
+    935.0,
+    1216.0
+   ]
+  ],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": [],
+  "fine_regions": [
+   [
+    1140,
+    1205,
+    1175,
+    1230
+   ]
+  ],
+  "fine_tol": 4
+ },
+ "pseudo_SI (APR1400)": {
+  "added_lines": [
+   [
+    630.0,
+    2559.0,
+    700.0,
+    2559.0
+   ],
+   [
+    744.0,
+    1549.0,
+    744.0,
+    1558.0
+   ],
+   [
+    744.0,
+    1255.0,
+    805.0,
+    1255.0
+   ],
+   [
+    1449.0,
+    1255.0,
+    1509.0,
+    1255.0
+   ],
+   [
+    767.0,
+    2287.0,
+    825.0,
+    2287.0
+   ],
+   [
+    1036.0,
+    2283.0,
+    1096.0,
+    2283.0
+   ],
+   [
+    1471.0,
+    2284.0,
+    1531.0,
+    2284.0
+   ],
+   [
+    1741.0,
+    2286.0,
+    1799.0,
+    2286.0
+   ],
+   [
+    1131.0,
+    1056.0,
+    1131.0,
+    1135.0
+   ]
+  ],
+  "removed_lines": [
+   [
+    521.5,
+    2456.1,
+    628.4,
+    2455.7
+   ]
+  ],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_AFW_INL_System Study": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_AFW (Haddam Neck)": {
+  "added_lines": [
+   [
+    509.0,
+    2208.0,
+    509.0,
+    2380.0
+   ],
+   [
+    509.0,
+    2294.0,
+    549.0,
+    2294.0
+   ],
+   [
+    1923.0,
+    2221.0,
+    1923.0,
+    2394.0
+   ],
+   [
+    1896.0,
+    2307.0,
+    1923.0,
+    2307.0
+   ]
+  ],
+  "removed_lines": [
+   [
+    2454.1,
+    19.0,
+    2515.3,
+    3252.9
+   ]
+  ],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_CCWS_(Surry) FSAR_p1": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [
+   {
+    "x": 1347.0,
+    "y": 1254.0,
+    "connected": false
+   },
+   {
+    "x": 2016.0,
+    "y": 1175.0,
+    "connected": false
+   }
+  ],
+  "cuts": [],
+  "unlinks": []
+ },
+ "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un": {
+  "added_lines": [],
+  "removed_lines": [],
+  "crossing_decisions": [
+   {
+    "x": 1243.0,
+    "y": 1558.0,
+    "connected": false
+   },
+   {
+    "x": 1725.0,
+    "y": 1558.0,
+    "connected": false
+   },
+   {
+    "x": 2215.0,
+    "y": 1558.0,
+    "connected": false
+   },
+   {
+    "x": 2207.0,
+    "y": 902.0,
+    "connected": false
+   },
+   {
+    "x": 1719.0,
+    "y": 902.0,
+    "connected": false
+   },
+   {
+    "x": 1232.0,
+    "y": 902.0,
+    "connected": false
+   }
+  ],
+  "cuts": [],
+  "unlinks": []
+ }
+}
