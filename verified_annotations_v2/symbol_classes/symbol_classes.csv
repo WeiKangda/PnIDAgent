@@ -5,8 +5,8 @@ pseudo_AC Power_APR1400,2,3509.0,1950.0,3573.0,2014.0,GENERATOR,DIESEL,DGN,,emer
 pseudo_AC Power_APR1400,3,3955.0,1946.0,4019.0,2009.0,GENERATOR,TURBINE,,,AAC gas turbine generator (GTG)
 pseudo_AC Power_APR1400,4,2942.0,1945.0,3005.0,2009.0,GENERATOR,DIESEL,DGN,,emergency diesel generator (1A-1D)
 pseudo_AC Power_APR1400,5,1205.0,512.0,1267.0,574.0,GENERATOR,-,,,main generator
-pseudo_AC Power_APR1400,6,2499.0,2654.0,2535.0,2697.0,OTHER,-,,,H circle (heater load connection)
-pseudo_AC Power_APR1400,7,4013.0,2465.0,4049.0,2509.0,OTHER,-,,,H circle (heater load connection)
+pseudo_AC Power_APR1400,6,2499.0,2654.0,2535.0,2697.0,OFFPAGE,-,,,continuation circle H (pair with the other H; same style as 1A/1B/1M/1N)
+pseudo_AC Power_APR1400,7,4013.0,2465.0,4049.0,2509.0,OFFPAGE,-,,,continuation circle H (pair with the other H; same style as 1A/1B/1M/1N)
 pseudo_AC Power_APR1400,8,3507.0,1871.0,3551.0,1907.0,OFFPAGE,-,,,
 pseudo_AC Power_APR1400,9,2500.0,524.0,2544.0,561.0,OFFPAGE,-,,,
 pseudo_AC Power_APR1400,10,4186.0,2290.0,4222.0,2334.0,OFFPAGE,-,,,
@@ -174,7 +174,7 @@ pseudo_AC Power_APR1400,171,2038.0,1977.0,2072.0,2004.0,OFFPAGE,-,,,
 pseudo_AC Power_APR1400,172,1615.0,1137.0,1649.0,1172.0,MOTOR,-,,,
 pseudo_AC Power_APR1400,173,3700.0,1137.0,3735.0,1171.0,MOTOR,-,,,
 pseudo_AC Power_APR1400,174,1531.0,585.0,1589.0,608.0,TRANSFORMER,-,TFM,,
-pseudo_AC Power_APR1400,175,1488.0,634.0,1628.0,688.0,PANEL,-,,,excitation system
+pseudo_AC Power_APR1400,175,1488.0,634.0,1628.0,688.0,BLOCK,-,,,EXCITATION SYSTEM equipment block
 pseudo_AC Power_APR1400,176,3209.6,1171.2,3247.5,1213.2,OFFPAGE,-,,,
 pseudo_AFW (Brain Wood),0,906.0,1507.0,979.0,1599.0,VLV_GATE,AIR,AOV,,
 pseudo_AFW (Brain Wood),1,994.0,2074.0,1067.0,2166.0,VLV_GATE,AIR,AOV,,
@@ -441,7 +441,7 @@ pseudo_AFW (Farley),43,1538.0,2728.0,1587.0,2823.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Farley),44,934.0,2278.0,990.0,2370.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Farley),45,889.0,1481.0,966.0,1578.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Farley),46,914.0,1219.0,967.0,1313.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW (Farley),47,1755.0,1235.0,1838.0,1319.0,VLV_CHECK,MOTOR,CKV,yes,stop-check valve with operator
+pseudo_AFW (Farley),47,1755.0,1235.0,1838.0,1319.0,VLV_CHECK,AIR,CKV,,"stop-check valve with a piston (cylinder) operator, no M in the box"
 pseudo_AFW (Farley),48,1407.0,801.0,1458.0,898.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Farley),49,404.0,800.0,456.0,897.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Farley),50,403.0,1795.0,456.0,1890.0,VLV_GATE,NONE,XVM,,
@@ -453,16 +453,16 @@ pseudo_AFW (Farley),55,912.0,937.0,968.0,1028.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Farley),56,1510.0,1878.0,1564.0,1972.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Farley),57,915.0,1919.0,973.0,2012.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Farley),58,508.0,1220.0,559.0,1315.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW (Farley),59,1383.0,625.0,1457.0,713.0,VLV_CHECK,MOTOR,CKV,yes,stop-check valve with operator
+pseudo_AFW (Farley),59,1383.0,625.0,1457.0,713.0,VLV_CHECK,MOTOR,CKV,,stop-check valve with operator (confirmed on review)
 pseudo_AFW (Farley),60,662.0,1597.0,760.0,1649.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Farley),61,927.0,2132.0,1015.0,2233.0,PUMP,MOTOR,MDP,,motor-driven AFW pump
-pseudo_AFW (Farley),62,1907.0,1239.0,1994.0,1320.0,VLV_CHECK,MOTOR,CKV,yes,stop-check valve with operator
-pseudo_AFW (Farley),63,378.0,623.0,453.0,712.0,VLV_CHECK,MOTOR,CKV,yes,stop-check valve with operator
-pseudo_AFW (Farley),64,888.0,619.0,964.0,707.0,VLV_CHECK,MOTOR,CKV,yes,stop-check valve with operator
+pseudo_AFW (Farley),62,1907.0,1239.0,1994.0,1320.0,VLV_CHECK,AIR,CKV,,"stop-check valve with a piston (cylinder) operator, no M in the box"
+pseudo_AFW (Farley),63,378.0,623.0,453.0,712.0,VLV_CHECK,MOTOR,CKV,,stop-check valve with operator (confirmed on review)
+pseudo_AFW (Farley),64,888.0,619.0,964.0,707.0,VLV_CHECK,MOTOR,CKV,,stop-check valve with operator (confirmed on review)
 pseudo_AFW (Farley),65,861.0,436.0,1056.0,554.0,STEAM_GEN,-,,,
 pseudo_AFW (Farley),66,357.0,443.0,552.0,561.0,STEAM_GEN,-,,,
 pseudo_AFW (Farley),67,1360.0,431.0,1555.0,550.0,STEAM_GEN,-,,,
-pseudo_AFW (Farley),68,1799.0,947.0,1829.0,981.0,OTHER,-,,yes,"flow arrow on the steam line, not a symbol (box could be deleted)"
+pseudo_AFW (Farley),68,1799.0,947.0,1829.0,981.0,OTHER,-,,,"flow arrow on the steam line, not a symbol (box could be deleted) (confirmed on review)"
 pseudo_AFW (Farley),69,1479.0,2057.0,1616.0,2301.0,PUMP,TURBINE,TDP,,turbine-driven AFW pump drawn with its turbine in one box
 pseudo_AFW (Farley),70,1254.0,2505.0,1345.0,2585.0,VLV_GATE,UNSPEC,,yes,"valve with a large square operator, type not given"
 pseudo_AFW (Farley),71,467.0,2692.0,798.0,2935.0,TANK,-,TNK,,condensate storage tank
@@ -471,7 +471,7 @@ pseudo_AFW (Haddam Neck),0,1550.0,2445.0,1600.0,2542.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),1,792.0,710.0,843.0,806.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),2,1694.0,1194.0,1745.0,1291.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),3,565.0,2250.0,658.0,2322.0,VLV_GATE,AIR,AOV,,
-pseudo_AFW (Haddam Neck),4,1667.0,942.0,1750.0,1109.0,VLV_GATE,AIR,AOV,yes,air-operated valve drawn with a second small body
+pseudo_AFW (Haddam Neck),4,1667.0,942.0,1750.0,1109.0,VLV_GATE,AIR,AOV,,air-operated valve drawn with a second small body (confirmed on review)
 pseudo_AFW (Haddam Neck),5,793.0,1198.0,845.0,1296.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),6,422.0,703.0,475.0,799.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),7,1698.0,704.0,1749.0,799.0,VLV_GATE,NONE,XVM,,
@@ -482,13 +482,13 @@ pseudo_AFW (Haddam Neck),11,1334.0,1198.0,1385.0,1294.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),12,1336.0,708.0,1387.0,802.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),13,421.0,1197.0,474.0,1294.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW (Haddam Neck),14,1328.0,575.0,1399.0,627.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Haddam Neck),15,394.0,938.0,477.0,1105.0,VLV_GATE,AIR,AOV,yes,air-operated valve drawn with a second small body
+pseudo_AFW (Haddam Neck),15,394.0,938.0,477.0,1105.0,VLV_GATE,AIR,AOV,,air-operated valve drawn with a second small body (confirmed on review)
 pseudo_AFW (Haddam Neck),16,1324.0,1420.0,1394.0,1473.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Haddam Neck),17,1305.0,942.0,1388.0,1108.0,VLV_GATE,AIR,AOV,yes,air-operated valve drawn with a second small body
+pseudo_AFW (Haddam Neck),17,1305.0,942.0,1388.0,1108.0,VLV_GATE,AIR,AOV,,air-operated valve drawn with a second small body (confirmed on review)
 pseudo_AFW (Haddam Neck),18,413.0,1419.0,484.0,1472.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Haddam Neck),19,412.0,569.0,483.0,624.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Haddam Neck),20,821.0,2743.0,905.0,2789.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW (Haddam Neck),21,768.0,946.0,850.0,1113.0,VLV_GATE,AIR,AOV,yes,air-operated valve drawn with a second small body
+pseudo_AFW (Haddam Neck),21,768.0,946.0,850.0,1113.0,VLV_GATE,AIR,AOV,,air-operated valve drawn with a second small body (confirmed on review)
 pseudo_AFW (Haddam Neck),22,784.0,1421.0,855.0,1475.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Haddam Neck),23,783.0,573.0,854.0,627.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Haddam Neck),24,1523.0,1673.0,1574.0,1768.0,VLV_GATE,NONE,XVM,,
@@ -579,7 +579,7 @@ pseudo_AFW (SALEM),56,1905.0,2043.0,1995.0,2145.0,PUMP,MOTOR,MDP,,motor-driven A
 pseudo_AFW (SALEM),57,1514.0,239.0,1714.0,394.0,STEAM_GEN,-,,,
 pseudo_AFW (SALEM),58,1142.0,239.0,1341.0,363.0,STEAM_GEN,-,,,
 pseudo_AFW (SALEM),59,791.0,241.0,994.0,404.0,STEAM_GEN,-,,,
-pseudo_AFW (SALEM),60,696.0,2056.0,798.0,2125.0,TURBINE,-,,,turbine of the turbine-driven AFW pump (pump not drawn separately)
+pseudo_AFW (SALEM),60,696.0,2056.0,798.0,2125.0,PUMP,TURBINE,TDP,,turbine-driven AFW pump drawn as the turbine trapezoid only (no separate pump symbol)
 pseudo_AFW (SALEM),61,1024.0,2798.0,1372.0,3056.0,TANK,-,TNK,,condensate storage tank
 pseudo_AFW (SALEM),62,1869.0,237.0,2067.0,390.0,STEAM_GEN,-,,,
 pseudo_AFW (SALEM),63,710.0,1173.6,760.1,1267.8,VLV_GATE,NONE,XVM,,
@@ -631,7 +631,7 @@ pseudo_AFW (ST. LUCIE),44,1261.0,542.0,1353.0,619.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (ST. LUCIE),45,1257.0,1118.0,1346.0,1195.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (ST. LUCIE),46,813.0,609.0,895.0,664.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (ST. LUCIE),47,1261.0,659.0,1356.0,746.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW (ST. LUCIE),48,1326.0,2039.0,1461.0,2106.0,TURBINE,-,,,turbine of the turbine-driven AFW pump (pump not drawn separately)
+pseudo_AFW (ST. LUCIE),48,1326.0,2039.0,1461.0,2106.0,PUMP,TURBINE,TDP,,turbine-driven AFW pump drawn as the turbine trapezoid only (no separate pump symbol)
 pseudo_AFW (ST. LUCIE),49,920.0,597.0,969.0,675.0,ORIFICE,-,ORF,yes,"stippled block in the feed line (flow restrictor / venturi, no legend on page)"
 pseudo_AFW (ST. LUCIE),50,912.0,1177.0,959.0,1252.0,ORIFICE,-,ORF,yes,"stippled block in the feed line (flow restrictor / venturi, no legend on page)"
 pseudo_AFW (ST. LUCIE),51,1100.0,2682.0,1608.0,3054.0,TANK,-,TNK,,condensate storage tank
@@ -889,12 +889,12 @@ pseudo_AFW (Turkey Point),140,2112.0,1773.0,2305.0,1913.0,TANK,-,TNK,,condensate
 pseudo_AFW (Turkey Point),141,2102.0,1093.0,2294.0,1231.0,TANK,-,TNK,,condensate storage tank
 pseudo_AFW (Turkey Point),142,1300.0,1389.0,1389.0,1462.0,TURBINE,-,,,AFW pump turbine
 pseudo_AFW (Turkey Point),143,1816.0,1383.0,1907.0,1455.0,TURBINE,-,,,AFW pump turbine
-pseudo_AFW (Turkey Point),144,777.0,1332.0,884.0,1371.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
-pseudo_AFW (Turkey Point),145,777.0,1385.0,884.0,1424.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
-pseudo_AFW (Turkey Point),146,1403.0,1324.0,1526.0,1363.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
-pseudo_AFW (Turkey Point),147,1419.0,1377.0,1526.0,1416.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
-pseudo_AFW (Turkey Point),148,1931.0,1316.0,2043.0,1356.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
-pseudo_AFW (Turkey Point),149,1920.0,1369.0,2044.0,1409.0,VLV_GATE,NONE,XVM,yes,one box holds two valves in series
+pseudo_AFW (Turkey Point),144,777.0,1332.0,884.0,1371.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
+pseudo_AFW (Turkey Point),145,777.0,1385.0,884.0,1424.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
+pseudo_AFW (Turkey Point),146,1403.0,1324.0,1526.0,1363.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
+pseudo_AFW (Turkey Point),147,1419.0,1377.0,1526.0,1416.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
+pseudo_AFW (Turkey Point),148,1931.0,1316.0,2043.0,1356.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
+pseudo_AFW (Turkey Point),149,1920.0,1369.0,2044.0,1409.0,VLV_GATE,NONE,XVM,,one box holds two valves in series (confirmed on review)
 pseudo_AFW (Turkey Point),150,567.0,1402.0,643.0,1453.0,OTHER,-,,yes,rounded block beside the pump turbine (meaning not given on page)
 pseudo_AFW (Turkey Point),151,1209.0,1394.0,1285.0,1446.0,OTHER,-,,yes,rounded block beside the pump turbine (meaning not given on page)
 pseudo_AFW (Turkey Point),152,1724.0,1387.0,1801.0,1438.0,OTHER,-,,yes,rounded block beside the pump turbine (meaning not given on page)
@@ -934,7 +934,7 @@ pseudo_AFW (Vogtle),11,876.0,1227.0,910.0,1283.0,VLV_GATE,NONE,XVM,,locked open 
 pseudo_AFW (Vogtle),12,1017.0,1230.0,1050.0,1285.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),13,1857.0,1120.0,1953.0,1182.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),14,1491.0,2054.0,1533.0,2113.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Vogtle),15,1237.0,2190.0,1273.0,2246.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),15,1237.0,2190.0,1273.0,2246.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),16,951.0,2045.0,992.0,2102.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),17,1827.0,2055.0,1870.0,2114.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),18,1573.0,1837.0,1606.0,1892.0,VLV_GATE,NONE,XVM,,locked open (LO)
@@ -954,7 +954,7 @@ pseudo_AFW (Vogtle),31,875.0,1006.0,907.0,1060.0,VLV_GATE,NONE,XVM,,locked open 
 pseudo_AFW (Vogtle),32,1816.0,1677.0,1855.0,1733.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),33,1225.0,1533.0,1256.0,1585.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),34,1745.0,1409.0,1800.0,1442.0,VLV_GATE,NONE,XVM,,locked closed (LC)
-pseudo_AFW (Vogtle),35,1835.0,2196.0,1871.0,2248.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),35,1835.0,2196.0,1871.0,2248.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),36,1714.0,1011.0,1745.0,1065.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),37,1820.0,1542.0,1852.0,1596.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),38,1320.0,1121.0,1398.0,1179.0,VLV_GATE,MOTOR,MOV,,
@@ -968,30 +968,30 @@ pseudo_AFW (Vogtle),45,940.0,1526.0,979.0,1583.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),46,1574.0,1236.0,1606.0,1291.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),47,674.0,2067.0,767.0,2131.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),48,1313.0,2718.0,1353.0,2772.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Vogtle),49,956.0,2189.0,988.0,2244.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),49,956.0,2189.0,988.0,2244.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),50,820.0,2707.0,855.0,2759.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),51,1156.0,1114.0,1257.0,1174.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),52,676.0,2155.0,768.0,2219.0,VLV_GATE,MOTOR,MOV,,stippled body (normally closed)
 pseudo_AFW (Vogtle),53,676.0,1970.0,767.0,2035.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),54,1600.0,2510.0,1709.0,2567.0,VLV_CHECK,MOTOR,CKV,,stop-check valve with motor operator
-pseudo_AFW (Vogtle),55,1500.0,2193.0,1534.0,2249.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),55,1500.0,2193.0,1534.0,2249.0,VLV_BUTTERFLY,MOTOR,MOV,,"motor-operated butterfly valve (its motor operator is drawn on a stem to the left, boxed separately as #72)"
 pseudo_AFW (Vogtle),56,391.0,1369.0,422.0,1421.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),57,508.0,1521.0,542.0,1567.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),58,1261.0,2722.0,1300.0,2770.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),59,1223.0,1810.0,1285.0,1912.0,PUMP,MOTOR,MDP,,motor-driven AFW pump
-pseudo_AFW (Vogtle),60,1401.0,2534.0,1454.0,2572.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
-pseudo_AFW (Vogtle),61,1402.0,2654.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),60,1401.0,2534.0,1454.0,2572.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),61,1402.0,2654.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),62,1662.0,2394.0,1705.0,2453.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Vogtle),63,1401.0,2591.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
-pseudo_AFW (Vogtle),64,669.0,1109.0,702.0,1169.0,VLV_GATE,NONE,XVM,yes,valve with its motor operator boxed separately (box 70)
-pseudo_AFW (Vogtle),65,901.0,2598.0,955.0,2630.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),63,1401.0,2591.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),64,669.0,1109.0,702.0,1169.0,VLV_GATE,MOTOR,MOV,,body of the motor-operated valve HV-5120 (box inside #70)
+pseudo_AFW (Vogtle),65,901.0,2598.0,955.0,2630.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),66,1825.0,1816.0,1897.0,1918.0,PUMP,MOTOR,MDP,,motor-driven AFW pump
 pseudo_AFW (Vogtle),67,344.0,1369.0,422.0,1422.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW (Vogtle),68,901.0,2662.0,954.0,2692.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
-pseudo_AFW (Vogtle),69,900.0,2534.0,955.0,2568.0,VLV_BUTTERFLY,NONE,XVM,yes,"butterfly valve, locked open (LO) where marked"
+pseudo_AFW (Vogtle),68,901.0,2662.0,954.0,2692.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),69,900.0,2534.0,955.0,2568.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),70,599.0,1109.0,706.0,1169.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW (Vogtle),71,420.0,2019.0,528.0,2069.0,OTHER,-,,yes,"main steam header branch (arrows), not a symbol"
-pseudo_AFW (Vogtle),72,1433.0,2203.0,1470.0,2240.0,OTHER,-,,yes,"motor operator drawn alone (S115), valve not boxed with it"
+pseudo_AFW (Vogtle),71,420.0,2019.0,528.0,2069.0,OTHER,-,,,"main steam header branch (arrows), not a symbol (confirmed on review)"
+pseudo_AFW (Vogtle),72,1433.0,2203.0,1470.0,2240.0,OTHER,-,,,"motor operator drawn alone (S115), valve not boxed with it (confirmed on review)"
 pseudo_AFW (Vogtle),73,704.0,2521.0,902.0,2709.0,TANK,-,TNK,,condensate storage tank (CST)
 pseudo_AFW (Vogtle),74,1200.0,2521.0,1381.0,2709.0,TANK,-,TNK,,condensate storage tank (CST)
 pseudo_AFW (Vogtle),75,694.0,1760.0,1006.0,1940.0,PUMP,TURBINE,TDP,,turbine-driven AFW pump with its turbine (dashed)
@@ -1051,7 +1051,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,0,1214.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,1,2115.0,621.0,2200.0,738.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,2,2538.0,2118.0,2625.0,2210.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,3,1449.0,1511.0,1575.0,1587.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,4,2624.0,2248.0,2702.0,2337.0,FILTER,-,STR,,silencer on the turbine exhaust
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,4,2624.0,2248.0,2702.0,2337.0,OTHER,-,,,"silencer on the turbine exhaust (S in a box, labelled SILENCER)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,5,2373.0,1631.0,2450.0,1776.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,6,1815.0,1511.0,1940.0,1580.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,7,1164.0,482.0,1301.0,598.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
@@ -1152,8 +1152,8 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,20,2183
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,21,2047.0,1271.0,2173.0,1465.0,VLV_GATE,MOTOR,MOV,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,22,1478.0,1517.0,1604.0,1587.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,23,1850.0,1521.0,1975.0,1587.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,24,1345.0,2226.0,1438.0,2302.0,FILTER,-,STR,,"silencer on the turbine exhaust (S1, S2)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,25,2048.0,2232.0,2140.0,2309.0,FILTER,-,STR,,"silencer on the turbine exhaust (S1, S2)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,24,1345.0,2226.0,1438.0,2302.0,OTHER,-,,,silencer (S1 box) on the turbine exhaust
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,25,2048.0,2232.0,2140.0,2309.0,OTHER,-,,,silencer (S2 box) on the turbine exhaust
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,0,1403.0,988.0,1499.0,1129.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,1,1046.0,1001.0,1130.0,1131.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,2,1708.0,261.0,1790.0,403.0,VLV_GATE,MOTOR,MOV,,
@@ -1181,11 +1181,11 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,23,810.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,24,741.0,2061.0,825.0,2121.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,25,321.0,2077.0,396.0,2129.0,OFFPAGE,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,26,899.0,345.0,996.0,399.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,27,1393.0,548.0,1543.0,635.0,VLV_GATE,UNSPEC,,,"startup control valve, solid body (normally closed), operator type not given"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,27,1393.0,548.0,1543.0,635.0,VLV_GATE,AIR,AOV,,startup feed control valve with a piston (cylinder) operator
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,28,1220.0,1316.0,1320.0,1353.0,ORIFICE,-,ORF,,flow element FE 2657
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,29,1237.0,1466.0,1289.0,1547.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,30,1178.0,1643.0,1296.0,1805.0,PUMP,UNSPEC,PMP,,startup feed pump (driver not shown)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,31,954.0,525.0,1152.0,638.0,VLV_GATE,UNSPEC,,,"startup control valve, solid body (normally closed), operator type not given"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,31,954.0,525.0,1152.0,638.0,VLV_GATE,AIR,AOV,,startup feed control valve with a piston (cylinder) operator
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,32,438.0,260.0,631.0,643.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,33,1950.0,236.0,2141.0,625.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,34,322.0,2309.0,513.0,2696.0,TANK,-,TNK,,deaerator storage tank
@@ -1328,11 +1328,11 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,28,620.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,29,2734.0,417.0,3124.0,613.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,30,2743.0,1954.0,3139.0,2148.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,31,2005.0,1205.0,2043.0,1308.0,ORIFICE,-,ORF,,flow element FE 2657
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,32,2736.0,1385.0,2825.0,1573.0,VLV_GATE,UNSPEC,,,"startup control valve, solid body (normally closed), operator type not given"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,33,2737.0,963.0,2833.0,1143.0,VLV_GATE,UNSPEC,,,"startup control valve, solid body (normally closed), operator type not given"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,32,2736.0,1385.0,2825.0,1573.0,VLV_GATE,AIR,AOV,,"startup control valve SP7A with a piston (cylinder) operator, solid body"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,33,2737.0,963.0,2833.0,1143.0,VLV_GATE,AIR,AOV,,"startup control valve SP7B with a piston (cylinder) operator, solid body"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,34,2977.0,752.0,3121.0,834.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,35,1546.0,1162.0,1710.0,1282.0,PUMP,UNSPEC,PMP,,startup feed pump (driver not shown)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,36,730.0,1698.0,891.0,1789.0,VLV_GATE,UNSPEC,,yes,valve with a boxed operator (type not given on page)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,36,730.0,1698.0,891.0,1789.0,VLV_GATE,AIR,AOV,,valve FW-423 with a piston (cylinder) operator
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,0,1689.0,585.0,1782.0,681.0,PUMP,MOTOR,MDP,,"motor-driven AFW pump (P-504, P-141)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,1,1927.0,1199.0,2003.0,1240.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,2,1262.0,1296.0,1335.0,1393.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
@@ -1370,7 +1370,7 @@ pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,33,2249.0,5
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,34,1818.0,570.0,1889.0,612.0,ORIFICE,-,ORF,,cavitating venturi
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,35,2219.0,908.0,2294.0,1004.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,36,2524.0,2030.0,2602.0,2127.0,VLV_GATE,EH,HOV,,"electro-hydraulic valve, fail closed (FC)"
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,37,1807.0,1201.0,1899.0,1248.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,37,1807.0,1201.0,1899.0,1248.0,ORIFICE,-,ORF,,"cavitating venturi (as the page legend and #26, #34)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,38,1115.0,1648.0,1158.0,1684.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,39,1555.0,694.0,1624.0,731.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,40,2528.0,1798.0,2611.0,1903.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
@@ -1387,7 +1387,7 @@ pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,50,1157.0,8
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,51,2165.0,515.0,2238.0,607.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,52,809.0,580.0,1023.0,860.0,TANK,-,TNK,,"condensate storage tank (T-120, T-121)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,53,1303.0,560.0,1452.0,860.0,TANK,-,TNK,,"condensate storage tank (T-120, T-121)"
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,54,1695.0,1168.0,1826.0,1260.0,TURBINE,-,,,AFW pump turbine (K-140)
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,54,1695.0,1168.0,1826.0,1260.0,PUMP,TURBINE,TDP,,turbine-driven AFW pump P-140 drawn as the turbine trapezoid only
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,55,2510.0,743.0,2585.0,837.0,VLV_GATE,EH,HOV,,"electro-hydraulic valve, fail closed (FC)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,56,2209.0,1389.0,2272.0,1483.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,57,2156.0,1801.0,2224.0,1893.0,VLV_GATE,MOTOR,MOV,,"motor valve, fail as is (FL)"
@@ -1417,7 +1417,7 @@ pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary 
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,21,1746.0,849.0,1780.0,893.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,22,1602.0,360.0,1655.0,395.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,23,1602.0,852.0,1655.0,886.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,24,1260.0,1438.0,1312.0,1479.0,VLV_GLOBE,NONE,XVM,yes,globe-type body
+pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,24,1260.0,1438.0,1312.0,1479.0,VLV_3WAY,NONE,XVM,,"three-way valve: three triangles meet at one point, third port to the recirculation branch"
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,25,672.0,958.0,724.0,992.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,26,672.0,1165.0,724.0,1236.0,VLV_GATE,AIR,AOV,,AFW flow control valve
 pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat,27,672.0,1513.0,724.0,1548.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
@@ -1880,7 +1880,7 @@ pseudo_CCWS_APR1400,116,3652.0,2645.0,3951.0,2710.0,CHILLER,-,CHL,,compound buil
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",11,993.0,1206.0,1039.0,1230.0,VLV_GATE,NONE,XVM,,
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",12,1544.0,1170.0,1589.0,1194.0,VLV_GATE,NONE,XVM,,
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",13,2237.0,997.0,2271.0,1032.0,VLV_RELIEF,NONE,SRV,,relief valve (RV-CC-116A/B/C)
-"pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",14,2788.0,1145.0,2832.0,1180.0,VLV_GATE,AIR,AOV,yes,"operator symbol over the body, fail closed (F.C.), TV-CC107"
+"pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",14,2788.0,1145.0,2832.0,1180.0,VLV_GATE,AIR,AOV,,"operator symbol over the body, fail closed (F.C.), TV-CC107 (confirmed on review)"
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",15,510.0,1061.0,533.0,1104.0,VLV_GATE,NONE,XVM,,
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",16,2444.0,1234.0,2489.0,1269.0,VLV_GATE,AIR,AOV,yes,"operator symbol over the body, fail open (FO)"
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",17,695.0,998.0,741.0,1022.0,VLV_GATE,NONE,XVM,,
@@ -1891,7 +1891,7 @@ pseudo_CCWS_APR1400,116,3652.0,2645.0,3951.0,2710.0,CHILLER,-,CHL,,compound buil
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",22,889.0,981.0,932.0,1013.0,VLV_CHECK,NONE,CKV,,
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",23,700.0,1217.0,745.0,1241.0,VLV_GATE,NONE,XVM,,
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",24,988.0,987.0,1032.0,1011.0,VLV_GATE,NONE,XVM,,
-"pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",25,2776.0,1456.0,2842.0,1491.0,VLV_GATE,UNSPEC,,yes,valve with a small operator mark (type not given)
+"pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",25,2776.0,1456.0,2842.0,1491.0,VLV_GATE,AIR,AOV,,"air-operated valve (diaphragm dome on a short stem, as TV-CC107)"
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",26,1245.0,1171.0,1290.0,1195.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",27,2238.0,1199.0,2273.0,1235.0,VLV_RELIEF,NONE,SRV,,relief valve (RV-CC-116A/B/C)
 "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I",28,2311.0,1145.0,2394.0,1217.0,PUMP,MOTOR,MDP,,"reactor coolant pump RCP 1, 2, 3 (CCW heat load)"
@@ -1918,7 +1918,7 @@ pseudo_CSS (APR1400),8,1457.0,1806.0,1475.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),9,2056.0,1806.0,2075.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),10,988.0,2090.0,1007.0,2121.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),11,1761.0,1435.0,1792.0,1466.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
-pseudo_CSS (APR1400),12,557.0,1944.0,592.0,1975.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
+pseudo_CSS (APR1400),12,557.0,1944.0,592.0,1975.0,VLV_GATE,NONE,XVM,,"locked closed (LC), handwheel, solid body"
 pseudo_CSS (APR1400),13,1161.0,1436.0,1192.0,1466.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_CSS (APR1400),14,1149.0,1806.0,1168.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),15,1412.0,1360.0,1455.0,1391.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
@@ -2000,8 +2000,8 @@ pseudo_CSS (APR1400),71,1838.0,879.1,1872.1,909.8,INSTR,-,,,"flow transmitter (F
 "pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",19,2132.0,797.0,2400.0,1055.0,SPARGER,-,,,containment spray header
 "pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",20,2466.0,481.0,2817.0,843.0,SPARGER,-,,,containment spray header
 "pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",21,2463.0,993.0,2815.0,1353.0,SPARGER,-,,,containment spray header
-"pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",22,1955.0,1274.0,2071.0,1327.0,ORIFICE,-,ORF,yes,pipe cap / blind flange on the line to the outside spray recirculation
-"pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",23,2090.0,1274.0,2207.0,1328.0,ORIFICE,-,ORF,yes,pipe cap / blind flange on the line to the outside spray recirculation
+"pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",22,1955.0,1274.0,2071.0,1327.0,OTHER,-,,yes,"blind flange (flange, blind, flange) on the line TO OSR; could be an orifice"
+"pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In",23,2090.0,1274.0,2207.0,1328.0,OTHER,-,,yes,"blind flange (flange, blind, flange) on the line TO OSR; could be an orifice"
 pseudo_Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F,0,1605.0,1100.0,1630.0,1144.0,VLV_GATE,NONE,XVM,,manual valve (XV)
 pseudo_Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F,1,493.0,1325.0,517.0,1369.0,VLV_GATE,NONE,XVM,,manual valve (XV)
 pseudo_Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F,2,1233.0,1327.0,1321.0,1396.0,PUMP,MOTOR,MDP,,"motor-driven charging pump cooling pump (MDPCC2A, 2B)"
@@ -2299,7 +2299,7 @@ pseudo_ECWS_APR1400,36,1937.0,841.0,1975.0,862.0,VLV_BUTTERFLY,NONE,XVM,,
 pseudo_ECWS_APR1400,37,786.0,853.0,815.0,870.0,VLV_GLOBE,NONE,XVM,,
 pseudo_ECWS_APR1400,38,2565.0,1512.0,2582.0,1541.0,VLV_GLOBE,NONE,XVM,,
 pseudo_ECWS_APR1400,39,997.0,929.0,1027.0,947.0,VLV_CHECK,NONE,CKV,,
-pseudo_ECWS_APR1400,40,2123.0,1958.0,2162.0,1976.0,VLV_GATE,AIR,AOV,yes,cylinder operator drawn half filled (loaded)
+pseudo_ECWS_APR1400,40,2123.0,1958.0,2162.0,1976.0,VLV_3WAY,AIR,AOV,,"air-operated three-way valve: body at the tee, all three ports piped, cylinder operator"
 pseudo_ECWS_APR1400,41,837.0,853.0,867.0,871.0,VLV_CHECK,NONE,CKV,,
 pseudo_ECWS_APR1400,42,2052.0,792.0,2253.0,912.0,CHILLER,-,CHL,,"essential chiller (CH01A, CH02A)"
 pseudo_ECWS_APR1400,43,2052.0,997.0,2253.0,1117.0,CHILLER,-,CHL,,"essential chiller (CH01A, CH02A)"
@@ -2308,10 +2308,10 @@ pseudo_ECWS_APR1400,45,2111.0,2000.0,2327.0,2073.0,AHU,-,,,control room supply a
 pseudo_ECWS_APR1400,46,827.0,637.0,857.0,654.0,VLV_CHECK,NONE,CKV,,
 pseudo_ECWS_APR1400,47,2708.0,1512.0,2725.0,1541.0,VLV_GLOBE,NONE,XVM,,
 pseudo_ECWS_APR1400,48,2626.0,1561.0,2656.0,1578.0,VLV_GLOBE,NONE,XVM,,
-pseudo_ECWS_APR1400,49,2545.0,1561.0,2584.0,1579.0,VLV_GATE,AIR,AOV,yes,cylinder operator drawn half filled (loaded)
-pseudo_ECWS_APR1400,50,2547.0,1958.0,2586.0,1976.0,VLV_GATE,AIR,AOV,yes,cylinder operator drawn half filled (loaded)
+pseudo_ECWS_APR1400,49,2545.0,1561.0,2584.0,1579.0,VLV_3WAY,AIR,AOV,,"air-operated three-way valve: body at the tee, all three ports piped, cylinder operator"
+pseudo_ECWS_APR1400,50,2547.0,1958.0,2586.0,1976.0,VLV_3WAY,AIR,AOV,,"air-operated three-way valve: body at the tee, all three ports piped, cylinder operator"
 pseudo_ECWS_APR1400,51,884.0,1959.0,914.0,1976.0,VLV_GLOBE,NONE,XVM,,
-pseudo_ECWS_APR1400,52,806.0,1958.0,845.0,1976.0,VLV_GATE,AIR,AOV,yes,cylinder operator drawn half filled (loaded)
+pseudo_ECWS_APR1400,52,806.0,1958.0,845.0,1976.0,VLV_3WAY,AIR,AOV,,"air-operated three-way valve: body at the tee, all three ports piped, cylinder operator"
 pseudo_ECWS_APR1400,53,665.0,853.0,694.0,870.0,VLV_GLOBE,NONE,XVM,,
 pseudo_ECWS_APR1400,54,1252.3,1999.1,1459.3,2077.6,AHU,-,,,area cubicle coolers (heat load)
 pseudo_ECWS_APR1400,55,1699.6,1994.4,1899.4,2074.1,AHU,-,,,area cubicle coolers (heat load)
@@ -2394,8 +2394,8 @@ pseudo_ECWS_APR1400,60,817.0,2000.4,1004.6,2071.3,AHU,-,,,EDG room normal supply
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",0,641.0,1065.0,711.0,1117.0,CHARGER,-,BCH,,rectifier assembly
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",1,1321.0,921.0,1509.0,1007.0,TRANSFORMER,-,TFM,,"transformer 1B1-1, 1B1-2"
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",2,641.0,902.0,828.0,989.0,TRANSFORMER,-,TFM,,"transformer 1B1-1, 1B1-2"
-"pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",3,609.0,1713.0,760.0,1763.0,SWITCH,-,,yes,contacts linked by a dashed line (static transfer switch)
-"pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",4,942.0,1712.0,1082.0,1762.0,SWITCH,-,,yes,contacts linked by a dashed line (static transfer switch)
+"pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",3,609.0,1713.0,760.0,1763.0,SWITCH,-,,,contacts linked by a dashed line (static transfer switch) (confirmed on review)
+"pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",4,942.0,1712.0,1082.0,1762.0,SWITCH,-,,,contacts linked by a dashed line (static transfer switch) (confirmed on review)
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",5,586.0,1495.0,761.0,1608.0,INVERTER,-,INV,,inverter UPS B1
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",6,1425.0,2381.0,1566.0,2486.0,BREAKER,-,CRB,,molded case circuit breaker
 "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2",7,630.0,585.0,772.0,686.0,BREAKER,-,CRB,,molded case circuit breaker
@@ -2463,25 +2463,25 @@ pseudo_Feedwater system_(Surry) FSAR,9,1157.0,800.0,1251.0,882.0,PUMP,UNSPEC,PMP
 pseudo_Feedwater system_(Surry) FSAR,10,1796.0,2012.0,1890.0,2094.0,PUMP,UNSPEC,PMP,,auxiliary feedwater booster pump
 pseudo_Feedwater system_(Surry) FSAR,11,1796.0,1910.0,1890.0,1992.0,PUMP,UNSPEC,PMP,,auxiliary feedwater booster pump
 pseudo_Feedwater system_(Surry) FSAR,12,999.0,1708.0,1081.0,1802.0,PUMP,UNSPEC,PMP,,auxiliary feedwater pump (driver not shown)
-pseudo_Feedwater system_(Surry) FSAR,13,2522.0,1392.0,2590.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,13,2522.0,1392.0,2590.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,14,1892.0,530.0,1966.0,600.0,VLV_GATE,AIR,AOV,,"feedwater bypass valve, solid body (normally closed)"
 pseudo_Feedwater system_(Surry) FSAR,15,1185.0,1708.0,1269.0,1802.0,PUMP,UNSPEC,PMP,,auxiliary feedwater pump (driver not shown)
 pseudo_Feedwater system_(Surry) FSAR,16,1370.0,1708.0,1452.0,1802.0,PUMP,UNSPEC,PMP,,auxiliary feedwater pump (driver not shown)
 pseudo_Feedwater system_(Surry) FSAR,17,1119.0,1906.0,1145.0,1968.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_Feedwater system_(Surry) FSAR,18,2608.0,1392.0,2676.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,18,2608.0,1392.0,2676.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,19,1029.0,1906.0,1055.0,1968.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_Feedwater system_(Surry) FSAR,20,1388.0,768.0,1464.0,836.0,VLV_GATE,MOTOR,MOV,,motor-operated valve (legend on page)
-pseudo_Feedwater system_(Surry) FSAR,21,2166.0,1392.0,2234.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,21,2166.0,1392.0,2234.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,22,1215.0,1906.0,1241.0,1968.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_Feedwater system_(Surry) FSAR,23,2566.0,746.0,2612.0,826.0,VLV_CHECK,NONE,CKV,,stop-check valve (legend on page)
 pseudo_Feedwater system_(Surry) FSAR,24,1892.0,920.0,1966.0,998.0,VLV_GATE,AIR,AOV,,"feedwater bypass valve, solid body (normally closed)"
 pseudo_Feedwater system_(Surry) FSAR,25,2620.0,1130.0,2678.0,1210.0,VLV_CHECK,NONE,CKV,,stop-check valve (legend on page)
-pseudo_Feedwater system_(Surry) FSAR,26,2424.0,1392.0,2492.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,26,2424.0,1392.0,2492.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,27,1398.0,1906.0,1424.0,1968.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_Feedwater system_(Surry) FSAR,28,1460.0,1906.0,1486.0,1968.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_Feedwater system_(Surry) FSAR,29,2340.0,1392.0,2406.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,29,2340.0,1392.0,2406.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,30,1506.0,2002.0,1572.0,2028.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_Feedwater system_(Surry) FSAR,31,2252.0,1392.0,2320.0,1458.0,VLV_GATE,UNSPEC,,yes,valve with a square operator on the side (type not given on page)
+pseudo_Feedwater system_(Surry) FSAR,31,2252.0,1392.0,2320.0,1458.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve: operator drawn as the page legend 'Motor-Operated Valve' (trapezoid with cap), turned 90 degrees"
 pseudo_Feedwater system_(Surry) FSAR,32,2404.0,666.0,2486.0,716.0,VLV_CHECK,NONE,CKV,,stop-check valve (legend on page)
 pseudo_Feedwater system_(Surry) FSAR,33,2050.0,790.0,2080.0,866.0,VLV_GATE,NONE,XVM,,
 pseudo_Feedwater system_(Surry) FSAR,34,2190.0,1292.0,2246.0,1372.0,VLV_CHECK,NONE,CKV,,stop-check valve (legend on page)
@@ -2759,13 +2759,13 @@ pseudo_Instrument Air (APR1400),56,660.0,1600.0,792.0,1724.0,DRYER,-,,,instrumen
 pseudo_Instrument Air (APR1400),57,1441.0,1063.0,1523.0,1210.0,TANK,-,TNK,,closed loop surge tank (TK03)
 pseudo_Instrument Air (APR1400),58,1418.0,1248.0,1478.0,1468.0,PANEL,-,,,CLCS control panel (LP06)
 pseudo_Instrument Air (APR1400),59,1506.0,1714.0,1594.0,1896.0,HX,-,HTX,,closed loop cooling tower (HE03)
-pseudo_Instrument Air (APR1400),60,661.0,2081.0,740.0,2171.0,VLV_GATE,AIR,AOV,,"air-operated valve with its tag circle (005, 006), fail open (FO)"
+pseudo_Instrument Air (APR1400),60,661.0,2081.0,740.0,2171.0,VLV_GLOBE,AIR,AOV,,"air-operated globe valve (dot at the body centre), solenoid pilot, FO"
 pseudo_Instrument Air (APR1400),61,617.0,2055.0,694.0,2122.0,VLV_3WAY,SOLENOID,SOV,,solenoid pilot valve on the instrument air supply (S)
 pseudo_Instrument Air (APR1400),62,1184.0,1111.0,1256.0,1216.0,VLV_REGULATOR,NONE,XVM,,"self-actuated pressure regulator with its tag circle (1027, 1034)"
 pseudo_Instrument Air (APR1400),63,668.0,1111.0,740.0,1218.0,VLV_REGULATOR,NONE,XVM,,"self-actuated pressure regulator with its tag circle (1027, 1034)"
 pseudo_Instrument Air (APR1400),64,1566.0,1036.0,1606.0,1091.0,FILTER,-,STR,,strainer ST03
 pseudo_Instrument Air (APR1400),65,1132.0,2055.0,1208.0,2123.0,VLV_3WAY,SOLENOID,SOV,,solenoid pilot valve on the instrument air supply (S)
-pseudo_Instrument Air (APR1400),66,1171.0,2079.0,1255.0,2172.0,VLV_GATE,AIR,AOV,,"air-operated valve with its tag circle (005, 006), fail open (FO)"
+pseudo_Instrument Air (APR1400),66,1171.0,2079.0,1255.0,2172.0,VLV_GLOBE,AIR,AOV,,"air-operated globe valve (dot at the body centre), solenoid pilot, FO"
 pseudo_Instrument Air (APR1400),67,769.0,595.0,821.0,624.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_Instrument Air (APR1400),68,712.0,471.0,739.0,563.0,OFFPAGE,-,,,instrument air supply
 pseudo_Instrument Air (APR1400),69,940.0,1916.0,967.0,2006.0,OFFPAGE,-,,,service air supply
@@ -2880,7 +2880,7 @@ pseudo_Main Steam System_APR1400,63,1947.0,1503.0,1978.0,1564.0,VLV_GATE,EH,HOV,
 pseudo_Main Steam System_APR1400,64,1948.0,1580.0,1980.0,1641.0,VLV_GATE,EH,HOV,,"turbine stop valve, electro-hydraulic operator"
 pseudo_Main Steam System_APR1400,65,1947.0,1641.0,1980.0,1707.0,VLV_GATE,EH,HOV,,"turbine stop valve, electro-hydraulic operator"
 pseudo_Main Steam system_(Surry) FSAR,0,1860.0,1378.0,1984.0,1426.0,VLV_GATE,NONE,XVM,,"reheat steam inlet valve, solid body (normally closed)"
-pseudo_Main Steam system_(Surry) FSAR,1,1395.0,986.0,1479.0,1152.0,VLV_ANGLE,MOTOR,MOV,,main steam non-return valve (M)
+pseudo_Main Steam system_(Surry) FSAR,1,1395.0,986.0,1479.0,1152.0,VLV_CHECK,MOTOR,CKV,,"main steam non-return valve (text NON RETURN VALVE), angle body with motor operator (stop-check)"
 pseudo_Main Steam system_(Surry) FSAR,2,293.0,974.0,495.0,1514.0,STEAM_GEN,-,,,
 pseudo_Main Steam system_(Surry) FSAR,3,1938.0,1052.0,2248.0,1215.0,TURBINE,-,,,HP turbine
 pseudo_Main Steam system_(Surry) FSAR,4,2564.0,1046.0,2811.0,1202.0,TURBINE,-,,,LP turbines
@@ -2938,9 +2938,9 @@ pseudo_RCS-POSRV (APR1400),5,985.0,485.0,1081.0,571.0,VLV_RELIEF,NONE,SRV,,safet
 pseudo_RCS-POSRV (APR1400),6,1186.0,924.0,1290.0,1006.0,VLV_RELIEF,NONE,SRV,,safety relief valve with its tag circle (1401-1404)
 pseudo_RCS-POSRV (APR1400),7,803.0,395.0,839.0,442.0,RUPTURE_DISC,-,,,"rupture disc (RD01A, RD01B)"
 pseudo_RCS-POSRV (APR1400),8,793.0,832.0,829.0,879.0,RUPTURE_DISC,-,,,"rupture disc (RD01A, RD01B)"
-pseudo_RCS-POSRV (APR1400),9,802.0,602.0,881.0,687.0,VLV_GLOBE,MOTOR,MOV,,"rapid depressurization valve with its tag circle (385, 386), solid body (normally closed)"
+pseudo_RCS-POSRV (APR1400),9,802.0,602.0,881.0,687.0,VLV_3WAY,MOTOR,MOV,,"motor-operated three-way valve: three triangles meet at the centre (top port solid), rapid depressurization line"
 pseudo_RCS-POSRV (APR1400),10,1193.0,485.0,1293.0,569.0,VLV_RELIEF,NONE,SRV,,safety relief valve with its tag circle (1401-1404)
-pseudo_RCS-POSRV (APR1400),11,792.0,1048.0,871.0,1134.0,VLV_GLOBE,MOTOR,MOV,,"rapid depressurization valve with its tag circle (385, 386), solid body (normally closed)"
+pseudo_RCS-POSRV (APR1400),11,792.0,1048.0,871.0,1134.0,VLV_3WAY,MOTOR,MOV,,"motor-operated three-way valve: three triangles meet at the centre (top port solid), rapid depressurization line"
 pseudo_RCS-POSRV (APR1400),12,1813.0,1890.0,1898.0,1962.0,HEATER,-,,,pressurizer heater
 pseudo_RCS-POSRV (APR1400),13,1812.0,2068.0,1897.0,2135.0,HEATER,-,,,pressurizer heater
 pseudo_RCS-POSRV (APR1400),14,1504.0,1901.0,1532.0,1934.0,SPARGER,-,,,pressurizer spray nozzle
@@ -2980,10 +2980,10 @@ pseudo_RCS-POSRV (APR1400),47,695.0,1156.0,766.0,1253.0,VLV_RELIEF,NONE,SRV,,pil
 pseudo_RCS-POSRV (APR1400),48,699.0,1587.0,770.0,1674.0,VLV_RELIEF,NONE,SRV,,pilot-operated safety relief valve (POSRV) with its tag circle (200-203)
 pseudo_RCS-POSRV (APR1400),49,703.0,2022.0,773.0,2109.0,VLV_RELIEF,NONE,SRV,,pilot-operated safety relief valve (POSRV) with its tag circle (200-203)
 pseudo_RCS-POSRV (APR1400),50,691.0,2459.0,772.0,2543.0,VLV_RELIEF,NONE,SRV,,pilot-operated safety relief valve (POSRV) with its tag circle (200-203)
-pseudo_RCS-POSRV (APR1400),51,623.0,1160.0,660.0,1210.0,INSTR,-,,yes,P box on the pilot line (pressure sensing device)
-pseudo_RCS-POSRV (APR1400),52,624.0,1592.0,660.0,1642.0,INSTR,-,,yes,P box on the pilot line (pressure sensing device)
-pseudo_RCS-POSRV (APR1400),53,628.0,2027.0,664.0,2077.0,INSTR,-,,yes,P box on the pilot line (pressure sensing device)
-pseudo_RCS-POSRV (APR1400),54,626.0,2463.0,663.0,2513.0,INSTR,-,,yes,P box on the pilot line (pressure sensing device)
+pseudo_RCS-POSRV (APR1400),51,623.0,1160.0,660.0,1210.0,OTHER,-,,,"P box: pilot of the adjacent POSRV (APR1400 legend: pilot operated safety relief), not an instrument"
+pseudo_RCS-POSRV (APR1400),52,624.0,1592.0,660.0,1642.0,OTHER,-,,,"P box: pilot of the adjacent POSRV (APR1400 legend: pilot operated safety relief), not an instrument"
+pseudo_RCS-POSRV (APR1400),53,628.0,2027.0,664.0,2077.0,OTHER,-,,,"P box: pilot of the adjacent POSRV (APR1400 legend: pilot operated safety relief), not an instrument"
+pseudo_RCS-POSRV (APR1400),54,626.0,2463.0,663.0,2513.0,OTHER,-,,,"P box: pilot of the adjacent POSRV (APR1400 legend: pilot operated safety relief), not an instrument"
 pseudo_RCS-POSRV (APR1400),55,1934.0,735.0,2004.0,808.0,INSTR,-,,,
 pseudo_RCS-POSRV (APR1400),56,1935.0,801.0,2005.0,876.0,INSTR,-,,,
 pseudo_RCS-POSRV (APR1400),57,1936.0,868.0,2006.0,943.0,INSTR,-,,,
@@ -3045,7 +3045,7 @@ pseudo_RHR_(Surry) FSAR,5,1285.0,740.0,1356.0,799.0,VLV_GATE,MOTOR,MOV,,"motor-o
 pseudo_RHR_(Surry) FSAR,6,1334.0,1455.0,1403.0,1517.0,VLV_GATE,NONE,XVM,,"motor-operated valve with the motor removed (manual), solid body (normally closed)"
 pseudo_RHR_(Surry) FSAR,7,933.0,1388.0,1003.0,1447.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve (legend on page), solid body (normally closed)"
 pseudo_RHR_(Surry) FSAR,8,933.0,1159.0,1003.0,1218.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve (legend on page), solid body (normally closed)"
-pseudo_RHR_(Surry) FSAR,9,1429.0,1416.0,1487.0,1442.0,ORIFICE,-,ORF,yes,curved bars across the pipe (orifice / venturi)
+pseudo_RHR_(Surry) FSAR,9,1429.0,1416.0,1487.0,1442.0,PENETRATION,-,,,"containment penetration (two parallel arcs, as in the Surry main steam legend), line to the RWST outside containment"
 pseudo_RHR_(Surry) FSAR,10,2173.0,1222.0,2280.0,1410.0,HX,-,HTX,,RHR heat exchanger
 pseudo_RHR_(Surry) FSAR,11,2173.0,1618.0,2280.0,1806.0,HX,-,HTX,,RHR heat exchanger
 pseudo_RHR_(Surry) FSAR,12,2013.0,611.0,2134.0,740.0,PUMP,UNSPEC,PMP,,RHR pump with its seal cooler
@@ -3058,20 +3058,20 @@ pseudo_SCS2_APR1400,4,738.0,2237.0,807.0,2312.0,VLV_GATE,MOTOR,MOV,,motor-operat
 pseudo_SCS2_APR1400,5,1605.0,2233.0,1673.0,2309.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,6,1009.0,2446.0,1081.0,2526.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,7,1698.0,1084.0,1743.0,1127.0,INSTR,-,,,"flow transmitter (FT 302A, 305B)"
-pseudo_SCS2_APR1400,8,1935.0,2001.0,2002.0,2080.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,8,1935.0,2001.0,2002.0,2080.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,9,896.0,2233.0,961.0,2309.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,10,829.0,1584.0,912.0,1649.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,11,1451.0,2237.0,1519.0,2312.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,12,1159.0,1160.0,1231.0,1238.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,13,1701.0,937.0,1777.0,1014.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,12,1159.0,1160.0,1231.0,1238.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SCS2_APR1400,13,1701.0,937.0,1777.0,1014.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,14,1042.0,1701.0,1064.0,1735.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,15,1754.0,998.0,1776.0,1032.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,16,1720.0,2201.0,1792.0,2281.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,17,563.0,2136.0,635.0,2214.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,18,1704.0,1161.0,1777.0,1235.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,19,1870.0,1161.0,1942.0,1240.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,18,1704.0,1161.0,1777.0,1235.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SCS2_APR1400,19,1870.0,1161.0,1942.0,1240.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,20,787.0,2167.0,808.0,2202.0,VLV_CHECK,NONE,CKV,,
-pseudo_SCS2_APR1400,21,1220.0,2003.0,1291.0,2080.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,21,1220.0,2003.0,1291.0,2080.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,22,862.0,2097.0,948.0,2162.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,23,1816.0,1749.0,1859.0,1787.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_SCS2_APR1400,24,1306.0,2133.0,1379.0,2212.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
@@ -3084,10 +3084,10 @@ pseudo_SCS2_APR1400,30,733.0,2348.0,807.0,2425.0,VLV_GATE,MOTOR,MOV,,motor-opera
 pseudo_SCS2_APR1400,31,1754.0,1692.0,1776.0,1726.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,32,1042.0,1001.0,1064.0,1034.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,33,1721.0,2527.0,1793.0,2607.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,34,990.0,939.0,1065.0,1016.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,34,990.0,939.0,1065.0,1016.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,35,941.0,2166.0,963.0,2200.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,36,1724.0,1609.0,1775.0,1643.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
-pseudo_SCS2_APR1400,37,1555.0,1070.0,1632.0,1142.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,37,1555.0,1070.0,1632.0,1142.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,38,564.0,2541.0,634.0,2620.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,39,1498.0,2167.0,1520.0,2201.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,40,1651.0,2166.0,1673.0,2200.0,VLV_CHECK,NONE,CKV,,
@@ -3097,7 +3097,7 @@ pseudo_SCS2_APR1400,43,1008.0,2203.0,1080.0,2283.0,VLV_GATE,MOTOR,MOV,,motor-ope
 pseudo_SCS2_APR1400,44,1040.0,772.0,1062.0,805.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,45,1444.0,1069.0,1522.0,1140.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,46,1752.0,770.0,1773.0,803.0,VLV_CHECK,NONE,CKV,,
-pseudo_SCS2_APR1400,47,994.0,1161.0,1066.0,1238.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,47,994.0,1161.0,1066.0,1238.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,48,613.0,2477.0,634.0,2512.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,49,1573.0,2095.0,1652.0,2167.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,50,1009.0,2530.0,1081.0,2609.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
@@ -3107,7 +3107,7 @@ pseudo_SCS2_APR1400,53,1753.0,705.0,1775.0,739.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,54,732.0,1071.0,810.0,1144.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,55,1105.0,1752.0,1147.0,1775.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_SCS2_APR1400,56,1752.0,818.0,1773.0,852.0,VLV_CHECK,NONE,CKV,,
-pseudo_SCS2_APR1400,57,844.0,1073.0,921.0,1145.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SCS2_APR1400,57,844.0,1073.0,921.0,1145.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,58,1483.0,1698.0,1505.0,1733.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,59,1040.0,820.0,1062.0,854.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,60,1043.0,600.0,1065.0,663.0,OFFPAGE,-,,,DVI nozzle
@@ -3144,7 +3144,7 @@ pseudo_SCS_APR1400,17,1107.0,1478.0,1173.0,1563.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS_APR1400,18,1784.0,1135.0,2032.0,1238.0,HX,-,HTX,,shutdown cooling heat exchanger (SDCHX-01)
 pseudo_SCS_APR1400,19,1219.0,1376.0,1466.0,1479.0,HX,-,HTX,,SCP miniflow heat exchanger (SCP MFHX-01)
 pseudo_SCS_APR1400,20,1461.0,1296.0,1547.0,1341.0,ORIFICE,-,ORF,,
-pseudo_SCS_APR1400,21,730.8,998.7,826.6,1066.6,OTHER,-,,yes,"ASME code class break box (1|2), not a component (box could be deleted)"
+pseudo_SCS_APR1400,21,730.8,998.7,826.6,1066.6,OTHER,-,,,"ASME code class break box (1|2), not a component (box could be deleted) (confirmed on review)"
 pseudo_SI (APR1400),0,1000.0,1781.0,1025.0,1825.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),1,1704.0,1784.0,1729.0,1828.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),2,1823.0,938.0,1848.0,982.0,VLV_CHECK,NONE,CKV,,
@@ -3213,19 +3213,19 @@ pseudo_SI (APR1400),64,1497.0,641.0,1644.0,778.0,TANK,-,TNK,,safety injection ta
 pseudo_SI (APR1400),65,490.0,2711.0,2060.0,2839.0,TANK,-,TNK,,in-containment refueling water storage tank (IRWST)
 pseudo_SI (APR1400),66,1524.0,1827.0,1572.0,1854.0,ORIFICE,-,ORF,,restriction orifice
 pseudo_SI (APR1400),67,816.0,1828.0,863.0,1854.0,ORIFICE,-,ORF,,restriction orifice
-pseudo_SI (APR1400),68,1379.0,1459.0,1462.0,1555.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),69,1490.0,1460.0,1566.0,1552.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),70,1647.0,1458.0,1731.0,1553.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),71,1764.0,1331.0,1847.0,1433.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),68,1379.0,1459.0,1462.0,1555.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SI (APR1400),69,1490.0,1460.0,1566.0,1552.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SI (APR1400),70,1647.0,1458.0,1731.0,1553.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SI (APR1400),71,1764.0,1331.0,1847.0,1433.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SI (APR1400),72,1764.0,1459.0,1847.0,1561.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),73,1062.0,1328.0,1143.0,1427.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),73,1062.0,1328.0,1143.0,1427.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SI (APR1400),74,1062.0,1455.0,1158.0,1556.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),75,936.0,1455.0,1038.0,1549.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),76,786.0,1458.0,862.0,1551.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),77,1765.0,1659.0,1785.0,1685.0,OTHER,-,,yes,test connection with cap beside the LC valve
-pseudo_SI (APR1400),78,1498.0,1660.0,1517.0,1686.0,OTHER,-,,yes,test connection with cap beside the LC valve
-pseudo_SI (APR1400),79,1051.0,1657.0,1083.0,1683.0,OTHER,-,,yes,test connection with cap beside the LC valve
-pseudo_SI (APR1400),80,777.0,1660.0,809.0,1687.0,OTHER,-,,yes,test connection with cap beside the LC valve
+pseudo_SI (APR1400),75,936.0,1455.0,1038.0,1549.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SI (APR1400),76,786.0,1458.0,862.0,1551.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
+pseudo_SI (APR1400),77,1765.0,1659.0,1785.0,1685.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
+pseudo_SI (APR1400),78,1498.0,1660.0,1517.0,1686.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
+pseudo_SI (APR1400),79,1051.0,1657.0,1083.0,1683.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
+pseudo_SI (APR1400),80,777.0,1660.0,809.0,1687.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
 pseudo_SI (APR1400),81,561.0,2323.0,658.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SI (APR1400),82,699.0,2323.0,796.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SI (APR1400),83,968.0,2320.0,1066.0,2423.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
@@ -3237,7 +3237,7 @@ pseudo_SI (APR1400),88,1618.0,880.0,1705.0,966.0,VLV_GATE,MOTOR,MOV,,motor-opera
 pseudo_SI (APR1400),89,1350.0,879.0,1439.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SI (APR1400),90,911.0,876.0,1003.0,963.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SI (APR1400),91,644.0,879.0,735.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),92,681.8,1456.7,757.7,1549.2,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),92,681.8,1456.7,757.7,1549.2,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",0,716.0,1140.0,739.0,1183.0,VLV_GATE,NONE,XVM,,manual valve (XV)
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",1,1715.0,1462.0,1749.0,1505.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve (MOV), operator box on the side"
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",2,716.0,949.0,739.0,992.0,VLV_GATE,NONE,XVM,,manual valve (XV)
@@ -3331,7 +3331,7 @@ pseudo_SWS_(Surry) FSAR,45,1960.0,1466.0,2011.0,1503.0,VLV_GATE,MOTOR,MOV,,"moto
 pseudo_SWS_(Surry) FSAR,46,1730.0,1466.0,1780.0,1503.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve, solid body (normally closed)"
 pseudo_SWS_(Surry) FSAR,47,2710.0,1516.0,2751.0,1552.0,PUMP,UNSPEC,PMP,,turbine building service water pump
 pseudo_SWS_(Surry) FSAR,48,1220.0,1027.0,1361.0,1077.0,HX,-,HTX,,component cooling heat exchangers (4)
-pseudo_SWS_(Surry) FSAR,49,1368.0,1085.0,1454.0,1406.0,OTHER,-,,yes,CCHX brominator (chemical feed)
+pseudo_SWS_(Surry) FSAR,49,1368.0,1085.0,1454.0,1406.0,BLOCK,-,,,CCHX Brominator equipment block
 pseudo_SWS_(Surry) FSAR,50,850.0,1163.0,1259.0,1358.0,CONDENSER,-,,,unit condenser
 pseudo_SWS_(Surry) FSAR,51,2096.0,1159.0,2498.0,1363.0,CONDENSER,-,,,unit condenser
 pseudo_SWS_(Surry) FSAR,52,849.0,1754.0,1258.0,1848.0,BLOCK,-,,,high level intake

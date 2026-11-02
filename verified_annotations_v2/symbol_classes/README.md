@@ -2,7 +2,7 @@
 
 **Status: pre-labels.** Every one of the 3488 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
 labeled by eye page by page and checked a second time class by class. A human review of every row is in progress;
-until it is done these labels are not verified. Rows marked `uncertain = yes` (108) are drawn ambiguously and have no
+until it is done these labels are not verified. Rows marked `uncertain = yes` (52) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
 
 **Start here: [index.md](index.md)**, one row per page with links to its overview and evidence images.
@@ -15,11 +15,11 @@ legend on their page; they are reviewed first.
   legend entry of its operator for powered valves, and the evidence written out: the page's own legend, the drawing text
   inside or next to the box, source documents (NUREG/CR-4550, INL and Davis-Besse reports), and the labeler's note.
   The header colour gives the evidence level:
-  - **A** (1625): the label is confirmed by the drawing itself (its own legend or text such as "MOV", "M", "DIESEL GEN.")
+  - **A** (1651): the label is confirmed by the drawing itself (its own legend or text such as "MOV", "M", "DIESEL GEN.")
     or by a source document;
-  - **B** (1755): the label rests on the symbol shape matching the legend PDF entry shown;
-  - **C** (108): uncertain (`uncertain = yes`), check first.
-  3447 of the 3488 boxes are tied to a legend PDF entry; the other 41 (OTHER, BLOCK, ENGINE, SUMP, PRESSURIZER) have no
+  - **B** (1785): the label rests on the symbol shape matching the legend PDF entry shown (or, for a symbol without a legend entry, on its drawn shape alone);
+  - **C** (52): uncertain (`uncertain = yes`), check first.
+  3437 of the 3488 boxes are tied to a legend PDF entry; the other 51 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
   legend entry and rest on the drawing text and note shown in the tile.
 
 - `overlay/<page>.jpg`: check image of each page. Every box is drawn on the drawing with its box id and a short class tag
@@ -29,6 +29,14 @@ legend on their page; they are reviewed first.
 - `symbol_classes.json`: the same, grouped by page.
 - `classes.csv`: the 51 classes with definitions and counts. `actuators.csv`: the 10 actuator values.
 - `ft_component_types.csv`: how `class` + `actuator` map to a fault-tree component type.
+
+## Independent review
+
+All 3488 labels were reviewed a second time (November 2026) by four independent reviewers, each covering about 870 symbols with
+the evidence images, the full-resolution crops, the page legends and the legend PDFs. Every proposed change was checked again on the
+drawing before it was applied: 67 labels were corrected (mostly gate valves that are globe valves, a dot at the body centre on the APR1400
+drawings; operators identified from the page legend; three-way valves; turbine-driven pumps drawn as a turbine only) and 56 of the
+uncertain rows were resolved. 52 rows remain uncertain.
 
 ## Labeling scheme
 
