@@ -6,6 +6,363 @@ until it is done these labels are not verified. Rows marked `uncertain = yes` (5
 legend on their page; they are reviewed first.
 
 **Start here: [index.md](index.md)**, one row per page with links to its overview and evidence images.
+**To check the class definitions themselves**, see [Class reference](#class-reference) below: one picture per class
+with the legend entries it follows.
+
+
+## Class reference
+
+One image per class, for reviewers who want to confirm that the categories are right. Each image shows the
+AP1000 / APR1400 P&ID legend entries that the boxes of the class were tied to, with the PDF page, entry number and
+printed description under each entry and the number of boxes citing it. These are the definitions the labels follow;
+a class that maps to several entries (e.g. `VLV_GATE`: open and closed gate valve of both legends) lists all of them.
+
+The 51 classes are in five groups: 13 valves and dampers, 23 equipment, 1 instrument, 9 electrical, 5 other.
+46 of them occur in the 65 pages; the five that do not (`VLV_BALL`, `VLV_PLUG`, `VLV_NEEDLE`, `VLV_DIAPHRAGM`, `TRAP`)
+are kept in the list so the scheme stays complete. Five classes (`BLOCK`, `ENGINE`, `OTHER`, `PRESSURIZER`,
+`SUMP`) have no legend entry, and `OFFPAGE` has one for 46 of its 52 boxes; where there is none the image says so,
+and the class rests on the drawing text (see the `note` column and the evidence tiles).
+
+The legend PDFs are not in the repository; the entry images are cut from the evidence tiles in [`evidence/`](evidence/),
+where every single box can be checked against its entry (see [index.md](index.md)). If a class is wrong, or two classes
+should be merged or split, please say so as: class, what it should be, and, if it is about one symbol, page + box id.
+
+All classes at a glance: the most-cited legend entry of each of the 41 classes that have one (frame colour = group).
+The five classes without an instance and the five without a legend entry are not on this sheet.
+
+![overview](class_reference/overview.png)
+
+### Valves and dampers
+
+| class | definition | boxes |
+|---|---|---:|
+| [`VLV_GATE`](#vlv_gate) | Gate valve / generic two-way valve (plain bowtie) | 1301 (25 uncertain) |
+| [`VLV_GLOBE`](#vlv_globe) | Globe valve (bowtie with a dot at the waist) | 131 |
+| [`VLV_BUTTERFLY`](#vlv_butterfly) | Butterfly valve (diagonal with a centre dot between two ticks) | 92 |
+| [`VLV_BALL`](#vlv_ball) | Ball valve | 0 |
+| [`VLV_PLUG`](#vlv_plug) | Plug valve | 0 |
+| [`VLV_NEEDLE`](#vlv_needle) | Needle valve | 0 |
+| [`VLV_DIAPHRAGM`](#vlv_diaphragm) | Diaphragm valve | 0 |
+| [`VLV_ANGLE`](#vlv_angle) | Angle valve | 5 |
+| [`VLV_3WAY`](#vlv_3way) | Three-way valve | 9 |
+| [`VLV_CHECK`](#vlv_check) | Check valve (incl. stop-check, swing check) | 530 (8 uncertain) |
+| [`VLV_RELIEF`](#vlv_relief) | Safety / relief valve (incl. pilot-operated) | 51 |
+| [`VLV_REGULATOR`](#vlv_regulator) | Self-actuated pressure regulator | 2 |
+| [`DAMPER`](#damper) | Damper (HVAC) | 73 |
+
+#### VLV_GATE
+
+![VLV_GATE](class_reference/VLV_GATE.png)
+
+#### VLV_GLOBE
+
+![VLV_GLOBE](class_reference/VLV_GLOBE.png)
+
+#### VLV_BUTTERFLY
+
+![VLV_BUTTERFLY](class_reference/VLV_BUTTERFLY.png)
+
+#### VLV_BALL
+
+Ball valve. No instance in the 65 pages, so no reference image.
+
+#### VLV_PLUG
+
+Plug valve. No instance in the 65 pages, so no reference image.
+
+#### VLV_NEEDLE
+
+Needle valve. No instance in the 65 pages, so no reference image.
+
+#### VLV_DIAPHRAGM
+
+Diaphragm valve. No instance in the 65 pages, so no reference image.
+
+#### VLV_ANGLE
+
+![VLV_ANGLE](class_reference/VLV_ANGLE.png)
+
+#### VLV_3WAY
+
+![VLV_3WAY](class_reference/VLV_3WAY.png)
+
+#### VLV_CHECK
+
+![VLV_CHECK](class_reference/VLV_CHECK.png)
+
+#### VLV_RELIEF
+
+![VLV_RELIEF](class_reference/VLV_RELIEF.png)
+
+#### VLV_REGULATOR
+
+![VLV_REGULATOR](class_reference/VLV_REGULATOR.png)
+
+#### DAMPER
+
+![DAMPER](class_reference/DAMPER.png)
+
+### Equipment
+
+| class | definition | boxes |
+|---|---|---:|
+| [`PUMP`](#pump) | Pump | 148 |
+| [`COMPRESSOR`](#compressor) | Compressor | 12 |
+| [`FAN`](#fan) | Fan / blower | 48 |
+| [`TURBINE`](#turbine) | Turbine (incl. turbine-generator) | 22 |
+| [`TANK`](#tank) | Tank / vessel / accumulator | 76 |
+| [`HX`](#hx) | Heat exchanger / cooler / feedwater heater | 124 |
+| [`CONDENSER`](#condenser) | Condenser | 11 |
+| [`COIL`](#coil) | Heating or cooling coil (HVAC) | 40 |
+| [`CHILLER`](#chiller) | Chiller | 11 |
+| [`HUMIDIFIER`](#humidifier) | Humidifier (HVAC) | 4 |
+| [`AHU`](#ahu) | Air handling unit / cubicle cooler housing | 9 |
+| [`STEAM_GEN`](#steam_gen) | Steam generator | 73 |
+| [`REACTOR`](#reactor) | Reactor vessel | 1 |
+| [`PRESSURIZER`](#pressurizer) | Pressurizer | 1 |
+| [`FILTER`](#filter) | Filter / strainer / adsorber / separator | 109 |
+| [`DEMIN`](#demin) | Demineralizer / ion exchanger | 10 |
+| [`DRYER`](#dryer) | Air dryer | 5 |
+| [`ORIFICE`](#orifice) | Orifice / flow element / venturi | 103 (10 uncertain) |
+| [`HEATER`](#heater) | Electric heater | 4 |
+| [`SPARGER`](#sparger) | Spray nozzle / sparger | 21 |
+| [`SUMP`](#sump) | Sump | 1 |
+| [`TRAP`](#trap) | Steam trap | 0 |
+| [`ENGINE`](#engine) | Diesel engine / prime mover drawn on its own | 1 |
+
+#### PUMP
+
+![PUMP](class_reference/PUMP.png)
+
+#### COMPRESSOR
+
+![COMPRESSOR](class_reference/COMPRESSOR.png)
+
+#### FAN
+
+![FAN](class_reference/FAN.png)
+
+#### TURBINE
+
+![TURBINE](class_reference/TURBINE.png)
+
+#### TANK
+
+![TANK](class_reference/TANK.png)
+
+#### HX
+
+![HX](class_reference/HX.png)
+
+#### CONDENSER
+
+![CONDENSER](class_reference/CONDENSER.png)
+
+#### COIL
+
+![COIL](class_reference/COIL.png)
+
+#### CHILLER
+
+![CHILLER](class_reference/CHILLER.png)
+
+#### HUMIDIFIER
+
+![HUMIDIFIER](class_reference/HUMIDIFIER.png)
+
+#### AHU
+
+![AHU](class_reference/AHU.png)
+
+#### STEAM_GEN
+
+![STEAM_GEN](class_reference/STEAM_GEN.png)
+
+#### REACTOR
+
+![REACTOR](class_reference/REACTOR.png)
+
+#### PRESSURIZER
+
+![PRESSURIZER](class_reference/PRESSURIZER.png)
+
+#### FILTER
+
+![FILTER](class_reference/FILTER.png)
+
+#### DEMIN
+
+![DEMIN](class_reference/DEMIN.png)
+
+#### DRYER
+
+![DRYER](class_reference/DRYER.png)
+
+#### ORIFICE
+
+![ORIFICE](class_reference/ORIFICE.png)
+
+#### HEATER
+
+![HEATER](class_reference/HEATER.png)
+
+#### SPARGER
+
+![SPARGER](class_reference/SPARGER.png)
+
+#### SUMP
+
+![SUMP](class_reference/SUMP.png)
+
+#### TRAP
+
+Steam trap. No instance in the 65 pages, so no reference image.
+
+#### ENGINE
+
+![ENGINE](class_reference/ENGINE.png)
+
+### Instruments
+
+| class | definition | boxes |
+|---|---|---:|
+| [`INSTR`](#instr) | Instrument (bubble or box with a tag) | 78 |
+
+#### INSTR
+
+![INSTR](class_reference/INSTR.png)
+
+### Electrical
+
+| class | definition | boxes |
+|---|---|---:|
+| [`BREAKER`](#breaker) | Circuit breaker | 181 |
+| [`TRANSFORMER`](#transformer) | Transformer | 37 |
+| [`GENERATOR`](#generator) | Generator (incl. diesel generator) | 10 |
+| [`MOTOR`](#motor) | Motor drawn on its own | 17 |
+| [`BATTERY`](#battery) | Battery | 3 |
+| [`CHARGER`](#charger) | Battery charger / rectifier | 3 |
+| [`INVERTER`](#inverter) | Inverter / UPS | 6 |
+| [`SWITCH`](#switch) | Switch / disconnect / transfer switch | 5 |
+| [`PANEL`](#panel) | Distribution panel / MCC / switchgear box | 7 |
+
+#### BREAKER
+
+![BREAKER](class_reference/BREAKER.png)
+
+#### TRANSFORMER
+
+![TRANSFORMER](class_reference/TRANSFORMER.png)
+
+#### GENERATOR
+
+![GENERATOR](class_reference/GENERATOR.png)
+
+#### MOTOR
+
+![MOTOR](class_reference/MOTOR.png)
+
+#### BATTERY
+
+![BATTERY](class_reference/BATTERY.png)
+
+#### CHARGER
+
+![CHARGER](class_reference/CHARGER.png)
+
+#### INVERTER
+
+![INVERTER](class_reference/INVERTER.png)
+
+#### SWITCH
+
+![SWITCH](class_reference/SWITCH.png)
+
+#### PANEL
+
+![PANEL](class_reference/PANEL.png)
+
+### Other
+
+| class | definition | boxes |
+|---|---|---:|
+| [`RUPTURE_DISC`](#rupture_disc) | Rupture disc | 2 |
+| [`PENETRATION`](#penetration) | Containment penetration (box on the containment boundary, e.g. 'PC') | 17 |
+| [`OFFPAGE`](#offpage) | Off-page connector / system interface | 52 |
+| [`BLOCK`](#block) | Labelled equipment block (named by its text) | 18 |
+| [`OTHER`](#other) | Other | 24 (9 uncertain) |
+
+#### RUPTURE_DISC
+
+![RUPTURE_DISC](class_reference/RUPTURE_DISC.png)
+
+#### PENETRATION
+
+![PENETRATION](class_reference/PENETRATION.png)
+
+#### OFFPAGE
+
+![OFFPAGE](class_reference/OFFPAGE.png)
+
+#### BLOCK
+
+![BLOCK](class_reference/BLOCK.png)
+
+#### OTHER
+
+![OTHER](class_reference/OTHER.png)
+
+### Actuators
+
+The actuator label of a valve, damper or pump follows the operator legend entries in the same way. `NONE` (no operator drawn) and `-` (not a valve, damper or pump) have no entry.
+
+#### MOTOR (actuator)
+
+Motor operator.
+
+![MOTOR](class_reference/actuator_MOTOR.png)
+
+#### AIR (actuator)
+
+Air / pneumatic operator (diaphragm or piston).
+
+![AIR](class_reference/actuator_AIR.png)
+
+#### SOLENOID (actuator)
+
+Solenoid operator.
+
+![SOLENOID](class_reference/actuator_SOLENOID.png)
+
+#### HYDRAULIC (actuator)
+
+Hydraulic operator.
+
+![HYDRAULIC](class_reference/actuator_HYDRAULIC.png)
+
+#### EH (actuator)
+
+Electro-hydraulic operator.
+
+![EH](class_reference/actuator_EH.png)
+
+#### UNSPEC (actuator)
+
+Operator drawn, type not identifiable.
+
+![UNSPEC](class_reference/actuator_UNSPEC.png)
+
+#### TURBINE (actuator)
+
+Turbine driver (pumps).
+
+![TURBINE](class_reference/actuator_TURBINE.png)
+
+#### DIESEL (actuator)
+
+Diesel / engine driver (pumps).
+
+![DIESEL](class_reference/actuator_DIESEL.png)
 
 ## Files
 
@@ -27,6 +384,9 @@ legend on their page; they are reviewed first.
 - `symbol_classes.csv`: one row per symbol box. Columns: `page`, `box_id` (line index in `../labels/<page>.txt`),
   `x0,y0,x1,y1` (box in image pixels), `class`, `actuator`, `ft_component_type`, `uncertain`, `note`.
 - `symbol_classes.json`: the same, grouped by page.
+- `class_reference/<CLASS>.png`, `class_reference/actuator_<ACTUATOR>.png`: the legend entries each class and actuator
+  value is tied to, see [Class reference](#class-reference) above; `class_reference/overview.png`: one entry per class.
+  Made by `make_class_reference.py` from the evidence images (run it again after editing `symbol_classes.csv`).
 - `classes.csv`: the 51 classes with definitions and counts. `actuators.csv`: the 10 actuator values.
 - `ft_component_types.csv`: how `class` + `actuator` map to a fault-tree component type.
 
