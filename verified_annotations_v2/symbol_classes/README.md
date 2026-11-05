@@ -419,6 +419,8 @@ applies (steam generators, instruments, off-page connectors, ...).
 
 ## Sources used to resolve ambiguous symbols
 
+- The legend library in [`../legend_library/`](../legend_library/README.md) (both legend PDFs, every entry, and the legend entry of every symbol box).
+
 - AP1000 and APR1400 P&ID legend sheets (962 legend entries).
 - Legends printed on individual drawings (Surry FSAR figures, San Onofre, Davis-Besse, NuScale).
 - NUREG/CR-4550 Vol. 3 (Surry) basic events, e.g. LPI-MOV-PG-1864A, for valve operator types on the Surry NUREG sketches.

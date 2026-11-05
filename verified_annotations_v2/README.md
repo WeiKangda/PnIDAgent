@@ -94,3 +94,8 @@ not used here.
 
 [`symbol_classes/`](symbol_classes/README.md) has a class and an actuator for every symbol box, plus the derived fault-tree
 component type (MOV, AOV, CKV, MDP, ...). These are pre-labels, reviewed twice (the second time by independent reviewers); a human review of every row is in progress.
+
+## Legend library
+
+[`legend_library/`](legend_library/README.md) has the AP1000 and APR1400 P&ID legend PDFs, every legend entry extracted from them (symbol
+image, section, printed description), and the files that tie each symbol box of the 65 pages to its legend entry.

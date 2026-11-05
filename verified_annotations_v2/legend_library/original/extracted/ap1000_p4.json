@@ -1,0 +1,847 @@
+{
+ "source": "AP1000",
+ "page": 5,
+ "image": "ap1000_p4_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_001.png",
+   "symbol_text": null,
+   "description": "COMPONENT NUMBERING EXAMPLE (REFERENCE A) \u2014 COMPONENT NUMBER: APP-RCS-PY-S01A; P&ID LABEL: S01A",
+   "notes": "Callouts: SPECIFIC COMPONENT TYPE (NOTE 2); COMPONENT NUMBER (2 DIGITS); PIPE / DUCT LOOP (IF APPLICABLE) (SEE NOTE 15 ON GW-M6-001); SEQUENCE NUMBER; GENERAL COMPONENT TYPE (PY = PIPING SPECIALTY, MD = MECHANICAL DUCTWORK); SYSTEM LOCATOR CODE (REFERENCE C)"
+  },
+  {
+   "n": 2,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_101.png",
+   "symbol_text": null,
+   "description": "CONCENTRIC REDUCER",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_102.png",
+   "symbol_text": null,
+   "description": "ECCENTRIC REDUCER",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_103.png",
+   "symbol_text": null,
+   "description": "CAPPED OR STUB END",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_104.png",
+   "symbol_text": null,
+   "description": "DRIP POT",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_105.png",
+   "symbol_text": null,
+   "description": "SCREWED CAP",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_106.png",
+   "symbol_text": null,
+   "description": "HOSE CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_107.png",
+   "symbol_text": null,
+   "description": "FLANGE CONNECTION (PIPING OR EQUIPMENT)",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_108.png",
+   "symbol_text": null,
+   "description": "RUPTURE DISC (PRESSURE RELIEF) (K)",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_109.png",
+   "symbol_text": null,
+   "description": "RUPTURE DISC (VACUUM RELIEF) (K)",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_110.png",
+   "symbol_text": null,
+   "description": "SPECTACLE BLIND (NORMALLY OPEN) (B)",
+   "notes": "Symbol annotated NO"
+  },
+  {
+   "n": 12,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_111.png",
+   "symbol_text": null,
+   "description": "SPECTACLE BLIND (NORMALLY CLOSED) (B)",
+   "notes": "Symbol annotated NC"
+  },
+  {
+   "n": 13,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_112.png",
+   "symbol_text": null,
+   "description": "ORIFICE (4) (R)",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_113.png",
+   "symbol_text": null,
+   "description": "FLOW CONDITIONER (R)",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_114.png",
+   "symbol_text": null,
+   "description": "PLUG RESISTANT ORIFICE (R)",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_115.png",
+   "symbol_text": null,
+   "description": "EDUCTOR OR EJECTOR (N)",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_116.png",
+   "symbol_text": null,
+   "description": "CAVITATING VENTURI OR FLOW NOZZLE (4) (N)",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_117.png",
+   "symbol_text": null,
+   "description": "QUICK DISCONNECT COUPLING (M)",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_118.png",
+   "symbol_text": null,
+   "description": "EXPANSION JOINT (E)",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_119.png",
+   "symbol_text": null,
+   "description": "LOOP SEAL (TRAP)",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_120.png",
+   "symbol_text": null,
+   "description": "S TRAP",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_121.png",
+   "symbol_text": null,
+   "description": "P TRAP",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_122.png",
+   "symbol_text": null,
+   "description": "FLEXIBLE PIPE",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_123.png",
+   "symbol_text": null,
+   "description": "OPEN FUNNEL (D)",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_124.png",
+   "symbol_text": null,
+   "description": "ROOF DRAIN (D)",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_125.png",
+   "symbol_text": null,
+   "description": "FLOOR DRAIN OR SURFACE COLLECTION UNIT (D)",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_126.png",
+   "symbol_text": null,
+   "description": "PLUGGED FLOOR DRAIN OR SURFACE COLLECTION UNIT (D)",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_201.png",
+   "symbol_text": null,
+   "description": "AUTOMATIC VENT (Y)",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_202.png",
+   "symbol_text": null,
+   "description": "CONTAINMENT PENETRATION (C)",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_203.png",
+   "symbol_text": null,
+   "description": "FILTER (PIPING) (S)",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_204.png",
+   "symbol_text": null,
+   "description": "JOHNSON SCREEN (S)",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_205.png",
+   "symbol_text": null,
+   "description": "STRAINER (S)",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_206.png",
+   "symbol_text": null,
+   "description": "Y STRAINER (S)",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_207.png",
+   "symbol_text": null,
+   "description": "AUTOMATIC STRAINER (S)",
+   "notes": "Symbol annotated M (motor) and TC"
+  },
+  {
+   "n": 35,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_208.png",
+   "symbol_text": null,
+   "description": "TEMPORARY STRAINER (S) (NOTE 9)",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_209.png",
+   "symbol_text": null,
+   "description": "FLOAT TRAP (T)",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_210.png",
+   "symbol_text": null,
+   "description": "STEAM TRAP OR LIQUID DRAINER (T)",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_211.png",
+   "symbol_text": null,
+   "description": "RESIN TRAP (T)",
+   "notes": null
+  },
+  {
+   "n": 39,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_212.png",
+   "symbol_text": null,
+   "description": "CYCLONE SEPARATOR (P)",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_213.png",
+   "symbol_text": null,
+   "description": "FIRE HYDRANT WITH HOSE RACK (H)",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_214.png",
+   "symbol_text": null,
+   "description": "FIRE HYDRANT (H)",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_215.png",
+   "symbol_text": null,
+   "description": "HOSE RACK STATION (F)",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_216.png",
+   "symbol_text": null,
+   "description": "HOSE REEL STATION (F)",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_217.png",
+   "symbol_text": null,
+   "description": "FLAME ARRESTOR (A)",
+   "notes": null
+  },
+  {
+   "n": 45,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_218.png",
+   "symbol_text": null,
+   "description": "EXHAUST HEAD",
+   "notes": null
+  },
+  {
+   "n": 46,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_219.png",
+   "symbol_text": null,
+   "description": "AUTO DRAINER (D)",
+   "notes": null
+  },
+  {
+   "n": 47,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_220.png",
+   "symbol_text": null,
+   "description": "LUBRICATOR (L)",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_221.png",
+   "symbol_text": null,
+   "description": "SIGHT GLASS",
+   "notes": "Printed note: EVEN THOUGH SIGHT GLASSES ARE PLACED AS INLINE COMPONENTS, THEY ARE TAGGED AS INSTRUMENTS. AN EXAMPLE OF A COMPLETE TAG NUMBER FOR A SIGHT GLASS WOULD BE: APP-RCS-JE-LG130"
+  },
+  {
+   "n": 49,
+   "section": "PIPING AND DUCT COMPONENTS",
+   "sym_file": "sym/ap1000_p4_222.png",
+   "symbol_text": null,
+   "description": "PIPING / TUBING PLUG",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_051.png",
+   "symbol_text": null,
+   "description": "PROCESS PIPING: APP-RCS-PL-L123A \u2014 P&ID LABEL: 8\" DBA L123A",
+   "notes": "Table columns: LINE NUMBERING EXAMPLES / TAG NUMBERS / P&ID LABELS / P&ID EXAMPLES. Callouts: SEQUENCE NUMBER; COMPONENT TYPE CODE; SYSTEM LOCATOR CODE (REFERENCE C); COMPONENT TYPE CODE - PL = PIPE LINE"
+  },
+  {
+   "n": 51,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_052.png",
+   "symbol_text": null,
+   "description": "PROCESS TUBING: APP-RCS-PL-T456A \u2014 P&ID LABEL: .375\" YBD T456A",
+   "notes": "Table columns: LINE NUMBERING EXAMPLES / TAG NUMBERS / P&ID LABELS / P&ID EXAMPLES. Callouts: SEQUENCE NUMBER; COMPONENT TYPE CODE; SYSTEM LOCATOR CODE (REFERENCE C); COMPONENT TYPE CODE - PL = PIPE LINE"
+  },
+  {
+   "n": 52,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_053.png",
+   "symbol_text": null,
+   "description": "INSTRUMENT TUBING: APP-RCS-JT-T789A \u2014 P&ID LABEL: .375\" YBD T789A",
+   "notes": "Table columns: LINE NUMBERING EXAMPLES / TAG NUMBERS / P&ID LABELS / P&ID EXAMPLES. Callouts: SEQUENCE NUMBER; COMPONENT TYPE CODE; SYSTEM LOCATOR CODE (REFERENCE C); COMPONENT TYPE CODE - JT = INSTRUMENT TUBING"
+  },
+  {
+   "n": 53,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_054.png",
+   "symbol_text": null,
+   "description": "MECHANICAL DUCT: APP-VAS-MD-L321A \u2014 P&ID LABEL: UGL L321A",
+   "notes": "Table columns: LINE NUMBERING EXAMPLES / TAG NUMBERS / P&ID LABELS / P&ID EXAMPLES. Callouts: SEQUENCE NUMBER; COMPONENT TYPE CODE; SYSTEM LOCATOR CODE (REFERENCE C); COMPONENT TYPE CODE - MD = MECHANICAL DUCTWORK"
+  },
+  {
+   "n": 54,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_301.png",
+   "symbol_text": null,
+   "description": "MAIN FLOW LINE (FLOW DURING SELECTED NORMAL SYSTEM OPERATION)",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_302.png",
+   "symbol_text": null,
+   "description": "SECONDARY FLOW LINES (NO FLOW DURING SELECTED NORMAL SYSTEM OPERATION)",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_303.png",
+   "symbol_text": null,
+   "description": "VENT, DRAIN AND TEST LINES",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_304.png",
+   "symbol_text": null,
+   "description": "ELECTRICAL HEAT TRACING",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_305.png",
+   "symbol_text": null,
+   "description": "UNDERGROUND PIPE",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_306.png",
+   "symbol_text": null,
+   "description": "DESIGNATION FOR PIPING AND EQUIPMENT WHOSE DESIGN IS DESCRIBED ON ANOTHER P&ID",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_307.png",
+   "symbol_text": null,
+   "description": "DOWNWARD SLOPE (X INCHES PER Y FEET, OPTIONAL)",
+   "notes": "Symbol annotated (X,Y)"
+  },
+  {
+   "n": 61,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_308.png",
+   "symbol_text": null,
+   "description": "UPWARD SLOPE (X INCHES PER Y FEET, OPTIONAL)",
+   "notes": "Symbol annotated (X,Y)"
+  },
+  {
+   "n": 62,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_401.png",
+   "symbol_text": null,
+   "description": "INSTRUMENT LINE",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_402.png",
+   "symbol_text": null,
+   "description": "ELECTRICAL SIGNAL",
+   "notes": null
+  },
+  {
+   "n": 64,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_403.png",
+   "symbol_text": null,
+   "description": "UNGUIDED SONIC OR ELECTROMAGNETIC SIGNAL (INCLUDING HEAT, RADIO WAVES, NUCLEAR RADIATION AND LIGHT)",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_404.png",
+   "symbol_text": null,
+   "description": "PNEUMATIC SUGNAL",
+   "notes": "sic \u2014 printed typo in source for PNEUMATIC SIGNAL"
+  },
+  {
+   "n": 66,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_405.png",
+   "symbol_text": null,
+   "description": "HYDRAULIC SIGNAL",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_406.png",
+   "symbol_text": null,
+   "description": "FILLED INSTRUMENT CAPILLARY TUBING",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_407.png",
+   "symbol_text": null,
+   "description": "DATA SIGNAL",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_408.png",
+   "symbol_text": null,
+   "description": "AIR MOVEMENT (NOT DUCTED)",
+   "notes": null
+  },
+  {
+   "n": 70,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_409.png",
+   "symbol_text": null,
+   "description": "DUCTED AIR FLOW TO SPACE",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "LINES",
+   "sym_file": "sym/ap1000_p4_410.png",
+   "symbol_text": null,
+   "description": "DUCTED AIR FLOW FROM SPACE",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 2500 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): ALLOY STEEL, STANDARD | THIRD LETTER (DESIGN CODE / STANDARD): ASME SEC.III, CLASS 1, NRC QUAL. GRP. A",
+   "notes": null
+  },
+  {
+   "n": 73,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "B",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): SPECIAL RATING - SEE CLASS SHEET | SECOND LETTER (BASIC PIPE LINE MATERIAL): AUSTENTIC STAINLESS STEEL, STANDARD | THIRD LETTER (DESIGN CODE / STANDARD): ASME SEC.III, CLASS 2, NRC QUAL. GRP. B",
+   "notes": null
+  },
+  {
+   "n": 74,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 1500 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): CARBON STEEL, STANDARD | THIRD LETTER (DESIGN CODE / STANDARD): ASME SEC.III, CLASS 3, NRC QUAL. GRP. C",
+   "notes": null
+  },
+  {
+   "n": 75,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 900/600 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): DUCTILE IRON - CEMENT LINED | THIRD LETTER (DESIGN CODE / STANDARD): ASME B31.1, (PIPE)/SMACNA (DUCT) NRC QUAL. GRP. D",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 600/900 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): DUCTILE IRON | THIRD LETTER (DESIGN CODE / STANDARD): ASME B31.1, NON Q",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 400 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): FERROUS, CAST IRON | THIRD LETTER (DESIGN CODE / STANDARD): NATIONAL FIRE PROTECTION ASSOCIATION CODE, FIRE PROTECTION QA",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 300 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): CARBON STEEL, GALVANIZED | THIRD LETTER (DESIGN CODE / STANDARD): NATIONAL FIRE PROTECTION ASSOCIATION CODE",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 250 ASME B16.1 | SECOND LETTER (BASIC PIPE LINE MATERIAL): COPPER - NICKEL ALLOY | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "J",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 150 ASME B16.5 | SECOND LETTER (BASIC PIPE LINE MATERIAL): PE3408/PE3608 HDPE | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "K",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): CL 125 ASME B16.1 | SECOND LETTER (BASIC PIPE LINE MATERIAL): COPPER, BRASS OR BRONZE | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 82,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 150 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): LINED PIPE | THIRD LETTER (DESIGN CODE / STANDARD): SMACNA DUCT CONSTRUCTION STANDARDS",
+   "notes": null
+  },
+  {
+   "n": 83,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "M",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 125 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): ALUMINUM | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 84,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "N",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 100 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): ALLOY 20 (UNS N08020) | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 85,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "P",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 80 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): PLASTIC AND NON-METALIC | THIRD LETTER (DESIGN CODE / STANDARD): NATIONAL PLUMBING CODE",
+   "notes": null
+  },
+  {
+   "n": 86,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "Q",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): NOT USED | SECOND LETTER (BASIC PIPE LINE MATERIAL): CARBON STEEL, RUBBER LINED | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 87,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 250 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): CONCRETE | THIRD LETTER (DESIGN CODE / STANDARD): ASME/ANSI AG-1 (ASME N509) DUCT STANDARD",
+   "notes": null
+  },
+  {
+   "n": 88,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "S",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 200 PSI, CWP | SECOND LETTER (BASIC PIPE LINE MATERIAL): ALLOY STEEL, HIGH STRENGTH | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 89,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 300 PSI SERVICE (VICTAULIC PRESSFIT) | SECOND LETTER (BASIC PIPE LINE MATERIAL): AUSTENTIC STAINLESS STEEL, HIGH STRENGTH | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 90,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "U",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 0\" - 2\" W.G. | SECOND LETTER (BASIC PIPE LINE MATERIAL): CARBON STEEL, IMPACT TESTED | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 91,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "V",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 2\" - 6\" W.G. | SECOND LETTER (BASIC PIPE LINE MATERIAL): PE4710 HDPE | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 92,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "W",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): 6\" - 10\" W.G. | SECOND LETTER (BASIC PIPE LINE MATERIAL):  | THIRD LETTER (DESIGN CODE / STANDARD): AMERICAN WATER WORKS ASSOCIATION STANDARD",
+   "notes": null
+  },
+  {
+   "n": 93,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "X",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): OVER 10\" W.G. | SECOND LETTER (BASIC PIPE LINE MATERIAL):  | THIRD LETTER (DESIGN CODE / STANDARD): ",
+   "notes": null
+  },
+  {
+   "n": 94,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "Y",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS | SECOND LETTER (BASIC PIPE LINE MATERIAL): SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS | THIRD LETTER (DESIGN CODE / STANDARD): SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS",
+   "notes": null
+  },
+  {
+   "n": 95,
+   "section": "LINE AND VALVE / DAMPER SPECIFICATIONS",
+   "sym_file": null,
+   "symbol_text": "Z",
+   "description": "FIRST LETTER (NOMINAL PRESSURE RATING): SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS | SECOND LETTER: SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS | THIRD LETTER: SPECIAL USE AS SHOWN ON PIPING CLASS SHEETS",
+   "notes": "Row half-cut at the bottom page edge in source PDF; letter code and text inferred from visible upper halves (pattern matches row Y)"
+  },
+  {
+   "n": 96,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_901.png",
+   "symbol_text": null,
+   "description": "DRAWING NUMBER REFERENCE",
+   "notes": "Boxed letter A with leader; right part of symbol cut off; truncated in source PDF"
+  },
+  {
+   "n": 97,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_902.png",
+   "symbol_text": null,
+   "description": "(description cut off \u2014 off-page continuation pennant symbol)",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 98,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_903.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 oval tag XYZ|XYZ (line continuation label)",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 99,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_904.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 INSIDE | OUTSIDE hatched boundary crossing",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 100,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_905.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 IMB | OMB boundary designation",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 101,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_906.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 MU27 | MU03 drawing continuation designation",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 102,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_907.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 capped riser / vent at grade symbol",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 103,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_908.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 upward arrow OR hook (vent direction) symbol",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 104,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": "sym/ap1000_p4_909.png",
+   "symbol_text": null,
+   "description": "(description cut off) \u2014 elbow with downward arrow symbol",
+   "notes": "truncated in source PDF"
+  },
+  {
+   "n": 105,
+   "section": "CON... (RIGHTMOST COLUMN, SECTION TITLE TRUNCATED IN SOURCE PDF)",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "(several additional unlabeled line-type entries visible as bare line fragments; their symbols and labels are cut off at the right page edge)",
+   "notes": "truncated in source PDF; not individually croppable"
+  }
+ ]
+}

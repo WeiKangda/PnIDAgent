@@ -1,0 +1,1258 @@
+{
+ "source": "APR1400",
+ "page": 1,
+ "image": "apr1400_p0_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_001.png",
+   "symbol_text": null,
+   "description": "TURBINE (SINGLE FLOW / DOUBLE FLOW)",
+   "notes": null
+  },
+  {
+   "n": 2,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_002.png",
+   "symbol_text": null,
+   "description": "STEAM GENERATOR",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_003.png",
+   "symbol_text": null,
+   "description": "REACTOR VESSEL",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_004.png",
+   "symbol_text": null,
+   "description": "HORIZONTAL CENTRIFUGAL PUMP",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_005.png",
+   "symbol_text": null,
+   "description": "VERTICAL PUMP (CANNED / WET PIT / SUMP)",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_006.png",
+   "symbol_text": null,
+   "description": "POSITIVE DISPLACEMENT PUMP (RECIPROCATING / ROTARY)",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_007.png",
+   "symbol_text": null,
+   "description": "VACUUM PUMP",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_008.png",
+   "symbol_text": null,
+   "description": "HAND PUMP",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_009.png",
+   "symbol_text": null,
+   "description": "PLATE TYPE HEAT EXCHANGER",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_010.png",
+   "symbol_text": null,
+   "description": "U-TUBE HEAT EXCHANGER",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_011.png",
+   "symbol_text": null,
+   "description": "STRAIGHT TUBE HEAT EXCHANGER (SINGLE-PASS / TWO-PASS)",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_012.png",
+   "symbol_text": null,
+   "description": "PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_013.png",
+   "symbol_text": null,
+   "description": "DOME ROOF TYPE TANK",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_014.png",
+   "symbol_text": null,
+   "description": "CYLINDRICAL TYPE TANK (DRUM TYPE)",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_015.png",
+   "symbol_text": null,
+   "description": "CONE ROOF TANK",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_016.png",
+   "symbol_text": null,
+   "description": "D : DIAPHRAGM TANK (AS SHOWN) / F : FLOATING TANK COVER",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_017.png",
+   "symbol_text": null,
+   "description": "FLAT TYPE TANK",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_018.png",
+   "symbol_text": null,
+   "description": "CONE BOTTOM TYPE TANK OR CYCLONE",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_019.png",
+   "symbol_text": null,
+   "description": "AIR COMPRESSOR \u2014 RE : RECIPROCATING (SHOWN) / RO : ROTARY / SC : SCREW / CF : CENTRIFUGAL",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_020.png",
+   "symbol_text": null,
+   "description": "AFTER COOLER",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_021.png",
+   "symbol_text": null,
+   "description": "GENERIC BOX EQUIPMENT",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_022.png",
+   "symbol_text": null,
+   "description": "GENERIC CIRCLE EQUIPMENT",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_023.png",
+   "symbol_text": null,
+   "description": "HOPPER",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_024.png",
+   "symbol_text": null,
+   "description": "MIXER",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_025.png",
+   "symbol_text": null,
+   "description": "ELECTRIC MOTOR",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_026.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Symbol truncated at bottom edge of source PDF; label not present in file"
+  },
+  {
+   "n": 27,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_027.png",
+   "symbol_text": null,
+   "description": "FUME SCRUBBER",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_028.png",
+   "symbol_text": null,
+   "description": "PRESSURIZED GAS BOTTLE",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_029.png",
+   "symbol_text": null,
+   "description": "BALL STRAINER",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_030.png",
+   "symbol_text": null,
+   "description": "CHUTE",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_031.png",
+   "symbol_text": null,
+   "description": "TANDEM LOUVER DAMPER",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_032.png",
+   "symbol_text": null,
+   "description": "AMMONIA VAPORIZER",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_033.png",
+   "symbol_text": null,
+   "description": "SWING PANEL",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "EQUIPMENT SYMBOLS",
+   "sym_file": "sym/apr1400_p0_034.png",
+   "symbol_text": null,
+   "description": "IRWST SUMP STRAINER",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_035_a.png",
+   "symbol_text": null,
+   "description": "GATE",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION; V001A = VALVE NO. (example tag)",
+   "sym_file2": "sym/apr1400_p0_035_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 36,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_036_a.png",
+   "symbol_text": null,
+   "description": "GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SHOW ONLY WHEN DIFFERENT FROM NORMAL SYSTEM FLOW DIRECTION OR REQUIRED IN BI-DIRECTION FLOW.)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_036_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 37,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_037_a.png",
+   "symbol_text": null,
+   "description": "BUTTERFLY",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION; NO / NC",
+   "sym_file2": "sym/apr1400_p0_037_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 38,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_038_a.png",
+   "symbol_text": null,
+   "description": "BALL (2-WAY)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_038_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 39,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_039_a.png",
+   "symbol_text": null,
+   "description": "BALL VALVE (3-WAY)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_039_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 40,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_040_a.png",
+   "symbol_text": null,
+   "description": "PLUG (2-WAY)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_040_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 41,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_041_a.png",
+   "symbol_text": null,
+   "description": "PLUG VALVE (3-WAY)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_041_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 42,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_042_a.png",
+   "symbol_text": null,
+   "description": "PLUG VALVE (4-WAY)",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_042_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 43,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_043_a.png",
+   "symbol_text": null,
+   "description": "ANGLE",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_043_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 44,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_044_a.png",
+   "symbol_text": null,
+   "description": "ANGLE CHECK VALVE",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_044_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 45,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_045_a.png",
+   "symbol_text": null,
+   "description": "DIAPHRAGM",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_045_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 46,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_046_a.png",
+   "symbol_text": null,
+   "description": "PACKLESS VALVE \u2014 B : BELLOWS SEAL (AS SHOWN) / M : METALLIC DIAPHRAGM",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_046_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 47,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_047_a.png",
+   "symbol_text": null,
+   "description": "NEEDLE",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_047_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 48,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_048.png",
+   "symbol_text": null,
+   "description": "FOOT VALVE",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_049.png",
+   "symbol_text": null,
+   "description": "NON-RETURN VALVE",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_050_a.png",
+   "symbol_text": null,
+   "description": "RAM VALVE",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION",
+   "sym_file2": "sym/apr1400_p0_050_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 51,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_051.png",
+   "symbol_text": null,
+   "description": "BACKFLOW PREVENTER",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_052.png",
+   "symbol_text": null,
+   "description": "CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING DISC CHECK VALVE BY NOTE)",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_053_a.png",
+   "symbol_text": null,
+   "description": "STOP-CHECK",
+   "notes": "Left symbol = OPEN DURING NORMAL OPERATION; right = CLOSED DURING NORMAL OPERATION; NO / NC",
+   "sym_file2": "sym/apr1400_p0_053_b.png",
+   "variant_labels": [
+    "OPEN DURING NORMAL OPERATION",
+    "CLOSED DURING NORMAL OPERATION"
+   ]
+  },
+  {
+   "n": 54,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_054.png",
+   "symbol_text": null,
+   "description": "SINGLE END SHUTOFF WITH QUICK DISCONNECT",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "VALVE SYMBOLS - LINE VALVE-BODIES",
+   "sym_file": "sym/apr1400_p0_055.png",
+   "symbol_text": null,
+   "description": "FLOW LIMITING VALVE",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "VALVE SYMBOLS",
+   "sym_file": "sym/apr1400_p0_056.png",
+   "symbol_text": null,
+   "description": "KNIFE GATE VALVE",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "VALVE SYMBOLS",
+   "sym_file": "sym/apr1400_p0_057.png",
+   "symbol_text": null,
+   "description": "DOUBLE BLADE DAMPER",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "VALVE POSITION STATUS (TYPICAL FOR ALL VALVES)",
+   "sym_file": "sym/apr1400_p0_058.png",
+   "symbol_text": "LO",
+   "description": "LO : LOCKED OPEN IN LOCAL",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "VALVE POSITION STATUS (TYPICAL FOR ALL VALVES)",
+   "sym_file": "sym/apr1400_p0_059.png",
+   "symbol_text": "LC",
+   "description": "LC : LOCKED CLOSED IN LOCAL",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "VALVE POSITION STATUS (TYPICAL FOR ALL VALVES)",
+   "sym_file": "sym/apr1400_p0_060.png",
+   "symbol_text": "[LO]",
+   "description": "[LO] : LOCKED OPEN ON MCB AND/OR REMOTE SHUTDOWN CONSOLE",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "VALVE POSITION STATUS (TYPICAL FOR ALL VALVES)",
+   "sym_file": "sym/apr1400_p0_061.png",
+   "symbol_text": "[LC]",
+   "description": "[LC] : LOCKED CLOSED ON MCB AND/OR REMOTE SHUTDOWN CONSOLE",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "VALVE POSITION STATUS (TYPICAL FOR ALL VALVES)",
+   "sym_file": "sym/apr1400_p0_062.png",
+   "symbol_text": "LT",
+   "description": "LT : LOCKED THROTTLED",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "SELF-ACTUATED VALVES",
+   "sym_file": "sym/apr1400_p0_063.png",
+   "symbol_text": null,
+   "description": "ANGLE SAFETY OR RELIEF",
+   "notes": "VALVE IDENT. NUMBER (TYPICAL); SET @ ____ PSIG"
+  },
+  {
+   "n": 64,
+   "section": "SELF-ACTUATED VALVES",
+   "sym_file": "sym/apr1400_p0_064.png",
+   "symbol_text": null,
+   "description": "STRAIGHT SAFETY OR RELIEF",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 65,
+   "section": "SELF-ACTUATED VALVES",
+   "sym_file": "sym/apr1400_p0_065.png",
+   "symbol_text": null,
+   "description": "PRESSURE REDUCING REGULATOR SELF-CONTAINED",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 66,
+   "section": "SELF-ACTUATED VALVES",
+   "sym_file": "sym/apr1400_p0_066.png",
+   "symbol_text": null,
+   "description": "VACUUM RELIEF",
+   "notes": "SET @ ____ IN (H20,HG)"
+  },
+  {
+   "n": 67,
+   "section": "SELF-ACTUATED VALVES",
+   "sym_file": "sym/apr1400_p0_067.png",
+   "symbol_text": null,
+   "description": "PILOT OPERATED SAFETY RELIEF",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 68,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_068.png",
+   "symbol_text": null,
+   "description": "INSTRUMENT IDENTIFICATION NUMBER FOR CONTROL AIR & INSTRUMENT AIR SIGNAL SOLENOID VALVES ONLY",
+   "notes": "VALVE IDENTIFICATION"
+  },
+  {
+   "n": 69,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_069.png",
+   "symbol_text": null,
+   "description": "VALVE IDENTIFICATION NUMBER (TYPICAL FOR POWER OPERATED VALVES EXCEPT AS NOTED FOR CERTAIN SOLENOID VALVES)",
+   "notes": "VALVE IDENTIFICATION"
+  },
+  {
+   "n": 70,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_070.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATOR \u2014 AC MOTOR",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_071.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATOR \u2014 DC MOTOR",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_072.png",
+   "symbol_text": null,
+   "description": "PNEUMATIC OPERATORS (SPRING RETURN) FOR CONTROL AND ON/OFF VALVES (TYPICAL FOR OTHER VALVE TYPES) \u2014 DIAPHRAGM OPERATOR (TYPICAL), CYLINDER OPERATOR (TYPICAL); GLOBE VALVE / GATE VALVE; (AIR TO CLOSE, i.e. FAIL OPEN)",
+   "notes": null
+  },
+  {
+   "n": 73,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_073.png",
+   "symbol_text": null,
+   "description": "OPERATOR UNLOADED (TYPICAL) / OPERATOR LOADED (TYPICAL) \u2014 (AIR TO OPEN, i.e. FAIL CLOSED)",
+   "notes": null
+  },
+  {
+   "n": 74,
+   "section": "OPERATOR SYMBOLS (FOR USE WITH VALVE & DAMPER SYMBOL)",
+   "sym_file": "sym/apr1400_p0_074.png",
+   "symbol_text": null,
+   "description": "SOLENOID OPERATORS (SPRING RETURN) FOR VALVES (TYPICAL FOR OTHER VALVE TYPES)",
+   "notes": null
+  },
+  {
+   "n": 105,
+   "section": "OTHER OPERATORS",
+   "sym_file": "sym/apr1400_p0_105.png",
+   "symbol_text": null,
+   "description": "DOUBLE ACTING (AIR TO OPEN AND AIR TO CLOSE)",
+   "notes": null
+  },
+  {
+   "n": 106,
+   "section": "OTHER OPERATORS",
+   "sym_file": "sym/apr1400_p0_106.png",
+   "symbol_text": null,
+   "description": "ELECTRO-HYDRAULIC ACTUATORS",
+   "notes": null
+  },
+  {
+   "n": 107,
+   "section": "OTHER OPERATORS",
+   "sym_file": "sym/apr1400_p0_107.png",
+   "symbol_text": null,
+   "description": "HAND ACTUATOR (NOT SHOWN UNLESS AS INDICATED ABOVE OR WHEN USED AS AN EXTENSION SHAFT THRU SHIELD WALL OR FOR FLOORSTAND)",
+   "notes": null
+  },
+  {
+   "n": 108,
+   "section": "OTHER OPERATORS",
+   "sym_file": "sym/apr1400_p0_108.png",
+   "symbol_text": null,
+   "description": "MANUAL FLOW CONTROL",
+   "notes": null
+  },
+  {
+   "n": 109,
+   "section": "OPERATOR FAILURE MODE ABBREVIATION",
+   "sym_file": "sym/apr1400_p0_109.png",
+   "symbol_text": "FO",
+   "description": "FO : FAIL OPEN",
+   "notes": null
+  },
+  {
+   "n": 110,
+   "section": "OPERATOR FAILURE MODE ABBREVIATION",
+   "sym_file": "sym/apr1400_p0_110.png",
+   "symbol_text": "FC",
+   "description": "FC : FAIL CLOSED",
+   "notes": null
+  },
+  {
+   "n": 111,
+   "section": "OPERATOR FAILURE MODE ABBREVIATION",
+   "sym_file": "sym/apr1400_p0_111.png",
+   "symbol_text": "FL",
+   "description": "FL : FAIL LOCKED IN PLACE (POSITION DOES NOT CHANGE)",
+   "notes": null
+  },
+  {
+   "n": 75,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_075.png",
+   "symbol_text": "ST",
+   "description": "TRAP \u2014 ST : STEAM TRAP (SHOWN) / AT : AIR TRAP / DT : DRAIN TRAP / RT : RESIN TRAP",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_076.png",
+   "symbol_text": null,
+   "description": "Y-TYPE STRAINER",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_077.png",
+   "symbol_text": null,
+   "description": "TEMPORARY STARTUP STRAINER",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_078.png",
+   "symbol_text": null,
+   "description": "CIRCULAR OR HAMMER BLIND",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_079.png",
+   "symbol_text": null,
+   "description": "SPECTACLE BLIND",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_080.png",
+   "symbol_text": null,
+   "description": "SIMPLEX BASKET STRAINER",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_081.png",
+   "symbol_text": null,
+   "description": "DUPLEX BASKET STRAINER",
+   "notes": null
+  },
+  {
+   "n": 82,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_082.png",
+   "symbol_text": null,
+   "description": "MIXING TEE",
+   "notes": null
+  },
+  {
+   "n": 83,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_083.png",
+   "symbol_text": null,
+   "description": "BURSTING PLUG",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 84,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_084.png",
+   "symbol_text": null,
+   "description": "RUPTURE DISC FOR PRESSURE RELIEF",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 85,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_085.png",
+   "symbol_text": null,
+   "description": "RUPTURE DISC FOR VACUUM RELIEF",
+   "notes": "SET @ ____ PSIG"
+  },
+  {
+   "n": 86,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_086.png",
+   "symbol_text": null,
+   "description": "RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE)",
+   "notes": null
+  },
+  {
+   "n": 87,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_087.png",
+   "symbol_text": "CAP",
+   "description": "RESTRICTION DEVICE (CAPILLARY)",
+   "notes": null
+  },
+  {
+   "n": 88,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_088.png",
+   "symbol_text": null,
+   "description": "CAVITATING VENTURI",
+   "notes": null
+  },
+  {
+   "n": 89,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_089.png",
+   "symbol_text": null,
+   "description": "EXPANSION JOINT",
+   "notes": null
+  },
+  {
+   "n": 90,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_090.png",
+   "symbol_text": null,
+   "description": "FLEXIBLE HOSE",
+   "notes": null
+  },
+  {
+   "n": 91,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_091.png",
+   "symbol_text": null,
+   "description": "FLEXIBLE CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 92,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_092.png",
+   "symbol_text": null,
+   "description": "PULSATION DAMPENER",
+   "notes": null
+  },
+  {
+   "n": 93,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_093.png",
+   "symbol_text": "FA",
+   "description": "FLAME ARRESTOR",
+   "notes": null
+  },
+  {
+   "n": 94,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_094.png",
+   "symbol_text": null,
+   "description": "OIL SEAL POT",
+   "notes": null
+  },
+  {
+   "n": 95,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_095.png",
+   "symbol_text": "FG",
+   "description": "FLOW SIGHT GLASS",
+   "notes": null
+  },
+  {
+   "n": 96,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_096.png",
+   "symbol_text": null,
+   "description": "FLOW STRAIGHTENING VANE",
+   "notes": null
+  },
+  {
+   "n": 97,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_097.png",
+   "symbol_text": "F",
+   "description": "FILTER",
+   "notes": null
+  },
+  {
+   "n": 98,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_098.png",
+   "symbol_text": "D",
+   "description": "DESICCANT FILTER",
+   "notes": null
+  },
+  {
+   "n": 99,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_099.png",
+   "symbol_text": null,
+   "description": "ROOF EXHAUST HOOD",
+   "notes": null
+  },
+  {
+   "n": 100,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_100.png",
+   "symbol_text": null,
+   "description": "SPRAY NOZZLE OR SPARGER (UPWARD OR DOWNWARD)",
+   "notes": null
+  },
+  {
+   "n": 101,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_101.png",
+   "symbol_text": null,
+   "description": "ELECTRIC HEATER",
+   "notes": null
+  },
+  {
+   "n": 102,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_102.png",
+   "symbol_text": null,
+   "description": "AIR SEPARATOR ASSEMBLY",
+   "notes": null
+  },
+  {
+   "n": 103,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_103.png",
+   "symbol_text": null,
+   "description": "CONDENSATE POT",
+   "notes": null
+  },
+  {
+   "n": 104,
+   "section": "MISCELLANEOUS PIPING SPECIALTY SYMBOLS",
+   "sym_file": "sym/apr1400_p0_104.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Symbol truncated at bottom edge of source PDF; label not present in file"
+  },
+  {
+   "n": 112,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_112.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 113,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_113.png",
+   "symbol_text": "V",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 114,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_114.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 115,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_115.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 116,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_116.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 117,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_117.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 118,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_118.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 119,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_119.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 120,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_120.png",
+   "symbol_text": "DU",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 121,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_121.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 122,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_122.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 123,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_123.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 124,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_124.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 125,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_125.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 126,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_126.png",
+   "symbol_text": "DE",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 127,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_127.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 128,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_128.png",
+   "symbol_text": "DE",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 129,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_129.png",
+   "symbol_text": "DE",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 130,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_130.png",
+   "symbol_text": "DE",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 131,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_131.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 132,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_132.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 133,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_133.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 134,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_134.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 135,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_135.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 136,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_136.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 137,
+   "section": "PIPE LINE SYMBOLS (section header truncated in source: 'PIPE LIN...')",
+   "sym_file": "sym/apr1400_p0_137.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 138,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_138.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file); heavy line symbol"
+  },
+  {
+   "n": 139,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_139.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file); thin line symbol"
+  },
+  {
+   "n": 140,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_140.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 141,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_141.png",
+   "symbol_text": "(DOWNWARD) / UP... (fragment)",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 142,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_142.png",
+   "symbol_text": "S / E",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 143,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_143.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 144,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_144.png",
+   "symbol_text": null,
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 145,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_145.png",
+   "symbol_text": "TRENCH",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 146,
+   "section": "Untitled section (header truncated in source: 'F...')",
+   "sym_file": "sym/apr1400_p0_146.png",
+   "symbol_text": "TUNNEL",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  },
+  {
+   "n": 147,
+   "section": "Untitled section (header truncated in source: 'MISC...')",
+   "sym_file": "sym/apr1400_p0_147.png",
+   "symbol_text": "MS / SHEET... (fragment)",
+   "description": null,
+   "notes": "Description cut off at right edge of source PDF (missing in file)"
+  }
+ ]
+}

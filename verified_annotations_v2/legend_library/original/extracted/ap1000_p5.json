@@ -1,0 +1,535 @@
+{
+ "source": "AP1000",
+ "page": 6,
+ "image": "ap1000_p5_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "INSTRUMENTS AND INSTRUMENTATION FUNCTIONS",
+   "sym_file": "sym/ap1000_p5_001.png",
+   "symbol_text": null,
+   "description": "LOCAL DEVICE",
+   "notes": "Circle symbol XXXX/XXX. Callouts: INSTRUMENT FUNCTION CODE (FLOW ELEMENT); INSTRUMENT NUMBER"
+  },
+  {
+   "n": 2,
+   "section": "INSTRUMENTS AND INSTRUMENTATION FUNCTIONS",
+   "sym_file": "sym/ap1000_p5_002.png",
+   "symbol_text": null,
+   "description": "SOFT FUNCTION PERFORMED IN",
+   "notes": "Box symbol XXXX/XXX with XXX designation. Callouts: INSTRUMENT FUNCTION CODE (TYP.); INSTRUMENT NUMBER AND LOOP (TYP.); I & C SYSTEM DESIGNATION, IF BLANK, PLS IS ASSUMED. IF NOT, PMS OR DAS MUST BE SPECIFIED. USE NOTES TO SPECIFY IF FUNCTIONS MUST BE PERFORMED OUTSIDE OF MAIN CONTROL ROOM, AND WHERE. (E.G. PRIMARY SAMPLE ROOM, SOLID RADWASTE CONTROL AREA, ETC.) (REMOTE SHUTDOWN ROOM EXCLUDED)"
+  },
+  {
+   "n": 3,
+   "section": "INSTRUMENTS AND INSTRUMENTATION FUNCTIONS",
+   "sym_file": "sym/ap1000_p5_003.png",
+   "symbol_text": null,
+   "description": "SOFT FUNCTION PERFORMED IN A PACKAGED UNIT AND/OR IN A PERMANENTLY INSTALLED LOCAL CONTROL STATION",
+   "notes": "Box symbol XXXX/XXX with XXX designation. Callout: SYSTEM DESIGNATION OR PANEL ABBREVIATION"
+  },
+  {
+   "n": 4,
+   "section": "ALARMS",
+   "sym_file": "sym/ap1000_p5_004.png",
+   "symbol_text": null,
+   "description": "ALARM ARROW REPRESENTATION ON DEVICE (EXAMPLE: LICA 064)",
+   "notes": "Dashed arrows from device: up = H, HH; down = L, LL; bottom = EMPTY"
+  },
+  {
+   "n": 5,
+   "section": "ALARMS",
+   "sym_file": null,
+   "symbol_text": "HH",
+   "description": "HIGHER OF TWO ALARMS",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "ALARMS",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "HIGH ALARM",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "ALARMS",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "LOW ALARM",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "ALARMS",
+   "sym_file": null,
+   "symbol_text": "LL",
+   "description": "LOWER OF TWO LOW ALARMS",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "ALARMS",
+   "sym_file": null,
+   "symbol_text": "EMPTY",
+   "description": "EMPTY ALARM",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "ANALYSIS",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "B",
+   "description": "BURNER FLAME",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "CONDUCTIVITY",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "DENSITY OR WEIGHT",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "VOLTAGE",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FLOW",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "GAGING (DIMENSIONAL)",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "HAND (MANUAL)",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "I",
+   "description": "CURRENT",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "J",
+   "description": "POWER",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "K",
+   "description": "TIME",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "LEVEL",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "M",
+   "description": "MOISTURE",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "N",
+   "description": "NUTRON FLUX",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "O",
+   "description": "USER'S CHOICE",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "P",
+   "description": "PRESSURE",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "PD",
+   "description": "PRESSURE DIFFERENTIAL",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "Q",
+   "description": "QUANTITY OR EVENT",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "RADIOACTIVITY",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "S",
+   "description": "SPEED OR FREQUENCY",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "INSTRUMENT FUNCTION CODES - MEASURED OR INITIATED VARIABLE (1ST LETTER)",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "TEMPERATURE",
+   "notes": "table truncated at page bottom after this row - rows below missing in source PDF"
+  },
+  {
+   "n": 31,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "ALARM",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "B",
+   "description": "USER'S CHOICE",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "CONTROL (6)",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "PRIMARY ELEMENT",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "LOCAL OBSERVATION GLASS",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "I",
+   "description": "INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "K",
+   "description": "CONTROL STATION",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "IMDICATING LIGHTS",
+   "notes": "transcribed as printed"
+  },
+  {
+   "n": 39,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "P",
+   "description": "TEST POINT CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "QI",
+   "description": "INTEGRATING INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "Q",
+   "description": "LOOP POWER SUPPLY",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "RECORDER",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "S",
+   "description": "SWITCH",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "INSTRUMENT FUNCTION CODES - FUNCTION CODE (2ND, 3RD, 4TH LETTER) (2)",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "TRANSMITTER",
+   "notes": "table truncated at page bottom after this row - rows below missing in source PDF"
+  },
+  {
+   "n": 45,
+   "section": "INSTRUMENTATION NUMBERING",
+   "sym_file": "sym/ap1000_p5_045.png",
+   "symbol_text": null,
+   "description": "INSTRUMENT NUMBER: APP-RCS-JE-PS001A - INSTRUMENT NUMBERING EXAMPLE (REFERENCE A)",
+   "notes": "Callouts: MEASURED VARIABLE CODE (SEE TABLE); INSTRUMENT FUNCTION CODE (MAY BE MULTIPLE CODES - SEE TABLE); INSTRUMENT NUMBER (UP TO 5 DIGITS); LOOP DESIGNATION (IF APPLICABLE) (SEE NOTE 15 ON GW-M6-001); SEQUENCE NUMBER (MAX. OF 8 CHARACTERS); COMPONENT TYPE (JE=INSTRUMENT); SYSTEM LOCATOR CODE (REFERENCE C)"
+  },
+  {
+   "n": 46,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_046.png",
+   "symbol_text": null,
+   "description": "CONTROL INTERFACE BLOCK FORMAT: (1) TAG NUMBER OF INTERFACING COMPONENT (2) ACTION OR SIGNAL OF ITEM 1 (3) ACTION OR SIGNAL OF RELATED DEVICE",
+   "notes": "Intro: CONTROL INTERFACE BLOCKS ARE SHOWN ON P&ID'S TO INDICATE IN AN OVERVIEW FASHION THE RELATIONSHIP BETWEEN INSTRUMENT CHANNELS AND CONTROLLED DEVICES. THE DETAILS ARE FOUND ON THE CONTROL LOGIC DIAGRAM. A CONTROL INTERFACE BLOCK IS A TABLE WITH THREE COLUMNS IN THE FORMAT SHOWN BELOW."
+  },
+  {
+   "n": 47,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_047.png",
+   "symbol_text": null,
+   "description": "EXAMPLE: TICA100 | H | OP - V022 OPENS ON HIGH SIGNAL FROM TICA 100 (block at controlled valve V022)",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_048.png",
+   "symbol_text": null,
+   "description": "EXAMPLE: V022 | OP | H - V022 OPENS ON HIGH SIGNAL FROM TICA 100 (block at instrument TICA 100 / TE 100)",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "THE TAG NUMBERS MAY BE OMITTED FROM THE CONTROL INTERFACE BLOCK IF THE COMPONENTS ARE IN CLOSE PROXIMITY TO EACH OTHER",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_050.png",
+   "symbol_text": null,
+   "description": "FOR COMPLEX LOGIC, REFERENCES TO NOTES MAY REPLACE ITEMS IN COLUMNS 1.2. OR 3. (EXAMPLES: MK-01A | NOTE 9; MP-05B | SEE NOTE 5; V100 | OP | H; V100 | CL | L)",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "IF A COMPONENT IN COLUMN 1 IS ON A DIFFERENT DRAWING, REFERENCE THE DRAWING NUMBER IN COLUMN 1.",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_052.png",
+   "symbol_text": null,
+   "description": "EXAMPLE: OP | H (TAG NUMBERS OMITTED) - V022 OPENS ON HIGH SIGNAL FROM TICA 100",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": "sym/ap1000_p5_053.png",
+   "symbol_text": null,
+   "description": "EXAMPLE: V100 | CL | L / V200 CAS-M6-002 | OP | H",
+   "notes": "VALVE V100 IS PART OF CAS AND IS LOCATED ON SHEET 1 ALONG WITH THE CONTROLLING DEVICE. V200 IS LOCATED ON SHEET 2 AND IS CONTROLLED BY THE SAME DEVICE. IF V200 WERE A PART OF ANOTHER SYSTEM (E.G. BDS), THEN THE SAME METHOD WOULD BE USED."
+  },
+  {
+   "n": 54,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "CONTROL INTERFACE BLOCKS TO READ LEFT TO RIGHT / ARROWS ARE TO BE USED TO SHOW THE DIRECTION OF SIGNAL FLOW / THR LEGEND FOR CIB'S IS AS FOLLOWS.",
+   "notes": "\"THR\" as printed"
+  },
+  {
+   "n": 55,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": "ST",
+   "description": "START",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": "SP",
+   "description": "STOP",
+   "notes": "legend table truncated at page bottom after this row - possible further rows missing in source PDF"
+  },
+  {
+   "n": 57,
+   "section": "CONTROL INTERFACE BLOCKS",
+   "sym_file": null,
+   "symbol_text": "H1,H2,H3,L1,L2,L3, ETC. (MULTIPLE SETPOINTS)",
+   "description": "MULTIPLE SETPOINTS WHERE H3 IS [...] AND L2 IS LOWER THAN L1, ETC.",
+   "notes": "right edge truncated in source PDF - middle of sentence cut off"
+  },
+  {
+   "n": 58,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_058.png",
+   "symbol_text": null,
+   "description": "FT 123 / FE 123 - FLOW TRANSMITTER WITH FLOW ELEMENT (NOZZLE/ORIFICE FLANGE TAPS) AND TWO ROOT VALVES",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 59,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_059.png",
+   "symbol_text": null,
+   "description": "FX 123 / FE 123 - FLOW ELEMENT (VENTURI / FLOW TUBE) WITH TWO ROOT VALVES",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 60,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_060.png",
+   "symbol_text": null,
+   "description": "TE 040 / FE 040 - IN-LINE ELEMENT WITH TEMPERATURE ELEMENT AND FLOW ELEMENT",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 61,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_061.png",
+   "symbol_text": null,
+   "description": "XX 123 - IN-LINE (FLANGED) INSTRUMENT DEVICE",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 62,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_062.png",
+   "symbol_text": null,
+   "description": "TE 123 - TEMPERATURE ELEMENT WITH WELL, STEM MOUNTED IN PIPE",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 63,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_063.png",
+   "symbol_text": null,
+   "description": "TE 456 - TEMPERATURE ELEMENT, SURFACE / LINE CONNECTED",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 64,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_064.png",
+   "symbol_text": null,
+   "description": "IN-LINE FLOW ELEMENT SYMBOL (PARALLEL PLATES STYLE)",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 65,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_065.png",
+   "symbol_text": null,
+   "description": "IN-LINE FLOW ELEMENT SYMBOL (SINGLE PLATE WITH ZIGZAG)",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  },
+  {
+   "n": 66,
+   "section": "FLOW SENSORS AND OTHE[R ...] (SECTION TITLE TRUNCATED)",
+   "sym_file": "sym/ap1000_p5_066.png",
+   "symbol_text": null,
+   "description": "IN-LINE FLOW ELEMENT SYMBOL (FLANGED SMALL BOX)",
+   "notes": "truncated in source PDF - description column cut off at page edge; description inferred from visible symbol"
+  }
+ ]
+}
