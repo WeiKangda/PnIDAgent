@@ -3253,34 +3253,27 @@
   },
   {
    "box_id": 68,
-   "class": "OTHER",
-   "actuator": "-",
-   "legend_symbol": null,
-   "legend_operator": null
-  },
-  {
-   "box_id": 69,
    "class": "PUMP",
    "actuator": "TURBINE",
    "legend_symbol": 276,
    "legend_operator": null
   },
   {
-   "box_id": 70,
+   "box_id": 69,
    "class": "VLV_GATE",
    "actuator": "UNSPEC",
    "legend_symbol": 213,
    "legend_operator": null
   },
   {
-   "box_id": 71,
+   "box_id": 70,
    "class": "TANK",
    "actuator": "-",
    "legend_symbol": 283,
    "legend_operator": null
   },
   {
-   "box_id": 72,
+   "box_id": 71,
    "class": "VLV_GATE",
    "actuator": "MOTOR",
    "legend_symbol": 213,
@@ -6858,10 +6851,10 @@
   },
   {
    "box_id": 56,
-   "class": "VLV_GATE",
-   "actuator": "MOTOR",
-   "legend_symbol": 213,
-   "legend_operator": 267
+   "class": "VLV_CHECK",
+   "actuator": "NONE",
+   "legend_symbol": 203,
+   "legend_operator": null
   },
   {
    "box_id": 57,
@@ -6872,16 +6865,16 @@
   },
   {
    "box_id": 58,
-   "class": "VLV_CHECK",
-   "actuator": "NONE",
-   "legend_symbol": 203,
+   "class": "PUMP",
+   "actuator": "MOTOR",
+   "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 59,
-   "class": "PUMP",
-   "actuator": "MOTOR",
-   "legend_symbol": 273,
+   "class": "VLV_BUTTERFLY",
+   "actuator": "NONE",
+   "legend_symbol": 201,
    "legend_operator": null
   },
   {
@@ -6893,16 +6886,16 @@
   },
   {
    "box_id": 61,
-   "class": "VLV_BUTTERFLY",
+   "class": "VLV_CHECK",
    "actuator": "NONE",
-   "legend_symbol": 201,
+   "legend_symbol": 203,
    "legend_operator": null
   },
   {
    "box_id": 62,
-   "class": "VLV_CHECK",
+   "class": "VLV_BUTTERFLY",
    "actuator": "NONE",
-   "legend_symbol": 203,
+   "legend_symbol": 201,
    "legend_operator": null
   },
   {
@@ -6914,83 +6907,55 @@
   },
   {
    "box_id": 64,
-   "class": "VLV_GATE",
-   "actuator": "MOTOR",
-   "legend_symbol": 213,
-   "legend_operator": 267
-  },
-  {
-   "box_id": 65,
-   "class": "VLV_BUTTERFLY",
-   "actuator": "NONE",
-   "legend_symbol": 201,
-   "legend_operator": null
-  },
-  {
-   "box_id": 66,
    "class": "PUMP",
    "actuator": "MOTOR",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
-   "box_id": 67,
+   "box_id": 65,
    "class": "VLV_GATE",
    "actuator": "MOTOR",
    "legend_symbol": 213,
    "legend_operator": 267
   },
   {
-   "box_id": 68,
+   "box_id": 66,
    "class": "VLV_BUTTERFLY",
    "actuator": "NONE",
    "legend_symbol": 201,
    "legend_operator": null
   },
   {
-   "box_id": 69,
+   "box_id": 67,
    "class": "VLV_BUTTERFLY",
    "actuator": "NONE",
    "legend_symbol": 201,
+   "legend_operator": null
+  },
+  {
+   "box_id": 68,
+   "class": "VLV_GATE",
+   "actuator": "MOTOR",
+   "legend_symbol": 213,
+   "legend_operator": 267
+  },
+  {
+   "box_id": 69,
+   "class": "TANK",
+   "actuator": "-",
+   "legend_symbol": 283,
    "legend_operator": null
   },
   {
    "box_id": 70,
-   "class": "VLV_GATE",
-   "actuator": "MOTOR",
-   "legend_symbol": 213,
-   "legend_operator": 267
+   "class": "TANK",
+   "actuator": "-",
+   "legend_symbol": 283,
+   "legend_operator": null
   },
   {
    "box_id": 71,
-   "class": "OTHER",
-   "actuator": "-",
-   "legend_symbol": null,
-   "legend_operator": null
-  },
-  {
-   "box_id": 72,
-   "class": "OTHER",
-   "actuator": "-",
-   "legend_symbol": null,
-   "legend_operator": null
-  },
-  {
-   "box_id": 73,
-   "class": "TANK",
-   "actuator": "-",
-   "legend_symbol": 283,
-   "legend_operator": null
-  },
-  {
-   "box_id": 74,
-   "class": "TANK",
-   "actuator": "-",
-   "legend_symbol": 283,
-   "legend_operator": null
-  },
-  {
-   "box_id": 75,
    "class": "PUMP",
    "actuator": "TURBINE",
    "legend_symbol": 276,
@@ -7337,7 +7302,7 @@
   {
    "box_id": 48,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -7351,7 +7316,7 @@
   {
    "box_id": 50,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -7360,6 +7325,13 @@
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 345,
+   "legend_operator": null
+  },
+  {
+   "box_id": 52,
+   "class": "VLV_CHECK",
+   "actuator": "NONE",
+   "legend_symbol": 203,
    "legend_operator": null
   }
  ],
@@ -7852,7 +7824,7 @@
   {
    "box_id": 42,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -7922,7 +7894,7 @@
   {
    "box_id": 52,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -8332,7 +8304,7 @@
   {
    "box_id": 30,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -8516,14 +8488,14 @@
   {
    "box_id": 20,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 21,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -8693,7 +8665,7 @@
   {
    "box_id": 18,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -9052,7 +9024,7 @@
   {
    "box_id": 44,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -9087,7 +9059,7 @@
   {
    "box_id": 49,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -9369,7 +9341,7 @@
   {
    "box_id": 35,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -11439,14 +11411,14 @@
   {
    "box_id": 10,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 11,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -11509,14 +11481,14 @@
   {
    "box_id": 20,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 21,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -11921,14 +11893,14 @@
   {
    "box_id": 14,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 15,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -11965,7 +11937,7 @@
   {
    "box_id": 3,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -11993,7 +11965,7 @@
   {
    "box_id": 7,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12014,14 +11986,14 @@
   {
    "box_id": 10,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 11,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12079,21 +12051,21 @@
   {
    "box_id": 0,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 1,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12151,21 +12123,21 @@
   {
    "box_id": 0,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 1,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12246,7 +12218,7 @@
   {
    "box_id": 0,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12260,7 +12232,7 @@
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -12766,42 +12738,42 @@
   {
    "box_id": 63,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 64,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 65,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 66,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 67,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 68,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -13146,7 +13118,7 @@
   {
    "box_id": 0,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -13188,7 +13160,7 @@
   {
    "box_id": 6,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -13456,7 +13428,7 @@
   {
    "box_id": 4,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -13687,28 +13659,28 @@
   {
    "box_id": 37,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 38,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 39,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 40,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
@@ -15440,64 +15412,64 @@
   {
    "box_id": 20,
    "class": "DAMPER",
-   "actuator": "AIR",
-   "legend_symbol": 593,
-   "legend_operator": null
-  },
-  {
-   "box_id": 21,
-   "class": "DAMPER",
    "actuator": "NONE",
    "legend_symbol": 257,
    "legend_operator": null
   },
   {
-   "box_id": 22,
+   "box_id": 21,
    "class": "DAMPER",
    "actuator": "EH",
    "legend_symbol": 595,
    "legend_operator": null
   },
   {
-   "box_id": 23,
+   "box_id": 22,
    "class": "DAMPER",
    "actuator": "AIR",
    "legend_symbol": 593,
    "legend_operator": null
   },
   {
-   "box_id": 24,
+   "box_id": 23,
    "class": "DAMPER",
    "actuator": "AIR",
    "legend_symbol": 592,
    "legend_operator": null
   },
   {
-   "box_id": 25,
+   "box_id": 24,
    "class": "HUMIDIFIER",
    "actuator": "-",
    "legend_symbol": 580,
    "legend_operator": null
   },
   {
-   "box_id": 26,
+   "box_id": 25,
    "class": "DAMPER",
    "actuator": "AIR",
    "legend_symbol": 593,
    "legend_operator": null
   },
   {
-   "box_id": 27,
+   "box_id": 26,
    "class": "INSTR",
    "actuator": "-",
    "legend_symbol": 656,
    "legend_operator": null
   },
   {
-   "box_id": 28,
+   "box_id": 27,
    "class": "DAMPER",
    "actuator": "AIR",
    "legend_symbol": 593,
+   "legend_operator": null
+  },
+  {
+   "box_id": 28,
+   "class": "INSTR",
+   "actuator": "-",
+   "legend_symbol": 656,
    "legend_operator": null
   },
   {
@@ -15509,23 +15481,23 @@
   },
   {
    "box_id": 30,
-   "class": "INSTR",
-   "actuator": "-",
-   "legend_symbol": 656,
-   "legend_operator": null
-  },
-  {
-   "box_id": 31,
    "class": "HUMIDIFIER",
    "actuator": "-",
    "legend_symbol": 580,
    "legend_operator": null
   },
   {
-   "box_id": 32,
+   "box_id": 31,
    "class": "DAMPER",
    "actuator": "AIR",
    "legend_symbol": 592,
+   "legend_operator": null
+  },
+  {
+   "box_id": 32,
+   "class": "INSTR",
+   "actuator": "-",
+   "legend_symbol": 656,
    "legend_operator": null
   },
   {
@@ -15537,30 +15509,30 @@
   },
   {
    "box_id": 34,
-   "class": "INSTR",
-   "actuator": "-",
-   "legend_symbol": 656,
-   "legend_operator": null
-  },
-  {
-   "box_id": 35,
    "class": "FAN",
    "actuator": "-",
    "legend_symbol": 578,
    "legend_operator": null
   },
   {
-   "box_id": 36,
+   "box_id": 35,
    "class": "HUMIDIFIER",
    "actuator": "-",
    "legend_symbol": 580,
    "legend_operator": null
   },
   {
-   "box_id": 37,
+   "box_id": 36,
    "class": "FAN",
    "actuator": "-",
    "legend_symbol": 578,
+   "legend_operator": null
+  },
+  {
+   "box_id": 37,
+   "class": "COIL",
+   "actuator": "-",
+   "legend_symbol": 581,
    "legend_operator": null
   },
   {
@@ -15572,23 +15544,23 @@
   },
   {
    "box_id": 39,
-   "class": "COIL",
-   "actuator": "-",
-   "legend_symbol": 581,
-   "legend_operator": null
-  },
-  {
-   "box_id": 40,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 583,
    "legend_operator": null
   },
   {
-   "box_id": 41,
+   "box_id": 40,
    "class": "COIL",
    "actuator": "-",
    "legend_symbol": 581,
+   "legend_operator": null
+  },
+  {
+   "box_id": 41,
+   "class": "FILTER",
+   "actuator": "-",
+   "legend_symbol": 583,
    "legend_operator": null
   },
   {
@@ -15600,16 +15572,16 @@
   },
   {
    "box_id": 43,
-   "class": "FILTER",
+   "class": "FAN",
    "actuator": "-",
-   "legend_symbol": 583,
+   "legend_symbol": 578,
    "legend_operator": null
   },
   {
    "box_id": 44,
-   "class": "FAN",
+   "class": "COIL",
    "actuator": "-",
-   "legend_symbol": 578,
+   "legend_symbol": 581,
    "legend_operator": null
   },
   {
@@ -15621,65 +15593,65 @@
   },
   {
    "box_id": 46,
-   "class": "COIL",
-   "actuator": "-",
-   "legend_symbol": 581,
-   "legend_operator": null
-  },
-  {
-   "box_id": 47,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 583,
    "legend_operator": null
   },
   {
-   "box_id": 48,
+   "box_id": 47,
    "class": "COIL",
    "actuator": "-",
    "legend_symbol": 581,
    "legend_operator": null
   },
   {
-   "box_id": 49,
+   "box_id": 48,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 587,
    "legend_operator": null
   },
   {
-   "box_id": 50,
+   "box_id": 49,
    "class": "FAN",
    "actuator": "-",
    "legend_symbol": 578,
    "legend_operator": null
   },
   {
-   "box_id": 51,
+   "box_id": 50,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 586,
    "legend_operator": null
   },
   {
-   "box_id": 52,
+   "box_id": 51,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 534,
    "legend_operator": null
   },
   {
-   "box_id": 53,
+   "box_id": 52,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 584,
    "legend_operator": null
   },
   {
-   "box_id": 54,
+   "box_id": 53,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 583,
+   "legend_operator": null
+  },
+  {
+   "box_id": 54,
+   "class": "COIL",
+   "actuator": "-",
+   "legend_symbol": 581,
    "legend_operator": null
   },
   {
@@ -15691,16 +15663,16 @@
   },
   {
    "box_id": 56,
-   "class": "COIL",
+   "class": "FILTER",
    "actuator": "-",
-   "legend_symbol": 581,
+   "legend_symbol": 587,
    "legend_operator": null
   },
   {
    "box_id": 57,
-   "class": "FILTER",
+   "class": "COIL",
    "actuator": "-",
-   "legend_symbol": 587,
+   "legend_symbol": 581,
    "legend_operator": null
   },
   {
@@ -15712,44 +15684,44 @@
   },
   {
    "box_id": 59,
-   "class": "COIL",
-   "actuator": "-",
-   "legend_symbol": 581,
-   "legend_operator": null
-  },
-  {
-   "box_id": 60,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 583,
    "legend_operator": null
   },
   {
-   "box_id": 61,
+   "box_id": 60,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 584,
    "legend_operator": null
   },
   {
-   "box_id": 62,
+   "box_id": 61,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 534,
    "legend_operator": null
   },
   {
-   "box_id": 63,
+   "box_id": 62,
    "class": "FILTER",
    "actuator": "-",
    "legend_symbol": 586,
    "legend_operator": null
   },
   {
-   "box_id": 64,
+   "box_id": 63,
    "class": "DAMPER",
    "actuator": "EH",
    "legend_symbol": 594,
+   "legend_operator": null
+  },
+  {
+   "box_id": 64,
+   "class": "DAMPER",
+   "actuator": "AIR",
+   "legend_symbol": 593,
    "legend_operator": null
   },
   {
@@ -15761,9 +15733,9 @@
   },
   {
    "box_id": 66,
-   "class": "DAMPER",
-   "actuator": "AIR",
-   "legend_symbol": 593,
+   "class": "COIL",
+   "actuator": "-",
+   "legend_symbol": 581,
    "legend_operator": null
   },
   {
@@ -15775,9 +15747,9 @@
   },
   {
    "box_id": 68,
-   "class": "COIL",
-   "actuator": "-",
-   "legend_symbol": 581,
+   "class": "DAMPER",
+   "actuator": "EH",
+   "legend_symbol": 595,
    "legend_operator": null
   },
   {
@@ -15790,15 +15762,15 @@
   {
    "box_id": 70,
    "class": "DAMPER",
-   "actuator": "EH",
-   "legend_symbol": 595,
+   "actuator": "AIR",
+   "legend_symbol": 592,
    "legend_operator": null
   },
   {
    "box_id": 71,
    "class": "DAMPER",
-   "actuator": "AIR",
-   "legend_symbol": 592,
+   "actuator": "EH",
+   "legend_symbol": 595,
    "legend_operator": null
   },
   {
@@ -15811,22 +15783,22 @@
   {
    "box_id": 73,
    "class": "DAMPER",
-   "actuator": "EH",
-   "legend_symbol": 595,
+   "actuator": "AIR",
+   "legend_symbol": 592,
    "legend_operator": null
   },
   {
    "box_id": 74,
    "class": "DAMPER",
    "actuator": "AIR",
-   "legend_symbol": 592,
+   "legend_symbol": 593,
    "legend_operator": null
   },
   {
    "box_id": 75,
    "class": "DAMPER",
-   "actuator": "AIR",
-   "legend_symbol": 593,
+   "actuator": "EH",
+   "legend_symbol": 595,
    "legend_operator": null
   },
   {
@@ -15874,8 +15846,8 @@
   {
    "box_id": 82,
    "class": "DAMPER",
-   "actuator": "EH",
-   "legend_symbol": 595,
+   "actuator": "AIR",
+   "legend_symbol": 593,
    "legend_operator": null
   },
   {
@@ -15888,19 +15860,12 @@
   {
    "box_id": 84,
    "class": "DAMPER",
-   "actuator": "AIR",
-   "legend_symbol": 593,
-   "legend_operator": null
-  },
-  {
-   "box_id": 85,
-   "class": "DAMPER",
    "actuator": "EH",
    "legend_symbol": 595,
    "legend_operator": null
   },
   {
-   "box_id": 86,
+   "box_id": 85,
    "class": "DAMPER",
    "actuator": "EH",
    "legend_symbol": 595,
@@ -15911,21 +15876,21 @@
   {
    "box_id": 0,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 1,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -17184,28 +17149,28 @@
   {
    "box_id": 38,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 39,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 40,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 41,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
@@ -17270,7 +17235,7 @@
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -17319,28 +17284,28 @@
   {
    "box_id": 9,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 10,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 11,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 12,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -17361,14 +17326,14 @@
   {
    "box_id": 15,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 16,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -19021,7 +18986,7 @@
   {
    "box_id": 2,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -20604,21 +20569,21 @@
   {
    "box_id": 39,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 40,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 41,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   }
@@ -21462,14 +21427,14 @@
   {
    "box_id": 12,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 13,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   }
@@ -21912,7 +21877,7 @@
   {
    "box_id": 62,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
@@ -21926,21 +21891,21 @@
   {
    "box_id": 64,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 65,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
   {
    "box_id": 66,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 420,
    "legend_operator": null
   },
@@ -22004,9 +21969,9 @@
   },
   {
    "box_id": 2,
-   "class": "VLV_GATE",
+   "class": "VLV_GLOBE",
    "actuator": "MOTOR",
-   "legend_symbol": 451,
+   "legend_symbol": 453,
    "legend_operator": 500
   },
   {
@@ -22054,7 +22019,7 @@
   {
    "box_id": 9,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -22137,9 +22102,9 @@
   },
   {
    "box_id": 21,
-   "class": "OTHER",
+   "class": "PENETRATION",
    "actuator": "-",
-   "legend_symbol": null,
+   "legend_symbol": 344,
    "legend_operator": null
   }
  ],
@@ -22203,7 +22168,7 @@
   {
    "box_id": 8,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -22259,7 +22224,7 @@
   {
    "box_id": 16,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -22357,7 +22322,7 @@
   {
    "box_id": 30,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -22378,7 +22343,7 @@
   {
    "box_id": 33,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 419,
    "legend_operator": null
   },
@@ -23390,7 +23355,7 @@
   {
    "box_id": 40,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -23411,7 +23376,7 @@
   {
    "box_id": 43,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -23439,7 +23404,7 @@
   {
    "box_id": 47,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -23544,14 +23509,14 @@
   {
    "box_id": 62,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 63,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -24379,28 +24344,28 @@
   {
    "box_id": 116,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 117,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 118,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
   {
    "box_id": 119,
    "class": "PUMP",
-   "actuator": "UNSPEC",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },

@@ -1,0 +1,5957 @@
+{
+ "pseudo_SCS_APR1400": {
+  "review": "ALE review of the SCS (APR1400) page, 2026-11-17",
+  "remove_boxes": [
+   {
+    "id": 21,
+    "bbox": [
+     730.8,
+     998.7,
+     826.6,
+     1066.6
+    ],
+    "reason": "the ASME code-class break label '1|2' is not a component"
+   }
+  ],
+  "remove_lines": [
+   {
+    "seg": [
+     778.8,
+     1065.0,
+     777.3,
+     1133.4
+    ],
+    "reason": "leader line of the code-class label, not a pipe"
+   }
+  ],
+  "add_boxes": [
+   {
+    "bbox": [
+     889,
+     1193,
+     934,
+     1239
+    ],
+    "class": "PENETRATION",
+    "actuator": "-",
+    "note": "containment penetration (square on the inside / outside containment boundary)",
+    "reason": "the containment penetration on the boundary was not boxed; the suction line now ends at it on both sides"
+   }
+  ],
+  "move_lines": [
+   {
+    "seg": [
+     781.0,
+     1215.9,
+     884.2,
+     1216.8
+    ],
+    "new": [
+     781.0,
+     1215.9,
+     889.0,
+     1216.8
+    ],
+    "reason": "ends at the edge of the new penetration box"
+   },
+   {
+    "seg": [
+     2032.0,
+     1178.0,
+     2067.0,
+     1178.0
+    ],
+    "new": [
+     2030.0,
+     1178.0,
+     2067.0,
+     1178.0
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1628.0,
+     1177.1,
+     1784.3,
+     1177.1
+    ],
+    "new": [
+     1628.0,
+     1177.1,
+     1785.0,
+     1177.1
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1466.0,
+     1418.9,
+     1503.9,
+     1418.9
+    ],
+    "new": [
+     1464.0,
+     1418.9,
+     1503.9,
+     1418.9
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   }
+  ],
+  "manual_edits": {
+   "remove_added_lines": [
+    [
+     884.0,
+     1216.0,
+     935.0,
+     1216.0
+    ]
+   ]
+  },
+  "relabel": [
+   {
+    "id": 2,
+    "bbox": [
+     2150.0,
+     580.0,
+     2236.0,
+     686.0
+    ],
+    "class": "VLV_GLOBE",
+    "actuator": "MOTOR",
+    "note": "solid body (normally closed) with the dot at the waist (SI-314)",
+    "reason": "dot at the waist: globe valve (classes.csv)"
+   },
+   {
+    "id": 9,
+    "bbox": [
+     1300.0,
+     1165.0,
+     1386.0,
+     1260.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "note": "shutdown cooling pump (SCP-01), no operator drawn",
+    "reason": "no operator drawn: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 18,
+    "bbox": [
+     1784.0,
+     1135.0,
+     2032.0,
+     1238.0
+    ],
+    "box": [
+     1785,
+     1136,
+     2030,
+     1219
+    ],
+    "reason": "the box held the CCW arrowheads and the start of the CCW lines below the outline; now the heat exchanger outline only"
+   },
+   {
+    "id": 19,
+    "bbox": [
+     1219.0,
+     1376.0,
+     1466.0,
+     1479.0
+    ],
+    "box": [
+     1219,
+     1377,
+     1464,
+     1461
+    ],
+    "reason": "the box held the CCW arrowheads and the start of the CCW lines below the outline; now the heat exchanger outline only"
+   }
+  ],
+  "add_dashed": [
+   {
+    "seg": [
+     735.5,
+     934.0,
+     832.2,
+     934.0
+    ],
+    "reason": "relief discharge of SI-179 to the IRWST"
+   },
+   {
+    "seg": [
+     1303.3,
+     921.3,
+     1385.3,
+     921.3
+    ],
+    "reason": "SIS supply from the IRWST into check valve SI-157"
+   },
+   {
+    "seg": [
+     1553.5,
+     662.3,
+     1696.3,
+     662.3
+    ],
+    "reason": "SI-300 to SIS (to IRWST or ERVC)"
+   },
+   {
+    "seg": [
+     1985.5,
+     1544.7,
+     2131.5,
+     1544.7
+    ],
+    "reason": "SI-601 to SIS (to DVI)"
+   },
+   {
+    "seg": [
+     2468.5,
+     1524.5,
+     2814.6,
+     1524.5
+    ],
+    "reason": "external emergency injection line (horizontal part)"
+   },
+   {
+    "seg": [
+     2814.6,
+     1524.5,
+     2814.6,
+     1560.5
+    ],
+    "reason": "external emergency injection line (vertical part, from the label)"
+   },
+   {
+    "seg": [
+     1869.8,
+     662.5,
+     1869.8,
+     825.6
+    ],
+    "reason": "CSS interface into the SI-688 / SI-300 line"
+   },
+   {
+    "seg": [
+     1163.4,
+     745.5,
+     1162.9,
+     887.5
+    ],
+    "reason": "CSS interface from the SI-340 / SI-157 line"
+   },
+   {
+    "seg": [
+     1665.9,
+     815.8,
+     1665.5,
+     894.0
+    ],
+    "reason": "CSS interface above SI-341"
+   },
+   {
+    "seg": [
+     414.2,
+     1052.5,
+     414.2,
+     1373.6
+    ],
+    "reason": "RCS hot leg (the shutdown cooling suction starts on it)"
+   },
+   {
+    "seg": [
+     1826.6,
+     1219.0,
+     1826.6,
+     1337.7
+    ],
+    "reason": "CCW from SDCHX-01"
+   },
+   {
+    "seg": [
+     494.7,
+     1216.3,
+     494.7,
+     1450.5
+    ],
+    "reason": "SIS injection into the RCS hot leg line"
+   },
+   {
+    "seg": [
+     1988.3,
+     1219.0,
+     1988.3,
+     1340.5
+    ],
+    "reason": "CCW to SDCHX-01"
+   },
+   {
+    "seg": [
+     1261.4,
+     1461.0,
+     1261.4,
+     1578.7
+    ],
+    "reason": "CCW from SCP MFHX-01"
+   },
+   {
+    "seg": [
+     1422.5,
+     1461.0,
+     1422.5,
+     1581.7
+    ],
+    "reason": "CCW to SCP MFHX-01"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (code-class label removed, containment penetration added, dotted flow pipes added, heat exchanger boxes tightened)."
+ },
+ "pseudo_AFW (Farley)": {
+  "remove_boxes": [
+   {
+    "id": 68,
+    "bbox": [
+     1799,
+     947,
+     1829,
+     981
+    ],
+    "reason": "flow arrow on the steam line, not a component"
+   }
+  ],
+  "relabel": [
+   {
+    "id": 40,
+    "bbox": [
+     1933,
+     987,
+     1981,
+     1082
+    ],
+    "box": [
+     1933,
+     997,
+     1981,
+     1082
+    ],
+    "reason": "the box held the flow arrow above the valve; now the valve only, like valve 27"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     1812.0,
+     889.0,
+     1812.0,
+     995.0
+    ],
+    "reason": "steam supply stub from TD/SGC into valve 27 (with its flow arrow)"
+   },
+   {
+    "seg": [
+     1957.0,
+     890.0,
+     1957.0,
+     997.0
+    ],
+    "reason": "steam supply stub from TD/SGC into valve 40 (with its flow arrow)"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (flow arrow box removed, the two steam supply stubs added, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      941.4,
+      1313.0,
+      941.4,
+      1337.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1424.8,
+      1315.0,
+      1424.8,
+      1337.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      941.0,
+      1312.0,
+      941.0,
+      1352.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1425.0,
+      1314.0,
+      1425.0,
+      1336.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      431.0,
+      2055.0,
+      616.0,
+      2055.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      946.0,
+      2056.0,
+      1131.0,
+      2056.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1443.0,
+      2011.0,
+      1541.0,
+      2011.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1812.5,
+      889.0,
+      1812.5,
+      946.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1812.5,
+      980.0,
+      1812.5,
+      994.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1959.0,
+      890.0,
+      1959.0,
+      987.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_AFW (Vogtle)": {
+  "remove_boxes": [
+   {
+    "id": 56,
+    "bbox": [
+     391,
+     1369,
+     422,
+     1421
+    ],
+    "reason": "valve body boxed again inside the motor-operated valve 67"
+   },
+   {
+    "id": 64,
+    "bbox": [
+     669,
+     1109,
+     702,
+     1169
+    ],
+    "reason": "valve body boxed again inside the motor-operated valve 70"
+   },
+   {
+    "id": 71,
+    "bbox": [
+     420,
+     2019,
+     528,
+     2069
+    ],
+    "reason": "main steam system interface bracket (arrows), not a component"
+   },
+   {
+    "id": 72,
+    "bbox": [
+     1433,
+     2203,
+     1470,
+     2240
+    ],
+    "reason": "motor operator of butterfly valve 55, merged into its box"
+   }
+  ],
+  "relabel": [
+   {
+    "id": 55,
+    "bbox": [
+     1500,
+     2193,
+     1534,
+     2249
+    ],
+    "box": [
+     1433,
+     2193,
+     1534,
+     2249
+    ],
+    "note": "motor-operated butterfly valve, with its motor operator (S115) on a stem to the left",
+    "reason": "a valve and its actuator are one box"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     467.5,
+     2019.0,
+     467.5,
+     2069.0
+    ],
+    "reason": "the pipe through the removed bracket box"
+   }
+  ],
+  "notes": [],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set).",
+  "manual_edits": {
+   "no_join": [
+    55
+   ]
+  },
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      969.1,
+      1973.9,
+      1526.5,
+      1973.9
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      954.0,
+      2680.0,
+      1114.7,
+      2680.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1377.9,
+      1354.7,
+      1600.8,
+      1354.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1589.7,
+      1291.0,
+      1589.5,
+      1349.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      467.5,
+      2069.0,
+      467.5,
+      2333.2
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1006.0,
+      1766.0,
+      1120.2,
+      1766.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      969.1,
+      1973.9,
+      1518.0,
+      1973.9
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1518.0,
+      1973.9,
+      1518.0,
+      1985.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      954.0,
+      2680.0,
+      1099.1,
+      2680.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1377.9,
+      1354.7,
+      1589.6,
+      1354.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1589.6,
+      1291.0,
+      1589.6,
+      1354.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      467.5,
+      2069.0,
+      467.5,
+      2320.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      960.7,
+      1766.0,
+      1120.2,
+      1766.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_Control room HVAC_APR1400": {
+  "remove_boxes": [
+   {
+    "id": 20,
+    "bbox": [
+     2750,
+     854,
+     2791,
+     895
+    ],
+    "reason": "damper body boxed again inside damper 26 (Y0016D)"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (duplicate damper box removed, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1510.5,
+      1482.5,
+      1510.5,
+      1138.0
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      1508.9,
+      1141.1,
+      1767.9,
+      1141.1
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      1764.4,
+      1141.1,
+      1764.4,
+      1482.5
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      1510.5,
+      1482.5,
+      1764.4,
+      1482.5
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      521.7,
+      604.6,
+      751.6,
+      604.6
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      752.2,
+      582.6,
+      752.2,
+      606.2
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      2586.2,
+      606.2,
+      2788.8,
+      604.2
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      2586.7,
+      583.1,
+      2586.2,
+      606.2
+     ],
+     "reason": "control room envelope and concrete tunnel outlines"
+    },
+    {
+     "seg": [
+      2546.2,
+      903.3,
+      2546.2,
+      1139.6
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      752.2,
+      582.6,
+      752.2,
+      593.6
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2546.2,
+      903.3,
+      2546.2,
+      1123.1
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      662.0,
+      554.0,
+      662.0,
+      582.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      720.0,
+      554.0,
+      720.0,
+      582.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2617.0,
+      554.0,
+      2617.0,
+      583.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2675.0,
+      554.0,
+      2675.0,
+      583.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1719.7,
+      1438.0,
+      1719.7,
+      1462.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1": {
+  "add_boxes": [
+   {
+    "bbox": [
+     1337,
+     1179,
+     1382,
+     1237
+    ],
+    "class": "VLV_CHECK",
+    "actuator": "NONE",
+    "note": "check valve AF-15 below AF-9",
+    "reason": "the check valve was not boxed; the pipe ran through it"
+   }
+  ],
+  "move_lines": [
+   {
+    "seg": [
+     1352.3,
+     1178.0,
+     1352.3,
+     1251.5
+    ],
+    "new": [
+     1352.3,
+     1237.0,
+     1352.3,
+     1251.5
+    ],
+    "reason": "starts at the new check valve box"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (check valve AF-15 added).",
+  "relabel": [
+   {
+    "id": 48,
+    "bbox": [
+     1221.0,
+     1007.0,
+     1340.0,
+     1129.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 50,
+    "bbox": [
+     1224.0,
+     1617.0,
+     1339.0,
+     1709.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ]
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3": {
+  "relabel": [
+   {
+    "id": 42,
+    "bbox": [
+     1271.0,
+     1662.0,
+     1406.0,
+     1768.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 52,
+    "bbox": [
+     1290.6,
+     1096.3,
+     1398.5,
+     1181.5
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1482.0,
+      1257.5,
+      1531.0,
+      1257.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1482.0,
+      1257.5,
+      1482.0,
+      1431.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5": {
+  "relabel": [
+   {
+    "id": 30,
+    "bbox": [
+     1178.0,
+     1643.0,
+     1296.0,
+     1805.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
+  "relabel": [
+   {
+    "id": 20,
+    "bbox": [
+     992.0,
+     1621.0,
+     1113.0,
+     1807.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 21,
+    "bbox": [
+     1367.0,
+     1591.0,
+     1486.0,
+     1759.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
+  "relabel": [
+   {
+    "id": 18,
+    "bbox": [
+     1368.0,
+     1325.0,
+     1526.0,
+     1447.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8": {
+  "relabel": [
+   {
+    "id": 44,
+    "bbox": [
+     1217.8,
+     1619.0,
+     1331.4,
+     1703.5
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 49,
+    "bbox": [
+     1223.1,
+     1033.4,
+     1327.9,
+     1118.3
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": {
+  "relabel": [
+   {
+    "id": 35,
+    "bbox": [
+     1546.0,
+     1162.0,
+     1710.0,
+     1282.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2712.0,
+      1409.0,
+      2736.0,
+      1409.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2825.0,
+      1409.0,
+      2852.3,
+      1409.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2716.9,
+      1115.8,
+      2737.0,
+      1115.8
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2833.0,
+      1117.6,
+      2853.2,
+      1117.6
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      2712.0,
+      1409.0,
+      2729.0,
+      1409.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2832.0,
+      1409.0,
+      2852.0,
+      1409.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2717.0,
+      1116.0,
+      2730.0,
+      1116.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2839.0,
+      1118.0,
+      2853.0,
+      1118.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p1": {
+  "relabel": [
+   {
+    "id": 10,
+    "bbox": [
+     898.0,
+     1546.0,
+     972.0,
+     1612.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     898.0,
+     1674.0,
+     972.0,
+     1738.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 20,
+    "bbox": [
+     2400.0,
+     1812.0,
+     2468.0,
+     1876.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 21,
+    "bbox": [
+     2400.0,
+     1930.0,
+     2468.0,
+     1994.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      945.0,
+      1209.0,
+      818.0,
+      1209.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p4": {
+  "relabel": [
+   {
+    "id": 14,
+    "bbox": [
+     1933.0,
+     1342.0,
+     2034.0,
+     1432.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 15,
+    "bbox": [
+     1933.0,
+     1460.0,
+     2034.0,
+     1548.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      2402.0,
+      1724.0,
+      2428.0,
+      1724.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_CCWS_(Surry) FSAR_p1": {
+  "relabel": [
+   {
+    "id": 3,
+    "bbox": [
+     834.0,
+     2154.0,
+     923.0,
+     2233.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 7,
+    "bbox": [
+     832.0,
+     1885.0,
+     922.0,
+     1965.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 10,
+    "bbox": [
+     832.0,
+     1615.0,
+     922.0,
+     1695.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     830.0,
+     1345.0,
+     920.0,
+     1425.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_CCWS_(Surry) FSAR_p2": {
+  "relabel": [
+   {
+    "id": 0,
+    "bbox": [
+     910.0,
+     1702.0,
+     1023.0,
+     1803.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 1,
+    "bbox": [
+     907.0,
+     1371.0,
+     1023.0,
+     1473.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 2,
+    "bbox": [
+     907.0,
+     1040.0,
+     1023.0,
+     1141.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1640.4,
+      2041.0,
+      1640.4,
+      2060.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_CCWS_(Surry) FSAR_p3": {
+  "relabel": [
+   {
+    "id": 0,
+    "bbox": [
+     1177.0,
+     1374.0,
+     1304.0,
+     1477.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 1,
+    "bbox": [
+     1177.0,
+     1845.0,
+     1304.0,
+     1949.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 2,
+    "bbox": [
+     1177.0,
+     2331.0,
+     1304.0,
+     2434.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_CCWS_(Surry) FSAR_p5": {
+  "relabel": [
+   {
+    "id": 0,
+    "bbox": [
+     864.0,
+     1540.0,
+     981.0,
+     1639.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 2,
+    "bbox": [
+     865.0,
+     947.0,
+     981.0,
+     1047.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_CCWS_APR1400": {
+  "relabel": [
+   {
+    "id": 63,
+    "bbox": [
+     816.0,
+     482.0,
+     872.0,
+     536.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 64,
+    "bbox": [
+     1463.0,
+     744.0,
+     1519.0,
+     798.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 65,
+    "bbox": [
+     1463.0,
+     989.0,
+     1519.0,
+     1042.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 66,
+    "bbox": [
+     797.0,
+     1646.0,
+     853.0,
+     1700.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 67,
+    "bbox": [
+     1463.0,
+     1904.0,
+     1519.0,
+     1963.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 68,
+    "bbox": [
+     1463.0,
+     2150.0,
+     1519.0,
+     2206.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I": {
+  "relabel": [
+   {
+    "id": 0,
+    "bbox": [
+     787.0,
+     985.0,
+     852.0,
+     1037.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 6,
+    "bbox": [
+     791.0,
+     1204.0,
+     856.0,
+     1256.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2718.0,
+      1662.0,
+      2719.0,
+      754.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1919.0,
+      1660.0,
+      2720.0,
+      1660.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1920.0,
+      783.0,
+      1924.0,
+      747.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1924.0,
+      742.0,
+      1954.0,
+      677.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1954.0,
+      677.0,
+      1976.0,
+      644.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1976.0,
+      644.0,
+      2012.0,
+      604.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2012.0,
+      604.0,
+      2085.0,
+      558.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2085.0,
+      558.0,
+      2197.0,
+      514.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2197.0,
+      514.0,
+      2363.0,
+      502.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2363.0,
+      502.0,
+      2495.0,
+      529.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2715.0,
+      752.0,
+      2698.0,
+      702.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2698.0,
+      702.0,
+      2669.0,
+      650.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2669.0,
+      650.0,
+      2608.0,
+      591.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2608.0,
+      591.0,
+      2556.0,
+      559.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      2556.0,
+      559.0,
+      2495.0,
+      529.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    },
+    {
+     "seg": [
+      1918.0,
+      780.0,
+      1920.0,
+      1658.0
+     ],
+     "reason": "containment outline (dome and walls)"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      2351.0,
+      824.0,
+      2351.0,
+      842.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2350.5,
+      1015.0,
+      2350.5,
+      1033.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2352.5,
+      1216.0,
+      2352.5,
+      1234.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_CSS (APR1400)": {
+  "relabel": [
+   {
+    "id": 4,
+    "bbox": [
+     589.0,
+     1179.0,
+     643.0,
+     1236.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 37,
+    "bbox": [
+     1084.0,
+     1521.0,
+     1184.0,
+     1561.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 38,
+    "bbox": [
+     1388.0,
+     1519.0,
+     1488.0,
+     1560.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 39,
+    "bbox": [
+     1683.0,
+     1521.0,
+     1783.0,
+     1561.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 40,
+    "bbox": [
+     1988.0,
+     1520.0,
+     2088.0,
+     1560.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 33,
+    "bbox": [
+     1193.0,
+     919.0,
+     1269.0,
+     1045.0
+    ],
+    "box": [
+     1210,
+     950,
+     1245,
+     1043
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 34,
+    "bbox": [
+     1793.0,
+     948.0,
+     1865.0,
+     1045.0
+    ],
+    "box": [
+     1810,
+     950,
+     1845,
+     1043
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 35,
+    "bbox": [
+     1189.0,
+     1330.0,
+     1271.0,
+     1461.0
+    ],
+    "box": [
+     1210,
+     1366,
+     1245,
+     1459
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 36,
+    "bbox": [
+     1789.0,
+     1334.0,
+     1866.0,
+     1461.0
+    ],
+    "box": [
+     1809,
+     1366,
+     1845,
+     1459
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, heat exchanger boxes tightened, dotted CCW lines added).",
+  "move_lines": [
+   {
+    "seg": [
+     1269.0,
+     1020.2,
+     1306.2,
+     1020.2
+    ],
+    "new": [
+     1245.0,
+     1020.2,
+     1306.2,
+     1020.2
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1142.0,
+     1034.2,
+     1193.2,
+     1034.2
+    ],
+    "new": [
+     1142.0,
+     1034.2,
+     1210.0,
+     1034.2
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1865.0,
+     1020.6,
+     1906.4,
+     1020.0
+    ],
+    "new": [
+     1845.0,
+     1020.6,
+     1906.4,
+     1020.0
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1742.0,
+     1033.7,
+     1793.0,
+     1033.7
+    ],
+    "new": [
+     1742.0,
+     1033.7,
+     1810.0,
+     1033.7
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1267.8,
+     1461.0,
+     1266.9,
+     1555.0
+    ],
+    "new": [
+     1267.8,
+     1443.7,
+     1266.9,
+     1555.0
+    ],
+    "reason": "outlet riser of HE02A starts at its corner, outside the tightened box"
+   }
+  ],
+  "add_dashed": [
+   {
+    "seg": [
+     1201.5,
+     961.0,
+     1201.5,
+     984.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1201.5,
+     984.5,
+     1210.0,
+     984.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1263.0,
+     959.0,
+     1263.0,
+     983.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1263.0,
+     983.0,
+     1245.0,
+     983.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1801.5,
+     961.0,
+     1801.5,
+     984.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1801.5,
+     984.0,
+     1810.0,
+     984.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1862.5,
+     959.0,
+     1862.5,
+     982.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1862.5,
+     982.5,
+     1845.0,
+     982.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1196.6,
+     1359.0,
+     1196.6,
+     1391.6
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1196.6,
+     1391.6,
+     1210.0,
+     1391.6
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1259.0,
+     1357.0,
+     1259.0,
+     1390.6
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1259.0,
+     1390.6,
+     1245.0,
+     1390.6
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1795.0,
+     1363.0,
+     1795.0,
+     1395.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1795.0,
+     1395.5,
+     1809.0,
+     1395.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1859.5,
+     1363.0,
+     1859.5,
+     1395.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1859.5,
+     1395.5,
+     1845.0,
+     1395.5
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     1192.0,
+     1443.7,
+     1210.0,
+     1443.7
+    ],
+    "reason": "pipe from valve V1018 into HE02A, drawn inside the old box"
+   },
+   {
+    "seg": [
+     1245.0,
+     1443.7,
+     1267.8,
+     1443.7
+    ],
+    "reason": "outlet of HE02A to its riser, drawn inside the old box"
+   },
+   {
+    "seg": [
+     1792.0,
+     1444.0,
+     1809.0,
+     1444.0
+    ],
+    "reason": "pipe from valve V1018 into HE02B, drawn inside the old box"
+   },
+   {
+    "seg": [
+     1845.0,
+     1444.0,
+     1866.9,
+     1444.0
+    ],
+    "reason": "outlet of HE02B to its riser, drawn inside the old box"
+   }
+  ],
+  "manual_edits": {
+   "no_join": [
+    33,
+    34,
+    35,
+    36
+   ]
+  },
+  "notes": [
+   "coverage / attached: the dotted CCW supply and return lines of the four heat exchangers 33-36 end at CCW arrows a few px from the box; the builder drops a dangling stub that ends next to a symbol box, so six of their legs carry no connection. They lead to no other component on this page."
+  ]
+ },
+ "pseudo_ECWS_APR1400": {
+  "relabel": [
+   {
+    "id": 0,
+    "bbox": [
+     1408.0,
+     835.0,
+     1526.0,
+     953.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 1,
+    "bbox": [
+     1407.0,
+     1041.0,
+     1526.0,
+     1159.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 2,
+    "bbox": [
+     773.0,
+     923.0,
+     891.0,
+     1041.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_ESW_APR1400": {
+  "relabel": [
+   {
+    "id": 38,
+    "bbox": [
+     673.0,
+     486.0,
+     743.0,
+     722.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 39,
+    "bbox": [
+     673.0,
+     858.0,
+     743.0,
+     1094.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 40,
+    "bbox": [
+     673.0,
+     1709.0,
+     743.0,
+     1946.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 41,
+    "bbox": [
+     673.0,
+     2078.0,
+     743.0,
+     2315.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_Feedwater system_(Surry) FSAR": {
+  "relabel": [
+   {
+    "id": 2,
+    "bbox": [
+     1157.0,
+     938.0,
+     1251.0,
+     1022.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 9,
+    "bbox": [
+     1157.0,
+     800.0,
+     1251.0,
+     882.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 10,
+    "bbox": [
+     1796.0,
+     2012.0,
+     1890.0,
+     2094.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     1796.0,
+     1910.0,
+     1890.0,
+     1992.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 12,
+    "bbox": [
+     999.0,
+     1708.0,
+     1081.0,
+     1802.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 15,
+    "bbox": [
+     1185.0,
+     1708.0,
+     1269.0,
+     1802.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 16,
+    "bbox": [
+     1370.0,
+     1708.0,
+     1452.0,
+     1802.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2036.9,
+      974.1,
+      2065.9,
+      974.1
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2064.2,
+      986.4,
+      2063.7,
+      969.6
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1791.0,
+      586.5,
+      1892.0,
+      586.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1966.0,
+      586.5,
+      2067.0,
+      586.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2388.5,
+      1280.6,
+      2476.0,
+      1280.6
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2571.0,
+      1281.0,
+      2657.0,
+      1281.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2637.0,
+      1293.0,
+      2637.0,
+      1210.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2658.5,
+      1293.0,
+      2658.5,
+      1280.3
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      2036.9,
+      974.1,
+      2064.0,
+      974.1
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2064.0,
+      986.4,
+      2064.0,
+      974.1
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1793.0,
+      586.0,
+      1892.0,
+      586.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1966.0,
+      586.0,
+      2065.0,
+      586.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2388.0,
+      1280.0,
+      2474.0,
+      1280.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2571.0,
+      1281.0,
+      2658.0,
+      1281.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2637.0,
+      1281.0,
+      2637.0,
+      1210.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2658.0,
+      1293.0,
+      2658.0,
+      1281.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_Instrument Air (APR1400)": {
+  "relabel": [
+   {
+    "id": 2,
+    "bbox": [
+     1545.0,
+     1306.0,
+     1629.0,
+     1390.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1478.0,
+      1358.0,
+      1545.0,
+      1358.6
+     ],
+     "reason": "signal line from the CLCS control panel"
+    }
+   ],
+   "adopt_added_lines": []
+  }
+ },
+ "pseudo_Power conversion system (NuScale)": {
+  "relabel": [
+   {
+    "id": 39,
+    "bbox": [
+     4001.0,
+     1823.0,
+     4105.0,
+     2005.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 40,
+    "bbox": [
+     4008.0,
+     2041.0,
+     4111.0,
+     2223.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 41,
+    "bbox": [
+     4016.0,
+     2262.0,
+     4120.0,
+     2443.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      3707.0,
+      1590.0,
+      3707.0,
+      1506.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2650.6,
+      1535.9,
+      2650.6,
+      1606.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      3707.0,
+      1590.0,
+      3707.0,
+      1492.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2650.6,
+      1606.0,
+      2650.6,
+      1502.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_RHR_(Surry) FSAR": {
+  "relabel": [
+   {
+    "id": 12,
+    "bbox": [
+     2013.0,
+     611.0,
+     2134.0,
+     740.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 13,
+    "bbox": [
+     2013.0,
+     845.0,
+     2134.0,
+     974.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+ },
+ "pseudo_SCS2_APR1400": {
+  "relabel": [
+   {
+    "id": 62,
+    "bbox": [
+     974.0,
+     1838.0,
+     1091.0,
+     1883.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 64,
+    "bbox": [
+     712.0,
+     1840.0,
+     829.0,
+     1885.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 65,
+    "bbox": [
+     1424.0,
+     1838.0,
+     1541.0,
+     1883.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 66,
+    "bbox": [
+     1686.0,
+     1836.0,
+     1803.0,
+     1881.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 63,
+    "bbox": [
+     1172.0,
+     1676.0,
+     1248.0,
+     1783.0
+    ],
+    "box": [
+     1187,
+     1677,
+     1227,
+     1781
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 67,
+    "bbox": [
+     1797.0,
+     1285.0,
+     1860.0,
+     1361.0
+    ],
+    "box": [
+     1816,
+     1286,
+     1849,
+     1360
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 68,
+    "bbox": [
+     1086.0,
+     1284.0,
+     1148.0,
+     1360.0
+    ],
+    "box": [
+     1104,
+     1285,
+     1137,
+     1359
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 69,
+    "bbox": [
+     1882.0,
+     1677.0,
+     1958.0,
+     1785.0
+    ],
+    "box": [
+     1897,
+     1679,
+     1937,
+     1782
+    ],
+    "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, heat exchanger boxes tightened, dotted CCW lines added).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      688.0,
+      1947.0,
+      691.0,
+      1769.0
+     ],
+     "reason": "ESF-CSAS / ESF-SIAS start signal lines"
+    },
+    {
+     "seg": [
+      1661.9,
+      1770.0,
+      1661.9,
+      1897.0
+     ],
+     "reason": "ESF-CSAS / ESF-SIAS start signal lines"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1793.0,
+      2586.0,
+      1847.0,
+      2586.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1080.0,
+      2588.0,
+      1135.0,
+      2588.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1052.0,
+      922.0,
+      1157.0,
+      922.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1763.0,
+      918.0,
+      1867.0,
+      918.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      797.0,
+      2311.0,
+      848.0,
+      2311.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      950.0,
+      2310.0,
+      1001.0,
+      2310.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1508.0,
+      2307.0,
+      1559.0,
+      2307.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1662.0,
+      2305.0,
+      1714.0,
+      2305.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      623.0,
+      2526.0,
+      674.0,
+      2526.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "move_lines": [
+   {
+    "seg": [
+     1202.5,
+     1943.5,
+     1202.5,
+     1783.0
+    ],
+    "new": [
+     1202.5,
+     1943.5,
+     1202.5,
+     1781.0
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1147.0,
+     1762.9,
+     1172.0,
+     1762.9
+    ],
+    "new": [
+     1147.0,
+     1762.9,
+     1187.0,
+     1762.9
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1763.0,
+     1352.2,
+     1797.0,
+     1352.2
+    ],
+    "new": [
+     1763.0,
+     1352.2,
+     1816.0,
+     1352.2
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1860.0,
+     1340.1,
+     1898.4,
+     1340.1
+    ],
+    "new": [
+     1849.0,
+     1340.1,
+     1898.4,
+     1340.1
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1148.0,
+     1339.6,
+     1186.9,
+     1339.6
+    ],
+    "new": [
+     1137.0,
+     1339.6,
+     1186.9,
+     1339.6
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1054.8,
+     1350.7,
+     1086.0,
+     1350.7
+    ],
+    "new": [
+     1054.8,
+     1350.7,
+     1104.0,
+     1350.7
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1915.0,
+     1939.0,
+     1915.0,
+     1785.0
+    ],
+    "new": [
+     1915.0,
+     1939.0,
+     1915.0,
+     1782.0
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   },
+   {
+    "seg": [
+     1859.0,
+     1760.0,
+     1882.0,
+     1760.0
+    ],
+    "new": [
+     1859.0,
+     1760.0,
+     1897.0,
+     1760.0
+    ],
+    "reason": "ends at the edge of the tightened heat exchanger box"
+   }
+  ],
+  "add_dashed": [
+   {
+    "seg": [
+     1180.0,
+     1715.0,
+     1180.0,
+     1738.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1180.0,
+     1738.0,
+     1187.0,
+     1738.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1242.0,
+     1714.0,
+     1242.0,
+     1736.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1242.0,
+     1736.0,
+     1227.0,
+     1736.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1805.0,
+     1300.0,
+     1805.0,
+     1323.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1805.0,
+     1323.0,
+     1816.0,
+     1323.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1856.0,
+     1300.0,
+     1856.0,
+     1323.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1856.0,
+     1323.0,
+     1849.0,
+     1323.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1093.0,
+     1299.0,
+     1093.0,
+     1322.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1093.0,
+     1322.0,
+     1104.0,
+     1322.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1145.0,
+     1299.0,
+     1145.0,
+     1321.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1145.0,
+     1321.0,
+     1137.0,
+     1321.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1891.0,
+     1717.0,
+     1891.0,
+     1740.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1891.0,
+     1740.0,
+     1897.0,
+     1740.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1951.0,
+     1716.0,
+     1951.0,
+     1738.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   },
+   {
+    "seg": [
+     1951.0,
+     1738.0,
+     1937.0,
+     1738.0
+    ],
+    "reason": "dotted CCW line of the heat exchanger"
+   }
+  ],
+  "add_solid": [],
+  "manual_edits": {
+   "no_join": [
+    63,
+    67,
+    68,
+    69
+   ]
+  },
+  "notes": [
+   "attached (950,2145): pipe corner beside the tag circle merged into valve 22's box; valve 22 itself is connected",
+   "coverage / attached: the dotted CCW supply and return lines of the four heat exchangers 63, 67, 68, 69 end at CCW arrows a few px from the box; the builder drops a dangling stub that ends next to a symbol box, so their legs carry no connection. They lead to no other component on this page."
+  ]
+ },
+ "pseudo_SI (APR1400)": {
+  "relabel": [
+   {
+    "id": 8,
+    "bbox": [
+     1416.0,
+     2015.0,
+     1520.0,
+     2113.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 16,
+    "bbox": [
+     1684.0,
+     2014.0,
+     1789.0,
+     2112.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 30,
+    "bbox": [
+     710.0,
+     2015.0,
+     816.0,
+     2112.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 33,
+    "bbox": [
+     989.0,
+     2011.0,
+     1085.0,
+     2109.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      521.5,
+      2456.1,
+      628.4,
+      2455.7
+     ],
+     "reason": "area boundary (AB / CB)"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      630.0,
+      2559.0,
+      700.0,
+      2559.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      744.0,
+      1549.0,
+      744.0,
+      1558.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      744.0,
+      1255.0,
+      805.0,
+      1255.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1449.0,
+      1255.0,
+      1509.0,
+      1255.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      767.0,
+      2287.0,
+      825.0,
+      2287.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1036.0,
+      2283.0,
+      1096.0,
+      2283.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1471.0,
+      2284.0,
+      1531.0,
+      2284.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1741.0,
+      2286.0,
+      1799.0,
+      2286.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1131.0,
+      1056.0,
+      1131.0,
+      1135.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_SWS_(Surry) FSAR": {
+  "relabel": [
+   {
+    "id": 40,
+    "bbox": [
+     2710.0,
+     1429.0,
+     2751.0,
+     1465.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 43,
+    "bbox": [
+     2656.0,
+     1605.0,
+     2689.0,
+     1641.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 47,
+    "bbox": [
+     2710.0,
+     1516.0,
+     2751.0,
+     1552.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 62,
+    "bbox": [
+     2722.0,
+     1814.0,
+     2766.0,
+     1860.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 63,
+    "bbox": [
+     2723.0,
+     1894.0,
+     2767.0,
+     1941.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, a missing pipe piece, line annotations synchronised with the verified pipe set).",
+  "add_solid": [
+   {
+    "seg": [
+     1958.4,
+     1533.0,
+     1997.7,
+     1533.0
+    ],
+    "reason": "pipe piece between two T junctions, drawn but not labeled"
+   }
+  ],
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      900.5,
+      1374.0,
+      900.5,
+      1366.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1210.5,
+      1374.0,
+      1210.5,
+      1366.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2145.5,
+      1379.0,
+      2145.5,
+      1371.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2448.5,
+      1379.0,
+      2448.5,
+      1371.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      840.5,
+      880.0,
+      840.5,
+      988.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_Steam and Power Conversion System_GE-Hitachi ABWR Design Control Document Tier 1": {
+  "relabel": [
+   {
+    "id": 116,
+    "bbox": [
+     1329.0,
+     1549.0,
+     1386.0,
+     1659.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 117,
+    "bbox": [
+     1329.0,
+     1677.0,
+     1386.0,
+     1788.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 118,
+    "bbox": [
+     1329.0,
+     1805.0,
+     1386.0,
+     1916.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 119,
+    "bbox": [
+     1329.0,
+     1934.0,
+     1386.0,
+     2044.0
+    ],
+    "class": "PUMP",
+    "actuator": "NONE",
+    "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   }
+  ],
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1650.0,
+      1059.0,
+      1730.2,
+      1058.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1728.0,
+      1063.9,
+      1795.0,
+      999.6
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1541.5,
+      1198.0,
+      1570.4,
+      1198.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1508.0,
+      1407.0,
+      1868.0,
+      1407.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1882.0,
+      1406.5,
+      2161.0,
+      1406.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2088.0,
+      1058.5,
+      2162.0,
+      1058.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2170.4,
+      1064.0,
+      2239.0,
+      999.8
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2429.0,
+      1198.0,
+      2458.0,
+      1198.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2530.0,
+      1058.5,
+      2609.0,
+      1058.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2614.8,
+      1064.3,
+      2682.0,
+      999.8
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2774.0,
+      1198.0,
+      2847.5,
+      1198.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      752.0,
+      562.0,
+      752.0,
+      483.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2847.5,
+      1480.0,
+      2847.5,
+      676.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1643.2,
+      1000.0,
+      1643.2,
+      1059.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1643.2,
+      1059.0,
+      1733.0,
+      1059.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1733.0,
+      1059.0,
+      1795.0,
+      999.6
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1541.5,
+      1198.0,
+      1597.0,
+      1198.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1508.0,
+      1407.0,
+      2161.0,
+      1407.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1985.5,
+      1198.0,
+      2041.0,
+      1198.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2087.0,
+      1058.5,
+      2177.0,
+      1058.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2177.0,
+      1058.5,
+      2239.0,
+      999.8
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2429.0,
+      1198.0,
+      2485.0,
+      1198.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2530.0,
+      1058.5,
+      2621.0,
+      1058.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2621.0,
+      1058.5,
+      2682.0,
+      999.8
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2774.0,
+      1198.0,
+      2830.5,
+      1198.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      752.0,
+      555.0,
+      752.0,
+      483.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2847.5,
+      1480.0,
+      2847.5,
+      681.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1877.0,
+      639.0,
+      2051.0,
+      639.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2321.0,
+      639.0,
+      2495.0,
+      639.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2861.0,
+      1535.0,
+      2878.0,
+      1535.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  }
+ },
+ "pseudo_AFW_APR1400": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2223.5,
+      706.0,
+      2223.5,
+      753.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2223.5,
+      809.0,
+      2223.5,
+      1015.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2223.5,
+      1070.0,
+      2223.5,
+      1117.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2224.0,
+      1528.0,
+      2224.0,
+      1575.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2224.0,
+      1630.0,
+      2224.0,
+      1836.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2224.0,
+      1892.0,
+      2224.0,
+      1938.0
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2535.0,
+      1526.5,
+      2668.0,
+      1526.5
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2731.0,
+      1526.5,
+      2797.0,
+      1526.5
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2536.0,
+      704.5,
+      2668.0,
+      704.5
+     ],
+     "reason": "containment wall between the penetration boxes"
+    },
+    {
+     "seg": [
+      2732.0,
+      704.5,
+      2797.0,
+      704.5
+     ],
+     "reason": "containment wall between the penetration boxes"
+    }
+   ],
+   "adopt_added_lines": []
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Haddam Neck)": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2454.1,
+      19.0,
+      2515.3,
+      3252.9
+     ],
+     "reason": "edge of the scanned page"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      509.0,
+      2208.0,
+      509.0,
+      2380.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      509.0,
+      2294.0,
+      549.0,
+      2294.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1923.0,
+      2221.0,
+      1923.0,
+      2394.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1896.0,
+      2307.0,
+      1923.0,
+      2307.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set, missing inlet / outlet pipes added).",
+  "add_solid": [
+   {
+    "seg": [
+     1320.0,
+     1849.0,
+     1240.0,
+     1849.0
+    ],
+    "reason": "recirculation outlet of the valve to RECIRC (drawn, not labeled)"
+   },
+   {
+    "seg": [
+     1200.0,
+     2115.0,
+     1273.0,
+     2115.0
+    ],
+    "reason": "recirculation outlet of the valve to RECIRC (drawn, not labeled)"
+   }
+  ]
+ },
+ "pseudo_AC Power_APR1400": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      3314.0,
+      1364.0,
+      3314.0,
+      1388.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Brain Wood)": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1562.6,
+      1882.0,
+      1562.6,
+      2080.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1563.0,
+      1701.8,
+      1563.0,
+      1772.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1562.6,
+      1868.0,
+      1562.6,
+      2080.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Cristal River)_p1": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1611.0,
+      2025.0,
+      1611.0,
+      2125.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Cristal River)_p2": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1251.0,
+      1553.0,
+      1251.0,
+      1904.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      689.0,
+      1553.0,
+      1762.0,
+      1553.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1757.0,
+      1544.0,
+      1757.0,
+      1583.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1251.0,
+      1535.0,
+      1251.0,
+      1904.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      689.0,
+      1553.0,
+      1757.0,
+      1553.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1757.0,
+      1553.0,
+      1757.0,
+      1583.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Davis -Besse)": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2373.0,
+      3147.0,
+      2373.0,
+      193.0
+     ],
+     "reason": "edge of the scanned page"
+    },
+    {
+     "seg": [
+      969.4,
+      1553.0,
+      969.4,
+      1589.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      969.4,
+      1553.0,
+      969.4,
+      1599.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1629.0,
+      1915.7,
+      1638.0,
+      1915.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1638.0,
+      1915.7,
+      1638.0,
+      1938.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      782.0,
+      1938.0,
+      809.0,
+      1938.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set, missing inlet / outlet pipes added).",
+  "add_solid": [
+   {
+    "seg": [
+     525.0,
+     2043.0,
+     525.0,
+     2155.0
+    ],
+    "reason": "inlet from the deaerator storage tanks into the first valve (drawn, not labeled)"
+   },
+   {
+    "seg": [
+     530.0,
+     2601.0,
+     530.0,
+     2485.0
+    ],
+    "reason": "inlet from fire protection into its valve (drawn, not labeled)"
+   },
+   {
+    "seg": [
+     673.0,
+     2691.0,
+     673.0,
+     2579.0
+    ],
+    "reason": "inlet from service water into its valve (drawn, not labeled)"
+   }
+  ]
+ },
+ "pseudo_AFW (South Texas)": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1398.0,
+      797.0,
+      1412.0,
+      797.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW (Turkey Point)": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      415.8,
+      866.9,
+      415.8,
+      1008.8
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      634.1,
+      2099.1,
+      1729.5,
+      2099.1
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1740.9,
+      2093.5,
+      2059.2,
+      2093.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1419.0,
+      1395.5,
+      1405.6,
+      1395.5
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      818.5,
+      2396.6,
+      818.5,
+      2440.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      415.8,
+      866.9,
+      415.8,
+      998.1
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      631.2,
+      2096.5,
+      2059.2,
+      2096.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1399.0,
+      1395.5,
+      1418.0,
+      1395.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2243.0,
+      856.0,
+      2243.0,
+      731.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2260.0,
+      2163.0,
+      2260.0,
+      2295.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1188.5,
+      1335.0,
+      1189.0,
+      1388.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1703.0,
+      1333.0,
+      1704.0,
+      1376.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1232.0,
+      377.0,
+      1380.0,
+      377.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1232.0,
+      868.0,
+      1380.0,
+      868.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1481.0,
+      1506.0,
+      1674.0,
+      1506.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1232.0,
+      377.0,
+      1372.0,
+      377.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1232.0,
+      868.0,
+      1372.0,
+      868.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1426.0,
+      1506.0,
+      1674.0,
+      1506.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_Battery system_(Surry) FSAR": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1543.0,
+      1814.0,
+      1543.0,
+      1829.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1560.0,
+      1863.0,
+      1605.0,
+      1863.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1029.0,
+      515.0,
+      1029.0,
+      551.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      2208.0,
+      858.0,
+      2652.0,
+      858.0
+     ],
+     "reason": "480 V AC MCC bus drawn dashed (feeder to an off-page MCC)",
+     "dashed": true
+    },
+    {
+     "seg": [
+      670.0,
+      515.0,
+      1089.0,
+      515.0
+     ],
+     "dashed": true,
+     "reason": "480 V AC MCC bus drawn dashed (feeder to an off-page MCC)"
+    },
+    {
+     "seg": [
+      1820.0,
+      795.0,
+      2268.0,
+      795.0
+     ],
+     "dashed": true,
+     "reason": "480 V AC MCC bus drawn dashed (feeder to an off-page MCC)"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set, dashed 480 V MCC buses added)."
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p3": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      539.0,
+      1690.0,
+      486.0,
+      1690.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      487.0,
+      1776.0,
+      539.0,
+      1776.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_CCWS_(Surry) FSAR_p4": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1805.0,
+      1633.0,
+      1805.0,
+      1718.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1820.0,
+      1633.0,
+      1820.0,
+      1718.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      861.0,
+      1658.0,
+      861.0,
+      1550.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1062.0,
+      1550.0,
+      1062.0,
+      1658.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      861.0,
+      2294.0,
+      861.0,
+      2206.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1062.0,
+      2206.0,
+      1062.0,
+      2294.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2.0,
+      1.0,
+      3097.0,
+      1.0
+     ],
+     "reason": "page frame"
+    },
+    {
+     "seg": [
+      2.0,
+      2461.0,
+      2.0,
+      1.0
+     ],
+     "reason": "page frame"
+    },
+    {
+     "seg": [
+      1385.0,
+      2463.0,
+      2012.0,
+      2463.0
+     ],
+     "reason": "page frame"
+    },
+    {
+     "seg": [
+      3264.0,
+      2131.0,
+      3264.0,
+      1952.0
+     ],
+     "reason": "page frame"
+    }
+   ],
+   "adopt_added_lines": []
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p1": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1454.0,
+      1741.0,
+      1454.0,
+      1884.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      632.7,
+      1669.0,
+      632.7,
+      1883.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1557.0,
+      967.0,
+      1557.0,
+      762.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1474.0,
+      904.0,
+      1474.0,
+      770.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1454.0,
+      1741.0,
+      1454.0,
+      1872.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1746.0,
+      1450.0,
+      1746.0,
+      1498.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      632.7,
+      1669.0,
+      632.7,
+      1870.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1557.0,
+      967.0,
+      1557.0,
+      787.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1474.0,
+      904.0,
+      1474.0,
+      787.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1745.0,
+      2090.0,
+      1745.0,
+      751.0
+     ],
+     "reason": "UPS 1B1 enclosure and the scanned page edge"
+    },
+    {
+     "seg": [
+      499.0,
+      2087.0,
+      1748.0,
+      2087.0
+     ],
+     "reason": "UPS 1B1 enclosure and the scanned page edge"
+    },
+    {
+     "seg": [
+      502.0,
+      756.0,
+      502.0,
+      2087.0
+     ],
+     "reason": "UPS 1B1 enclosure and the scanned page edge"
+    },
+    {
+     "seg": [
+      504.0,
+      753.0,
+      1745.0,
+      753.0
+     ],
+     "reason": "UPS 1B1 enclosure and the scanned page edge"
+    },
+    {
+     "seg": [
+      1.0,
+      1855.0,
+      1.0,
+      1525.0
+     ],
+     "reason": "UPS 1B1 enclosure and the scanned page edge"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      326.5,
+      1298.0,
+      331.0,
+      1298.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_HVAC_APR1400_p1": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1833.0,
+      1018.0,
+      1854.0,
+      1018.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_HVAC_APR1400_p2": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      1417.0,
+      1308.0,
+      1571.0,
+      1308.0
+     ],
+     "reason": "outline of the battery-room cubicle cooler housing"
+    },
+    {
+     "seg": [
+      1555.0,
+      1322.0,
+      1555.0,
+      1308.0
+     ],
+     "reason": "outline of the battery-room cubicle cooler housing"
+    }
+   ],
+   "adopt_added_lines": []
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_LPI-LPR_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit ": {
+  "line_sync": {
+   "drop_removed_lines": [],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      1435.0,
+      804.0,
+      1435.0,
+      841.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1430.5,
+      1485.0,
+      1430.5,
+      1521.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_Main Steam System_APR1400": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      816.0,
+      913.7,
+      835.9,
+      913.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      835.9,
+      913.7,
+      835.9,
+      898.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      867.0,
+      913.7,
+      886.9,
+      913.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      886.9,
+      913.7,
+      886.9,
+      898.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      921.0,
+      913.7,
+      941.3,
+      913.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      941.3,
+      913.7,
+      941.3,
+      898.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      972.0,
+      913.7,
+      992.8,
+      913.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      992.8,
+      913.7,
+      992.8,
+      898.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1025.0,
+      913.7,
+      1044.8,
+      913.7
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1044.8,
+      913.7,
+      1044.8,
+      898.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      816.0,
+      1222.0,
+      835.9,
+      1222.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      835.9,
+      1222.0,
+      835.9,
+      1206.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      867.0,
+      1222.0,
+      886.9,
+      1222.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      886.9,
+      1222.0,
+      886.9,
+      1206.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      921.0,
+      1222.0,
+      941.3,
+      1222.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      941.3,
+      1222.0,
+      941.3,
+      1206.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      972.0,
+      1222.0,
+      992.8,
+      1222.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      992.8,
+      1222.0,
+      992.8,
+      1206.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1025.0,
+      1222.0,
+      1044.8,
+      1222.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1044.8,
+      1222.0,
+      1044.8,
+      1206.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      816.0,
+      1834.3,
+      835.9,
+      1834.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      835.9,
+      1834.3,
+      835.9,
+      1820.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      867.0,
+      1834.3,
+      886.9,
+      1834.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      886.9,
+      1834.3,
+      886.9,
+      1820.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      921.0,
+      1834.3,
+      940.3,
+      1834.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      940.3,
+      1834.3,
+      940.3,
+      1820.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      972.0,
+      1834.3,
+      992.8,
+      1834.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      992.8,
+      1834.3,
+      992.8,
+      1820.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1025.0,
+      1834.3,
+      1044.8,
+      1834.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1044.8,
+      1834.3,
+      1044.8,
+      1820.3
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      816.0,
+      2179.0,
+      835.9,
+      2179.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      835.9,
+      2179.0,
+      835.9,
+      2163.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      867.0,
+      2179.0,
+      886.9,
+      2179.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      886.9,
+      2179.0,
+      886.9,
+      2163.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      921.0,
+      2179.0,
+      940.3,
+      2179.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      940.3,
+      2179.0,
+      940.3,
+      2163.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      972.0,
+      2179.0,
+      992.8,
+      2179.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      992.8,
+      2179.0,
+      992.8,
+      2163.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1025.0,
+      2179.0,
+      1044.8,
+      2179.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1044.8,
+      2179.0,
+      1044.8,
+      2163.5
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      540.0,
+      962.0,
+      1281.0,
+      962.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1315.0,
+      962.0,
+      1763.0,
+      962.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      540.0,
+      1885.0,
+      1281.0,
+      1885.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1315.0,
+      1885.0,
+      1763.0,
+      1885.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      540.0,
+      1271.0,
+      1281.0,
+      1271.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1315.0,
+      1271.0,
+      1763.0,
+      1271.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1041.0,
+      1379.0,
+      1079.0,
+      1379.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1109.0,
+      1379.0,
+      1141.0,
+      1379.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1763.0,
+      1555.0,
+      1947.0,
+      1555.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1978.0,
+      1555.0,
+      2041.0,
+      1555.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1763.0,
+      1631.0,
+      1948.0,
+      1631.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1980.0,
+      1631.0,
+      2043.0,
+      1631.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1041.0,
+      1993.0,
+      1079.0,
+      1993.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1109.0,
+      1993.0,
+      1140.0,
+      1993.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1041.3,
+      2335.0,
+      1079.0,
+      2335.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1109.0,
+      2335.0,
+      1141.0,
+      2335.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      540.0,
+      962.0,
+      1275.0,
+      962.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1321.0,
+      962.0,
+      1763.0,
+      962.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      540.0,
+      1885.0,
+      1275.0,
+      1885.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1321.0,
+      1885.0,
+      1763.0,
+      1885.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      540.0,
+      1271.0,
+      1275.0,
+      1271.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1321.0,
+      1271.0,
+      1763.0,
+      1271.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1041.0,
+      1379.0,
+      1073.0,
+      1379.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1115.0,
+      1379.0,
+      1141.0,
+      1379.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1763.0,
+      1555.0,
+      1941.0,
+      1555.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1984.0,
+      1555.0,
+      2041.0,
+      1555.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1763.0,
+      1631.0,
+      1941.0,
+      1631.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1985.0,
+      1631.0,
+      2043.0,
+      1631.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1041.0,
+      1993.0,
+      1073.0,
+      1993.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1115.0,
+      1993.0,
+      1140.0,
+      1993.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1041.3,
+      2335.0,
+      1073.0,
+      2335.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1115.0,
+      2335.0,
+      1141.0,
+      2335.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1984.0,
+      1473.0,
+      2041.0,
+      1473.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      816.0,
+      913.7,
+      834.0,
+      913.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      834.0,
+      913.7,
+      834.0,
+      881.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      867.0,
+      913.7,
+      887.0,
+      913.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      887.0,
+      913.7,
+      887.0,
+      881.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      922.0,
+      913.7,
+      940.0,
+      913.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      940.0,
+      913.7,
+      940.0,
+      881.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      973.0,
+      913.7,
+      992.0,
+      913.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      992.0,
+      913.7,
+      992.0,
+      881.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1025.0,
+      913.7,
+      1045.0,
+      913.7
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1045.0,
+      913.7,
+      1045.0,
+      881.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      816.0,
+      1222.0,
+      834.0,
+      1222.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      834.0,
+      1222.0,
+      834.0,
+      1189.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      867.0,
+      1222.0,
+      887.0,
+      1222.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      887.0,
+      1222.0,
+      887.0,
+      1189.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      922.0,
+      1222.0,
+      940.0,
+      1222.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      940.0,
+      1222.0,
+      940.0,
+      1189.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      973.0,
+      1222.0,
+      992.0,
+      1222.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      992.0,
+      1222.0,
+      992.0,
+      1189.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1025.0,
+      1222.0,
+      1045.0,
+      1222.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1045.0,
+      1222.0,
+      1045.0,
+      1189.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      816.0,
+      1834.3,
+      834.0,
+      1834.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      834.0,
+      1834.3,
+      834.0,
+      1803.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      867.0,
+      1834.3,
+      887.0,
+      1834.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      887.0,
+      1834.3,
+      887.0,
+      1803.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      922.0,
+      1834.3,
+      940.0,
+      1834.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      940.0,
+      1834.3,
+      940.0,
+      1803.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      973.0,
+      1834.3,
+      992.0,
+      1834.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      992.0,
+      1834.3,
+      992.0,
+      1803.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1025.0,
+      1834.3,
+      1045.0,
+      1834.3
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1045.0,
+      1834.3,
+      1045.0,
+      1803.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      816.0,
+      2179.0,
+      834.0,
+      2179.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      834.0,
+      2179.0,
+      834.0,
+      2147.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      867.0,
+      2179.0,
+      887.0,
+      2179.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      887.0,
+      2179.0,
+      887.0,
+      2147.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      922.0,
+      2179.0,
+      940.0,
+      2179.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      940.0,
+      2179.0,
+      940.0,
+      2147.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      973.0,
+      2179.0,
+      992.0,
+      2179.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      992.0,
+      2179.0,
+      992.0,
+      2147.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1025.0,
+      2179.0,
+      1045.0,
+      2179.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1045.0,
+      2179.0,
+      1045.0,
+      2147.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_Main Steam system_(Surry) FSAR": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      2427.5,
+      1275.0,
+      2427.5,
+      981.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      2427.5,
+      1366.0,
+      2427.5,
+      1293.0
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      2427.5,
+      1366.0,
+      2427.5,
+      981.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_RCS-POSRV (APR1400)": {
+  "line_sync": {
+   "drop_removed_lines": [
+    {
+     "seg": [
+      748.0,
+      1411.0,
+      748.0,
+      1419.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      748.0,
+      1420.0,
+      682.0,
+      1420.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      749.0,
+      1483.0,
+      749.0,
+      1475.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      749.0,
+      1474.5,
+      683.0,
+      1474.5
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      748.0,
+      1843.0,
+      748.0,
+      1851.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      748.0,
+      1852.0,
+      683.0,
+      1852.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      721.5,
+      1940.0,
+      683.5,
+      1940.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      752.0,
+      2279.0,
+      752.0,
+      2287.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      752.0,
+      2288.0,
+      686.0,
+      2288.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      728.0,
+      2378.0,
+      686.0,
+      2378.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      750.5,
+      2706.0,
+      750.5,
+      2713.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      750.5,
+      2713.5,
+      683.5,
+      2713.5
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      752.0,
+      2808.0,
+      752.0,
+      2816.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      752.0,
+      2817.0,
+      683.0,
+      2817.0
+     ],
+     "reason": "dotted IPS position-indication signal lines"
+    },
+    {
+     "seg": [
+      566.0,
+      2592.5,
+      630.1,
+      2593.0
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      630.1,
+      2593.0,
+      651.0,
+      2597.1
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      651.0,
+      2597.1,
+      730.1,
+      2597.1
+     ],
+     "reason": "replaced"
+    },
+    {
+     "seg": [
+      1367.5,
+      1916.5,
+      1415.0,
+      1916.5
+     ],
+     "reason": "replaced"
+    }
+   ],
+   "adopt_added_lines": [
+    {
+     "seg": [
+      818.0,
+      1801.0,
+      818.0,
+      1815.0
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      566.0,
+      2592.5,
+      730.1,
+      2597.1
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    },
+    {
+     "seg": [
+      1367.5,
+      1916.5,
+      1506.0,
+      1916.5
+     ],
+     "reason": "drawn pipe piece of the connectivity review, on the drawing"
+    }
+   ]
+  },
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ }
+}

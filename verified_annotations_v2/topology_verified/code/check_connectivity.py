@@ -41,7 +41,8 @@ def same_line(s, d):
 def check(n, edits):
     t = json.load(open(f"{ROOT}/{n}.json")); W, H = t["width"], t["height"]
     g = cv2.imread(f"{ROOT}/images/{n}.png", 0); sc = 3300 / max(W, H); tol = max(6, int(8 / sc))
-    pipes = [s for s in json.load(open(f"{ROOT}/lines/{n}.json"))["solid"] if not any(same_line(s, d) for d in edits.get("removed_lines", []))]
+    L = json.load(open(f"{ROOT}/lines/{n}.json"))
+    pipes = [s for s in L["solid"] + L.get("dashed", []) if not any(same_line(s, d) for d in edits.get("removed_lines", []))]
     pipes += edits.get("added_lines", [])
     boxes = {s["id"]: s["bbox"] for s in t["symbols"]}
     sym = np.zeros((H, W), np.uint8)

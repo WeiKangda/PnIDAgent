@@ -171,13 +171,13 @@ def extend_dangling(segs, symbols, gray, tol=12, reach=28, skip=()):
     return [tuple(int(round(v)) for v in s) for s in segs]
 
 
-def join_passthrough(segs, symbols, pad=4):
+def join_passthrough(segs, symbols, pad=4, skip=()):
     """Elongated symbols (breakers etc., aspect ratio >= 1.8) that cut a line running through them (a bus bar) into two collinear parts entering from the two long sides
     -> join the parts back into one continuous line (then handled as a side tap: the bus stays continuous and the symbol hangs on it)."""
     segs = [tuple(int(v) for v in s) for s in segs]; used = set(); out = []
     for sid, b in symbols:
         bw, bh = b[2] - b[0], b[3] - b[1]
-        if max(bw, bh) < 1.8 * min(bw, bh): continue
+        if max(bw, bh) < 1.8 * min(bw, bh) or sid in skip: continue
         tall = bh > bw
         ends = []   # (segment index, which end point, side it enters from)
         for i, sg in enumerate(segs):
@@ -221,7 +221,8 @@ def join_through(segs, boxes, tol=5):
 
 
 def build(segs: Sequence[Tuple[Tuple[int, int, int, int], str]], symbols: Sequence[Tuple[object, Tuple[int, int, int, int]]],
-          gray: np.ndarray, tol: int = 12, pad: int = 8, decisions=None, trace: bool = True, vec_dots=None, pass_through=(), fine=None):
+          gray: np.ndarray, tol: int = 12, pad: int = 8, decisions=None, trace: bool = True, vec_dots=None, pass_through=(), fine=None,
+          no_join=()):
     """decisions: [{"x","y","connected"}] human decisions for X crossings; a decision within 8 px overrides the automatic one."""
     """Returns (nodes {key: (x, y)}, edges [(u, v, kind)], crossings [(x, y, connected)])."""
     by_kind: Dict[str, list] = collections.defaultdict(list)
@@ -231,7 +232,7 @@ def build(segs: Sequence[Tuple[Tuple[int, int, int, int], str]], symbols: Sequen
         return FT if any(r[0] <= x <= r[2] and r[1] <= y <= r[3] for r in FR) else tol
     PT = set(pass_through); pt_boxes = [b for sid, b in symbols if sid in PT]
     if pt_boxes: by_kind = {k: join_through(merge_collinear(ss), pt_boxes) for k, ss in by_kind.items()}
-    segs = [(s, k) for k, ss in by_kind.items() for s in extend_dangling(bridge_hops(join_passthrough(merge_collinear(ss), symbols), symbols), symbols, gray, tol=tol, skip=FR)]
+    segs = [(s, k) for k, ss in by_kind.items() for s in extend_dangling(bridge_hops(join_passthrough(merge_collinear(ss), symbols, skip=set(no_join)), symbols), symbols, gray, tol=tol, skip=FR)]
     w0 = stroke_width(gray, [s for s, _ in segs])
     stubs = trace_stubs(gray, [t for t in symbols if t[0] not in PT], [s for s, _ in segs], w0) if trace else []
     segs = segs + stubs

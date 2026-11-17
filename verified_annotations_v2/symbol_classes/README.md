@@ -1,6 +1,6 @@
 # Symbol classes (pre-labels, human review in progress)
 
-**Status: pre-labels.** Every one of the 3488 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
+**Status: pre-labels.** Every one of the 3483 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
 labeled by eye page by page and checked a second time class by class. A human review of every row is in progress;
 until it is done these labels are not verified. Rows marked `uncertain = yes` (52) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
@@ -36,8 +36,8 @@ The five classes without an instance and the five without a legend entry are not
 
 | class | definition | boxes |
 |---|---|---:|
-| [`VLV_GATE`](#vlv_gate) | Gate valve / generic two-way valve (plain bowtie) | 1301 (25 uncertain) |
-| [`VLV_GLOBE`](#vlv_globe) | Globe valve (bowtie with a dot at the waist) | 131 |
+| [`VLV_GATE`](#vlv_gate) | Gate valve / generic two-way valve (plain bowtie) | 1298 (25 uncertain) |
+| [`VLV_GLOBE`](#vlv_globe) | Globe valve (bowtie with a dot at the waist) | 132 |
 | [`VLV_BUTTERFLY`](#vlv_butterfly) | Butterfly valve (diagonal with a centre dot between two ticks) | 92 |
 | [`VLV_BALL`](#vlv_ball) | Ball valve | 0 |
 | [`VLV_PLUG`](#vlv_plug) | Plug valve | 0 |
@@ -45,10 +45,10 @@ The five classes without an instance and the five without a legend entry are not
 | [`VLV_DIAPHRAGM`](#vlv_diaphragm) | Diaphragm valve | 0 |
 | [`VLV_ANGLE`](#vlv_angle) | Angle valve | 5 |
 | [`VLV_3WAY`](#vlv_3way) | Three-way valve | 9 |
-| [`VLV_CHECK`](#vlv_check) | Check valve (incl. stop-check, swing check) | 530 (8 uncertain) |
+| [`VLV_CHECK`](#vlv_check) | Check valve (incl. stop-check, swing check) | 531 (8 uncertain) |
 | [`VLV_RELIEF`](#vlv_relief) | Safety / relief valve (incl. pilot-operated) | 51 |
 | [`VLV_REGULATOR`](#vlv_regulator) | Self-actuated pressure regulator | 2 |
-| [`DAMPER`](#damper) | Damper (HVAC) | 73 |
+| [`DAMPER`](#damper) | Damper (HVAC) | 72 |
 
 #### VLV_GATE
 
@@ -287,10 +287,10 @@ Steam trap. No instance in the 65 pages, so no reference image.
 | class | definition | boxes |
 |---|---|---:|
 | [`RUPTURE_DISC`](#rupture_disc) | Rupture disc | 2 |
-| [`PENETRATION`](#penetration) | Containment penetration (box on the containment boundary, e.g. 'PC') | 17 |
+| [`PENETRATION`](#penetration) | Containment penetration (box on the containment boundary, e.g. 'PC') | 18 |
 | [`OFFPAGE`](#offpage) | Off-page connector / system interface | 52 |
 | [`BLOCK`](#block) | Labelled equipment block (named by its text) | 18 |
-| [`OTHER`](#other) | Other | 24 (9 uncertain) |
+| [`OTHER`](#other) | Other | 20 (9 uncertain) |
 
 #### RUPTURE_DISC
 
@@ -376,8 +376,9 @@ Diesel / engine driver (pumps).
     or by a source document;
   - **B** (1785): the label rests on the symbol shape matching the legend PDF entry shown (or, for a symbol without a legend entry, on its drawn shape alone);
   - **C** (52): uncertain (`uncertain = yes`), check first.
-  3437 of the 3488 boxes are tied to a legend PDF entry; the other 51 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
-  legend entry and rest on the drawing text and note shown in the tile.
+  3436 of the 3483 boxes are tied to a legend PDF entry; the other 47 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
+  legend entry and rest on the drawing text and note shown in the tile. The tiles and the A / B / C counts are from before the review
+  fixes of November 2026 ([`../review_2026_11/`](../review_2026_11/README.md)); where they differ, `symbol_classes.csv` holds the labels.
 
 - `overlay/<page>.jpg`: check image of each page. Every box is drawn on the drawing with its box id and a short class tag
   (colour = class group); the panel on the right lists every id with its class, actuator and fault-tree type. `*` = uncertain.
@@ -392,7 +393,7 @@ Diesel / engine driver (pumps).
 
 ## Independent review
 
-All 3488 labels were reviewed a second time (November 2026) by four independent reviewers, each covering about 870 symbols with
+All 3488 labels (before the review fixes of November 2026) were reviewed a second time (November 2026) by four independent reviewers, each covering about 870 symbols with
 the evidence images, the full-resolution crops, the page legends and the legend PDFs. Every proposed change was checked again on the
 drawing before it was applied: 67 labels were corrected (mostly gate valves that are globe valves, a dot at the body centre on the APR1400
 drawings; operators identified from the page legend; three-way valves; turbine-driven pumps drawn as a turbine only) and 56 of the
@@ -406,8 +407,9 @@ Each symbol gets two labels:
    `VLV_RELIEF`, `DAMPER`, `PUMP`, `HX`, `TANK`, `FILTER`, `ORIFICE`, `INSTR`, `BREAKER`, `TRANSFORMER`, `OFFPAGE`, ...).
    Definitions follow the AP1000 and APR1400 P&ID legends and the legends printed on the drawings.
 2. **actuator** (valves, dampers, pumps): `MOTOR` (M operator), `AIR` (diaphragm, dome or piston), `SOLENOID` (S),
-   `HYDRAULIC`, `EH` (electro-hydraulic, E/H), `NONE` (no operator drawn: manual, check, self-acting), `UNSPEC`
-   (an operator is drawn but its type cannot be identified), `TURBINE` / `DIESEL` / `MOTOR` (pump drivers); `-` = not applicable.
+   `HYDRAULIC`, `EH` (electro-hydraulic, E/H), `NONE` (no operator drawn and none named on the drawing: manual, check, self-acting
+   valves, and pumps whose driver is not shown), `UNSPEC` (an operator is drawn but its type can be identified neither from
+   the symbol nor from the drawing text), `TURBINE` / `DIESEL` / `MOTOR` (pump drivers); `-` = not applicable.
 
 A valve and its actuator, lock mark and tag circle are one box (see the labeling rules in [`../README.md`](../README.md)),
 so the actuator is a property of the valve box. A solid (black) body means normally closed; this is written in `note`.

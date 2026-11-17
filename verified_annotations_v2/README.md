@@ -22,9 +22,9 @@ re-optimized and verified again page by page:
 | | v1 | v2 |
 |---|---|---|
 | Pages | 65 | 65 |
-| Symbol boxes | 3522 | 3488 |
+| Symbol boxes | 3522 | 3483 |
 | Total symbol box area (px²) | 32.0 M | 27.5 M (-14%) |
-| Pipe line segments | 5441 | 6306 |
+| Pipe line segments | 5441 | 6381 (of them 50 dashed) |
 | Line segments running into a symbol box | 1016 | 13 |
 | Text boxes | 6064 | 6064 (median box area 76% of v1) |
 
@@ -35,7 +35,8 @@ every page.
 ## Files
 
 - `labels/<page>.txt`: symbols, YOLO format `0 cx cy w h` (normalized, single class).
-- `lines/<page>.json`: pipes, `{"solid": [[x1,y1,x2,y2],...], "dashed": []}` in image pixels.
+- `lines/<page>.json`: pipes, `{"solid": [[x1,y1,x2,y2],...], "dashed": [...]}` in image pixels; `dashed` holds the flow
+  pipes drawn dashed or dotted.
 - `text/<page>.json`: text lines, `{"name", "width", "height", "items": [{"id", "box": [x0,y0,x1,y1], "text", "rot"}]}`,
   boxes in image pixels. `id` matches the first release, `rot` as in the first release (`0`, `cw`, `ccw`, `180`).
 - `overlay/<page>.jpg`: symbols (red) and pipes (green) drawn on the page.
@@ -58,9 +59,15 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 - A dashed frame drawn around several valves is not a symbol: each valve inside gets its own box (AFW (Haddam Neck)).
 - Lines follow pipe centerlines and stop at the edge of a symbol box. A box that holds 3 or more other boxes (a tank with
   spargers inside) is not cut.
-- Dashed and dash-dot lines are not labeled when they are signal lines or area / seismic boundaries. Pipes that carry
-  flow but are drawn dashed or dash-dot **are** labeled: the ESW emergency supply on AFW (INL system study) and the
-  pilot lines of the four POSRVs on RCS-POSRV (APR1400).
+- Dashed, dash-dot and dotted lines are not labeled when they are signal lines (e.g. from an ESF-SIAS START box or a
+  control panel) or area / room / seismic / containment boundaries. Pipes that carry flow but are drawn dashed, dash-dot
+  or dotted **are** labeled: the ESW emergency supply on AFW (INL system study), the pilot lines of the four POSRVs on
+  RCS-POSRV (APR1400), the dotted CCW supply and return lines of the heat exchangers and the dotted lines to and from
+  other systems (IRWST, CSS, DVI, external emergency injection) on SCS, SCS2 and CSS (APR1400).
+- Marks drawn on a pipe are not symbols: code-class break marks (e.g. "1|2" with its leader), flow arrows, interface
+  brackets. A containment penetration drawn as a box on the containment boundary **is** a symbol (PENETRATION).
+- An equipment box ends at the outline of the equipment: the arrows, labels and CCW lines drawn next to a heat
+  exchanger are outside its box.
 - No line is added where the drawing shows none (e.g. between the filter, coils and fan inside an HVAC unit housing).
 
 ## How it was made
@@ -81,6 +88,11 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
    no box covered were reviewed and the real misses were added. All changed boxes were inspected visually.
 5. Human verification of every page in the browser editor (symbols and lines, then text), with the changes the
    reviewer asked for applied and re-checked.
+
+## Review fixes (November 2026)
+
+An external review of the SCS (APR1400) page found boxes, lines and labels that did not follow these rules; the page
+and the same kinds of problems on the other 64 pages were fixed: see [`review_2026_11/`](review_2026_11/README.md).
 
 ## Connectivity
 

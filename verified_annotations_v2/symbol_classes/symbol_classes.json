@@ -5233,7 +5233,7 @@
 {
 "box_id": 40,
 "x0": 1933.0,
-"y0": 987.0,
+"y0": 997.0,
 "x1": 1981.0,
 "y1": 1082.0,
 "class": "VLV_GATE",
@@ -5568,18 +5568,6 @@
 },
 {
 "box_id": 68,
-"x0": 1799.0,
-"y0": 947.0,
-"x1": 1829.0,
-"y1": 981.0,
-"class": "OTHER",
-"actuator": "-",
-"ft_component_type": "",
-"uncertain": "",
-"note": "flow arrow on the steam line, not a symbol (box could be deleted) (confirmed on review)"
-},
-{
-"box_id": 69,
 "x0": 1479.0,
 "y0": 2057.0,
 "x1": 1616.0,
@@ -5591,7 +5579,7 @@
 "note": "turbine-driven AFW pump drawn with its turbine in one box"
 },
 {
-"box_id": 70,
+"box_id": 69,
 "x0": 1254.0,
 "y0": 2505.0,
 "x1": 1345.0,
@@ -5603,7 +5591,7 @@
 "note": "valve with a large square operator, type not given"
 },
 {
-"box_id": 71,
+"box_id": 70,
 "x0": 467.0,
 "y0": 2692.0,
 "x1": 798.0,
@@ -5615,7 +5603,7 @@
 "note": "condensate storage tank"
 },
 {
-"box_id": 72,
+"box_id": 71,
 "x0": 886.8,
 "y0": 1352.2,
 "x1": 966.4,
@@ -11726,7 +11714,7 @@
 },
 {
 "box_id": 55,
-"x0": 1500.0,
+"x0": 1433.0,
 "y0": 2193.0,
 "x1": 1534.0,
 "y1": 2249.0,
@@ -11734,22 +11722,10 @@
 "actuator": "MOTOR",
 "ft_component_type": "MOV",
 "uncertain": "",
-"note": "motor-operated butterfly valve (its motor operator is drawn on a stem to the left, boxed separately as #72)"
+"note": "motor-operated butterfly valve, with its motor operator (S115) on a stem to the left"
 },
 {
 "box_id": 56,
-"x0": 391.0,
-"y0": 1369.0,
-"x1": 422.0,
-"y1": 1421.0,
-"class": "VLV_GATE",
-"actuator": "MOTOR",
-"ft_component_type": "MOV",
-"uncertain": "",
-"note": ""
-},
-{
-"box_id": 57,
 "x0": 508.0,
 "y0": 1521.0,
 "x1": 542.0,
@@ -11761,7 +11737,7 @@
 "note": ""
 },
 {
-"box_id": 58,
+"box_id": 57,
 "x0": 1261.0,
 "y0": 2722.0,
 "x1": 1300.0,
@@ -11773,7 +11749,7 @@
 "note": ""
 },
 {
-"box_id": 59,
+"box_id": 58,
 "x0": 1223.0,
 "y0": 1810.0,
 "x1": 1285.0,
@@ -11785,7 +11761,7 @@
 "note": "motor-driven AFW pump"
 },
 {
-"box_id": 60,
+"box_id": 59,
 "x0": 1401.0,
 "y0": 2534.0,
 "x1": 1454.0,
@@ -11797,7 +11773,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 61,
+"box_id": 60,
 "x0": 1402.0,
 "y0": 2654.0,
 "x1": 1456.0,
@@ -11809,7 +11785,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 62,
+"box_id": 61,
 "x0": 1662.0,
 "y0": 2394.0,
 "x1": 1705.0,
@@ -11821,7 +11797,7 @@
 "note": ""
 },
 {
-"box_id": 63,
+"box_id": 62,
 "x0": 1401.0,
 "y0": 2591.0,
 "x1": 1455.0,
@@ -11833,19 +11809,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 64,
-"x0": 669.0,
-"y0": 1109.0,
-"x1": 702.0,
-"y1": 1169.0,
-"class": "VLV_GATE",
-"actuator": "MOTOR",
-"ft_component_type": "MOV",
-"uncertain": "",
-"note": "body of the motor-operated valve HV-5120 (box inside #70)"
-},
-{
-"box_id": 65,
+"box_id": 63,
 "x0": 901.0,
 "y0": 2598.0,
 "x1": 955.0,
@@ -11857,7 +11821,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 66,
+"box_id": 64,
 "x0": 1825.0,
 "y0": 1816.0,
 "x1": 1897.0,
@@ -11869,7 +11833,7 @@
 "note": "motor-driven AFW pump"
 },
 {
-"box_id": 67,
+"box_id": 65,
 "x0": 344.0,
 "y0": 1369.0,
 "x1": 422.0,
@@ -11881,7 +11845,7 @@
 "note": ""
 },
 {
-"box_id": 68,
+"box_id": 66,
 "x0": 901.0,
 "y0": 2662.0,
 "x1": 954.0,
@@ -11893,7 +11857,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 69,
+"box_id": 67,
 "x0": 900.0,
 "y0": 2534.0,
 "x1": 955.0,
@@ -11905,7 +11869,7 @@
 "note": "butterfly valve, locked open (LO) where marked (confirmed on review)"
 },
 {
-"box_id": 70,
+"box_id": 68,
 "x0": 599.0,
 "y0": 1109.0,
 "x1": 706.0,
@@ -11917,31 +11881,7 @@
 "note": ""
 },
 {
-"box_id": 71,
-"x0": 420.0,
-"y0": 2019.0,
-"x1": 528.0,
-"y1": 2069.0,
-"class": "OTHER",
-"actuator": "-",
-"ft_component_type": "",
-"uncertain": "",
-"note": "main steam header branch (arrows), not a symbol (confirmed on review)"
-},
-{
-"box_id": 72,
-"x0": 1433.0,
-"y0": 2203.0,
-"x1": 1470.0,
-"y1": 2240.0,
-"class": "OTHER",
-"actuator": "-",
-"ft_component_type": "",
-"uncertain": "",
-"note": "motor operator drawn alone (S115), valve not boxed with it (confirmed on review)"
-},
-{
-"box_id": 73,
+"box_id": 69,
 "x0": 704.0,
 "y0": 2521.0,
 "x1": 902.0,
@@ -11953,7 +11893,7 @@
 "note": "condensate storage tank (CST)"
 },
 {
-"box_id": 74,
+"box_id": 70,
 "x0": 1200.0,
 "y0": 2521.0,
 "x1": 1381.0,
@@ -11965,7 +11905,7 @@
 "note": "condensate storage tank (CST)"
 },
 {
-"box_id": 75,
+"box_id": 71,
 "x0": 694.0,
 "y0": 1760.0,
 "x1": 1006.0,
@@ -12561,7 +12501,7 @@
 "x1": 1340.0,
 "y1": 1129.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -12585,7 +12525,7 @@
 "x1": 1339.0,
 "y1": 1709.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -12601,6 +12541,18 @@
 "ft_component_type": "STR",
 "uncertain": "",
 "note": "fine mesh strainer (ST-201, ST-206)"
+},
+{
+"box_id": 52,
+"x0": 1337.0,
+"y0": 1179.0,
+"x1": 1382.0,
+"y1": 1237.0,
+"class": "VLV_CHECK",
+"actuator": "NONE",
+"ft_component_type": "CKV",
+"uncertain": "",
+"note": "check valve AF-15 below AF-9"
 }
 ],
 "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2": [
@@ -13441,7 +13393,7 @@
 "x1": 1406.0,
 "y1": 1768.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -13561,7 +13513,7 @@
 "x1": 1398.5,
 "y1": 1181.5,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -14261,7 +14213,7 @@
 "x1": 1296.0,
 "y1": 1805.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "startup feed pump (driver not shown)"
@@ -14575,7 +14527,7 @@
 "x1": 1113.0,
 "y1": 1807.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "make-up pump (driver not shown)"
@@ -14587,7 +14539,7 @@
 "x1": 1486.0,
 "y1": 1759.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "make-up pump (driver not shown)"
@@ -14877,7 +14829,7 @@
 "x1": 1526.0,
 "y1": 1447.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "startup feed pump (driver not shown)"
@@ -15491,7 +15443,7 @@
 "x1": 1331.4,
 "y1": 1703.5,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -15551,7 +15503,7 @@
 "x1": 1327.9,
 "y1": 1118.3,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "AFW pump (driver not shown on this page)"
@@ -16033,7 +15985,7 @@
 "x1": 1710.0,
 "y1": 1282.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "startup feed pump (driver not shown)"
@@ -19573,7 +19525,7 @@
 "x1": 972.0,
 "y1": 1612.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "primary drain tank pump (driver not shown)"
@@ -19585,7 +19537,7 @@
 "x1": 972.0,
 "y1": 1738.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "primary drain tank pump (driver not shown)"
@@ -19693,7 +19645,7 @@
 "x1": 2468.0,
 "y1": 1876.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "stripper circulating pump (driver not shown)"
@@ -19705,7 +19657,7 @@
 "x1": 2468.0,
 "y1": 1994.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "stripper circulating pump (driver not shown)"
@@ -20395,7 +20347,7 @@
 "x1": 2034.0,
 "y1": 1432.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "evaporator feed pump (driver not shown)"
@@ -20407,7 +20359,7 @@
 "x1": 2034.0,
 "y1": 1548.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "evaporator feed pump (driver not shown)"
@@ -20469,7 +20421,7 @@
 "x1": 923.0,
 "y1": 2233.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "component cooling pump (driver not shown)"
@@ -20517,7 +20469,7 @@
 "x1": 922.0,
 "y1": 1965.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "component cooling pump (driver not shown)"
@@ -20553,7 +20505,7 @@
 "x1": 922.0,
 "y1": 1695.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "component cooling pump (driver not shown)"
@@ -20565,7 +20517,7 @@
 "x1": 920.0,
 "y1": 1425.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "component cooling pump (driver not shown)"
@@ -20663,7 +20615,7 @@
 "x1": 1023.0,
 "y1": 1803.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled component cooling pump (driver not shown)"
@@ -20675,7 +20627,7 @@
 "x1": 1023.0,
 "y1": 1473.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled component cooling pump (driver not shown)"
@@ -20687,7 +20639,7 @@
 "x1": 1023.0,
 "y1": 1141.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled component cooling pump (driver not shown)"
@@ -20785,7 +20737,7 @@
 "x1": 1304.0,
 "y1": 1477.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled water pump (driver not shown)"
@@ -20797,7 +20749,7 @@
 "x1": 1304.0,
 "y1": 1949.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled water pump (driver not shown)"
@@ -20809,7 +20761,7 @@
 "x1": 1304.0,
 "y1": 2434.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "chilled water pump (driver not shown)"
@@ -20945,7 +20897,7 @@
 "x1": 981.0,
 "y1": 1639.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "charging pump component cooling pump (driver not shown)"
@@ -20969,7 +20921,7 @@
 "x1": 981.0,
 "y1": 1047.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "charging pump component cooling pump (driver not shown)"
@@ -21835,7 +21787,7 @@
 "x1": 872.0,
 "y1": 536.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW makeup pump (PP03A, PP03B)"
@@ -21847,7 +21799,7 @@
 "x1": 1519.0,
 "y1": 798.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (PP01A/B, PP02A/B)"
@@ -21859,7 +21811,7 @@
 "x1": 1519.0,
 "y1": 1042.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (PP01A/B, PP02A/B)"
@@ -21871,7 +21823,7 @@
 "x1": 853.0,
 "y1": 1700.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW makeup pump (PP03A, PP03B)"
@@ -21883,7 +21835,7 @@
 "x1": 1519.0,
 "y1": 1963.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (PP01A/B, PP02A/B)"
@@ -21895,7 +21847,7 @@
 "x1": 1519.0,
 "y1": 2206.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (PP01A/B, PP02A/B)"
@@ -22485,7 +22437,7 @@
 "x1": 852.0,
 "y1": 1037.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (1-CC-P1A, 1-CC-P1B), driver not shown"
@@ -22557,7 +22509,7 @@
 "x1": 856.0,
 "y1": 1256.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "CCW pump (1-CC-P1A, 1-CC-P1B), driver not shown"
@@ -23015,7 +22967,7 @@
 "x1": 643.0,
 "y1": 1236.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "fire water pump"
@@ -23358,10 +23310,10 @@
 },
 {
 "box_id": 33,
-"x0": 1193.0,
-"y0": 919.0,
-"x1": 1269.0,
-"y1": 1045.0,
+"x0": 1210.0,
+"y0": 950.0,
+"x1": 1245.0,
+"y1": 1043.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -23370,10 +23322,10 @@
 },
 {
 "box_id": 34,
-"x0": 1793.0,
-"y0": 948.0,
-"x1": 1865.0,
-"y1": 1045.0,
+"x0": 1810.0,
+"y0": 950.0,
+"x1": 1845.0,
+"y1": 1043.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -23382,10 +23334,10 @@
 },
 {
 "box_id": 35,
-"x0": 1189.0,
-"y0": 1330.0,
-"x1": 1271.0,
-"y1": 1461.0,
+"x0": 1210.0,
+"y0": 1366.0,
+"x1": 1245.0,
+"y1": 1459.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -23394,10 +23346,10 @@
 },
 {
 "box_id": 36,
-"x0": 1789.0,
-"y0": 1334.0,
-"x1": 1866.0,
-"y1": 1461.0,
+"x0": 1809.0,
+"y0": 1366.0,
+"x1": 1845.0,
+"y1": 1459.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -23411,7 +23363,7 @@
 "x1": 1184.0,
 "y1": 1561.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "containment spray pump (PP01A, PP01B)"
@@ -23423,7 +23375,7 @@
 "x1": 1488.0,
 "y1": 1560.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "shutdown cooling pump (PP01A, PP01B)"
@@ -23435,7 +23387,7 @@
 "x1": 1783.0,
 "y1": 1561.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "containment spray pump (PP01A, PP01B)"
@@ -23447,7 +23399,7 @@
 "x1": 2088.0,
 "y1": 1560.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "shutdown cooling pump (PP01A, PP01B)"
@@ -26404,18 +26356,6 @@
 },
 {
 "box_id": 20,
-"x0": 2750.0,
-"y0": 854.0,
-"x1": 2791.0,
-"y1": 895.0,
-"class": "DAMPER",
-"actuator": "AIR",
-"ft_component_type": "PND",
-"uncertain": "",
-"note": "pneumatic operated damper"
-},
-{
-"box_id": 21,
 "x0": 2215.0,
 "y0": 1846.0,
 "x1": 2256.0,
@@ -26427,7 +26367,7 @@
 "note": "damper (Y tag), no operator drawn"
 },
 {
-"box_id": 22,
+"box_id": 21,
 "x0": 2678.0,
 "y0": 1685.0,
 "x1": 2718.0,
@@ -26439,7 +26379,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 23,
+"box_id": 22,
 "x0": 2653.0,
 "y0": 807.0,
 "x1": 2694.0,
@@ -26451,7 +26391,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 24,
+"box_id": 23,
 "x0": 615.0,
 "y0": 691.0,
 "x1": 656.0,
@@ -26463,7 +26403,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 25,
+"box_id": 24,
 "x0": 1821.0,
 "y0": 1050.0,
 "x1": 1860.0,
@@ -26475,7 +26415,7 @@
 "note": "humidifier (HU01-HU04)"
 },
 {
-"box_id": 26,
+"box_id": 25,
 "x0": 2750.0,
 "y0": 807.0,
 "x1": 2791.0,
@@ -26487,7 +26427,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 27,
+"box_id": 26,
 "x0": 1761.0,
 "y0": 1564.0,
 "x1": 1798.0,
@@ -26499,7 +26439,7 @@
 "note": "instrument XS"
 },
 {
-"box_id": 28,
+"box_id": 27,
 "x0": 614.0,
 "y0": 802.0,
 "x1": 655.0,
@@ -26511,7 +26451,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 29,
+"box_id": 28,
 "x0": 2656.0,
 "y0": 517.0,
 "x1": 2694.0,
@@ -26523,7 +26463,7 @@
 "note": "radiation monitor (R)"
 },
 {
-"box_id": 30,
+"box_id": 29,
 "x0": 2599.0,
 "y0": 517.0,
 "x1": 2637.0,
@@ -26535,7 +26475,7 @@
 "note": "radiation monitor (R)"
 },
 {
-"box_id": 31,
+"box_id": 30,
 "x0": 1378.0,
 "y0": 1054.0,
 "x1": 1418.0,
@@ -26547,7 +26487,7 @@
 "note": "humidifier (HU01-HU04)"
 },
 {
-"box_id": 32,
+"box_id": 31,
 "x0": 1133.0,
 "y0": 1803.0,
 "x1": 1173.0,
@@ -26559,7 +26499,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 33,
+"box_id": 32,
 "x0": 643.0,
 "y0": 517.0,
 "x1": 681.0,
@@ -26571,7 +26511,7 @@
 "note": "radiation monitor (R)"
 },
 {
-"box_id": 34,
+"box_id": 33,
 "x0": 701.0,
 "y0": 517.0,
 "x1": 739.0,
@@ -26583,7 +26523,7 @@
 "note": "radiation monitor (R)"
 },
 {
-"box_id": 35,
+"box_id": 34,
 "x0": 1131.0,
 "y0": 1567.0,
 "x1": 1187.0,
@@ -26595,7 +26535,7 @@
 "note": "emergency makeup ACU fan (centrifugal)"
 },
 {
-"box_id": 36,
+"box_id": 35,
 "x0": 1372.0,
 "y0": 834.0,
 "x1": 1411.0,
@@ -26607,7 +26547,7 @@
 "note": "humidifier (HU01-HU04)"
 },
 {
-"box_id": 37,
+"box_id": 36,
 "x0": 2025.0,
 "y0": 1572.0,
 "x1": 2080.0,
@@ -26619,7 +26559,7 @@
 "note": "emergency makeup ACU fan (centrifugal)"
 },
 {
-"box_id": 38,
+"box_id": 37,
 "x0": 902.0,
 "y0": 1085.0,
 "x1": 975.0,
@@ -26631,7 +26571,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 39,
+"box_id": 38,
 "x0": 2264.0,
 "y0": 834.0,
 "x1": 2316.0,
@@ -26643,7 +26583,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 40,
+"box_id": 39,
 "x0": 821.0,
 "y0": 834.0,
 "x1": 873.0,
@@ -26655,7 +26595,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 41,
+"box_id": 40,
 "x0": 913.0,
 "y0": 834.0,
 "x1": 965.0,
@@ -26667,7 +26607,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 42,
+"box_id": 41,
 "x0": 821.0,
 "y0": 1058.0,
 "x1": 873.0,
@@ -26679,7 +26619,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 43,
+"box_id": 42,
 "x0": 2359.0,
 "y0": 1055.0,
 "x1": 2411.0,
@@ -26691,7 +26631,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 44,
+"box_id": 43,
 "x0": 1115.0,
 "y0": 1642.0,
 "x1": 1187.0,
@@ -26703,7 +26643,7 @@
 "note": "emergency makeup ACU fan (centrifugal)"
 },
 {
-"box_id": 45,
+"box_id": 44,
 "x0": 1007.0,
 "y0": 834.0,
 "x1": 1059.0,
@@ -26715,7 +26655,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 46,
+"box_id": 45,
 "x0": 2165.0,
 "y0": 834.0,
 "x1": 2217.0,
@@ -26727,7 +26667,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 47,
+"box_id": 46,
 "x0": 2353.0,
 "y0": 834.0,
 "x1": 2404.0,
@@ -26739,7 +26679,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 48,
+"box_id": 47,
 "x0": 1007.0,
 "y0": 1058.0,
 "x1": 1059.0,
@@ -26751,7 +26691,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 49,
+"box_id": 48,
 "x0": 702.0,
 "y0": 1567.0,
 "x1": 759.0,
@@ -26763,7 +26703,7 @@
 "note": "moisture separator"
 },
 {
-"box_id": 50,
+"box_id": 49,
 "x0": 2025.0,
 "y0": 1647.0,
 "x1": 2080.0,
@@ -26775,7 +26715,7 @@
 "note": "emergency makeup ACU fan (centrifugal)"
 },
 {
-"box_id": 51,
+"box_id": 50,
 "x0": 2105.0,
 "y0": 1572.0,
 "x1": 2144.0,
@@ -26787,7 +26727,7 @@
 "note": "postfilter"
 },
 {
-"box_id": 52,
+"box_id": 51,
 "x0": 2163.0,
 "y0": 1572.0,
 "x1": 2204.0,
@@ -26799,7 +26739,7 @@
 "note": "carbon adsorber (AD)"
 },
 {
-"box_id": 53,
+"box_id": 52,
 "x0": 2222.0,
 "y0": 1572.0,
 "x1": 2263.0,
@@ -26811,7 +26751,7 @@
 "note": "HEPA filter"
 },
 {
-"box_id": 54,
+"box_id": 53,
 "x0": 2282.0,
 "y0": 1572.0,
 "x1": 2318.0,
@@ -26823,7 +26763,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 55,
+"box_id": 54,
 "x0": 2337.0,
 "y0": 1572.0,
 "x1": 2374.0,
@@ -26835,7 +26775,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 56,
+"box_id": 55,
 "x0": 2395.0,
 "y0": 1572.0,
 "x1": 2433.0,
@@ -26847,7 +26787,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 57,
+"box_id": 56,
 "x0": 2452.0,
 "y0": 1572.0,
 "x1": 2501.0,
@@ -26859,7 +26799,7 @@
 "note": "moisture separator"
 },
 {
-"box_id": 58,
+"box_id": 57,
 "x0": 779.0,
 "y0": 1567.0,
 "x1": 817.0,
@@ -26871,7 +26811,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 59,
+"box_id": 58,
 "x0": 838.0,
 "y0": 1567.0,
 "x1": 875.0,
@@ -26883,7 +26823,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 60,
+"box_id": 59,
 "x0": 894.0,
 "y0": 1567.0,
 "x1": 930.0,
@@ -26895,7 +26835,7 @@
 "note": "prefilter"
 },
 {
-"box_id": 61,
+"box_id": 60,
 "x0": 949.0,
 "y0": 1567.0,
 "x1": 990.0,
@@ -26907,7 +26847,7 @@
 "note": "HEPA filter"
 },
 {
-"box_id": 62,
+"box_id": 61,
 "x0": 1008.0,
 "y0": 1567.0,
 "x1": 1049.0,
@@ -26919,7 +26859,7 @@
 "note": "carbon adsorber (AD)"
 },
 {
-"box_id": 63,
+"box_id": 62,
 "x0": 1068.0,
 "y0": 1567.0,
 "x1": 1106.0,
@@ -26931,7 +26871,7 @@
 "note": "postfilter"
 },
 {
-"box_id": 64,
+"box_id": 63,
 "x0": 2187.0,
 "y0": 502.0,
 "x1": 2228.0,
@@ -26943,7 +26883,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 65,
+"box_id": 64,
 "x0": 2749.0,
 "y0": 691.0,
 "x1": 2790.0,
@@ -26955,7 +26895,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 66,
+"box_id": 65,
 "x0": 2653.0,
 "y0": 691.0,
 "x1": 2694.0,
@@ -26967,7 +26907,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 67,
+"box_id": 66,
 "x0": 2172.0,
 "y0": 1055.0,
 "x1": 2224.0,
@@ -26979,7 +26919,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 68,
+"box_id": 67,
 "x0": 2271.0,
 "y0": 1055.0,
 "x1": 2323.0,
@@ -26991,7 +26931,7 @@
 "note": "heating coil (HC, electric) or cooling coil (CC, chilled water)"
 },
 {
-"box_id": 69,
+"box_id": 68,
 "x0": 1197.0,
 "y0": 1533.0,
 "x1": 1238.0,
@@ -27003,7 +26943,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 70,
+"box_id": 69,
 "x0": 1202.0,
 "y0": 1608.0,
 "x1": 1239.0,
@@ -27015,7 +26955,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 71,
+"box_id": 70,
 "x0": 1053.0,
 "y0": 1803.0,
 "x1": 1094.0,
@@ -27027,7 +26967,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 72,
+"box_id": 71,
 "x0": 516.0,
 "y0": 1564.0,
 "x1": 557.0,
@@ -27039,7 +26979,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 73,
+"box_id": 72,
 "x0": 516.0,
 "y0": 1685.0,
 "x1": 557.0,
@@ -27051,7 +26991,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 74,
+"box_id": 73,
 "x0": 516.0,
 "y0": 691.0,
 "x1": 557.0,
@@ -27063,7 +27003,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 75,
+"box_id": 74,
 "x0": 515.0,
 "y0": 802.0,
 "x1": 556.0,
@@ -27075,7 +27015,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 76,
+"box_id": 75,
 "x0": 653.8,
 "y0": 1292.7,
 "x1": 745.1,
@@ -27087,7 +27027,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 77,
+"box_id": 76,
 "x0": 770.7,
 "y0": 1292.7,
 "x1": 863.5,
@@ -27099,7 +27039,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 78,
+"box_id": 77,
 "x0": 1262.5,
 "y0": 1013.3,
 "x1": 1301.6,
@@ -27111,7 +27051,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 79,
+"box_id": 78,
 "x0": 1918.1,
 "y0": 1008.5,
 "x1": 1959.5,
@@ -27123,7 +27063,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 80,
+"box_id": 79,
 "x0": 1913.0,
 "y0": 787.1,
 "x1": 1952.3,
@@ -27135,7 +27075,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 81,
+"box_id": 80,
 "x0": 2410.1,
 "y0": 1301.4,
 "x1": 2494.3,
@@ -27147,7 +27087,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 82,
+"box_id": 81,
 "x0": 2517.3,
 "y0": 1297.0,
 "x1": 2601.9,
@@ -27159,7 +27099,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 83,
+"box_id": 82,
 "x0": 1711.3,
 "y0": 1802.0,
 "x1": 1750.3,
@@ -27171,7 +27111,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 84,
+"box_id": 83,
 "x0": 1790.0,
 "y0": 1802.0,
 "x1": 1827.2,
@@ -27183,7 +27123,7 @@
 "note": "pneumatic operated damper"
 },
 {
-"box_id": 85,
+"box_id": 84,
 "x0": 1979.2,
 "y0": 1526.9,
 "x1": 2012.9,
@@ -27195,7 +27135,7 @@
 "note": "electro-hydraulic operated damper"
 },
 {
-"box_id": 86,
+"box_id": 85,
 "x0": 1979.2,
 "y0": 1604.4,
 "x1": 2012.9,
@@ -27215,7 +27155,7 @@
 "x1": 1526.0,
 "y1": 953.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ECW pump (PP01A, PP02A)"
@@ -27227,7 +27167,7 @@
 "x1": 1526.0,
 "y1": 1159.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ECW pump (PP01A, PP02A)"
@@ -27239,7 +27179,7 @@
 "x1": 891.0,
 "y1": 1041.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ECW makeup pump (PP03A)"
@@ -29393,7 +29333,7 @@
 "x1": 743.0,
 "y1": 722.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ESW pump (vertical)"
@@ -29405,7 +29345,7 @@
 "x1": 743.0,
 "y1": 1094.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ESW pump (vertical)"
@@ -29417,7 +29357,7 @@
 "x1": 743.0,
 "y1": 1946.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ESW pump (vertical)"
@@ -29429,7 +29369,7 @@
 "x1": 743.0,
 "y1": 2315.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "ESW pump (vertical)"
@@ -29539,7 +29479,7 @@
 "x1": 1251.0,
 "y1": 1022.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "main feed pump"
@@ -29623,7 +29563,7 @@
 "x1": 1251.0,
 "y1": 882.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "main feed pump"
@@ -29635,7 +29575,7 @@
 "x1": 1890.0,
 "y1": 2094.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "auxiliary feedwater booster pump"
@@ -29647,7 +29587,7 @@
 "x1": 1890.0,
 "y1": 1992.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "auxiliary feedwater booster pump"
@@ -29659,7 +29599,7 @@
 "x1": 1081.0,
 "y1": 1802.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "auxiliary feedwater pump (driver not shown)"
@@ -29695,7 +29635,7 @@
 "x1": 1269.0,
 "y1": 1802.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "auxiliary feedwater pump (driver not shown)"
@@ -29707,7 +29647,7 @@
 "x1": 1452.0,
 "y1": 1802.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "auxiliary feedwater pump (driver not shown)"
@@ -32535,7 +32475,7 @@
 "x1": 1629.0,
 "y1": 1390.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "closed loop circulating pump (PP03)"
@@ -35243,7 +35183,7 @@
 "x1": 4105.0,
 "y1": 2005.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -35255,7 +35195,7 @@
 "x1": 4111.0,
 "y1": 2223.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -35267,7 +35207,7 @@
 "x1": 4120.0,
 "y1": 2443.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -36711,7 +36651,7 @@
 "x1": 2134.0,
 "y1": 740.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "RHR pump with its seal cooler"
@@ -36723,7 +36663,7 @@
 "x1": 2134.0,
 "y1": 974.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "RHR pump with its seal cooler"
@@ -37481,17 +37421,17 @@
 "x1": 1091.0,
 "y1": 1883.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "shutdown cooling pump (PP01A, PP01B)"
 },
 {
 "box_id": 63,
-"x0": 1172.0,
-"y0": 1676.0,
-"x1": 1248.0,
-"y1": 1783.0,
+"x0": 1187.0,
+"y0": 1677.0,
+"x1": 1227.0,
+"y1": 1781.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -37505,7 +37445,7 @@
 "x1": 829.0,
 "y1": 1885.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "containment spray pump (PP01A, PP01B)"
@@ -37517,7 +37457,7 @@
 "x1": 1541.0,
 "y1": 1883.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "containment spray pump (PP01A, PP01B)"
@@ -37529,28 +37469,16 @@
 "x1": 1803.0,
 "y1": 1881.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "shutdown cooling pump (PP01A, PP01B)"
 },
 {
 "box_id": 67,
-"x0": 1797.0,
-"y0": 1285.0,
-"x1": 1860.0,
-"y1": 1361.0,
-"class": "HX",
-"actuator": "-",
-"ft_component_type": "HTX",
-"uncertain": "",
-"note": "shutdown cooling heat exchanger (HE01A, HE01B)"
-},
-{
-"box_id": 68,
-"x0": 1086.0,
-"y0": 1284.0,
-"x1": 1148.0,
+"x0": 1816.0,
+"y0": 1286.0,
+"x1": 1849.0,
 "y1": 1360.0,
 "class": "HX",
 "actuator": "-",
@@ -37559,11 +37487,23 @@
 "note": "shutdown cooling heat exchanger (HE01A, HE01B)"
 },
 {
+"box_id": 68,
+"x0": 1104.0,
+"y0": 1285.0,
+"x1": 1137.0,
+"y1": 1359.0,
+"class": "HX",
+"actuator": "-",
+"ft_component_type": "HTX",
+"uncertain": "",
+"note": "shutdown cooling heat exchanger (HE01A, HE01B)"
+},
+{
 "box_id": 69,
-"x0": 1882.0,
-"y0": 1677.0,
-"x1": 1958.0,
-"y1": 1785.0,
+"x0": 1897.0,
+"y0": 1679.0,
+"x1": 1937.0,
+"y1": 1782.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -37638,11 +37578,11 @@
 "y0": 580.0,
 "x1": 2236.0,
 "y1": 686.0,
-"class": "VLV_GATE",
+"class": "VLV_GLOBE",
 "actuator": "MOTOR",
 "ft_component_type": "MOV",
 "uncertain": "",
-"note": "solid body (normally closed)"
+"note": "solid body (normally closed) with the dot at the waist (SI-314)"
 },
 {
 "box_id": 3,
@@ -37723,10 +37663,10 @@
 "x1": 1386.0,
 "y1": 1260.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
-"note": "shutdown cooling pump (SCP-01)"
+"note": "shutdown cooling pump (SCP-01), no operator drawn"
 },
 {
 "box_id": 10,
@@ -37826,10 +37766,10 @@
 },
 {
 "box_id": 18,
-"x0": 1784.0,
-"y0": 1135.0,
-"x1": 2032.0,
-"y1": 1238.0,
+"x0": 1785.0,
+"y0": 1136.0,
+"x1": 2030.0,
+"y1": 1219.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -37839,9 +37779,9 @@
 {
 "box_id": 19,
 "x0": 1219.0,
-"y0": 1376.0,
-"x1": 1466.0,
-"y1": 1479.0,
+"y0": 1377.0,
+"x1": 1464.0,
+"y1": 1461.0,
 "class": "HX",
 "actuator": "-",
 "ft_component_type": "HTX",
@@ -37862,15 +37802,15 @@
 },
 {
 "box_id": 21,
-"x0": 730.8,
-"y0": 998.7,
-"x1": 826.6,
-"y1": 1066.6,
-"class": "OTHER",
+"x0": 889.0,
+"y0": 1193.0,
+"x1": 934.0,
+"y1": 1239.0,
+"class": "PENETRATION",
 "actuator": "-",
 "ft_component_type": "",
 "uncertain": "",
-"note": "ASME code class break box (1|2), not a component (box could be deleted) (confirmed on review)"
+"note": "containment penetration (square on the inside / outside containment boundary)"
 }
 ],
 "pseudo_SI (APR1400)": [
@@ -37977,7 +37917,7 @@
 "x1": 1520.0,
 "y1": 2113.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "safety injection pump (PP02A-D)"
@@ -38073,7 +38013,7 @@
 "x1": 1789.0,
 "y1": 2112.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "safety injection pump (PP02A-D)"
@@ -38241,7 +38181,7 @@
 "x1": 816.0,
 "y1": 2112.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "safety injection pump (PP02A-D)"
@@ -38277,7 +38217,7 @@
 "x1": 1085.0,
 "y1": 2109.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "safety injection pump (PP02A-D)"
@@ -40009,7 +39949,7 @@
 "x1": 2751.0,
 "y1": 1465.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "turbine building service water pump"
@@ -40045,7 +39985,7 @@
 "x1": 2689.0,
 "y1": 1641.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "river water makeup pump (RWMU PP)"
@@ -40093,7 +40033,7 @@
 "x1": 2751.0,
 "y1": 1552.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "turbine building service water pump"
@@ -40273,7 +40213,7 @@
 "x1": 2766.0,
 "y1": 1860.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "circulating water pumps (8)"
@@ -40285,7 +40225,7 @@
 "x1": 2767.0,
 "y1": 1941.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "emergency service water pumps (3)"
@@ -41703,7 +41643,7 @@
 "x1": 1386.0,
 "y1": 1659.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -41715,7 +41655,7 @@
 "x1": 1386.0,
 "y1": 1788.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -41727,7 +41667,7 @@
 "x1": 1386.0,
 "y1": 1916.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"
@@ -41739,7 +41679,7 @@
 "x1": 1386.0,
 "y1": 2044.0,
 "class": "PUMP",
-"actuator": "UNSPEC",
+"actuator": "NONE",
 "ft_component_type": "PMP",
 "uncertain": "",
 "note": "condensate pump"

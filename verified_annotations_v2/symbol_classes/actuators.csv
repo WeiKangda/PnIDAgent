@@ -1,11 +1,11 @@
 actuator,definition
-NONE,No operator drawn (manual / check / self-acting)
-MOTOR,Motor operator
+NONE,"No operator drawn and none named on the drawing (manual / check / self-acting valve, pump whose driver is not shown)"
+MOTOR,"Motor operator or motor driver, drawn (M) or named on the drawing (e.g. MOTOR DRIVEN, MD, an MOV / MDP tag)"
 AIR,Air / pneumatic operator (diaphragm or piston)
 SOLENOID,Solenoid operator
 HYDRAULIC,Hydraulic operator
 EH,Electro-hydraulic operator
-UNSPEC,"Operator drawn, type not identifiable"
-TURBINE,Turbine driver (pumps)
-DIESEL,Diesel / engine driver (pumps)
+UNSPEC,"Operator drawn, type neither identifiable from the symbol nor named on the drawing"
+TURBINE,"Turbine driver (pumps), drawn or named on the drawing (e.g. TURBINE DRIVEN, TD)"
+DIESEL,"Diesel / engine driver (pumps), drawn or named on the drawing"
 -,"Not applicable (not a valve, damper or pump)"

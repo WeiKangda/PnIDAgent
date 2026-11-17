@@ -3,7 +3,7 @@
 Inputs (paths relative to the topology_verified folder):
   images/<page>.png       the drawing
   symbols/<page>.txt      human-verified symbol boxes, YOLO format; the line number is the symbol id
-  lines/<page>.json       human-verified pipe lines ("solid")
+  lines/<page>.json       human-verified pipe lines ("solid", and "dashed": flow pipes drawn dashed or dotted)
   manual_edits.json       per page, the changes made by hand during the connectivity review:
                             added_lines        pipe pieces drawn on the page but missing from the line annotations
                             removed_lines      annotated lines that are not pipes (a boundary or the page edge)
@@ -15,6 +15,9 @@ Inputs (paths relative to the topology_verified folder):
                             tol                snapping distance for the whole page when it is not 12 px
                             pass_through       symbols a pipe runs straight through (a bus breaker, a condenser): the pipe
                                                parts on both sides are joined through the box
+                            no_join            elongated symbols (one side >= 1.8 x the other) that are not on a bus: the
+                                               two pipe parts entering from the long sides are not joined through the box
+                                               (e.g. a valve whose motor operator is drawn beside it)
                             vector_regions     regions where the pipes are taken from the vector drawing of the source PDF
                                                (lines a few px apart that the raster labels cannot separate):
                                                vector_lines replace the labeled lines inside these regions, and
@@ -89,7 +92,7 @@ def build(n, e):
     syms = load_symbols(n, W, H)
     L = json.load(open(f"{ROOT}/lines/{n}.json"))
     drop = e.get("removed_lines", [])
-    segs = [(tuple(map(int, s)), "solid") for s in L["solid"] if not any(same_line(s, d) for d in drop)]
+    segs = [(tuple(map(int, s)), "solid") for s in L["solid"] + L.get("dashed", []) if not any(same_line(s, d) for d in drop)]   # dashed flow pipes are pipes
     vec_dots = None
     if e.get("vector_regions"):
         regs = e["vector_regions"]; kept = []
@@ -101,7 +104,8 @@ def build(n, e):
     segs += [(tuple(int(round(v)) for v in a), "solid") for a in e.get("added_lines", [])]
     fine = (e["fine_regions"], int(e.get("fine_tol", 4))) if e.get("fine_regions") else None
     nodes, edges, crossings, _, _, paths = topo.build(segs, syms, g, decisions=e.get("crossing_decisions", []), tol=int(e.get("tol", 12)),
-                                                      vec_dots=vec_dots, pass_through=e.get("pass_through", []), fine=fine)
+                                                      vec_dots=vec_dots, pass_through=e.get("pass_through", []), fine=fine,
+                                                      no_join=e.get("no_join", []))
     for sid, x, y in e.get("unlinks", []):
         keep = [i for i, (ed, pth) in enumerate(zip(edges, paths)) if not (("sym", sid) in (ed[0], ed[1]) and any(topo.point_seg_dist((x, y), tuple(p)) <= 10 for p in pth))]
         edges = [edges[i] for i in keep]; paths = [paths[i] for i in keep]
