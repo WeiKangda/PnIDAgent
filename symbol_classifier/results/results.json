@@ -1,0 +1,831 @@
+{
+ "frozen": {
+  "majority class": {
+   "all": {
+    "n": 3483,
+    "class_acc": 0.37266724088429515,
+    "class_macro_f1": 0.012066280880336518
+   },
+   "not_in_review": {
+    "n": 3004,
+    "class_acc": 0.32689747003994674,
+    "class_macro_f1": 0.010949434130568099
+   },
+   "per_family": {
+    "AFW, other plants": 0.5415415415415415,
+    "APR1400 DCD": 0.14803149606299212,
+    "Davis-Besse reliability report": 0.551622418879056,
+    "GE-Hitachi ABWR": 0.4714285714285714,
+    "NUREG/CR-4550 (Surry)": 0.4551083591331269,
+    "NuScale": 0.23809523809523808,
+    "Surry FSAR": 0.4297297297297297
+   },
+   "model": "most frequent class",
+   "input": "-",
+   "protocol": "new family"
+  },
+  "LR  clip (d4)": {
+   "all": {
+    "n": 3483,
+    "class_acc": 0.5736434108527132,
+    "class_macro_f1": 0.15985987159221704
+   },
+   "not_in_review": {
+    "n": 3004,
+    "class_acc": 0.5635818908122503,
+    "class_macro_f1": 0.1627081968327127
+   },
+   "per_family": {
+    "AFW, other plants": 0.7857857857857858,
+    "APR1400 DCD": 0.2692913385826772,
+    "Davis-Besse reliability report": 0.8466076696165191,
+    "GE-Hitachi ABWR": 0.6285714285714286,
+    "NUREG/CR-4550 (Surry)": 0.7275541795665634,
+    "NuScale": 0.5714285714285714,
+    "Surry FSAR": 0.6405405405405405
+   },
+   "model": "CLIP ViT-B/32 features + logistic regression",
+   "input": "image",
+   "protocol": "new family"
+  },
+  "LR  effnetv2s (d4)": {
+   "all": {
+    "n": 3483,
+    "class_acc": 0.5762273901808785,
+    "class_macro_f1": 0.14483416949616504
+   },
+   "not_in_review": {
+    "n": 3004,
+    "class_acc": 0.5675765645805593,
+    "class_macro_f1": 0.14835953947411168
+   },
+   "per_family": {
+    "AFW, other plants": 0.7907907907907908,
+    "APR1400 DCD": 0.30236220472440944,
+    "Davis-Besse reliability report": 0.8495575221238938,
+    "GE-Hitachi ABWR": 0.5928571428571429,
+    "NUREG/CR-4550 (Surry)": 0.6842105263157895,
+    "NuScale": 0.5714285714285714,
+    "Surry FSAR": 0.5864864864864865
+   },
+   "model": "EfficientNetV2-S features + logistic regression",
+   "input": "image",
+   "protocol": "new family"
+  },
+  "LR  effnetv2s (d4) + text": {
+   "all": {
+    "n": 3483,
+    "class_acc": 0.5768016078093597,
+    "class_macro_f1": 0.1425728646928884,
+    "act_acc": 0.7784405624201107,
+    "class_act_acc": 0.49669824863623313,
+    "ft_acc": 0.5946675666554168,
+    "ft_n": 2963,
+    "pos_acc": 0.8874538745387454,
+    "pos_n": 1626
+   },
+   "not_in_review": {
+    "n": 3004,
+    "class_acc": 0.568242343541944,
+    "class_macro_f1": 0.14602685685432057,
+    "act_acc": 0.8062692702980473,
+    "class_act_acc": 0.5026631158455392,
+    "ft_acc": 0.5952006294256491,
+    "ft_n": 2542,
+    "pos_acc": 0.9371980676328503,
+    "pos_n": 1242
+   },
+   "per_family": {
+    "AFW, other plants": 0.7917917917917918,
+    "APR1400 DCD": 0.30551181102362207,
+    "Davis-Besse reliability report": 0.8495575221238938,
+    "GE-Hitachi ABWR": 0.5857142857142857,
+    "NUREG/CR-4550 (Surry)": 0.6749226006191951,
+    "NuScale": 0.5476190476190477,
+    "Surry FSAR": 0.5918918918918918
+   },
+   "model": "EfficientNetV2-S features + logistic regression",
+   "input": "image + text",
+   "protocol": "new family"
+  }
+ },
+ "cnn_family / img": {
+  "model": "ResNet-18, boxes only",
+  "protocol": "new family",
+  "input": "image only",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.615848406546081,
+   "class_macro_f1": 0.15171440753422635,
+   "act_acc": 0.7971878994461014,
+   "class_act_acc": 0.5486649440137812,
+   "ft_acc": 0.679379007762403,
+   "ft_n": 2963,
+   "pos_acc": 0.9538745387453874,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.6108521970705726,
+   "class_macro_f1": 0.15483242816624643,
+   "act_acc": 0.8119218910585817,
+   "class_act_acc": 0.5522636484687083,
+   "ft_acc": 0.6774193548387096,
+   "ft_n": 2542,
+   "pos_acc": 0.9943639291465378,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8218218218218218,
+   "APR1400 DCD": 0.3543307086614173,
+   "Davis-Besse reliability report": 0.8377581120943953,
+   "GE-Hitachi ABWR": 0.6357142857142857,
+   "NUREG/CR-4550 (Surry)": 0.7089783281733746,
+   "NuScale": 0.5476190476190477,
+   "Surry FSAR": 0.672972972972973
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.6405397645707723,
+    "class_acc": 0.8207082025997311
+   },
+   "0.7": {
+    "share": 0.4619580821131209,
+    "class_acc": 0.9123679303915475
+   },
+   "0.9": {
+    "share": 0.01435544071202986,
+    "class_acc": 0.6
+   }
+  }
+ },
+ "cnn_family / ctx": {
+  "model": "ResNet-18, boxes only",
+  "protocol": "new family",
+  "input": "image + text",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.6169968418030434,
+   "class_macro_f1": 0.15235938818065597,
+   "act_acc": 0.7976139752876011,
+   "class_act_acc": 0.549526270456503,
+   "ft_acc": 0.6790415119811002,
+   "ft_n": 2963,
+   "pos_acc": 0.9501845018450185,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.6121837549933422,
+   "class_macro_f1": 0.15545662155089848,
+   "act_acc": 0.8129496402877698,
+   "class_act_acc": 0.5532623169107856,
+   "ft_acc": 0.6774193548387096,
+   "ft_n": 2542,
+   "pos_acc": 0.9943639291465378,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8208208208208209,
+   "APR1400 DCD": 0.35590551181102364,
+   "Davis-Besse reliability report": 0.8377581120943953,
+   "GE-Hitachi ABWR": 0.6357142857142857,
+   "NUREG/CR-4550 (Surry)": 0.7120743034055728,
+   "NuScale": 0.5952380952380952,
+   "Surry FSAR": 0.672972972972973
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.6419753086419753,
+    "class_acc": 0.8211091234347049
+   },
+   "0.7": {
+    "share": 0.46454206144128624,
+    "class_acc": 0.9097651421508035
+   },
+   "0.9": {
+    "share": 0.013781223083548665,
+    "class_acc": 0.6666666666666666
+   }
+  }
+ },
+ "cnn_family_legend / img": {
+  "model": "ResNet-18 + legend symbols",
+  "protocol": "new family",
+  "input": "image only",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.7166236003445305,
+   "class_macro_f1": 0.3322144949745004,
+   "act_acc": 0.7984661269706008,
+   "class_act_acc": 0.6480045937410278,
+   "ft_acc": 0.7455281808977388,
+   "ft_n": 2963,
+   "pos_acc": 0.9464944649446494,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.7067243675099867,
+   "class_macro_f1": 0.3146251823003768,
+   "act_acc": 0.8052415210688592,
+   "class_act_acc": 0.6507989347536618,
+   "ft_acc": 0.7344610542879623,
+   "ft_n": 2542,
+   "pos_acc": 0.9887278582930756,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8278278278278278,
+   "APR1400 DCD": 0.6094488188976378,
+   "Davis-Besse reliability report": 0.8377581120943953,
+   "GE-Hitachi ABWR": 0.65,
+   "NUREG/CR-4550 (Surry)": 0.718266253869969,
+   "NuScale": 0.6190476190476191,
+   "Surry FSAR": 0.7081081081081081
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.6362331323571634,
+    "class_acc": 0.8962093862815884
+   },
+   "0.7": {
+    "share": 0.42492104507608386,
+    "class_acc": 0.9459459459459459
+   },
+   "0.9": {
+    "share": 0.008326155612977318,
+    "class_acc": 0.8620689655172413
+   }
+  }
+ },
+ "cnn_family_legend / ctx": {
+  "model": "ResNet-18 + legend symbols",
+  "protocol": "new family",
+  "input": "image + text",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.7177720356014929,
+   "class_macro_f1": 0.33054333514677703,
+   "act_acc": 0.8023008095440989,
+   "class_act_acc": 0.648578811369509,
+   "ft_acc": 0.7485656429294634,
+   "ft_n": 2963,
+   "pos_acc": 0.9446494464944649,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.7067243675099867,
+   "class_macro_f1": 0.30843416517653444,
+   "act_acc": 0.8088386433710175,
+   "class_act_acc": 0.6504660452729694,
+   "ft_acc": 0.7356412273800157,
+   "ft_n": 2542,
+   "pos_acc": 0.9895330112721417,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8268268268268268,
+   "APR1400 DCD": 0.6110236220472441,
+   "Davis-Besse reliability report": 0.8377581120943953,
+   "GE-Hitachi ABWR": 0.6428571428571429,
+   "NUREG/CR-4550 (Surry)": 0.718266253869969,
+   "NuScale": 0.6428571428571429,
+   "Surry FSAR": 0.7162162162162162
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.6416881998277347,
+    "class_acc": 0.8917225950782998
+   },
+   "0.7": {
+    "share": 0.429801894918174,
+    "class_acc": 0.9452237808951236
+   },
+   "0.9": {
+    "share": 0.010048808498420901,
+    "class_acc": 0.8285714285714286
+   }
+  }
+ },
+ "cnn_page_legend / img": {
+  "model": "ResNet-18 + legend symbols",
+  "protocol": "new page",
+  "input": "image only",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.8426643697961528,
+   "class_macro_f1": 0.5020423697662456,
+   "act_acc": 0.9348103962505326,
+   "class_act_acc": 0.8231409704277921,
+   "ft_acc": 0.8778265271684104,
+   "ft_n": 2963,
+   "pos_acc": 0.9532595325953259,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.8288948069241012,
+   "class_macro_f1": 0.46483308986162697,
+   "act_acc": 0.9326824254881809,
+   "class_act_acc": 0.8119174434087882,
+   "ft_acc": 0.8654602675059009,
+   "ft_n": 2542,
+   "pos_acc": 0.9726247987117552,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8818818818818819,
+   "APR1400 DCD": 0.8543307086614174,
+   "Davis-Besse reliability report": 0.9941002949852508,
+   "GE-Hitachi ABWR": 0.6285714285714286,
+   "NUREG/CR-4550 (Surry)": 0.7120743034055728,
+   "NuScale": 0.6190476190476191,
+   "Surry FSAR": 0.7783783783783784
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.8130921619293713,
+    "class_acc": 0.9523305084745762
+   },
+   "0.7": {
+    "share": 0.6893482629916738,
+    "class_acc": 0.978758850478967
+   },
+   "0.9": {
+    "share": 0.059431524547803614,
+    "class_acc": 0.9710144927536232
+   }
+  }
+ },
+ "cnn_page_legend / ctx": {
+  "model": "ResNet-18 + legend symbols",
+  "protocol": "new page",
+  "input": "image + text",
+  "all": {
+   "n": 3483,
+   "class_acc": 0.8440999138673557,
+   "class_macro_f1": 0.5012020316877067,
+   "act_acc": 0.9365146996165318,
+   "class_act_acc": 0.8254378409417169,
+   "ft_acc": 0.8818764765440432,
+   "ft_n": 2963,
+   "pos_acc": 0.9532595325953259,
+   "pos_n": 1626
+  },
+  "not_in_review": {
+   "n": 3004,
+   "class_acc": 0.8305592543275633,
+   "class_macro_f1": 0.4654541746370347,
+   "act_acc": 0.9347379239465571,
+   "class_act_acc": 0.8145805592543276,
+   "ft_acc": 0.8701809598741149,
+   "ft_n": 2542,
+   "pos_acc": 0.9726247987117552,
+   "pos_n": 1242
+  },
+  "per_family": {
+   "AFW, other plants": 0.8818818818818819,
+   "APR1400 DCD": 0.8574803149606299,
+   "Davis-Besse reliability report": 0.9941002949852508,
+   "GE-Hitachi ABWR": 0.6357142857142857,
+   "NUREG/CR-4550 (Surry)": 0.7120743034055728,
+   "NuScale": 0.6190476190476191,
+   "Surry FSAR": 0.7783783783783784
+  },
+  "coverage": {
+   "0.5": {
+    "share": 0.816824576514499,
+    "class_acc": 0.9525483304042179
+   },
+   "0.7": {
+    "share": 0.6962388745334481,
+    "class_acc": 0.9785567010309278
+   },
+   "0.9": {
+    "share": 0.07608383577375825,
+    "class_acc": 0.9735849056603774
+   }
+  }
+ },
+ "per_class": [
+  {
+   "class": "VLV_GATE",
+   "n": 1298,
+   "precision": 0.8771215207060421,
+   "recall": 0.9953775038520801,
+   "f1": 0.9325153374233128
+  },
+  {
+   "class": "VLV_CHECK",
+   "n": 494,
+   "precision": 0.852994555353902,
+   "recall": 0.951417004048583,
+   "f1": 0.8995215311004785
+  },
+  {
+   "class": "BREAKER",
+   "n": 181,
+   "precision": 0.9172932330827067,
+   "recall": 0.6740331491712708,
+   "f1": 0.7770700636942676
+  },
+  {
+   "class": "VLV_GLOBE",
+   "n": 132,
+   "precision": 0.85,
+   "recall": 0.25757575757575757,
+   "f1": 0.3953488372093023
+  },
+  {
+   "class": "HX",
+   "n": 124,
+   "precision": 0.5042735042735043,
+   "recall": 0.47580645161290325,
+   "f1": 0.4896265560165975
+  },
+  {
+   "class": "PUMP_CENTRIFUGAL",
+   "n": 113,
+   "precision": 0.6571428571428571,
+   "recall": 0.8141592920353983,
+   "f1": 0.7272727272727273
+  },
+  {
+   "class": "ORIFICE",
+   "n": 103,
+   "precision": 0.32075471698113206,
+   "recall": 0.3300970873786408,
+   "f1": 0.3253588516746411
+  },
+  {
+   "class": "VLV_BUTTERFLY",
+   "n": 92,
+   "precision": 0.7,
+   "recall": 0.07608695652173914,
+   "f1": 0.13725490196078433
+  },
+  {
+   "class": "INSTR",
+   "n": 78,
+   "precision": 0.391304347826087,
+   "recall": 0.34615384615384615,
+   "f1": 0.3673469387755102
+  },
+  {
+   "class": "TANK",
+   "n": 76,
+   "precision": 0.5043478260869565,
+   "recall": 0.7631578947368421,
+   "f1": 0.6073298429319371
+  },
+  {
+   "class": "STEAM_GEN",
+   "n": 73,
+   "precision": 0.8163265306122449,
+   "recall": 0.547945205479452,
+   "f1": 0.6557377049180327
+  },
+  {
+   "class": "FILTER",
+   "n": 68,
+   "precision": 0.9795918367346939,
+   "recall": 0.7058823529411765,
+   "f1": 0.8205128205128205
+  },
+  {
+   "class": "OFFPAGE",
+   "n": 52,
+   "precision": 0.6521739130434783,
+   "recall": 0.28846153846153844,
+   "f1": 0.4
+  },
+  {
+   "class": "FAN",
+   "n": 48,
+   "precision": 0.8461538461538461,
+   "recall": 0.6875,
+   "f1": 0.7586206896551724
+  },
+  {
+   "class": "COIL",
+   "n": 40,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0
+  },
+  {
+   "class": "VLV_SAFETY_RELIEF",
+   "n": 39,
+   "precision": 0.3,
+   "recall": 0.3076923076923077,
+   "f1": 0.3037974683544304
+  },
+  {
+   "class": "VLV_STOP_CHECK",
+   "n": 37,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "TRANSFORMER",
+   "n": 37,
+   "precision": 0.8,
+   "recall": 0.5405405405405406,
+   "f1": 0.6451612903225806
+  },
+  {
+   "class": "DAMPER_EH",
+   "n": 30,
+   "precision": 0.875,
+   "recall": 0.9333333333333333,
+   "f1": 0.9032258064516129
+  },
+  {
+   "class": "DAMPER_PNEUMATIC",
+   "n": 27,
+   "precision": 0.8571428571428571,
+   "recall": 0.2222222222222222,
+   "f1": 0.35294117647058826
+  },
+  {
+   "class": "TURBINE",
+   "n": 22,
+   "precision": 0.07142857142857142,
+   "recall": 0.045454545454545456,
+   "f1": 0.05555555555555555
+  },
+  {
+   "class": "PUMP_TURBINE_DRIVEN",
+   "n": 22,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "SPRAY",
+   "n": 21,
+   "precision": 0.5,
+   "recall": 0.38095238095238093,
+   "f1": 0.43243243243243246
+  },
+  {
+   "class": "OTHER",
+   "n": 20,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "PENETRATION",
+   "n": 18,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "BLOCK",
+   "n": 18,
+   "precision": 0.1282051282051282,
+   "recall": 0.2777777777777778,
+   "f1": 0.17543859649122806
+  },
+  {
+   "class": "MOTOR",
+   "n": 17,
+   "precision": 0.36363636363636365,
+   "recall": 0.7058823529411765,
+   "f1": 0.48
+  },
+  {
+   "class": "STRAINER",
+   "n": 16,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "DAMPER_NO_OPERATOR",
+   "n": 15,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "PUMP_VERTICAL",
+   "n": 13,
+   "precision": 0.3333333333333333,
+   "recall": 0.3076923076923077,
+   "f1": 0.32
+  },
+  {
+   "class": "COMPRESSOR",
+   "n": 12,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "MOISTURE_SEPARATOR",
+   "n": 12,
+   "precision": 0.75,
+   "recall": 1.0,
+   "f1": 0.8571428571428571
+  },
+  {
+   "class": "CARBON_ADSORBER",
+   "n": 12,
+   "precision": 0.9230769230769231,
+   "recall": 1.0,
+   "f1": 0.96
+  },
+  {
+   "class": "VLV_PILOT_RELIEF",
+   "n": 12,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "CONDENSER",
+   "n": 11,
+   "precision": 0.1,
+   "recall": 0.09090909090909091,
+   "f1": 0.09523809523809523
+  },
+  {
+   "class": "CHILLER",
+   "n": 11,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "GENERATOR",
+   "n": 10,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "DEMIN",
+   "n": 10,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "VLV_3WAY",
+   "n": 9,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "AHU",
+   "n": 9,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "PANEL",
+   "n": 7,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "INVERTER",
+   "n": 6,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "DRYER",
+   "n": 5,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "VLV_ANGLE",
+   "n": 5,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  },
+  {
+   "class": "SWITCH",
+   "n": 5,
+   "precision": 0.0,
+   "recall": 0.0,
+   "f1": 0.0
+  }
+ ],
+ "confusions": [
+  {
+   "true": "VLV_GLOBE",
+   "predicted": "VLV_GATE",
+   "n": 94
+  },
+  {
+   "true": "VLV_BUTTERFLY",
+   "predicted": "SWITCH",
+   "n": 42
+  },
+  {
+   "true": "INSTR",
+   "predicted": "GENERATOR",
+   "n": 37
+  },
+  {
+   "true": "VLV_STOP_CHECK",
+   "predicted": "VLV_CHECK",
+   "n": 28
+  },
+  {
+   "true": "STEAM_GEN",
+   "predicted": "TANK",
+   "n": 27
+  },
+  {
+   "true": "BREAKER",
+   "predicted": "VLV_CHECK",
+   "n": 26
+  },
+  {
+   "true": "BREAKER",
+   "predicted": "SWITCH",
+   "n": 22
+  },
+  {
+   "true": "ORIFICE",
+   "predicted": "HX",
+   "n": 22
+  },
+  {
+   "true": "VLV_BUTTERFLY",
+   "predicted": "DAMPER_NO_OPERATOR",
+   "n": 22
+  },
+  {
+   "true": "VLV_SAFETY_RELIEF",
+   "predicted": "VLV_CHECK",
+   "n": 22
+  },
+  {
+   "true": "DAMPER_PNEUMATIC",
+   "predicted": "ORIFICE",
+   "n": 21
+  },
+  {
+   "true": "HX",
+   "predicted": "BLOCK",
+   "n": 18
+  },
+  {
+   "true": "ORIFICE",
+   "predicted": "VLV_GATE",
+   "n": 17
+  },
+  {
+   "true": "VLV_CHECK",
+   "predicted": "CHARGER",
+   "n": 15
+  },
+  {
+   "true": "FAN",
+   "predicted": "PUMP_CENTRIFUGAL",
+   "n": 15
+  },
+  {
+   "true": "OFFPAGE",
+   "predicted": "INSTR",
+   "n": 14
+  },
+  {
+   "true": "ORIFICE",
+   "predicted": "OTHER",
+   "n": 14
+  },
+  {
+   "true": "PENETRATION",
+   "predicted": "ORIFICE",
+   "n": 13
+  },
+  {
+   "true": "VLV_PILOT_RELIEF",
+   "predicted": "VLV_GATE",
+   "n": 12
+  },
+  {
+   "true": "SPRAY",
+   "predicted": "VLV_SAFETY_RELIEF",
+   "n": 12
+  }
+ ]
+}

@@ -32,13 +32,26 @@ The symbol classes ([`verified_annotations_v3/symbol_classes/`](verified_annotat
 - **Review**: 479 boxes that need a person's decision (fan or pump, normally closed valves and dampers, `OTHER`, ...) are
   listed with crops of the drawings in `review.xlsx`.
 
+## Symbol classifier (this branch)
+
+[`symbol_classifier/`](symbol_classifier/README.md) gives each detected symbol box one of the 63 v3 classes, the actuator
+of valves, dampers and pumps, and the normal position (open / closed) of valves and dampers, and writes the
+classification JSON that `digitize_pnid.py` reads. It is a ResNet-18 trained on the crops of the 3,483 boxes and on the
+legend symbols. On pages of a document family it was not trained on it gets 71.8% of the classes right, on new pages of
+the families it was trained on 84.4%; open / closed is right for about 95% of the valves and dampers.
+
+```bash
+python symbol_classifier/predict.py --image page.png --boxes page_classification.json --overlay check.png
+```
+
 ## Pipeline Overview
 
 The pipeline consists of 8 stages:
 
 1. **Symbol Detection** - Detect symbols using SAM2 or YOLO
 2. **Symbol Mask Editing** - Interactive cleanup of detected masks
-3. **Symbol Classification** - Cluster and label similar symbols
+3. **Symbol Classification** - Cluster and label similar symbols (or classify them with the trained
+   [symbol classifier](symbol_classifier/README.md))
 4. **Text Detection** - Extract text using PaddleOCR
 5. **Text Editing** - Interactive text correction
 6. **Line Detection** - Detect solid and dashed lines
@@ -98,7 +111,9 @@ The pipeline supports two detection models:
 | YOLO | `best.pt` | Pre-trained YOLO model for symbol detection |
 | SAM2 | `best_model.pth` | Fine-tuned SAM2 model for mask generation |
 
-Both model files should be placed in the `PnIDAgent` directory.
+Both detection model files should be placed in the `PnIDAgent` directory. The symbol classifier reads
+`symbol_classifier/model/symbol_classifier_v3.pt`; `python symbol_classifier/train_cnn.py --final` trains it (see its
+README).
 
 ## Usage
 
