@@ -5,6 +5,9 @@ labeled by eye page by page and checked a second time class by class. A human re
 until it is done these labels are not verified. Rows marked `uncertain = yes` (52) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
 
+**Finer classes (v3, in review):** [`v3/`](v3/README.md) splits checks, reliefs, dampers, pumps and filters, adds the normal
+position of valves and dampers and a PRA flag; it is on the `symbol-classes-v3` branch.
+
 **Start here: [index.md](index.md)**, one row per page with links to its overview and evidence images.
 **To check the class definitions themselves**, see [Class reference](#class-reference) below: one picture per class
 with the legend entries it follows.
