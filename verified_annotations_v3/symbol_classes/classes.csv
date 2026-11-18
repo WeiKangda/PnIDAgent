@@ -1,0 +1,64 @@
+class,definition,group,legend_png,pra_modeled,count
+VLV_GATE,Gate valve / generic two-way valve (plain bowtie),valve,yes,yes,1298
+VLV_GLOBE,Globe valve (bowtie with a dot at the waist),valve,yes,yes,132
+VLV_BUTTERFLY,Butterfly valve,valve,yes,yes,92
+VLV_BALL,Ball valve,valve,yes,yes,0
+VLV_PLUG,Plug valve,valve,yes,yes,0
+VLV_NEEDLE,Needle valve,valve,yes,yes,0
+VLV_DIAPHRAGM,Diaphragm valve,valve,yes,yes,0
+VLV_ANGLE,Angle valve,valve,yes,yes,5
+VLV_3WAY,Three-way / four-way valve,valve,yes,yes,9
+VLV_CHECK,"Check valve (swing, tilting disc, non-return)",valve,yes,yes,494
+VLV_STOP_CHECK,"Stop-check valve (check valve with a stem, manual or powered)",valve,yes,yes,37
+VLV_SAFETY_RELIEF,Spring safety or relief valve (the symbol does not tell safety from relief; the tag does),valve,yes,yes,39
+VLV_PILOT_RELIEF,"Pilot-operated safety relief valve and its pilot (POSRV, PORV)",valve,yes,yes,12
+VLV_VACUUM_BREAKER,Vacuum breaker / vacuum relief valve,valve,yes,yes,0
+VLV_REGULATOR,Self-actuated pressure regulator,valve,yes,yes,2
+DAMPER_MOTOR,Motor-operated damper (any system),valve,yes,yes,0
+DAMPER_PNEUMATIC,Pneumatic (air) operated damper (any system),valve,yes,yes,27
+DAMPER_EH,Electro-hydraulic operated damper (any system),valve,yes,yes,30
+DAMPER_NO_OPERATOR,"Damper with no operator drawn (parallel blade, gravity, fire damper, ...)",valve,yes,yes,15
+RUPTURE_DISC,Rupture disc,other,yes,no,2
+PUMP_CENTRIFUGAL,Centrifugal pump (incl. horizontal centrifugal); the driver is the actuator,equipment,yes,yes,113
+PUMP_TURBINE_DRIVEN,Turbine-driven pump,equipment,yes,yes,22
+PUMP_VERTICAL,Vertical pump (canned / wet pit / sump),equipment,yes,yes,13
+COMPRESSOR,Compressor,equipment,yes,yes,12
+FAN,Fan / blower,equipment,yes,yes,48
+TURBINE,Turbine (incl. turbine-generator),equipment,yes,yes,22
+TANK,Tank / vessel / accumulator,equipment,yes,yes,76
+HX,Heat exchanger / cooler / feedwater heater,equipment,yes,yes,124
+CONDENSER,Condenser,equipment,yes,yes,11
+COIL,Heating or cooling coil (HVAC),equipment,yes,no,40
+CHILLER,Chiller,equipment,yes,yes,11
+HUMIDIFIER,Humidifier (HVAC),equipment,yes,yes,4
+AHU,Air handling unit / cubicle cooler housing,equipment,yes,yes,9
+STEAM_GEN,Steam generator,equipment,yes,no,73
+REACTOR,Reactor vessel,equipment,yes,no,1
+PRESSURIZER,Pressurizer,equipment,no,no,1
+FILTER,"Filter (piping filter, prefilter, postfilter, HEPA filter)",equipment,yes,yes,68
+STRAINER,"Strainer (basket, Y-type, mesh)",equipment,yes,yes,16
+CARBON_ADSORBER,Carbon (charcoal) adsorber,equipment,yes,yes,12
+MOISTURE_SEPARATOR,Moisture separator,equipment,yes,yes,12
+AIR_SEPARATOR,Air separator assembly,equipment,yes,yes,1
+DEMIN,Demineralizer / ion exchanger,equipment,yes,yes,10
+DRYER,Air dryer,equipment,yes,yes,5
+ORIFICE,Orifice / flow element / venturi,equipment,yes,no,103
+HEATER,Electric heater,equipment,yes,yes,4
+SPRAY,"Spray: spray nozzle, spray header, sparger",equipment,yes,yes,21
+SUMP,Sump,equipment,no,yes,1
+TRAP,Steam trap,equipment,yes,no,0
+INSTR,Instrument (bubble or box with a tag),instrument,yes,no,78
+BREAKER,Circuit breaker,electrical,yes,yes,181
+TRANSFORMER,Transformer,electrical,yes,yes,37
+GENERATOR,Generator (incl. diesel generator),electrical,yes,no,10
+MOTOR,Motor drawn on its own,electrical,yes,yes,17
+ENGINE,Diesel engine / prime mover drawn on its own,equipment,no,no,1
+BATTERY,Battery,electrical,yes,yes,3
+CHARGER,Battery charger / rectifier,electrical,yes,yes,3
+INVERTER,Inverter / UPS,electrical,yes,yes,6
+SWITCH,Switch / disconnect / transfer switch,electrical,yes,yes,5
+PANEL,Distribution panel / MCC / switchgear box,electrical,yes,yes,7
+PENETRATION,"Containment penetration (box on the containment boundary, e.g. 'PC')",other,yes,no,18
+OFFPAGE,Off-page connector / system interface,other,yes,no,52
+BLOCK,Labelled equipment block (named by its text),other,no,no,18
+OTHER,Other,other,no,no,20

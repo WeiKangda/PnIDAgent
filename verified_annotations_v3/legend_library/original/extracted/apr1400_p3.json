@@ -1,0 +1,231 @@
+{
+ "source": "APR1400",
+ "page": 4,
+ "image": "apr1400_p3_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - MULTIPLE CONTROL SIGNALS FOR PNEUMATIC OPERATORS",
+   "sym_file": "sym/apr1400_p3_001.png",
+   "symbol_text": "S / IA",
+   "description": "MULTIPLE CONTROL SIGNALS FOR PNEUMATIC OPERATORS",
+   "notes": "Example diagram callouts: INSTRUMENT IDENTIFICATION NUMBER; INSTRUMENT AIR SUPPLY SYSTEM CODE ( TYPICAL); DIAPHRAGM OPERATOR (TYPICAL)",
+   "box": [
+    1970,
+    875,
+    2175,
+    1065
+   ]
+  },
+  {
+   "n": 2,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - MULTIPLE CONTROL SIGNALS FOR PNEUMATIC OPERATORS",
+   "sym_file": "sym/apr1400_p3_002.png",
+   "symbol_text": "S",
+   "description": "SOLENOID VALVE FURNISHED MOUNTED WITH OPERATOR",
+   "notes": "",
+   "box": [
+    1985,
+    1195,
+    2150,
+    1350
+   ]
+  },
+  {
+   "n": 3,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - SINGLE CONTROL SIGNALS FOR PNEUMATIC OPERATORS",
+   "sym_file": "sym/apr1400_p3_003.png",
+   "symbol_text": "",
+   "description": "SINGLE CONTROL SIGNALS FOR PNEUMATIC OPERATORS",
+   "notes": "Example diagram (no individual caption in source)",
+   "box": [
+    1990,
+    1615,
+    2150,
+    1755
+   ]
+  },
+  {
+   "n": 4,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - VALVE / DAMPER POSITION SIGNALS",
+   "sym_file": "sym/apr1400_p3_004.png",
+   "symbol_text": "S / HS",
+   "description": "OPEN & CLOSED POSITION LIGHTS INCLUDED WITH HAND SWITCH (EXCEPT M.O.TYPE)",
+   "notes": "Dashed signal line marked OPTIONAL",
+   "box": [
+    1965,
+    1985,
+    2180,
+    2110
+   ]
+  },
+  {
+   "n": 5,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - VALVE / DAMPER POSITION SIGNALS",
+   "sym_file": "sym/apr1400_p3_005.png",
+   "symbol_text": "",
+   "description": "POSITION FROM STEM-MOUNTED DEVICES FURNISHED INTEGRAL WITH VALVE / DAMPER (EXCEPT M.O. TYPE)",
+   "notes": "Callout: STEM MOUNTED POSITION DEVICE PER CONTROL VALVE / DAMPER DATA SHEET",
+   "box": [
+    1995,
+    2225,
+    2250,
+    2300
+   ]
+  },
+  {
+   "n": 6,
+   "section": "TYPICAL INSTRUMENT & CONTROL SYMBOL EXAMPLES - VALVE / DAMPER POSITION SIGNALS",
+   "sym_file": "sym/apr1400_p3_006.png",
+   "symbol_text": "ZL",
+   "description": "OPEN & CLOSE POSITION LIGHTS MOUNTED REMOTE FROM HAND SWITCH OR WHEN NO HAND SWITCH INCLUDED",
+   "notes": "",
+   "box": [
+    1995,
+    2435,
+    2170,
+    2520
+   ]
+  },
+  {
+   "n": 7,
+   "section": "VALNE OPERATOR CONTROLS ( TYPICAL FOR OTHER CONTROL DEVICES )",
+   "sym_file": "sym/apr1400_p3_007.png",
+   "symbol_text": "S / IA / S",
+   "description": "DOUBLE ACTING CYLINDER OPERATOR AIR TO OPEN AND AIR TO CLOSE (ENERGIZE TO OPEN-ENERGIZE TO CLOSE)",
+   "notes": "Section title has typo \"VALNE\" for \"VALVE\" in source",
+   "box": [
+    3185,
+    700,
+    3310,
+    830
+   ]
+  },
+  {
+   "n": 8,
+   "section": "VALNE OPERATOR CONTROLS ( TYPICAL FOR OTHER CONTROL DEVICES )",
+   "sym_file": "sym/apr1400_p3_008.png",
+   "symbol_text": "S / IA",
+   "description": "DOUBLE ACTING CYLINDER OPERATOR AIR TO OPEN AND AIR TO CLOSE (LOSS OF ELECTRICAL POWER CLOSES VALVE)",
+   "notes": "",
+   "box": [
+    3185,
+    930,
+    3310,
+    1055
+   ]
+  },
+  {
+   "n": 9,
+   "section": "VALNE OPERATOR CONTROLS ( TYPICAL FOR OTHER CONTROL DEVICES )",
+   "sym_file": "sym/apr1400_p3_009.png",
+   "symbol_text": "IA / S",
+   "description": "SPRING - RETURN OPERATOR (ENERGIZE TO OPEN AND DE-ENERGIZE TO CLOSE VALVE ON ELECTRICAL OR AIR FAILURE)",
+   "notes": "",
+   "box": [
+    3185,
+    1135,
+    3280,
+    1260
+   ]
+  },
+  {
+   "n": 10,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_010.png",
+   "symbol_text": "",
+   "description": "PNEUMATIC ANALOG SIGNAL LINE - LINE CONNECTED",
+   "notes": "",
+   "box": [
+    3075,
+    1620,
+    3215,
+    1760
+   ]
+  },
+  {
+   "n": 11,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_011.png",
+   "symbol_text": "",
+   "description": "PNEUMATIC ANALOG SIGNAL LINE - LINE NOT CONNECTED",
+   "notes": "",
+   "box": [
+    3235,
+    1620,
+    3370,
+    1760
+   ]
+  },
+  {
+   "n": 12,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_012.png",
+   "symbol_text": "",
+   "description": "ELECTRICAL ANALOG OR DIGITAL SIGNAL - LINE CONNECTED",
+   "notes": "",
+   "box": [
+    3075,
+    1905,
+    3215,
+    2045
+   ]
+  },
+  {
+   "n": 13,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_013.png",
+   "symbol_text": "",
+   "description": "ELECTRICAL ANALOG OR DIGITAL SIGNAL - LINE NOT CONNECTED",
+   "notes": "",
+   "box": [
+    3235,
+    1905,
+    3375,
+    2045
+   ]
+  },
+  {
+   "n": 14,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_014.png",
+   "symbol_text": "",
+   "description": "HYDRAULIC SIGNAL LINE - LINE CONNECTED",
+   "notes": "",
+   "box": [
+    3075,
+    2200,
+    3215,
+    2340
+   ]
+  },
+  {
+   "n": 15,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_015.png",
+   "symbol_text": "",
+   "description": "HYDRAULIC SIGNAL LINE - LINE NOT CONNECTED",
+   "notes": "",
+   "box": [
+    3230,
+    2200,
+    3375,
+    2340
+   ]
+  },
+  {
+   "n": 16,
+   "section": "INSTRUMENT & CONTROL SIGNAL SYMBOLS",
+   "sym_file": "sym/apr1400_p3_016.png",
+   "symbol_text": "",
+   "description": "ON-OFF CONTROLLING DEVICE (TYPICAL)",
+   "notes": "Only a leader/callout hook is drawn; the symbol it points to appears truncated/absent in source PDF",
+   "box": [
+    3280,
+    2495,
+    3465,
+    2620
+   ]
+  }
+ ]
+}

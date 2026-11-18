@@ -1,0 +1,1065 @@
+{
+ "source": "AP1000",
+ "page": 4,
+ "image": "ap1000_p3_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_001_a.png",
+   "symbol_text": "A",
+   "description": "ANGLE VALVE (6)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_001_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 2,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_002_a.png",
+   "symbol_text": "B",
+   "description": "BUTTERFLY VALVE (7)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_002_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 3,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_003_a.png",
+   "symbol_text": "C",
+   "description": "CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_003_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 4,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_004_a.png",
+   "symbol_text": "C",
+   "description": "AIR ASSIST CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_004_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 5,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_005_a.png",
+   "symbol_text": "D",
+   "description": "DIAPHRAGM VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_005_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 6,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_006_a.png",
+   "symbol_text": "E",
+   "description": "EXCESS FLOW CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_006_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 7,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_007_a.png",
+   "symbol_text": "F",
+   "description": "FOUR WAY VALVE (7) (12)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_007_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 8,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_008_a.png",
+   "symbol_text": "G",
+   "description": "GATE VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_008_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 9,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_009_a.png",
+   "symbol_text": "H",
+   "description": "DELUGE VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY OPEN variant: NA",
+   "sym_file2": "sym/ap1000_p3_009_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 10,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_010_a.png",
+   "symbol_text": "I",
+   "description": "STOP CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_010_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 11,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_011_a.png",
+   "symbol_text": "J",
+   "description": "DRY PIPE VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY OPEN variant: NA",
+   "sym_file2": "sym/ap1000_p3_011_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 12,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_012_a.png",
+   "symbol_text": "K",
+   "description": "VACUUM BREAKER (7)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY OPEN variant: NA",
+   "sym_file2": "sym/ap1000_p3_012_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 13,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_013_a.png",
+   "symbol_text": "L",
+   "description": "BALL VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_013_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 14,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_014_a.png",
+   "symbol_text": "M",
+   "description": "BALL DRIP VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY OPEN variant: NA",
+   "sym_file2": "sym/ap1000_p3_014_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 15,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_015_a.png",
+   "symbol_text": "N",
+   "description": "NEEDLE VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_015_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 16,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_016_a.png",
+   "symbol_text": "P",
+   "description": "PLUG VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_016_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 17,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_017_a.png",
+   "symbol_text": "Q",
+   "description": "THREE WAY PLUG VALVE (7) (8)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_017_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 18,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_018_a.png",
+   "symbol_text": "R",
+   "description": "DOUBLE BLOCK ROOT VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_018_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 19,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_019_a.png",
+   "symbol_text": "S",
+   "description": "SAFETY OR RELIEF VALVE (7)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY OPEN variant: NA",
+   "sym_file2": "sym/ap1000_p3_019_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 20,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_020_a.png",
+   "symbol_text": "T",
+   "description": "THREE WAY VALVE (7) (8)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_020_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 21,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_021_a.png",
+   "symbol_text": "U",
+   "description": "ALARM CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_021_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 22,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_022_a.png",
+   "symbol_text": "V",
+   "description": "GLOBE VALVE (8)",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_022_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 23,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_023_a.png",
+   "symbol_text": "W",
+   "description": "ANGLE STOP CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_023_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 24,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_024_a.png",
+   "symbol_text": "X",
+   "description": "PINCH VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_024_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 25,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_025_a.png",
+   "symbol_text": "Y",
+   "description": "TURBINE STOP OR CONTROL VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants.",
+   "sym_file2": "sym/ap1000_p3_025_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 26,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_026_a.png",
+   "symbol_text": "Z",
+   "description": "ANGLE CHECK VALVE",
+   "notes": "Symbol image shows NORMALLY OPEN (left) and NORMALLY CLOSED (right) variants. NORMALLY CLOSED variant: NA",
+   "sym_file2": "sym/ap1000_p3_026_b.png",
+   "variant_labels": [
+    "NORMALLY OPEN",
+    "NORMALLY CLOSED"
+   ]
+  },
+  {
+   "n": 27,
+   "section": "VALVES (9) (13) (14)",
+   "sym_file": "sym/ap1000_p3_027.png",
+   "symbol_text": null,
+   "description": "PACKLESS GLOBE (METAL DIAPHRAGM) ...",
+   "notes": "Row cut off at page bottom edge in source PDF scan; only first text line 'PACKLESS GLOBE' fully legible, second line partially visible."
+  },
+  {
+   "n": 28,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_028.png",
+   "symbol_text": "B",
+   "description": "FACE / BYPASS DAMPER",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_029.png",
+   "symbol_text": "F",
+   "description": "FIRE DAMPER",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_030.png",
+   "symbol_text": "G",
+   "description": "GRAVITY DAMPER",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_031.png",
+   "symbol_text": "L",
+   "description": "FIXED LOUVER",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_032.png",
+   "symbol_text": "M",
+   "description": "OPERABLE LOUVER DAMPER",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_033.png",
+   "symbol_text": "P",
+   "description": "PARALLEL BLADE DAMPER (SINGLE OR MULTIBLADE)",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_034.png",
+   "symbol_text": "Q",
+   "description": "OPPOSED BLADE DAMPER",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_035.png",
+   "symbol_text": "S",
+   "description": "SECURITY DAMPER",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_036.png",
+   "symbol_text": "T",
+   "description": "TORNADO DAMPER",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "DAMPERS (9) (13)",
+   "sym_file": "sym/ap1000_p3_037.png",
+   "symbol_text": "Y",
+   "description": "BLAST GATE DAMPER",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_038.png",
+   "symbol_text": "C",
+   "description": "AIR DIAPHRAGM OPERATOR WITH VALVE POSITIONER",
+   "notes": null
+  },
+  {
+   "n": 39,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_039.png",
+   "symbol_text": "D",
+   "description": "AIR DIAPHRAGM OPERATOR",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_040.png",
+   "symbol_text": "F",
+   "description": "PRESSURE CONTROL OPERATOR (SELF CONTAINED OR EXTERNAL SENSING)",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_041.png",
+   "symbol_text": "K",
+   "description": "ELECTRO - HYDRAULIC",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_042.png",
+   "symbol_text": "L",
+   "description": "PNEUMATIC - HYDRAULIC",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_043.png",
+   "symbol_text": "M",
+   "description": "MOTOR OPERATOR",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_044.png",
+   "symbol_text": "S",
+   "description": "SOLENOID OPERATOR (11)",
+   "notes": null
+  },
+  {
+   "n": 45,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_045.png",
+   "symbol_text": "Y",
+   "description": "UNCLASSIFIED (TYPE OF ACTUATOR TO BE WRITTEN ADJACENT TO THE SYSMBOL)",
+   "notes": "'SYSMBOL' as printed in source (sic, likely 'SYMBOL')"
+  },
+  {
+   "n": 46,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_046.png",
+   "symbol_text": "Z",
+   "description": "POST INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 47,
+   "section": "OPERATORS & ACCESSORIES (9) (13)",
+   "sym_file": "sym/ap1000_p3_047.png",
+   "symbol_text": null,
+   "description": "EXTENSION STEM (REACH ROD) THRU SHIELD WALL",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_048.png",
+   "symbol_text": null,
+   "description": "TWO CANNED MOTOR REACTOR COOLANT PUMPS ARE COUPLED TO ONE STEAM GENERATOR CHANNEL HEAD IN THE INVERTED POSITION. THE STEAM GENERATOR IS OF A VERTICAL U-TUBE TYPE.",
+   "notes": "Combined RCP/steam-generator arrangement symbol"
+  },
+  {
+   "n": 49,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_049.png",
+   "symbol_text": "MP",
+   "description": "CENTRIFUGAL PUMP",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_050.png",
+   "symbol_text": "MP",
+   "description": "CANNED MOTOR PUMP",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_051.png",
+   "symbol_text": "MP",
+   "description": "GEAR PUMP",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_052.png",
+   "symbol_text": "MP",
+   "description": "TURBINE DRIVEN CENTRIFUGAL PUMP",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_053.png",
+   "symbol_text": "MP",
+   "description": "DOUBLE DIAPHRAM PUMP",
+   "notes": "'DIAPHRAM' as printed in source (sic)"
+  },
+  {
+   "n": 54,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_054.png",
+   "symbol_text": "MP",
+   "description": "SINGLE DIAPHRAM PUMP",
+   "notes": "'DIAPHRAM' as printed in source (sic)"
+  },
+  {
+   "n": 55,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_055.png",
+   "symbol_text": "MP",
+   "description": "VERTICAL SUMP PUMP (RESERVOIR SUCTION)",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_056.png",
+   "symbol_text": "MP",
+   "description": "VERTICAL DEEP WELL PUMP (PIPED SUCTION)",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_057.png",
+   "symbol_text": "MP",
+   "description": "SUBMERSIBLE PUMP",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_058.png",
+   "symbol_text": "MP",
+   "description": "POSITIVE DISPLACEMENT PUMP",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_059.png",
+   "symbol_text": "MT (16)",
+   "description": "ATMOSPHERIC PRESSURE TANK",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_060.png",
+   "symbol_text": "MG OR MP",
+   "description": "SINGLE FLOW TURBINE",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_061.png",
+   "symbol_text": "ME",
+   "description": "TURBINE CONDENSER",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_062.png",
+   "symbol_text": "ME",
+   "description": "U-TUBE HEAT EXCHANGER",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_063.png",
+   "symbol_text": "ME",
+   "description": "PLATE TYPE HEAT EXCHANGER",
+   "notes": null
+  },
+  {
+   "n": 64,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_064.png",
+   "symbol_text": "ME",
+   "description": "HEAT EXCHANGER (OTHER TYPE)",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_065.png",
+   "symbol_text": "ME",
+   "description": "MECHANICAL DRAFT COOLING TOWER",
+   "notes": null
+  },
+  {
+   "n": 66,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_066.png",
+   "symbol_text": "ME",
+   "description": "DESUPERHEATER",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_067.png",
+   "symbol_text": "MV (15)",
+   "description": "DEMINERALIZER",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_068.png",
+   "symbol_text": "MT (16)",
+   "description": "PRESSURIZED GAS BOTTLE",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_069.png",
+   "symbol_text": "MT (16)",
+   "description": "PRESSURE VESSEL,TANK, RECEIVER,DRYER,SEPARATOR,ECT. (SHOW VERTICAL OR HORIZONTAL)",
+   "notes": "'ECT.' as printed in source (sic, likely 'ETC.')"
+  },
+  {
+   "n": 70,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_070.png",
+   "symbol_text": "MT (16)",
+   "description": "SAMPLE VESSEL",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_071.png",
+   "symbol_text": "MK",
+   "description": "RECIPROCATING AIR COMPRESSOR",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_072.png",
+   "symbol_text": "MY",
+   "description": "MIXER (AIR OR ELECTRICAL)",
+   "notes": null
+  },
+  {
+   "n": 73,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_073.png",
+   "symbol_text": "MY",
+   "description": "EXHAUST HOOD",
+   "notes": null
+  },
+  {
+   "n": 74,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_074.png",
+   "symbol_text": "MA / MK",
+   "description": "FAN, BLOWER / COMPRESSOR, VACUUM PUMP",
+   "notes": null
+  },
+  {
+   "n": 75,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_075.png",
+   "symbol_text": "MA OR MK",
+   "description": "FAN,BLOWER OR COMPRESSOR WITH PNEUMATICALLY CONTROLLED VARIABLE INLET VANES",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_076.png",
+   "symbol_text": "MA",
+   "description": "VANE - AXIAL OR PROPELLER TYPE FAN",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_077.png",
+   "symbol_text": "MA",
+   "description": "ROOF VENTILATOR",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_078.png",
+   "symbol_text": "MY",
+   "description": "HUMIDIFIER",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_079.png",
+   "symbol_text": "MY",
+   "description": "FILTER OR OTHER COMPONENT (SEE PLENUM LEGEND)",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_080.png",
+   "symbol_text": "MS (15)",
+   "description": "AIR HANDLING UNIT WITH FILTRATION OR OTHER COMPONENT (SEE PLENUM LEGEND)",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_081.png",
+   "symbol_text": "MS (15)",
+   "description": "FILTER PLENUM OR OTHER COMPONNET (SEE PLENUM LEGEND)",
+   "notes": "'COMPONNET' as printed in source (sic, likely 'COMPONENT')"
+  },
+  {
+   "n": 82,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_082.png",
+   "symbol_text": "MB",
+   "description": "HEATER (STEAM OR ELECTRICAL)",
+   "notes": null
+  },
+  {
+   "n": 83,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_083.png",
+   "symbol_text": "MY",
+   "description": "VARIABLE AIR VOLUME BOX",
+   "notes": null
+  },
+  {
+   "n": 84,
+   "section": "VALVES AND DAMPERS",
+   "sym_file": "sym/ap1000_p3_084.png",
+   "symbol_text": null,
+   "description": "VALVE / DAMPER NUMBERING EXAMPLE (REFERENCE A)",
+   "notes": "VALVE / DAMPER NUMBER: RCS PL V 001 A. Callouts: VALVE (V) OR DAMPER (D); VALVE / DAMPER NUMBER (3 DIGITS); PIPING / DUCT LOOP (IF APPLICABLE); SEQUENCE NUMBER; GENERAL COMPONENT TYPE; SYSTEM LOCATOR CODE (SEE DOCUMENT APP-GW-G0X-001); PL = PIPE LINE, MD = MECHANICAL DUCTWORK, JT = INSTRUMENT TUBING. P&ID LABEL: V001A"
+  },
+  {
+   "n": 85,
+   "section": "EQUIPMENT",
+   "sym_file": "sym/ap1000_p3_085.png",
+   "symbol_text": null,
+   "description": "EQUIPMENT NUMBERING EXAMPLE (REFERENCE A)",
+   "notes": "EQUIPMENT NUMBER: RCS MP 01 A. Callouts: SPECIFIC EQUIPMENT TYPE; EQUIPMENT NUMBER (2 DIGITS); LOOP DESIGNATION (16); SEQUENCE NUMBER; GENERAL COMPONENT TYPE (SHOWN BELOW SYSBOL NAME) [sic]; SYSTEM LOCATOR CODE (SEE DOCUMENT APP-GW-GOX-001). SPECIFIC COMPONENT TYPE IS USED ONLY FOR: - MECHANICAL / HVAC SPECIALTIES (MY); SEE BELOW - EQUIPMENT DRIVERS (E.G. PUMP MOTOR); SEE REFERENCE A. EQUIPMENT DRIVERS ARE NOT LABELED ON THE P&ID. P&ID LABEL: MP 01A"
+  },
+  {
+   "n": 86,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "EH",
+   "description": "ELECTI...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 87,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "EHC",
+   "description": "ELECTI...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 88,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "DEM",
+   "description": "MOISTU...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 89,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "CC",
+   "description": "COOLIN...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 90,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "LF",
+   "description": "LOW EF...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 91,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "HF",
+   "description": "HIGH E...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 92,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "HEPA",
+   "description": "HIGH E...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 93,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "CHARC...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 94,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "DX",
+   "description": "DIRECT...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 95,
+   "section": "PLENUM LEGEND (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "HC",
+   "description": "HEATIN...",
+   "notes": "Right side of text truncated in source PDF; only fragment legible."
+  },
+  {
+   "n": 96,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "VARIABLE A...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 97,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "COIL (MECH...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 98,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "DEMISTER",
+   "notes": null
+  },
+  {
+   "n": 99,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "HYDROGEN...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 100,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FILTER",
+   "notes": null
+  },
+  {
+   "n": 101,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "GRILLE",
+   "notes": null
+  },
+  {
+   "n": 102,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "HUMIDIFIER",
+   "notes": null
+  },
+  {
+   "n": 103,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "REGISTER",
+   "notes": null
+  },
+  {
+   "n": 104,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "U",
+   "description": "UNIT HEATE...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 105,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "V",
+   "description": "UNIT VENTL...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 106,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "W",
+   "description": "UNIT HEATE...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 107,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "X",
+   "description": "DISPOSABLE...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 108,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "Y",
+   "description": "OTHER MEC...",
+   "notes": "Right side of text truncated in source PDF."
+  },
+  {
+   "n": 109,
+   "section": "SPECIFIC MECHANICAL ... (title and right side truncated in source PDF)",
+   "sym_file": null,
+   "symbol_text": "*",
+   "description": "* UNIT VENTILA... FROM FANS (... ON A FLUME ... THROUGH A ... DUCTWORK S...",
+   "notes": "Footnote; right side truncated in source PDF."
+  },
+  {
+   "n": 110,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "ARCHITECTURAL PLUMBING ITEMS AND MODULES USE AREA LOCATORS, RATHER THAN SYSTEM LOCATORS, IN THEIR TAG NUMBERS.",
+   "notes": null
+  },
+  {
+   "n": 111,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_111.png",
+   "symbol_text": "S",
+   "description": "SINK",
+   "notes": "Tag format: XXX-AP-SXXX"
+  },
+  {
+   "n": 112,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_112.png",
+   "symbol_text": "T",
+   "description": "TOILET",
+   "notes": "Tag format: XXX-AP-TXXX"
+  },
+  {
+   "n": 113,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_113.png",
+   "symbol_text": "DF",
+   "description": "DRINKING FOUNTAIN",
+   "notes": "Tag format: XXX-AP-FXXX"
+  },
+  {
+   "n": 114,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_114.png",
+   "symbol_text": "SH",
+   "description": "SHOWER",
+   "notes": "Tag format: XXX-AP-WXXX"
+  },
+  {
+   "n": 115,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_115.png",
+   "symbol_text": null,
+   "description": "TAG NUMBERING CALLOUT DIAGRAM",
+   "notes": "Callouts: AREA LOCATOR CODE; GENERAL EQUIPMENT TYPE: ARCHITECTURAL PLUMBING (AP), STANDARD SERVICE MODLUE (KU) [sic]; SPECIFIC EQUIPMENT TYPE: SINK (S), TOILET (T), SHOWER (W), DRINKING FOUNTAIN (F), EYEWASH/EMERGENCY SHOWER (E), STANDARD SERVICE MODULE (05); EQUIPMENT NUMBER (2 DIGITS); LOOP DESIGNATION (NOTE 16, APP-GW-M6-001)"
+  },
+  {
+   "n": 116,
+   "section": "ARCHITECTURAL PLUMBING ITEMS AND MODULES",
+   "sym_file": "sym/ap1000_p3_116.png",
+   "symbol_text": null,
+   "description": "MODULE OUTLINE SYMBOLS (CUT OFF)",
+   "notes": "Two rectangular module symbols at page bottom are cut off by the page edge in the source PDF; no labels visible."
+  }
+ ]
+}

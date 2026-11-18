@@ -1,0 +1,759 @@
+{
+ "source": "AP1000",
+ "page": 1,
+ "image": "ap1000_p0_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "1. SWITCHING DEVICES \u2014 A. ABOVE 15KV (NOTES 1)",
+   "sym_file": "sym/ap1000_p0_001.png",
+   "symbol_text": null,
+   "description": "DISCONNECT SWITCH, GANG OPERATED",
+   "notes": null
+  },
+  {
+   "n": 2,
+   "section": "1. SWITCHING DEVICES \u2014 A. ABOVE 15KV (NOTES 1)",
+   "sym_file": "sym/ap1000_p0_002.png",
+   "symbol_text": null,
+   "description": "HORN GAP SWITCH, GANG OPERATED",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "1. SWITCHING DEVICES \u2014 A. ABOVE 15KV (NOTES 1)",
+   "sym_file": "sym/ap1000_p0_003.png",
+   "symbol_text": null,
+   "description": "DISCONNECT SWITCH-ROTARY BLADE, GANG OPERATED",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "1. SWITCHING DEVICES \u2014 A. ABOVE 15KV (NOTES 1)",
+   "sym_file": "sym/ap1000_p0_004.png",
+   "symbol_text": null,
+   "description": "DISCONNECT SWITCH, VERTICAL REACH (PANTOGRAPH TYPE)",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "section": "1. SWITCHING DEVICES \u2014 A. ABOVE 15KV (NOTES 1)",
+   "sym_file": "sym/ap1000_p0_005.png",
+   "symbol_text": null,
+   "description": "PRIMARY FUSE CUTOUT-DRY TYPE",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "1. SWITCHING DEVICES \u2014 B. 15KV & BELOW (NOTE 1)",
+   "sym_file": "sym/ap1000_p0_006.png",
+   "symbol_text": null,
+   "description": "SAFETY SWITCH/DISCONNECT SWITCH",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "1. SWITCHING DEVICES \u2014 B. 15KV & BELOW (NOTE 1)",
+   "sym_file": "sym/ap1000_p0_007.png",
+   "symbol_text": null,
+   "description": "FUSED SAFETY SWITCH",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "1. SWITCHING DEVICES \u2014 B. 15KV & BELOW (NOTE 1)",
+   "sym_file": "sym/ap1000_p0_008.png",
+   "symbol_text": null,
+   "description": "DISCONNECT FUSE",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "1. SWITCHING DEVICES \u2014 B. 15KV & BELOW (NOTE 1)",
+   "sym_file": "sym/ap1000_p0_009.png",
+   "symbol_text": null,
+   "description": "TRANSFER SWITCH",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "1. SWITCHING DEVICES \u2014 B. 15KV & BELOW (NOTE 1)",
+   "sym_file": "sym/ap1000_p0_010.png",
+   "symbol_text": null,
+   "description": "PRIMARY FUSE CUTOUT-OIL INSULATED",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "2. CIRCUIT PROTECTORS",
+   "sym_file": "sym/ap1000_p0_011.png",
+   "symbol_text": null,
+   "description": "AIR CIRCUIT BREAKER",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "section": "2. CIRCUIT PROTECTORS",
+   "sym_file": "sym/ap1000_p0_012.png",
+   "symbol_text": null,
+   "description": "AIR CIRCUIT BREAKER WITH MAGNETIC OVERCURRENT TRIP",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "section": "2. CIRCUIT PROTECTORS",
+   "sym_file": "sym/ap1000_p0_013.png",
+   "symbol_text": null,
+   "description": "AIR CIRCUIT BREAKER WITH SOLID STATE TRIPPING DEVICE",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "2. CIRCUIT PROTECTORS",
+   "sym_file": "sym/ap1000_p0_014.png",
+   "symbol_text": null,
+   "description": "DISCONNECT DEVICE",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_015.png",
+   "symbol_text": null,
+   "description": "FULL VOLTAGE, NONREVERSING STARTER WITH THERMAL OVERLOAD ELEMENTS",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_016.png",
+   "symbol_text": null,
+   "description": "CONTACTOR-BASIC SYMBOL",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_017.png",
+   "symbol_text": null,
+   "description": "CONTACTOR-ELECTRICALLY OPERATED WITH SERIES BLOWOUT",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_018.png",
+   "symbol_text": null,
+   "description": "STARTER, NONREVERSING, WITH THERMAL OVERLOAD ELEMENTS",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_019.png",
+   "symbol_text": null,
+   "description": "STARTER, 2-SPEED, NONREVERSING, WITH THERMAL OVERLOAD ELEMENTS",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_020.png",
+   "symbol_text": null,
+   "description": "STARTER, REVERSING, WITH THERMAL OVERLOAD ELEMENTS",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_021.png",
+   "symbol_text": null,
+   "description": "REDUCED VOLTAGE STARTER, PRIMARY RESISTOR TYPE, WITH THERMAL OVERLOAD ELEMENTS",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "2. CIRCUIT PROTECTORS \u2014 C. MOTOR CONTROL-5KV (NOTES 1 & 6)",
+   "sym_file": "sym/ap1000_p0_022.png",
+   "symbol_text": null,
+   "description": "AUTOMATIC TRANSFER CONTACTOR, MAGNETICALLY HELD ON NORMAL SOURCE, SPRING HELD ON EMERGENCY SOURCE",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "3. OPERATING SYMBOLS (TO BE USED WITH SWITCHING DEVICES & CIRCUIT PROTECTORS)",
+   "sym_file": "sym/ap1000_p0_023.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATED",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "3. OPERATING SYMBOLS (TO BE USED WITH SWITCHING DEVICES & CIRCUIT PROTECTORS)",
+   "sym_file": "sym/ap1000_p0_024.png",
+   "symbol_text": null,
+   "description": "SOLENOID OPERATED",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "3. OPERATING SYMBOLS (TO BE USED WITH SWITCHING DEVICES & CIRCUIT PROTECTORS)",
+   "sym_file": "sym/ap1000_p0_025.png",
+   "symbol_text": null,
+   "description": "PNEUMATICALLY OPERATED",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "3. OPERATING SYMBOLS (TO BE USED WITH SWITCHING DEVICES & CIRCUIT PROTECTORS)",
+   "sym_file": "sym/ap1000_p0_026.png",
+   "symbol_text": null,
+   "description": "STORED ENERGY OPERATED",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "3. OPERATING SYMBOLS (TO BE USED WITH SWITCHING DEVICES & CIRCUIT PROTECTORS)",
+   "sym_file": "sym/ap1000_p0_027.png",
+   "symbol_text": null,
+   "description": "HYDRAULICALLY OPERATED",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_028.png",
+   "symbol_text": null,
+   "description": "CURRENT TRANSFORMER, GENERAL (WITH POLARITY MARKINGS)",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_029.png",
+   "symbol_text": null,
+   "description": "CURRENT TRANSFORMER, BUSHING TYPE",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_030.png",
+   "symbol_text": null,
+   "description": "CURRENT TRANSFORMER, ZERO SEQUENCE TYPE FOR GROUND DETECTION",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_031.png",
+   "symbol_text": null,
+   "description": "LINEAR-COUPLER",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_032.png",
+   "symbol_text": null,
+   "description": "POTENTIAL TRANSFORMER",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_033.png",
+   "symbol_text": null,
+   "description": "POTENTIAL TRANSFORMER, DOUBLE SECONDARY",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "4. INSTRUMENT TRANSFORMERS (NOTE 2)",
+   "sym_file": "sym/ap1000_p0_034.png",
+   "symbol_text": null,
+   "description": "METERING DEVICE",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_035.png",
+   "symbol_text": null,
+   "description": "POWER TRANSFORMER, GENERAL",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_036.png",
+   "symbol_text": null,
+   "description": "POWER TRANSFORMER WITH TAP CHANGING UNDER LOAD",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_037.png",
+   "symbol_text": null,
+   "description": "POWER TRANSFORMER, 3 WINDING",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_038.png",
+   "symbol_text": null,
+   "description": "POWER TRANSFORMER WITH TERTIARY WINDING",
+   "notes": null
+  },
+  {
+   "n": 39,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_039.png",
+   "symbol_text": null,
+   "description": "AUTO-TRANSFORMER",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_040.png",
+   "symbol_text": null,
+   "description": "REACTOR, AIR CORE",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_041.png",
+   "symbol_text": null,
+   "description": "REACTOR, IRON CORE",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_042.png",
+   "symbol_text": null,
+   "description": "INDUCTION VOLTAGE REGULATOR",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "5. TRANSFORMERS & REACTORS",
+   "sym_file": "sym/ap1000_p0_043.png",
+   "symbol_text": null,
+   "description": "VOLTAGE REGULATING TRANSFORMER",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_044.png",
+   "symbol_text": null,
+   "description": "3\u00d8 3W DELTA UNGROUNDED",
+   "notes": null
+  },
+  {
+   "n": 45,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_045.png",
+   "symbol_text": null,
+   "description": "3\u00d8 OPEN DELTA",
+   "notes": null
+  },
+  {
+   "n": 46,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_046.png",
+   "symbol_text": null,
+   "description": "3\u00d8 OPEN DELTA, GROUNDED AT COMMON POINT",
+   "notes": null
+  },
+  {
+   "n": 47,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_047.png",
+   "symbol_text": null,
+   "description": "3\u00d8 BROKEN DELTA",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_048.png",
+   "symbol_text": null,
+   "description": "3\u00d8 WYE UNGROUNDED",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_049.png",
+   "symbol_text": null,
+   "description": "3\u00d8 WYE GROUNDED NEUTRAL",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_050.png",
+   "symbol_text": null,
+   "description": "3\u00d8 4W WYE UNGROUNDED",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "6. TRANSFORMER CONNECTIONS",
+   "sym_file": "sym/ap1000_p0_051.png",
+   "symbol_text": null,
+   "description": "3\u00d8 WYE RESISTANCE GROUNDED NEUTRAL",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_052.png",
+   "symbol_text": null,
+   "description": "SYNCHRONOUS GENERATOR",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_053.png",
+   "symbol_text": null,
+   "description": "CONSTANT SPEED, SQUIRREL CAGE INDUCTION MOTOR",
+   "notes": null
+  },
+  {
+   "n": 54,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_054.png",
+   "symbol_text": null,
+   "description": "VARIABLE SPEED, WOUND ROTOR INDUCTION MOTOR",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_055.png",
+   "symbol_text": null,
+   "description": "MOTOR GENERATOR SET",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_056.png",
+   "symbol_text": null,
+   "description": "SYNCHRONOUS MOTOR",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "7. ROTATING MACHINES (NOTES 3)",
+   "sym_file": "sym/ap1000_p0_057.png",
+   "symbol_text": null,
+   "description": "DIRECT CURRENT MOTORS AND GENERATORS (SHUNT, SERIES, COMPOUND)",
+   "notes": "Three variants shown: SHUNT, SERIES, COMPOUND"
+  },
+  {
+   "n": 58,
+   "section": "8. EXCITATION SYSTEMS FOR SYNCHRONOUS MACHINES",
+   "sym_file": "sym/ap1000_p0_058.png",
+   "symbol_text": null,
+   "description": "CONVENTIONAL DIRECT-CONNECTED DC EXCITER",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "8. EXCITATION SYSTEMS FOR SYNCHRONOUS MACHINES",
+   "sym_file": "sym/ap1000_p0_059.png",
+   "symbol_text": null,
+   "description": "ALTERNATE-EXCITER, STATIONARY RECTIFIER TYPE",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "8. EXCITATION SYSTEMS FOR SYNCHRONOUS MACHINES",
+   "sym_file": "sym/ap1000_p0_060.png",
+   "symbol_text": null,
+   "description": "AC EXCITER-ROTATING RECTIFIER TYPE",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "8. EXCITATION SYSTEMS FOR SYNCHRONOUS MACHINES",
+   "sym_file": "sym/ap1000_p0_061.png",
+   "symbol_text": null,
+   "description": "STATIC EXCITATION USING SPECIAL CURRENT/POTENTIAL (POWER) EXCITATION TRANSFORMER",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "8. EXCITATION SYSTEMS FOR SYNCHRONOUS MACHINES",
+   "sym_file": "sym/ap1000_p0_062.png",
+   "symbol_text": null,
+   "description": "PERMANENT MAGNET GENERATOR (USED WITH EXCITATION SYSTEMS HAVING PILOT EXCITERS)",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_063.png",
+   "symbol_text": null,
+   "description": "COUPLING CAPACITOR POTENTIAL DEVICE",
+   "notes": null
+  },
+  {
+   "n": 64,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_064.png",
+   "symbol_text": null,
+   "description": "CAPACITOR-BUSHING POTENTIAL DEVICE",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_065.png",
+   "symbol_text": null,
+   "description": "CARRIER CURRENT WAVE TRAP",
+   "notes": null
+  },
+  {
+   "n": 66,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_066.png",
+   "symbol_text": null,
+   "description": "COUPLING CAPACITOR FOR CARRIER CURRENT",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_067.png",
+   "symbol_text": null,
+   "description": "LIGHTNING ARRESTER",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_068.png",
+   "symbol_text": null,
+   "description": "CAPACITOR",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_069.png",
+   "symbol_text": null,
+   "description": "GROUND CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 70,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_070.png",
+   "symbol_text": null,
+   "description": "REMOVABLE LINKS",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_071.png",
+   "symbol_text": null,
+   "description": "FUSE (NOTE 1)",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_072.png",
+   "symbol_text": null,
+   "description": "RESISTOR (NOTE 4)",
+   "notes": null
+  },
+  {
+   "n": 73,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_073.png",
+   "symbol_text": null,
+   "description": "RESISTOR, VARIABLE (NOTE 4)",
+   "notes": null
+  },
+  {
+   "n": 74,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_074.png",
+   "symbol_text": null,
+   "description": "RHEOSTAT",
+   "notes": null
+  },
+  {
+   "n": 75,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_075.png",
+   "symbol_text": null,
+   "description": "RECTIFIER",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_076.png",
+   "symbol_text": null,
+   "description": "INSTRUMENT SHUNT",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_077.png",
+   "symbol_text": null,
+   "description": "BATTERY",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_078.png",
+   "symbol_text": null,
+   "description": "INVERTER",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_079.png",
+   "symbol_text": null,
+   "description": "BATTERY CHARGER",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_080.png",
+   "symbol_text": null,
+   "description": "SPACE HEATER",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_081.png",
+   "symbol_text": null,
+   "description": "PHASOR INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 82,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_082.png",
+   "symbol_text": null,
+   "description": "VARIABLE SPEED DRIVE",
+   "notes": null
+  },
+  {
+   "n": 83,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_083.png",
+   "symbol_text": null,
+   "description": "MONITOR DEVICE",
+   "notes": "Symbol: boxed 'MD'"
+  },
+  {
+   "n": 84,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_084.png",
+   "symbol_text": null,
+   "description": "MONITOR & PROTECTION DEVICE",
+   "notes": "Symbol: boxed 'MPD'"
+  },
+  {
+   "n": 85,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_085.png",
+   "symbol_text": null,
+   "description": "MEDIUM VOLTAGE TRIP UNIT",
+   "notes": "Symbol: boxed 'MVTU'"
+  },
+  {
+   "n": 86,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_086.png",
+   "symbol_text": null,
+   "description": "MOTOR PROTECTION RELAY",
+   "notes": "Symbol: boxed 'MPR'"
+  },
+  {
+   "n": 87,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_087.png",
+   "symbol_text": null,
+   "description": "COMMUNICATION MODULE",
+   "notes": "Symbol: boxed 'C'"
+  },
+  {
+   "n": 88,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_088.png",
+   "symbol_text": null,
+   "description": "ADDRESSABLE RELAY",
+   "notes": "Symbol: boxed 'ADR'"
+  },
+  {
+   "n": 89,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_089.png",
+   "symbol_text": null,
+   "description": "LOW VOTAGE TRIP UNIT",
+   "notes": "Symbol: boxed 'LVTU'; as printed (likely 'LOW VOLTAGE')"
+  },
+  {
+   "n": 90,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_090.png",
+   "symbol_text": null,
+   "description": "KEY INTERLOCK (USE WITH APPROPRIATE SWITCHING DEVICE OR CIRCUIT PROTECTOR)",
+   "notes": "Symbol: boxed 'K'"
+  },
+  {
+   "n": 91,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_091.png",
+   "symbol_text": null,
+   "description": "MATCH HEXAGON",
+   "notes": "Symbol: hexagon containing 'XXX'"
+  },
+  {
+   "n": 92,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_092.png",
+   "symbol_text": null,
+   "description": "REFERENCE DRAWING NUMBER",
+   "notes": "Symbol: hexagon containing 'xxx-xx/-xxx'"
+  },
+  {
+   "n": 93,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_093.png",
+   "symbol_text": null,
+   "description": "ON A SAFETY RELATED DRAWING, NON-SAFETY RELATED COMPONENT(S) ARE SHOWN WITHIN THIS BOUNDARY",
+   "notes": "Boundary convention note"
+  },
+  {
+   "n": 94,
+   "section": "9. MISCELLANEOUS POWER CIRCUIT DEVICES",
+   "sym_file": "sym/ap1000_p0_094.png",
+   "symbol_text": null,
+   "description": "SAFETY RELATED COMPONENT(S) ARE SHOWN WITHIN THIS BOUNDARY ON A NON-SAFETY RELATED DRAWING",
+   "notes": "Boundary convention note"
+  }
+ ]
+}

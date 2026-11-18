@@ -1,0 +1,652 @@
+{
+ "pseudo_AC Power_APR1400": {
+  "symbols": 177,
+  "symbol_area": 331069,
+  "pipe_lines": 325,
+  "dashed_pipe_lines": 0,
+  "text_lines": 313,
+  "connections": 315,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 155
+ },
+ "pseudo_AFW (Brain Wood)": {
+  "symbols": 67,
+  "symbol_area": 548790,
+  "pipe_lines": 102,
+  "dashed_pipe_lines": 0,
+  "text_lines": 36,
+  "connections": 103,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 47
+ },
+ "pseudo_AFW (Cristal River)_p1": {
+  "symbols": 36,
+  "symbol_area": 414603,
+  "pipe_lines": 69,
+  "dashed_pipe_lines": 0,
+  "text_lines": 34,
+  "connections": 62,
+  "normally_closed": 2,
+  "pra_modeled_symbols": 28
+ },
+ "pseudo_AFW (Cristal River)_p2": {
+  "symbols": 58,
+  "symbol_area": 532244,
+  "pipe_lines": 83,
+  "dashed_pipe_lines": 0,
+  "text_lines": 32,
+  "connections": 73,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 50
+ },
+ "pseudo_AFW (Davis -Besse)": {
+  "symbols": 57,
+  "symbol_area": 374249,
+  "pipe_lines": 96,
+  "dashed_pipe_lines": 0,
+  "text_lines": 35,
+  "connections": 99,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 55
+ },
+ "pseudo_AFW (Farley)": {
+  "symbols": 72,
+  "symbol_area": 564902,
+  "pipe_lines": 107,
+  "dashed_pipe_lines": 0,
+  "text_lines": 44,
+  "connections": 92,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 69
+ },
+ "pseudo_AFW (Haddam Neck)": {
+  "symbols": 52,
+  "symbol_area": 425466,
+  "pipe_lines": 80,
+  "dashed_pipe_lines": 0,
+  "text_lines": 42,
+  "connections": 83,
+  "normally_closed": 1,
+  "pra_modeled_symbols": 48
+ },
+ "pseudo_AFW (SALEM)": {
+  "symbols": 64,
+  "symbol_area": 559615,
+  "pipe_lines": 90,
+  "dashed_pipe_lines": 0,
+  "text_lines": 36,
+  "connections": 92,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 60
+ },
+ "pseudo_AFW (ST. LUCIE)": {
+  "symbols": 55,
+  "symbol_area": 513436,
+  "pipe_lines": 88,
+  "dashed_pipe_lines": 0,
+  "text_lines": 37,
+  "connections": 75,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 51
+ },
+ "pseudo_AFW (Seabrook)": {
+  "symbols": 47,
+  "symbol_area": 393073,
+  "pipe_lines": 65,
+  "dashed_pipe_lines": 0,
+  "text_lines": 37,
+  "connections": 52,
+  "normally_closed": 3,
+  "pra_modeled_symbols": 39
+ },
+ "pseudo_AFW (South Texas)": {
+  "symbols": 60,
+  "symbol_area": 551161,
+  "pipe_lines": 94,
+  "dashed_pipe_lines": 0,
+  "text_lines": 48,
+  "connections": 164,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 51
+ },
+ "pseudo_AFW (Turkey Point)": {
+  "symbols": 174,
+  "symbol_area": 849620,
+  "pipe_lines": 279,
+  "dashed_pipe_lines": 0,
+  "text_lines": 76,
+  "connections": 277,
+  "normally_closed": 18,
+  "pra_modeled_symbols": 144
+ },
+ "pseudo_AFW (Vogtle)": {
+  "symbols": 72,
+  "symbol_area": 336973,
+  "pipe_lines": 132,
+  "dashed_pipe_lines": 0,
+  "text_lines": 177,
+  "connections": 100,
+  "normally_closed": 3,
+  "pra_modeled_symbols": 72
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1": {
+  "symbols": 53,
+  "symbol_area": 542746,
+  "pipe_lines": 78,
+  "dashed_pipe_lines": 0,
+  "text_lines": 113,
+  "connections": 75,
+  "normally_closed": 12,
+  "pra_modeled_symbols": 47
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2": {
+  "symbols": 27,
+  "symbol_area": 561731,
+  "pipe_lines": 43,
+  "dashed_pipe_lines": 0,
+  "text_lines": 64,
+  "connections": 42,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 24
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3": {
+  "symbols": 54,
+  "symbol_area": 561978,
+  "pipe_lines": 77,
+  "dashed_pipe_lines": 0,
+  "text_lines": 134,
+  "connections": 75,
+  "normally_closed": 12,
+  "pra_modeled_symbols": 48
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4": {
+  "symbols": 26,
+  "symbol_area": 539966,
+  "pipe_lines": 50,
+  "dashed_pipe_lines": 0,
+  "text_lines": 75,
+  "connections": 39,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 22
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5": {
+  "symbols": 36,
+  "symbol_area": 546595,
+  "pipe_lines": 46,
+  "dashed_pipe_lines": 0,
+  "text_lines": 95,
+  "connections": 57,
+  "normally_closed": 5,
+  "pra_modeled_symbols": 32
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
+  "symbols": 27,
+  "symbol_area": 489568,
+  "pipe_lines": 41,
+  "dashed_pipe_lines": 0,
+  "text_lines": 68,
+  "connections": 32,
+  "normally_closed": 3,
+  "pra_modeled_symbols": 26
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
+  "symbols": 25,
+  "symbol_area": 597250,
+  "pipe_lines": 32,
+  "dashed_pipe_lines": 0,
+  "text_lines": 69,
+  "connections": 34,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 20
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8": {
+  "symbols": 54,
+  "symbol_area": 556488,
+  "pipe_lines": 82,
+  "dashed_pipe_lines": 0,
+  "text_lines": 136,
+  "connections": 75,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 48
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": {
+  "symbols": 37,
+  "symbol_area": 557988,
+  "pipe_lines": 48,
+  "dashed_pipe_lines": 0,
+  "text_lines": 99,
+  "connections": 58,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 33
+ },
+ "pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation": {
+  "symbols": 60,
+  "symbol_area": 340592,
+  "pipe_lines": 93,
+  "dashed_pipe_lines": 0,
+  "text_lines": 108,
+  "connections": 79,
+  "normally_closed": 7,
+  "pra_modeled_symbols": 53
+ },
+ "pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat": {
+  "symbols": 76,
+  "symbol_area": 540694,
+  "pipe_lines": 143,
+  "dashed_pipe_lines": 0,
+  "text_lines": 72,
+  "connections": 152,
+  "normally_closed": 11,
+  "pra_modeled_symbols": 64
+ },
+ "pseudo_AFW_APR1400": {
+  "symbols": 75,
+  "symbol_area": 240975,
+  "pipe_lines": 143,
+  "dashed_pipe_lines": 0,
+  "text_lines": 145,
+  "connections": 120,
+  "normally_closed": 18,
+  "pra_modeled_symbols": 59
+ },
+ "pseudo_AFW_INL_System Study": {
+  "symbols": 49,
+  "symbol_area": 214721,
+  "pipe_lines": 79,
+  "dashed_pipe_lines": 0,
+  "text_lines": 113,
+  "connections": 76,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 33
+ },
+ "pseudo_Battery system_(Surry) FSAR": {
+  "symbols": 22,
+  "symbol_area": 118409,
+  "pipe_lines": 42,
+  "dashed_pipe_lines": 3,
+  "text_lines": 54,
+  "connections": 34,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 21
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p1": {
+  "symbols": 25,
+  "symbol_area": 387742,
+  "pipe_lines": 82,
+  "dashed_pipe_lines": 0,
+  "text_lines": 77,
+  "connections": 48,
+  "normally_closed": 5,
+  "pra_modeled_symbols": 25
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p2": {
+  "symbols": 9,
+  "symbol_area": 237342,
+  "pipe_lines": 24,
+  "dashed_pipe_lines": 0,
+  "text_lines": 20,
+  "connections": 10,
+  "normally_closed": 3,
+  "pra_modeled_symbols": 9
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p3": {
+  "symbols": 30,
+  "symbol_area": 241561,
+  "pipe_lines": 84,
+  "dashed_pipe_lines": 0,
+  "text_lines": 36,
+  "connections": 104,
+  "normally_closed": 19,
+  "pra_modeled_symbols": 30
+ },
+ "pseudo_Boron recovery system_(Surry) FSAR_p4": {
+  "symbols": 17,
+  "symbol_area": 431633,
+  "pipe_lines": 55,
+  "dashed_pipe_lines": 0,
+  "text_lines": 55,
+  "connections": 61,
+  "normally_closed": 7,
+  "pra_modeled_symbols": 17
+ },
+ "pseudo_CCWS_(Surry) FSAR_p1": {
+  "symbols": 19,
+  "symbol_area": 148484,
+  "pipe_lines": 58,
+  "dashed_pipe_lines": 0,
+  "text_lines": 52,
+  "connections": 74,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 17
+ },
+ "pseudo_CCWS_(Surry) FSAR_p2": {
+  "symbols": 10,
+  "symbol_area": 162401,
+  "pipe_lines": 31,
+  "dashed_pipe_lines": 0,
+  "text_lines": 28,
+  "connections": 29,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 10
+ },
+ "pseudo_CCWS_(Surry) FSAR_p3": {
+  "symbols": 7,
+  "symbol_area": 334428,
+  "pipe_lines": 23,
+  "dashed_pipe_lines": 0,
+  "text_lines": 28,
+  "connections": 17,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 7
+ },
+ "pseudo_CCWS_(Surry) FSAR_p4": {
+  "symbols": 6,
+  "symbol_area": 378062,
+  "pipe_lines": 26,
+  "dashed_pipe_lines": 0,
+  "text_lines": 34,
+  "connections": 10,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 6
+ },
+ "pseudo_CCWS_(Surry) FSAR_p5": {
+  "symbols": 11,
+  "symbol_area": 236322,
+  "pipe_lines": 50,
+  "dashed_pipe_lines": 0,
+  "text_lines": 21,
+  "connections": 40,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 11
+ },
+ "pseudo_CCWS_APR1400": {
+  "symbols": 117,
+  "symbol_area": 991827,
+  "pipe_lines": 283,
+  "dashed_pipe_lines": 0,
+  "text_lines": 322,
+  "connections": 717,
+  "normally_closed": 2,
+  "pra_modeled_symbols": 108
+ },
+ "pseudo_CCWS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 I": {
+  "symbols": 40,
+  "symbol_area": 105764,
+  "pipe_lines": 78,
+  "dashed_pipe_lines": 0,
+  "text_lines": 56,
+  "connections": 94,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 40
+ },
+ "pseudo_CSS (APR1400)": {
+  "symbols": 72,
+  "symbol_area": 289121,
+  "pipe_lines": 131,
+  "dashed_pipe_lines": 16,
+  "text_lines": 182,
+  "connections": 102,
+  "normally_closed": 2,
+  "pra_modeled_symbols": 67
+ },
+ "pseudo_CSS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In": {
+  "symbols": 24,
+  "symbol_area": 564259,
+  "pipe_lines": 44,
+  "dashed_pipe_lines": 0,
+  "text_lines": 34,
+  "connections": 41,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 22
+ },
+ "pseudo_Charging pump cooling system_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage F": {
+  "symbols": 91,
+  "symbol_area": 196910,
+  "pipe_lines": 155,
+  "dashed_pipe_lines": 0,
+  "text_lines": 145,
+  "connections": 139,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 91
+ },
+ "pseudo_Compressed Air system_(Surry) FSAR": {
+  "symbols": 37,
+  "symbol_area": 478334,
+  "pipe_lines": 68,
+  "dashed_pipe_lines": 0,
+  "text_lines": 61,
+  "connections": 58,
+  "normally_closed": 1,
+  "pra_modeled_symbols": 36
+ },
+ "pseudo_Condensate and Feedwater system_APR1400": {
+  "symbols": 42,
+  "symbol_area": 553172,
+  "pipe_lines": 64,
+  "dashed_pipe_lines": 0,
+  "text_lines": 128,
+  "connections": 54,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 32
+ },
+ "pseudo_Control room HVAC_APR1400": {
+  "symbols": 86,
+  "symbol_area": 384361,
+  "pipe_lines": 140,
+  "dashed_pipe_lines": 0,
+  "text_lines": 150,
+  "connections": 203,
+  "normally_closed": 23,
+  "pra_modeled_symbols": 64
+ },
+ "pseudo_ECWS_APR1400": {
+  "symbols": 61,
+  "symbol_area": 279413,
+  "pipe_lines": 97,
+  "dashed_pipe_lines": 0,
+  "text_lines": 107,
+  "connections": 170,
+  "normally_closed": 1,
+  "pra_modeled_symbols": 61
+ },
+ "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p1": {
+  "symbols": 71,
+  "symbol_area": 702175,
+  "pipe_lines": 154,
+  "dashed_pipe_lines": 0,
+  "text_lines": 79,
+  "connections": 110,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 68
+ },
+ "pseudo_EPS_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit 1 In_p2": {
+  "symbols": 11,
+  "symbol_area": 147877,
+  "pipe_lines": 21,
+  "dashed_pipe_lines": 0,
+  "text_lines": 25,
+  "connections": 13,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 11
+ },
+ "pseudo_ESW_APR1400": {
+  "symbols": 48,
+  "symbol_area": 226905,
+  "pipe_lines": 100,
+  "dashed_pipe_lines": 0,
+  "text_lines": 114,
+  "connections": 64,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 42
+ },
+ "pseudo_Feedwater system_(Surry) FSAR": {
+  "symbols": 90,
+  "symbol_area": 559293,
+  "pipe_lines": 190,
+  "dashed_pipe_lines": 0,
+  "text_lines": 74,
+  "connections": 223,
+  "normally_closed": 17,
+  "pra_modeled_symbols": 81
+ },
+ "pseudo_HVAC_APR1400_p1": {
+  "symbols": 21,
+  "symbol_area": 186673,
+  "pipe_lines": 28,
+  "dashed_pipe_lines": 0,
+  "text_lines": 56,
+  "connections": 7,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 14
+ },
+ "pseudo_HVAC_APR1400_p2": {
+  "symbols": 23,
+  "symbol_area": 137082,
+  "pipe_lines": 38,
+  "dashed_pipe_lines": 0,
+  "text_lines": 65,
+  "connections": 10,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 18
+ },
+ "pseudo_HVAC_APR1400_p3": {
+  "symbols": 115,
+  "symbol_area": 459325,
+  "pipe_lines": 103,
+  "dashed_pipe_lines": 0,
+  "text_lines": 163,
+  "connections": 52,
+  "normally_closed": 11,
+  "pra_modeled_symbols": 97
+ },
+ "pseudo_Instrument Air (APR1400)": {
+  "symbols": 72,
+  "symbol_area": 404064,
+  "pipe_lines": 87,
+  "dashed_pipe_lines": 0,
+  "text_lines": 125,
+  "connections": 93,
+  "normally_closed": 9,
+  "pra_modeled_symbols": 68
+ },
+ "pseudo_LPI-LPR_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Unit ": {
+  "symbols": 42,
+  "symbol_area": 116069,
+  "pipe_lines": 73,
+  "dashed_pipe_lines": 0,
+  "text_lines": 103,
+  "connections": 73,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 42
+ },
+ "pseudo_Main Steam System_APR1400": {
+  "symbols": 66,
+  "symbol_area": 159105,
+  "pipe_lines": 167,
+  "dashed_pipe_lines": 0,
+  "text_lines": 228,
+  "connections": 424,
+  "normally_closed": 14,
+  "pra_modeled_symbols": 60
+ },
+ "pseudo_Main Steam system_(Surry) FSAR": {
+  "symbols": 8,
+  "symbol_area": 302822,
+  "pipe_lines": 28,
+  "dashed_pipe_lines": 0,
+  "text_lines": 57,
+  "connections": 10,
+  "normally_closed": 1,
+  "pra_modeled_symbols": 7
+ },
+ "pseudo_Power conversion system (NuScale)": {
+  "symbols": 42,
+  "symbol_area": 848509,
+  "pipe_lines": 127,
+  "dashed_pipe_lines": 0,
+  "text_lines": 122,
+  "connections": 82,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 34
+ },
+ "pseudo_RCS-POSRV (APR1400)": {
+  "symbols": 107,
+  "symbol_area": 805033,
+  "pipe_lines": 222,
+  "dashed_pipe_lines": 0,
+  "text_lines": 203,
+  "connections": 453,
+  "normally_closed": 8,
+  "pra_modeled_symbols": 62
+ },
+ "pseudo_RHR_(Surry) FSAR": {
+  "symbols": 14,
+  "symbol_area": 113738,
+  "pipe_lines": 50,
+  "dashed_pipe_lines": 0,
+  "text_lines": 46,
+  "connections": 34,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 13
+ },
+ "pseudo_SCS2_APR1400": {
+  "symbols": 73,
+  "symbol_area": 389538,
+  "pipe_lines": 133,
+  "dashed_pipe_lines": 16,
+  "text_lines": 214,
+  "connections": 128,
+  "normally_closed": 0,
+  "pra_modeled_symbols": 67
+ },
+ "pseudo_SCS_APR1400": {
+  "symbols": 22,
+  "symbol_area": 201256,
+  "pipe_lines": 51,
+  "dashed_pipe_lines": 15,
+  "text_lines": 93,
+  "connections": 45,
+  "normally_closed": 6,
+  "pra_modeled_symbols": 20
+ },
+ "pseudo_SI (APR1400)": {
+  "symbols": 93,
+  "symbol_area": 597203,
+  "pipe_lines": 147,
+  "dashed_pipe_lines": 0,
+  "text_lines": 222,
+  "connections": 136,
+  "normally_closed": 4,
+  "pra_modeled_symbols": 79
+ },
+ "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un": {
+  "symbols": 44,
+  "symbol_area": 100396,
+  "pipe_lines": 86,
+  "dashed_pipe_lines": 0,
+  "text_lines": 105,
+  "connections": 113,
+  "normally_closed": 14,
+  "pra_modeled_symbols": 44
+ },
+ "pseudo_SWS_(Surry) FSAR": {
+  "symbols": 65,
+  "symbol_area": 876538,
+  "pipe_lines": 160,
+  "dashed_pipe_lines": 0,
+  "text_lines": 67,
+  "connections": 251,
+  "normally_closed": 16,
+  "pra_modeled_symbols": 58
+ },
+ "pseudo_Steam and Power Conversion System_GE-Hitachi ABWR Design Control Document Tier 1": {
+  "symbols": 140,
+  "symbol_area": 946537,
+  "pipe_lines": 316,
+  "dashed_pipe_lines": 0,
+  "text_lines": 75,
+  "connections": 396,
+  "normally_closed": 3,
+  "pra_modeled_symbols": 129
+ }
+}

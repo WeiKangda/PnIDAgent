@@ -1,0 +1,146 @@
+"""Rebuild the pipe connectivity of the verified pages from their annotations.
+
+Inputs (paths relative to the topology_verified folder):
+  images/<page>.png       the drawing
+  symbols/<page>.txt      human-verified symbol boxes, YOLO format; the line number is the symbol id
+  lines/<page>.json       human-verified pipe lines ("solid", and "dashed": flow pipes drawn dashed or dotted)
+  manual_edits.json       per page, the changes made by hand during the connectivity review:
+                            added_lines        pipe pieces drawn on the page but missing from the line annotations
+                            removed_lines      annotated lines that are not pipes (a boundary or the page edge)
+                            crossing_decisions human decisions for X crossings ({"x", "y", "connected"})
+                            cuts               points where a connection that the algorithm made does not exist on the drawing
+                            unlinks            [symbol id, x, y]: remove the connection of that symbol passing near (x, y)
+                            fine_regions       regions with pipes very close to each other: ends are snapped within
+                                               fine_tol px instead of 12 px there
+                            tol                snapping distance for the whole page when it is not 12 px
+                            pass_through       symbols a pipe runs straight through (a bus breaker, a condenser): the pipe
+                                               parts on both sides are joined through the box
+                            no_join            elongated symbols (one side >= 1.8 x the other) that are not on a bus: the
+                                               two pipe parts entering from the long sides are not joined through the box
+                                               (e.g. a valve whose motor operator is drawn beside it)
+                            vector_regions     regions where the pipes are taken from the vector drawing of the source PDF
+                                               (lines a few px apart that the raster labels cannot separate):
+                                               vector_lines replace the labeled lines inside these regions, and
+                                               vector_dots are the filled junction dots of the PDF there
+Output:
+  rebuilt/<page>.json     same format as <page>.json (symbols, junctions, links, neighbors, crossings)
+
+  python code/build_connectivity.py            # all pages listed in manual_edits.json
+  python code/build_connectivity.py --check    # also compare with the published <page>.json files
+  python code/build_connectivity.py Seabrook   # only pages whose name contains "Seabrook"
+"""
+import collections, json, os, sys
+import cv2
+HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
+import topo
+ROOT = os.path.dirname(HERE)
+
+
+def load_symbols(n, W, H):
+    """Symbol boxes in pixels, rounded down exactly as when the graphs were built."""
+    boxes = [list(map(float, l.split()[1:5])) for l in open(f"{ROOT}/symbols/{n}.txt") if l.strip()]
+    return [(i, (int((cx - w / 2) * W), int((cy - h / 2) * H), int((cx + w / 2) * W), int((cy + h / 2) * H))) for i, (cx, cy, w, h) in enumerate(boxes)]
+
+
+def neighbors(symbols, links):
+    """Symbol -> symbols reachable through pipes and branch points, without passing through another symbol."""
+    adj = collections.defaultdict(set)
+    for l in links: adj[l["source"]].add(l["target"]); adj[l["target"]].add(l["source"])
+    out = {}
+    for s in symbols:
+        seen, stack, found = {s["id"]}, [s["id"]], set()
+        while stack:
+            for v in adj[stack.pop()]:
+                if v in seen: continue
+                seen.add(v)
+                if isinstance(v, int): found.add(v)       # a symbol: stop here
+                else: stack.append(v)                    # a branch point: keep walking
+        out[str(s["id"])] = sorted(found)
+    return out
+
+
+def inside_interval(p0, p1, box):
+    """Parameter interval of the segment p0->p1 that lies inside box (Liang-Barsky), or None."""
+    x0, y0 = p0; dx, dy = p1[0] - p0[0], p1[1] - p0[1]; t0, t1 = 0.0, 1.0
+    for p, q in ((-dx, x0 - box[0]), (dx, box[2] - x0), (-dy, y0 - box[1]), (dy, box[3] - y0)):
+        if abs(p) < 1e-12:
+            if q < 0: return None
+        else:
+            t = q / p
+            if p < 0: t0 = max(t0, t)
+            else: t1 = min(t1, t)
+    return (t0, t1) if t1 - t0 > 1e-9 else None
+
+
+def clip_out(seg, boxes, minlen=8.0):
+    """The parts of a segment outside all boxes (parts shorter than minlen dropped)."""
+    p0, p1 = (seg[0], seg[1]), (seg[2], seg[3]); L = ((p1[0] - p0[0]) ** 2 + (p1[1] - p0[1]) ** 2) ** 0.5
+    iv = sorted(filter(None, (inside_interval(p0, p1, b) for b in boxes))); out = []; cur = 0.0
+    for a, b in iv:
+        if a > cur: out.append((cur, a))
+        cur = max(cur, b)
+    if cur < 1.0: out.append((cur, 1.0))
+    return [[p0[0] + a * (p1[0] - p0[0]), p0[1] + a * (p1[1] - p0[1]), p0[0] + b * (p1[0] - p0[0]), p0[1] + b * (p1[1] - p0[1])] for a, b in out if (b - a) * L >= minlen]
+
+
+def same_line(s, d):
+    return max(abs(a - b) for a, b in zip(s, d)) <= 2 or max(abs(a - b) for a, b in zip(s, d[2:] + d[:2])) <= 2
+
+
+def build(n, e):
+    g = cv2.imread(f"{ROOT}/images/{n}.png", 0); H, W = g.shape
+    syms = load_symbols(n, W, H)
+    L = json.load(open(f"{ROOT}/lines/{n}.json"))
+    drop = e.get("removed_lines", [])
+    segs = [(tuple(map(int, s)), "solid") for s in L["solid"] + L.get("dashed", []) if not any(same_line(s, d) for d in drop)]   # dashed flow pipes are pipes
+    vec_dots = None
+    if e.get("vector_regions"):
+        regs = e["vector_regions"]; kept = []
+        for sg, k in segs:
+            for part in clip_out(list(sg), regs):
+                if topo.seg_len(part) >= 6: kept.append((tuple(int(round(v)) for v in part), k))
+        segs = kept + [(tuple(v), "solid") for v in e.get("vector_lines", [])]
+        vec_dots = (regs, [tuple(d) for d in e.get("vector_dots", [])])
+    segs += [(tuple(int(round(v)) for v in a), "solid") for a in e.get("added_lines", [])]
+    fine = (e["fine_regions"], int(e.get("fine_tol", 4))) if e.get("fine_regions") else None
+    nodes, edges, crossings, _, _, paths = topo.build(segs, syms, g, decisions=e.get("crossing_decisions", []), tol=int(e.get("tol", 12)),
+                                                      vec_dots=vec_dots, pass_through=e.get("pass_through", []), fine=fine,
+                                                      no_join=e.get("no_join", []))
+    for sid, x, y in e.get("unlinks", []):
+        keep = [i for i, (ed, pth) in enumerate(zip(edges, paths)) if not (("sym", sid) in (ed[0], ed[1]) and any(topo.point_seg_dist((x, y), tuple(p)) <= 10 for p in pth))]
+        edges = [edges[i] for i in keep]; paths = [paths[i] for i in keep]
+    for c in e.get("cuts", []):
+        keep = [i for i, pth in enumerate(paths) if not any(topo.point_seg_dist(tuple(c), tuple(p)) <= 6 for p in pth)]
+        edges = [edges[i] for i in keep]; paths = [paths[i] for i in keep]
+    # a crossing that a cut turned into a T junction (one of its four arms removed) is no longer a crossing
+    deg = collections.Counter(x for ed in edges for x in (ed[0], ed[1]))
+    def node_deg(x, y):
+        return max([deg[k] for k, (nx, ny) in nodes.items() if k[0] == "jct" and abs(nx - x) <= 3 and abs(ny - y) <= 3] or [0])
+    crossings = [c for c in crossings if not (c[2] and node_deg(c[0], c[1]) < 4)]
+    used = {x for ed in edges for x in (ed[0], ed[1])}
+    jid = {}
+    for k in nodes:
+        if k[0] == "jct" and k in used: jid[k] = f"J{len(jid)}"
+    nid = lambda k: k[1] if k[0] == "sym" else jid[k]
+    symbols = [{"id": i, "bbox": list(b)} for i, b in syms]
+    links = [{"source": nid(u), "target": nid(v), "path": [[round(c, 1) for c in p] for p in path]} for (u, v, _), path in zip(edges, paths)]
+    return {"name": n, "width": W, "height": H, "symbols": symbols,
+            "junctions": [{"id": jid[k], "xy": list(nodes[k])} for k in jid],
+            "links": links, "neighbors": neighbors(symbols, links),
+            "crossings": [{"x": round(c[0], 1), "y": round(c[1], 1), "connected": bool(c[2])} for c in crossings]}
+
+
+if __name__ == "__main__":
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]; check = "--check" in sys.argv
+    edits = json.load(open(f"{ROOT}/manual_edits.json"))
+    pages = [n for n in edits if not args or any(a in n for a in args)]
+    os.makedirs(f"{ROOT}/rebuilt", exist_ok=True); bad = 0
+    for n in pages:
+        r = build(n, edits[n]); json.dump(r, open(f"{ROOT}/rebuilt/{n}.json", "w"))
+        msg = f"{n}: {len(r['symbols'])} symbols, {len(r['junctions'])} branch points, {len(r['links'])} links"
+        if check:
+            pub = json.load(open(f"{ROOT}/{n}.json"))
+            diff = [k for k in ("symbols", "junctions", "links", "neighbors", "crossings") if json.loads(json.dumps(r[k])) != pub[k]]
+            msg += "  | identical to the published file" if not diff else f"  | DIFFERENT: {diff}"; bad += bool(diff)
+        print(msg)
+    if check: print("all identical" if not bad else f"{bad} page(s) differ")

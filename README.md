@@ -2,40 +2,35 @@
 
 A comprehensive pipeline for digitizing Piping and Instrumentation Diagrams (P&IDs). This tool processes P&ID images through symbol detection, text recognition, and line detection to produce structured JSON outputs suitable for downstream LLM processing.
 
-## This branch: symbol classes v3 (November 2026, in review)
+## Verified annotations v3 (this branch, symbol classes in review)
 
-This branch adds a finer symbol classification to the human-verified annotations of 65 real nuclear P&ID pages
-([`verified_annotations_v2/`](verified_annotations_v2/README.md)), as training and evaluation labels for the symbol
-classifier of the pipeline. The boxes, their ids and the v2 labels are unchanged; the new labels are in
-[`verified_annotations_v2/symbol_classes/v3/`](verified_annotations_v2/symbol_classes/v3/README.md).
+[`verified_annotations_v3/`](verified_annotations_v3/README.md) holds 65 real nuclear P&ID pages annotated by hand and
+verified in five layers: symbol boxes, symbol classes, pipe lines (solid, and the flow pipes drawn dashed or dotted), text
+lines and pipe connectivity, with the AP1000 / APR1400 P&ID legends they follow. It is the training and evaluation data
+of the pipeline's symbol classifier.
 
-What changes from the v2 classes:
+| | |
+|---|---:|
+| Pages | 65 |
+| Symbol boxes | 3483 |
+| Symbol classes | 63 (56 occur on the pages) |
+| Pipe line segments | 6381 (50 dashed) |
+| Text lines | 6064 |
+| Connections | 7223 |
 
-- **Finer classes.** Every component that has its own symbol in the AP1000 / APR1400 legends gets its own class.
-  Valves keep one class per body symbol, with the operator in `actuator`, so the fault-tree type (MOV, AOV, SOV, HOV,
-  CKV, XVM, SRV, PORV, VBV, ...) follows from class + actuator:
+The symbol classes ([`verified_annotations_v3/symbol_classes/`](verified_annotations_v3/symbol_classes/README.md)):
 
-| v2 class | v3 classes (boxes) |
-|---|---|
-| `VLV_CHECK` | `VLV_CHECK` (494), `VLV_STOP_CHECK` (37) |
-| `VLV_RELIEF` | `VLV_SAFETY_RELIEF` (39), `VLV_PILOT_RELIEF` (12), `VLV_VACUUM_BREAKER` (0) |
-| `DAMPER` | `DAMPER_MOTOR` (0), `DAMPER_PNEUMATIC` (27), `DAMPER_EH` (30), `DAMPER_NO_OPERATOR` (15) |
-| `PUMP` | `PUMP_CENTRIFUGAL` (113), `PUMP_TURBINE_DRIVEN` (22), `PUMP_VERTICAL` (13) |
-| `FILTER` | `FILTER` (68), `STRAINER` (16), `CARBON_ADSORBER` (12), `MOISTURE_SEPARATOR` (12), `AIR_SEPARATOR` (1) |
-| `SPARGER` | `SPRAY` (21) |
-
-- **Normal position** of valves and dampers (`open` 1269, `closed` 357, `not shown` 15, `unknown` 4) and **locked**
-  (`LO` 155, `LC` 20), from the labelers' notes and the open / closed symbol of the legends.
-- **PRA flag.** Components that are extracted but typically not modeled in a PRA (instruments, orifices, steam
-  generators, off-page connectors, penetrations, ...; 417 boxes) are marked `pra_modeled = no`, to be screened out
-  when the fault trees are built.
-- **Legend flag.** The classes with no symbol in the legends (`SUMP`, `PRESSURIZER`, `ENGINE`, `BLOCK`, `OTHER`) are
-  marked `legend_png = no`.
-- **Review.** 479 boxes need a person's decision and are listed, each with a crop of the drawing, in
-  `review_v3.xlsx`: fan or pump (48), normally closed valves and dampers (361), classes that rest only on the automatic
-  legend match (9), `OTHER` (20), and the rows marked uncertain in v2 (52).
-
-The v3 files are rebuilt from the v2 files by `relabel_v3.py`; `make_review_v3.py` writes the review workbook.
+- **One class per component that has its own legend symbol**: valves by body (gate, globe, butterfly, check, stop-check,
+  safety / relief, pilot-operated relief, vacuum breaker, ...), dampers by operator (motor, pneumatic, electro-hydraulic,
+  none), pumps by type (centrifugal, turbine-driven, vertical), filters, strainers, carbon adsorbers, moisture and air
+  separators, spray (nozzles, headers, spargers), and the other equipment, instruments and electrical components.
+- **Actuator** of valves, dampers and pumps, so the fault-tree type (MOV, AOV, SOV, HOV, CKV, XVM, SRV, PORV, VBV, MDP,
+  TDP, ...) follows from class + actuator.
+- **Normal position** of valves and dampers (open 1269, closed 357) and the locked marks (LO 155, LC 20).
+- **PRA flag**: components extracted but typically not modeled in a PRA (instruments, orifices, steam generators,
+  off-page connectors, penetrations, ...; 417 boxes) are marked, to be screened out when the fault trees are built.
+- **Review**: 479 boxes that need a person's decision (fan or pump, normally closed valves and dampers, `OTHER`, ...) are
+  listed with crops of the drawings in `review.xlsx`.
 
 ## Pipeline Overview
 

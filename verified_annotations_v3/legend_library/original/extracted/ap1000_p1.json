@@ -1,0 +1,1351 @@
+{
+ "source": "AP1000",
+ "page": 2,
+ "image": "ap1000_p1_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "(NOTE)",
+   "description": "PREFIX R INDICATES RECORDING TYPE",
+   "notes": "section note"
+  },
+  {
+   "n": 2,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "AMMETER",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "AH",
+   "description": "AMPERE-HOUR METER",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "DEMAND METER",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FREQUENCY METER",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "GD",
+   "description": "GROUND DETECTOR",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "OHM",
+   "description": "OHMMETER",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "OSC",
+   "description": "OSCILLOGRAPH",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "PD",
+   "description": "PRINTING DEMAND METER",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "PF",
+   "description": "POWER FACTOR METER",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "RT",
+   "description": "RUNNING TIME METER",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "SY",
+   "description": "SYNCHROSCOPE",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "TEMPERATURE METER",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "THC",
+   "description": "THERMAL CONVERTER",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "TI",
+   "description": "TEMPERATURE INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "TLM",
+   "description": "TELEMETERING",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "TM",
+   "description": "TRANSMITTER",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "TR",
+   "description": "TEMPERATURE RECORDER",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "*/T",
+   "description": "TRANSDUCER",
+   "notes": "A-INDICATES AMPS; V-INDICATES VOLTS; VAR-INDICATES VARS; W-INDICATES WATTS"
+  },
+  {
+   "n": 20,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "V",
+   "description": "VOLTMETER",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "VAR",
+   "description": "VARMETER",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "VARH",
+   "description": "VAR-HOUR METER",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "VV",
+   "description": "DOUBLE VOLTMETER",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "W",
+   "description": "WATTMETER",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "WH",
+   "description": "WATTHOUR METER",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "10. METERS AND INSTRUMENTS",
+   "sym_file": null,
+   "symbol_text": "WHD",
+   "description": "WATTHOUR DEMAND METER",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "11. METER & INSTRUMENT SWITCHES",
+   "sym_file": null,
+   "symbol_text": "AS",
+   "description": "AMMETER SWITCH",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "11. METER & INSTRUMENT SWITCHES",
+   "sym_file": null,
+   "symbol_text": "VS",
+   "description": "VOLTMETER SWITCH",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "11. METER & INSTRUMENT SWITCHES",
+   "sym_file": null,
+   "symbol_text": "SS",
+   "description": "SYNCHRONIZING SWITCH",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "11. METER & INSTRUMENT SWITCHES",
+   "sym_file": null,
+   "symbol_text": "MSS",
+   "description": "METERING SELECTOR SWITCH",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_031.png",
+   "symbol_text": null,
+   "description": "CONTROL SWITCH WITH RED & GREEN INDICATING LIGHTS. P-INDICATES PERMISSIVE",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_032.png",
+   "symbol_text": null,
+   "description": "CONTROL SWITCH WITH RED,GREEN & AMBER INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_033.png",
+   "symbol_text": null,
+   "description": "START-STOP MAINTAINED CONTACT PUSH BUTTON",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_034.png",
+   "symbol_text": null,
+   "description": "START-STOP MAINTAINED CONTACT PUSH BUTTON WITH RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_035.png",
+   "symbol_text": null,
+   "description": "START-STOP MOMENTARY CONTACT PUSH BUTTON",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_036.png",
+   "symbol_text": null,
+   "description": "START-STOP MOMENTARY CONTACT PUSH BUTTON WITH RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_037.png",
+   "symbol_text": null,
+   "description": "RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_038.png",
+   "symbol_text": null,
+   "description": "SELECTOR SWITCH WITH RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 39,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_039.png",
+   "symbol_text": null,
+   "description": "HAND-OFF-AUTOMATIC SELECTOR SWITCH",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_040.png",
+   "symbol_text": null,
+   "description": "TEST SWITCH WITH RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_041.png",
+   "symbol_text": null,
+   "description": "COMBINATION CONTROL & TEST SWITCH WITH RED & GREEN INDICATING LIGHTS",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "12. CONTROL SWITCHES & PUSHBUTTON STATIONS",
+   "sym_file": "sym/ap1000_p1_042.png",
+   "symbol_text": null,
+   "description": "LOCK-OUT PUSH BUTTON",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "20",
+   "description": "ELECTRICALLY OPERATED VALVE",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "23",
+   "description": "TEMPERATURE CONTROL DEVICE",
+   "notes": null
+  },
+  {
+   "n": 45,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "24",
+   "description": "BUS TIE CIRCUIT BREAKER",
+   "notes": null
+  },
+  {
+   "n": 46,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "25",
+   "description": "SYNCHRONIZING DEVICE",
+   "notes": null
+  },
+  {
+   "n": 47,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "26",
+   "description": "APPARATUS THERMAL DEVICE",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "28",
+   "description": "FLAME DETECTOR",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "33",
+   "description": "POSITION SWITCH (POSITION OR LIMIT SWITCH)",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "41",
+   "description": "FIELD CIRCUIT BREAKER",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "42",
+   "description": "MOTOR STARTER",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "43",
+   "description": "TRANSFER DEVICE",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "52",
+   "description": "AC CIRCUIT BREAKER",
+   "notes": null
+  },
+  {
+   "n": 54,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "63P",
+   "description": "SUDDEN PRESSURE SWITCH",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "65",
+   "description": "GOVERNOR DEVICE",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "69",
+   "description": "PERMISSIVE CONTROL DEVICE",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "70",
+   "description": "RHEOSTAT DEVICE",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "71",
+   "description": "LIQUID OR GAS LEVEL SWITCH",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "72",
+   "description": "DC CIRCUIT BREAKER",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "75",
+   "description": "POSITION CHANGING MECHANISM",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "77",
+   "description": "IMPULSE TRANSMITTER DEVICE",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "89",
+   "description": "FUSE DISCONNECT",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "90",
+   "description": "REGULATING DEVICE",
+   "notes": null
+  },
+  {
+   "n": 64,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "95",
+   "description": "METERING TRANSFER DEVICE",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "96",
+   "description": "BATTERY MONITOR",
+   "notes": null
+  },
+  {
+   "n": 66,
+   "section": "13. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "97",
+   "description": "BATTERY CHARGER FAILURE",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "21",
+   "description": "DISTANCE (IMPEDANCE)",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "27",
+   "description": "UNDERVOLTAGE",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "30",
+   "description": "ANNUNCIATOR",
+   "notes": null
+  },
+  {
+   "n": 70,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "32",
+   "description": "REVERSE POWER",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "37",
+   "description": "UNDERCURRENT OR UNDERPOWER",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "40",
+   "description": "FIELD",
+   "notes": null
+  },
+  {
+   "n": 73,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "46",
+   "description": "REVERSE PHASE (NEGATIVE PHASE SEQUENCE)",
+   "notes": null
+  },
+  {
+   "n": 74,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "47",
+   "description": "PHASE SEQUENCE",
+   "notes": null
+  },
+  {
+   "n": 75,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "48",
+   "description": "INCOMPLETE SEQUENCE",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "49",
+   "description": "THERMAL",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "50",
+   "description": "INSTANTANEOUS OVERCURRENT",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "50D",
+   "description": "HIGHDROPOUT OVERCURRENT USED AS MOTOR DIFFERENTIAL",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "50G",
+   "description": "INSTANTANEOUS GROUND CURRENT",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "50/51",
+   "description": "INSTANTANEOUS OVERCURRENT & TIME DELAY",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "51",
+   "description": "AC TIME OVERCURRENT",
+   "notes": null
+  },
+  {
+   "n": 82,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "51G",
+   "description": "GROUND CURRENT TIME DELAY",
+   "notes": null
+  },
+  {
+   "n": 83,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "51N",
+   "description": "RESIDUAL GROUND OVERCURRENT",
+   "notes": null
+  },
+  {
+   "n": 84,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "51V",
+   "description": "OVERCURRENT-TIME DELAY-VOLTAGE RESTRAINT",
+   "notes": null
+  },
+  {
+   "n": 85,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "55",
+   "description": "POWER FACTOR",
+   "notes": null
+  },
+  {
+   "n": 86,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "56",
+   "description": "FIELD APPLICATION",
+   "notes": null
+  },
+  {
+   "n": 87,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "58",
+   "description": "RECTIFICATION FAILURE",
+   "notes": null
+  },
+  {
+   "n": 88,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "59",
+   "description": "OVERVOLTAGE",
+   "notes": null
+  },
+  {
+   "n": 89,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "60",
+   "description": "VOLTAGE BALANCE",
+   "notes": null
+  },
+  {
+   "n": 90,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "62",
+   "description": "TIME DELAY",
+   "notes": null
+  },
+  {
+   "n": 91,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "64",
+   "description": "GROUND PROTECTIVE",
+   "notes": null
+  },
+  {
+   "n": 92,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "67",
+   "description": "AC DIRECTIONAL OVERCURRENT",
+   "notes": null
+  },
+  {
+   "n": 93,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "68",
+   "description": "BLOCKING",
+   "notes": null
+  },
+  {
+   "n": 94,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "74",
+   "description": "ALARM",
+   "notes": null
+  },
+  {
+   "n": 95,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "76",
+   "description": "DC OVERCURRENT",
+   "notes": null
+  },
+  {
+   "n": 96,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "78",
+   "description": "PHASE ANGLE",
+   "notes": null
+  },
+  {
+   "n": 97,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "79",
+   "description": "AC RECLOSING",
+   "notes": null
+  },
+  {
+   "n": 98,
+   "section": "14. RELAYS",
+   "sym_file": null,
+   "symbol_text": "81",
+   "description": "FREQUENCY",
+   "notes": null
+  },
+  {
+   "n": 99,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_099.png",
+   "symbol_text": null,
+   "description": "BLOCKING DIODE (SEMICONDUCTOR RECTIFIER)",
+   "notes": null
+  },
+  {
+   "n": 100,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_100.png",
+   "symbol_text": null,
+   "description": "PUSH BUTTON-MOMENTARY CONTACT NORMALLY CLOSED",
+   "notes": null
+  },
+  {
+   "n": 101,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_101.png",
+   "symbol_text": null,
+   "description": "PUSH BUTTON-MOMENTARY CONTACT NORMALLY OPEN",
+   "notes": null
+  },
+  {
+   "n": 102,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_102.png",
+   "symbol_text": null,
+   "description": "PUSH BUTTON LOCK-OUT",
+   "notes": null
+  },
+  {
+   "n": 103,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_103.png",
+   "symbol_text": null,
+   "description": "PUSH BUTTON-MAINTAINED CONTACT",
+   "notes": null
+  },
+  {
+   "n": 104,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_104.png",
+   "symbol_text": null,
+   "description": "CONTACTS OF OVERLOAD DEVICES",
+   "notes": "symbol drawn with device number 49"
+  },
+  {
+   "n": 105,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_105.png",
+   "symbol_text": null,
+   "description": "SELECTOR SWITCH (TWO OR THREE POSITIONS)",
+   "notes": "OFF position shown"
+  },
+  {
+   "n": 106,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_106.png",
+   "symbol_text": null,
+   "description": "SOLENOID",
+   "notes": null
+  },
+  {
+   "n": 107,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_107.png",
+   "symbol_text": null,
+   "description": "NORMALLY OPEN CONTACT (NO)",
+   "notes": null
+  },
+  {
+   "n": 108,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_108.png",
+   "symbol_text": null,
+   "description": "NORMALLY CLOSED CONTACT (NC)",
+   "notes": null
+  },
+  {
+   "n": 109,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_109.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATED VALVE POSITION LIMIT SWITCH",
+   "notes": null
+  },
+  {
+   "n": 110,
+   "section": "A. CONTROL DEVICES",
+   "sym_file": "sym/ap1000_p1_110.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATED VALVE TORQUE SWITCH",
+   "notes": null
+  },
+  {
+   "n": 111,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "CC",
+   "description": "CONTACTOR COIL",
+   "notes": null
+  },
+  {
+   "n": 112,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "CR",
+   "description": "CONTROL RELAY",
+   "notes": null
+  },
+  {
+   "n": 113,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "LR",
+   "description": "LATCHING RELAY",
+   "notes": null
+  },
+  {
+   "n": 114,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "M",
+   "description": "MOTOR STARTER OPERATING COIL",
+   "notes": null
+  },
+  {
+   "n": 115,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "MC",
+   "description": "VALVE MOTOR STARTER CLOSE COIL",
+   "notes": null
+  },
+  {
+   "n": 116,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "MO",
+   "description": "VALVE MOTOR STARTER OPEN COIL",
+   "notes": null
+  },
+  {
+   "n": 117,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "TDDO",
+   "description": "TIME DELAY DROPOUT",
+   "notes": null
+  },
+  {
+   "n": 118,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "TDPU",
+   "description": "TIME DELAY PICKUP",
+   "notes": null
+  },
+  {
+   "n": 119,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "42-C",
+   "description": "REVERSING MAGNETIC CONTACTOR CLOSING COIL",
+   "notes": null
+  },
+  {
+   "n": 120,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "42-MX",
+   "description": "MOTOR STARTER AUXILIARY RELAY",
+   "notes": null
+  },
+  {
+   "n": 121,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "42-O",
+   "description": "REVERSING MAGNETIC CONTACTOR OPENING COIL",
+   "notes": null
+  },
+  {
+   "n": 122,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "52-CC",
+   "description": "CIRCUIT BREAKER CLOSE COIL",
+   "notes": null
+  },
+  {
+   "n": 123,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": null,
+   "symbol_text": "52-TC",
+   "description": "CIRCUIT BREAKER TRIP COIL",
+   "notes": null
+  },
+  {
+   "n": 124,
+   "section": "B. OPERATING COIL & COMPONENTS",
+   "sym_file": "sym/ap1000_p1_124.png",
+   "symbol_text": null,
+   "description": "OPERATING COIL SYMBOL FORMS (CIRCLE OR ZIGZAG)",
+   "notes": "editorial caption: page prints only 'OR' between the two alternative coil symbol forms"
+  },
+  {
+   "n": 125,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "CS",
+   "description": "CONTROL SWITCH",
+   "notes": null
+  },
+  {
+   "n": 126,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "dPS",
+   "description": "DIFFERENTIAL PRESSURE SW...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 127,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "dPSH",
+   "description": "DIFFERENTIAL PRESSURE SW...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 128,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "E/P",
+   "description": "ELECTRO-PNEUMATIC CONVER...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 129,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "EP",
+   "description": "ELECTRO-PNEUMATIC SWITCH",
+   "notes": "right edge truncated in source PDF (label may continue)"
+  },
+  {
+   "n": 130,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "FM",
+   "description": "FLOW METER",
+   "notes": null
+  },
+  {
+   "n": 131,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "FR",
+   "description": "FIRE RELAY",
+   "notes": null
+  },
+  {
+   "n": 132,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "FS",
+   "description": "FLOW SWITCH",
+   "notes": null
+  },
+  {
+   "n": 133,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "FT",
+   "description": "FLOW TRANSMITTER",
+   "notes": null
+  },
+  {
+   "n": 134,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "HUMIDISTAT",
+   "notes": null
+  },
+  {
+   "n": 135,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "LMS",
+   "description": "LIMIT SWITCH",
+   "notes": null
+  },
+  {
+   "n": 136,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "LS",
+   "description": "LEVEL SWITCH",
+   "notes": null
+  },
+  {
+   "n": 137,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "LT",
+   "description": "LEVEL TRANSMITTER",
+   "notes": null
+  },
+  {
+   "n": 138,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "PE",
+   "description": "PNEUMATIC-ELECTRIC RELAY",
+   "notes": "right edge truncated in source PDF (label may continue)"
+  },
+  {
+   "n": 139,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "PIL",
+   "description": "POTENTIAL INDICATING LIGH...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 140,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "PMS",
+   "description": "PERMISSIVE SWITCH",
+   "notes": null
+  },
+  {
+   "n": 141,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "PS",
+   "description": "PRESSURE SWITCH",
+   "notes": null
+  },
+  {
+   "n": 142,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "PT",
+   "description": "PRESSURE TRANSMITTER",
+   "notes": null
+  },
+  {
+   "n": 143,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "RTD",
+   "description": "RESISTANCE TEMPERATURE...",
+   "notes": "right edge truncated in source PDF (likely DETECTOR)"
+  },
+  {
+   "n": 144,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "SD",
+   "description": "SMOKE DETECTOR",
+   "notes": null
+  },
+  {
+   "n": 145,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "SS",
+   "description": "SELECTOR SWITCH",
+   "notes": null
+  },
+  {
+   "n": 146,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "SV",
+   "description": "SOLENOID VALVE CONTACT",
+   "notes": null
+  },
+  {
+   "n": 147,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "THERMOSTAT",
+   "notes": null
+  },
+  {
+   "n": 148,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "T/C",
+   "description": "THERMOCOUPLE",
+   "notes": null
+  },
+  {
+   "n": 149,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "TE",
+   "description": "TEMPERATURE ELEMENT",
+   "notes": null
+  },
+  {
+   "n": 150,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "THD",
+   "description": "THERMODETECTOR IN MOTOR",
+   "notes": "right edge truncated in source PDF (label may continue)"
+  },
+  {
+   "n": 151,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES",
+   "sym_file": null,
+   "symbol_text": "TS",
+   "description": "TEMPERATURE SWITCH",
+   "notes": null
+  },
+  {
+   "n": 152,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_152.png",
+   "symbol_text": null,
+   "description": "INDICATING LIGHT. R=RED G=GREEN W=WHITE A=AMBER B=BLUE C=CLEAR",
+   "notes": null
+  },
+  {
+   "n": 153,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_153.png",
+   "symbol_text": null,
+   "description": "INDICATING LIGHT WITH P... (LIGHT COLOR CODE AS ABO...)",
+   "notes": "right edge truncated in source PDF (likely PUSH-TO-TEST / AS ABOVE)"
+  },
+  {
+   "n": 154,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_154.png",
+   "symbol_text": null,
+   "description": "BELL ALARM CONTACT",
+   "notes": "labeled BA"
+  },
+  {
+   "n": 155,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_155.png",
+   "symbol_text": null,
+   "description": "ANNUNCIATOR POINT",
+   "notes": null
+  },
+  {
+   "n": 156,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_156.png",
+   "symbol_text": null,
+   "description": "COMPUTER INPUT OR OUTPU...",
+   "notes": "right edge truncated in source PDF (likely OUTPUT)"
+  },
+  {
+   "n": 157,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_157.png",
+   "symbol_text": null,
+   "description": "THERMOCOUPLE",
+   "notes": null
+  },
+  {
+   "n": 158,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_158.png",
+   "symbol_text": null,
+   "description": "RESISTANCE TEMPERATURE...",
+   "notes": "right edge truncated in source PDF (RTD box symbol; likely DETECTOR)"
+  },
+  {
+   "n": 159,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_159.png",
+   "symbol_text": null,
+   "description": "ELECTRICAL INTERLOCK",
+   "notes": "notation ---E---"
+  },
+  {
+   "n": 160,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_160.png",
+   "symbol_text": null,
+   "description": "MECHANICAL INTERLOCK",
+   "notes": "notation ---M---"
+  },
+  {
+   "n": 161,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_161.png",
+   "symbol_text": null,
+   "description": "KEY INTERLOCK",
+   "notes": "notation ---K---"
+  },
+  {
+   "n": 162,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_162.png",
+   "symbol_text": null,
+   "description": "SINGLE CONDUCTOR WITH SHIELD-UNGROUNDED",
+   "notes": null
+  },
+  {
+   "n": 163,
+   "section": "CONTROL SYMBOLS - C. MISCELLANEOUS DEVICES (GRAPHIC SYMBOLS)",
+   "sym_file": "sym/ap1000_p1_163.png",
+   "symbol_text": null,
+   "description": "SINGLE CONDUCTOR WITH SHIELD-GROUNDED",
+   "notes": null
+  },
+  {
+   "n": 164,
+   "section": "ABBREVIATIONS (USED WITH POWER TRANSFORMER...)",
+   "sym_file": null,
+   "symbol_text": "AA",
+   "description": "OPEN DRY TYPE",
+   "notes": null
+  },
+  {
+   "n": 165,
+   "section": "ABBREVIATIONS (USED WITH POWER TRANSFORMER...)",
+   "sym_file": null,
+   "symbol_text": "GA",
+   "description": "GAS FILLED DRY TYPE",
+   "notes": null
+  },
+  {
+   "n": 166,
+   "section": "ABBREVIATIONS (USED WITH POWER TRANSFORMER...)",
+   "sym_file": null,
+   "symbol_text": "OA",
+   "description": "OIL FILLED, SELF COOLED T...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 167,
+   "section": "ABBREVIATIONS (USED WITH POWER TRANSFORMER...)",
+   "sym_file": null,
+   "symbol_text": "FA",
+   "description": "OIL FILLED, FORCED AIR CO...",
+   "notes": "right edge truncated in source PDF"
+  },
+  {
+   "n": 168,
+   "section": "ABBREVIATIONS (USED WITH POWER TRANSFORMER...)",
+   "sym_file": null,
+   "symbol_text": "FOA",
+   "description": "OIL FILLED, FORCED OIL, FO... AIR COOLED TYPE",
+   "notes": "right edge truncated in source PDF"
+  }
+ ]
+}

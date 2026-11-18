@@ -1,0 +1,575 @@
+{
+ "source": "APR1400",
+ "page": 3,
+ "image": "apr1400_p2_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_001.png",
+   "symbol_text": null,
+   "description": "SHARED HUMAN-SYSTEM INTERFACE (HSI) (HAND SWITCH, INDICATOR, CONTROL, ALARM, RECORDER) WITHIN POWER BLOCK (1)",
+   "notes": null
+  },
+  {
+   "n": 2,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_002.png",
+   "symbol_text": null,
+   "description": "SHARED HSI (HAND SWITCH, INDICATOR, CONTROL, ALARM, RECORDER) OUT OF POWER BLOCK (1)",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_003.png",
+   "symbol_text": null,
+   "description": "MAIN CONTROL ROOM PANEL MOUNTED DEVICE (FIXED); PANEL NUMBER (TYPICAL) shown below symbol, e.g. *1PM05",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_004.png",
+   "symbol_text": null,
+   "description": "CONTROL DEVICE AND / OR CCS CABINET MOUNTED DEVICE INSTALLED WITHIN POWER BLOCK; PANEL NUMBER (TYPICAL) shown below symbol, e.g. *1PA01",
+   "notes": null
+  },
+  {
+   "n": 5,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_005.png",
+   "symbol_text": null,
+   "description": "CONTROL DEVICE AND / OR CCS CABINET MOUNTED DEVICE INSTALLED OUT OF POWER BLOCK",
+   "notes": null
+  },
+  {
+   "n": 6,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_006.png",
+   "symbol_text": null,
+   "description": "LOCALLY MOUNTED DEVICE NOT ON INSTRUMENT PANEL OR ASSEMBLY",
+   "notes": null
+  },
+  {
+   "n": 7,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_007.png",
+   "symbol_text": null,
+   "description": "LOCAL INSTRUMENT PANEL MOUNTED DEVICE; PANEL NUMBER (TYPICAL) shown below symbol, e.g. *1LP01",
+   "notes": null
+  },
+  {
+   "n": 8,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": "sym/apr1400_p2_008.png",
+   "symbol_text": null,
+   "description": "MULTIPLE DEVICES IN ONE ASSEMBLY (i.e. TEMPERATURE ELEMENT IN THERMOWELL)",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": null,
+   "symbol_text": "*",
+   "description": "PLANT UNIT NUMBER NOT REQUIRED IF SAME AS DRAWING PLANT UNIT NUMBER",
+   "notes": "footnote"
+  },
+  {
+   "n": 10,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": null,
+   "symbol_text": "**",
+   "description": "THE INDICATED POWER SEGREGATION REPRESENTS THE POWER SEGREGATION OF COMPONENT BEING CONTROLLED BY THE SHARED CONTROL.",
+   "notes": "footnote"
+  },
+  {
+   "n": 11,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": null,
+   "symbol_text": "***",
+   "description": "TYPE OF HSI DEVICE SUCH AS QIAS-N, QIAS-P OR LDP IS PRESENTED AS SUFFIX. HOWEVER, THE TYPE OF HSI DEVICE IS NOT REQUIRED IF THE SYMBOL IS USED FOR THE SHARED CONTROL. THE SHARED SYMBOL WITHOUT SUFFIX MEANS THIS PARAMETER IS ONLY REPRESENTED ON THE INFORMATION FPD. THE QIAS-N MEANS THIS PARAMETER IS REPRESENTED ON BOTH INFORMATION FPD AND QIAS-N FPD. THE LDP MEANS THIS PARAMETER IS REPRESENTED ON THE INFORMATION FPD, QIAS-N AND LDP. FOR A MAN SWITCH, ONLY THE COMPONENT STATUS IS DISPLAYED ON QIAS-N AND LDP.",
+   "notes": "footnote (includes continuation paragraph)"
+  },
+  {
+   "n": 12,
+   "section": "INSTRUMENT & CONTROL DEVICE SYMBOLS",
+   "sym_file": null,
+   "symbol_text": "(1)",
+   "description": "SWITCH YARD IS EXCLUDED FROM POWER BLOCK AREA.",
+   "notes": "footnote"
+  },
+  {
+   "n": 13,
+   "section": "COMPUTER INPUT - OUTPUT SIGNAL NUMBER",
+   "sym_file": null,
+   "symbol_text": null,
+   "description": "ALL OF INPUT POINTS TO CCS ARE REGARED AS THE COMPUTER INPUT DATA FOR IPS OR QIAS-N.",
+   "notes": "'REGARED' spelling as printed in source"
+  },
+  {
+   "n": 14,
+   "section": "LOCAL PANEL INPUT SYMBOL",
+   "sym_file": "sym/apr1400_p2_014.png",
+   "symbol_text": "TO CCS",
+   "description": "INPUT SIGNAL FROM LOCAL PANEL TO COMPUTER THROUGH CCS",
+   "notes": null
+  },
+  {
+   "n": 15,
+   "section": "LOCAL PANEL INPUT SYMBOL",
+   "sym_file": "sym/apr1400_p2_015.png",
+   "symbol_text": "TO QIAS-P",
+   "description": "INPUT SIGNAL TO QIAS-P COMPUTER",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "LOCAL PANEL INPUT SYMBOL",
+   "sym_file": "sym/apr1400_p2_016.png",
+   "symbol_text": "TO DIS",
+   "description": "INPUT SIGNAL TO DIS COMPUTER",
+   "notes": "truncated in source PDF (row half cut at page edge)"
+  },
+  {
+   "n": 17,
+   "section": "CONTROL & INSTRUMENTATION FUNCTION SYMBOLS & CODES - FUNCTION SYMBOLS",
+   "sym_file": "sym/apr1400_p2_017.png",
+   "symbol_text": null,
+   "description": "ELECTRICAL SIGNAL BETWEEN LOCAL & MAIN CONTROL ROOM / I & C EQUIPMENT ROOM FUNCTIONS CONNECTION FOR THE PROCESS VARIABLE (TYPICAL)",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "CONTROL & INSTRUMENTATION FUNCTION SYMBOLS & CODES - FUNCTION SYMBOLS",
+   "sym_file": "sym/apr1400_p2_018.png",
+   "symbol_text": null,
+   "description": "LOCAL FUNCTION",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "CONTROL & INSTRUMENTATION FUNCTION SYMBOLS & CODES - FUNCTION SYMBOL CODES",
+   "sym_file": "sym/apr1400_p2_019.png",
+   "symbol_text": "PTIS 001 / XCIR / O2",
+   "description": "Function symbol code example. Callouts: VARIABLE (MEASURED); LOCAL FUNCTION OF VARIABLE; INSTRUMENT NUMBER; CLARIFYING SYMBOL PER ABOVE SYMBOL LIST (IF REQUIRED); FUNCTION IN MAIN CONTROL ROOM AREA; VARIABLE IN MAIN CONTROL ROOM AREA (USED WHEN NO LOCAL VARIABLE EXISTS)",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "CONTROL & INSTRUMENTATION FUNCTION SYMBOLS & CODES - FUNCTION SYMBOL CODES",
+   "sym_file": "sym/apr1400_p2_020.png",
+   "symbol_text": "PF-TIS 001 / CIR",
+   "description": "Function symbol code example for multiple variables. Callouts: MULTIPLE VARIABLE WHEN APPLICABLE; DASH USED WHEN MULTIPLE VARIABLES EXIST; ALTERNATE WHEN REQUIRED FOR MULTIPLE VARIABLES",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "ANALYSIS",
+   "notes": null
+  },
+  {
+   "n": 22,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "B",
+   "description": "BURNER",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "CONDUCTIVITY",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "DENSITY",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "VOLTAGE",
+   "notes": null
+  },
+  {
+   "n": 26,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FLOW",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "H",
+   "description": "HAND (MANUAL)",
+   "notes": null
+  },
+  {
+   "n": 28,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "I",
+   "description": "CURRENT (ELEC.)",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "J",
+   "description": "POWER (ELEC.)",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "K",
+   "description": "TIME",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "LEVEL(LIQUID OR SOLID)",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "M",
+   "description": "MOISTURE (HUMIDITY)",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "N",
+   "description": "NEUTRON FLUX",
+   "notes": null
+  },
+  {
+   "n": 34,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "P",
+   "description": "PRESSURE OR VACUUM",
+   "notes": null
+  },
+  {
+   "n": 35,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "PD",
+   "description": "DIFFERENTIAL PRESSURE",
+   "notes": null
+  },
+  {
+   "n": 36,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "RADIOACTIVITY",
+   "notes": null
+  },
+  {
+   "n": 37,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "S",
+   "description": "SPEED OR FREQUENCY",
+   "notes": null
+  },
+  {
+   "n": 38,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "TEMPERATURE",
+   "notes": null
+  },
+  {
+   "n": 39,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "U",
+   "description": "MULTIVARIABLE",
+   "notes": null
+  },
+  {
+   "n": 40,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "V",
+   "description": "VIBRATION",
+   "notes": null
+  },
+  {
+   "n": 41,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "W",
+   "description": "WEIGHT OR FORCE",
+   "notes": null
+  },
+  {
+   "n": 42,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "X",
+   "description": "SPECIAL (REFER TO CLARIFYING SYMBOL LIST)",
+   "notes": null
+  },
+  {
+   "n": 43,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "Y",
+   "description": "STRAIN",
+   "notes": null
+  },
+  {
+   "n": 44,
+   "section": "INSTRUMENT TYPE CODES - FIRST LETTER: VARIABLE (MEASURED OR INITIATING)",
+   "sym_file": null,
+   "symbol_text": "Z",
+   "description": "POSITION",
+   "notes": null
+  },
+  {
+   "n": 45,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "ALARM",
+   "notes": null
+  },
+  {
+   "n": 46,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AC",
+   "description": "ALARM CLOSED",
+   "notes": null
+  },
+  {
+   "n": 47,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AH",
+   "description": "ALARM HIGH",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AHH",
+   "description": "ALARM HIGH HIGH",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AHL",
+   "description": "ALARM HIGH OR LOW",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AL",
+   "description": "ALARM LOW",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "ALL",
+   "description": "ALARM LOW LOW",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "AO",
+   "description": "ALARM OPEN",
+   "notes": null
+  },
+  {
+   "n": 53,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "CONTROLLER (BLIND)",
+   "notes": null
+  },
+  {
+   "n": 54,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "PRIMARY ELEMENT",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "EW",
+   "description": "PRIMARY ELEMENT WELL",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "GLASS",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "I",
+   "description": "INDICATOR",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IC",
+   "description": "INDICATING CONTROLLER",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IK",
+   "description": "INDICATING CONTROL STATION (MANUAL/AUTO)",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IR",
+   "description": "INDICATING RECORDER",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IS",
+   "description": "INDICATING SWITCH",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IT",
+   "description": "INDICATING TRANSMITTER",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "IY",
+   "description": "INDICATING RELAY",
+   "notes": null
+  },
+  {
+   "n": 64,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "JR",
+   "description": "MULTIPOINT RECORDER (MORE THAN 3 PENS)",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "K",
+   "description": "CONTROL STATION-VARIABLE TYPE (MANUAL/AUTO) WITHOUT CONTROLLER",
+   "notes": null
+  },
+  {
+   "n": 66,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "L",
+   "description": "LIGHT (PILOT)",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "Q",
+   "description": "INTEGRATOR",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "R",
+   "description": "RECORDER",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "RC",
+   "description": "RECORDER CONTROLLER",
+   "notes": null
+  },
+  {
+   "n": 70,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "S",
+   "description": "SWITCH",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "INSTRUMENT TYPE CODES - SECOND OR SUCCEEDING LETTERS: INSTRUMENT FUNCTION",
+   "sym_file": null,
+   "symbol_text": "T",
+   "description": "TRANSMITTER",
+   "notes": "row half cut at page edge; table truncated in source PDF - any further codes after T are lost"
+  }
+ ]
+}

@@ -9,40 +9,6 @@ legend on their page; they are reviewed first.
 **To check the class definitions themselves**, see [Class reference](#class-reference) below: one picture per class
 with the legend entries it follows.
 
-## Classes v3 (November 2026, in review; this branch)
-
-[`v3/`](v3/README.md) refines the classes of this folder; the files of this folder (v2) are unchanged. Every component
-that has its own symbol in the AP1000 / APR1400 legends gets its own class; valves keep one class per body symbol, with
-the operator in `actuator`, so the fault-tree type follows from class + actuator (`v3/ft_component_types_v3.csv`).
-
-| v2 class | v3 classes (boxes) |
-|---|---|
-| `VLV_CHECK` | `VLV_CHECK` (494), `VLV_STOP_CHECK` (37) |
-| `VLV_RELIEF` | `VLV_SAFETY_RELIEF` (39), `VLV_PILOT_RELIEF` (12), `VLV_VACUUM_BREAKER` (0) |
-| `DAMPER` | `DAMPER_MOTOR` (0), `DAMPER_PNEUMATIC` (27), `DAMPER_EH` (30), `DAMPER_NO_OPERATOR` (15) |
-| `PUMP` | `PUMP_CENTRIFUGAL` (113), `PUMP_TURBINE_DRIVEN` (22), `PUMP_VERTICAL` (13) |
-| `FILTER` | `FILTER` (68), `STRAINER` (16), `CARBON_ADSORBER` (12), `MOISTURE_SEPARATOR` (12), `AIR_SEPARATOR` (1) |
-| `SPARGER` | `SPRAY` (21) |
-
-New per-box columns in `v3/symbol_classes_v3.csv`:
-
-- `normal_position` for valves with a stem and dampers: `open` 1269, `closed` 357, `not shown` 15 (dampers without a
-  position symbol), `unknown` 4 (half-filled body); `n/a` for check, relief and other self-acting valves and all other
-  classes. `locked`: `LO` 155, `LC` 20.
-- `pra_modeled`: `no` for components extracted but typically not modeled in a PRA (417 boxes: `INSTR`, `ORIFICE`,
-  `STEAM_GEN`, `OFFPAGE`, `PENETRATION`, `COIL`, `GENERATOR`, `RUPTURE_DISC`, `REACTOR`, `PRESSURIZER`, `ENGINE`, `TRAP`,
-  `BLOCK`, `OTHER`).
-- `class_evidence` / `position_evidence`: the labelers' note, the actuator label, or the automatic legend match.
-
-How the class is decided: the note first ("stop-check", "pilot", "vertical", "strainer", "moisture separator", ...), then
-the actuator label (dampers, turbine-driven pumps), and only then the legend entry the box was tied to automatically by
-image similarity. Fault-tree types that change: `FILTER` is FLT and `STRAINER` STR (v2 mapped all filters to STR), the
-pilot-operated relief valves are PORV and the vacuum breakers VBV.
-
-Review: `v3/review_v3.xlsx` lists the 479 boxes that need a person, each with a crop of its drawing: fan or pump (48),
-normally closed valves and dampers (361), classes resting only on the automatic legend match (9), `OTHER` (20), and the
-rows marked uncertain in v2 (52). The decisions will be applied by a script and the v3 files rebuilt.
-
 
 ## Class reference
 

@@ -107,28 +107,6 @@ not used here.
 [`symbol_classes/`](symbol_classes/README.md) has a class and an actuator for every symbol box, plus the derived fault-tree
 component type (MOV, AOV, CKV, MDP, ...). These are pre-labels, reviewed twice (the second time by independent reviewers); a human review of every row is in progress.
 
-### Symbol classes v3 (November 2026, in review; this branch)
-
-[`symbol_classes/v3/`](symbol_classes/v3/README.md) gives every box a finer class: every component that has its own
-symbol in the AP1000 / APR1400 legends gets its own class, and valves keep one class per body symbol with the operator
-in `actuator`.
-
-| v2 class | v3 classes (boxes) |
-|---|---|
-| `VLV_CHECK` | `VLV_CHECK` (494), `VLV_STOP_CHECK` (37) |
-| `VLV_RELIEF` | `VLV_SAFETY_RELIEF` (39), `VLV_PILOT_RELIEF` (12), `VLV_VACUUM_BREAKER` (0) |
-| `DAMPER` | `DAMPER_MOTOR` (0), `DAMPER_PNEUMATIC` (27), `DAMPER_EH` (30), `DAMPER_NO_OPERATOR` (15) |
-| `PUMP` | `PUMP_CENTRIFUGAL` (113), `PUMP_TURBINE_DRIVEN` (22), `PUMP_VERTICAL` (13) |
-| `FILTER` | `FILTER` (68), `STRAINER` (16), `CARBON_ADSORBER` (12), `MOISTURE_SEPARATOR` (12), `AIR_SEPARATOR` (1) |
-| `SPARGER` | `SPRAY` (21) |
-
-It also adds the normal position of valves and dampers (`open` 1269, `closed` 357, `not shown` 15, `unknown` 4), the
-locked mark (`LO` 155, `LC` 20), a flag for the components that are extracted but typically not modeled in a PRA
-(`pra_modeled = no`, 417 boxes) and a flag for the classes with no legend symbol. The v3 class comes from the labelers'
-note first, then from the actuator label, and only then from the legend entry the box was tied to automatically; the 479
-boxes that need a person are listed with crops in `symbol_classes/v3/review_v3.xlsx`. The boxes, their ids and all v2
-files are unchanged.
-
 ## Legend library
 
 [`legend_library/`](legend_library/README.md) has the AP1000 and APR1400 P&ID legend PDFs, every legend entry extracted from them (symbol

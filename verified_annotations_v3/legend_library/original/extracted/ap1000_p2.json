@@ -1,0 +1,663 @@
+{
+ "source": "AP1000",
+ "page": 3,
+ "image": "ap1000_p2_fullrot.png",
+ "entries": [
+  {
+   "n": 1,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_001.png",
+   "symbol_text": null,
+   "description": "PANEL (MISCELLANEOUS)",
+   "notes": null
+  },
+  {
+   "n": 2,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_002.png",
+   "symbol_text": null,
+   "description": "LIGHTING PANEL",
+   "notes": null
+  },
+  {
+   "n": 3,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_003.png",
+   "symbol_text": null,
+   "description": "POWER DISTRIBUTION PANEL",
+   "notes": null
+  },
+  {
+   "n": 4,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_004.png",
+   "symbol_text": null,
+   "description": "TRANSFORMER",
+   "notes": "Symbol: boxed \"TR\""
+  },
+  {
+   "n": 5,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_005.png",
+   "symbol_text": null,
+   "description": "SINGLE POLE MANUAL MOTOR STARTER WITH THERMAL OVERLOAD",
+   "notes": "Symbol labeled \"OVLD\""
+  },
+  {
+   "n": 6,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_006.png",
+   "symbol_text": null,
+   "description": "MOTOR STARTER OR CONTROLLER",
+   "notes": "Symbol: boxed \"S\""
+  },
+  {
+   "n": 7,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_007.png",
+   "symbol_text": null,
+   "description": "TRANSFER SWITCH",
+   "notes": "Symbol labeled \"TS\""
+  },
+  {
+   "n": 8,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_008.png",
+   "symbol_text": null,
+   "description": "DISCONNECT OR SAFETY SWITCH",
+   "notes": null
+  },
+  {
+   "n": 9,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_009.png",
+   "symbol_text": null,
+   "description": "POWER RECEPTACLE 100A, 480V, 3\u00d8, 4W GROUND OR AS OTHERWISE NOTED",
+   "notes": null
+  },
+  {
+   "n": 10,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_010.png",
+   "symbol_text": null,
+   "description": "UNIT HEATER (NOTE 11)",
+   "notes": null
+  },
+  {
+   "n": 11,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_011.png",
+   "symbol_text": null,
+   "description": "RADIANT HEATER (NOTE 11)",
+   "notes": null
+  },
+  {
+   "n": 12,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_012.png",
+   "symbol_text": null,
+   "description": "5KV BUS DUCT NON-SEGREGATED PHASE (NOTE 12)",
+   "notes": null
+  },
+  {
+   "n": 13,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_013.png",
+   "symbol_text": null,
+   "description": "CABLE TRAY OR CABLE LADDER WITH COMPUTER NODE POINT IDENTIFICATION",
+   "notes": null
+  },
+  {
+   "n": 14,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_014.png",
+   "symbol_text": null,
+   "description": "CABLE TRAY OR CABLE LADDER WITH ELEVATION OF BOTTOM OF TRAYS AND ITS FUNCTION",
+   "notes": "3-30\" TRAYS (P=POWER, C=CONTROL & I=INSTR); tags: EL__P / EL__C / EL__I"
+  },
+  {
+   "n": 15,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_015.png",
+   "symbol_text": null,
+   "description": "CABLE TRAY - UP",
+   "notes": null
+  },
+  {
+   "n": 16,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_016.png",
+   "symbol_text": null,
+   "description": "CABLE TRAY - DOWN",
+   "notes": null
+  },
+  {
+   "n": 17,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_017.png",
+   "symbol_text": null,
+   "description": "CONDUIT RUN EXPOSED",
+   "notes": null
+  },
+  {
+   "n": 18,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_018.png",
+   "symbol_text": null,
+   "description": "CONDUIT EMBEDDED IN CONCRETE",
+   "notes": null
+  },
+  {
+   "n": 19,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_019.png",
+   "symbol_text": null,
+   "description": "CONDUIT RUN CONCEALED",
+   "notes": null
+  },
+  {
+   "n": 20,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_020.png",
+   "symbol_text": null,
+   "description": "CONDUIT RUN BELOW ELEVATION SHOWN",
+   "notes": null
+  },
+  {
+   "n": 21,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_021.png",
+   "symbol_text": null,
+   "description": "FLEXIBLE CONDUIT",
+   "notes": "S INDICATES \"SEALTITE\""
+  },
+  {
+   "n": 22,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_022.png",
+   "symbol_text": null,
+   "description": "CONDUIT OR CABLE TURNING UP OR TOWARDS OBSERVER",
+   "notes": null
+  },
+  {
+   "n": 23,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_023.png",
+   "symbol_text": null,
+   "description": "CONDUIT OR CABLE TURNING DOWN OR AWAY FROM OBSERVER",
+   "notes": null
+  },
+  {
+   "n": 24,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_024.png",
+   "symbol_text": null,
+   "description": "CABLE TERMINATION POINT",
+   "notes": null
+  },
+  {
+   "n": 25,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_025.png",
+   "symbol_text": null,
+   "description": "UNDERFLOOR DUCT WITH JUNCTION BOX",
+   "notes": "T=TELEPHONE DUCT, P=POWER DUCT"
+  },
+  {
+   "n": 26,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_026.png",
+   "symbol_text": null,
+   "description": "J-INDICATES JUNCTION BOX, TB-INDICATES TERMINAL BOX, PB-INDICATES PULL BOX",
+   "notes": null
+  },
+  {
+   "n": 27,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_027.png",
+   "symbol_text": null,
+   "description": "PUSHBUTTON STATION",
+   "notes": "Tagged \"PB STA\" on drawing"
+  },
+  {
+   "n": 28,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_028.png",
+   "symbol_text": null,
+   "description": "MOTOR-HORIZONTALLY MOUNTED",
+   "notes": null
+  },
+  {
+   "n": 29,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_029.png",
+   "symbol_text": null,
+   "description": "MOTOR-VERTICALLY MOUNTED",
+   "notes": null
+  },
+  {
+   "n": 30,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_030.png",
+   "symbol_text": null,
+   "description": "MOTOR OPERATED VALVE",
+   "notes": null
+  },
+  {
+   "n": 31,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_031.png",
+   "symbol_text": null,
+   "description": "SOLENOID OPERATED VALVE",
+   "notes": null
+  },
+  {
+   "n": 32,
+   "section": "CONDUIT & CABLE TRAY DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_032.png",
+   "symbol_text": null,
+   "description": "ELECTRICAL PENETRATION ASSEMBLY",
+   "notes": null
+  },
+  {
+   "n": 33,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_033.png",
+   "symbol_text": null,
+   "description": "SUSPENSION MOUNTING (MTG HGT AFF=)",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 34,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_034.png",
+   "symbol_text": null,
+   "description": "CEILING MOUNTED",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 35,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_035.png",
+   "symbol_text": null,
+   "description": "WALL MOUNTED",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 36,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_036.png",
+   "symbol_text": null,
+   "description": "EXIT-CEILING MOUNTED",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 37,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_037.png",
+   "symbol_text": null,
+   "description": "EXIT-WALL MOUNTED",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 38,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_038.png",
+   "symbol_text": null,
+   "description": "GOOSE NECK LIGHTING STANCHION & LUMINAIRE",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 39,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_039.png",
+   "symbol_text": null,
+   "description": "STREET LIGHTING LUMINAIRE",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 40,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_040.png",
+   "symbol_text": null,
+   "description": "FLOOD LIGHTING LUMINAIRE",
+   "notes": "Shared note: LUMINAIRES WITH INCANDESCENT OR HIGH INTENSITY DISCHARGE LAMPS. A INDICATES TYPE AS SPECIFIED ON LIGHTING FIXTURE SCHEDULE. MTG HGT AFF=MOUNTING HEIGHT IN FEET ABOVE FINISHED FLOOR. C-2 INDICATES LUMINAIRE IS SUPPLIED FROM LIGHTING PANEL C, CIRCUIT NO 2. CONTROLLED FROM SWITCH \"a\""
+  },
+  {
+   "n": 41,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_041.png",
+   "symbol_text": null,
+   "description": "SUSPENSION MOUNTING (MTG HGT AFF=) - FLUORESCENT",
+   "notes": "Shared note: FLUORESCENT LIGHTING LUMINAIRES DESIGNATIONS SAME AS ABOVE"
+  },
+  {
+   "n": 42,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_042.png",
+   "symbol_text": null,
+   "description": "CEILING MOUNTED - FLUORESCENT",
+   "notes": "Shared note: FLUORESCENT LIGHTING LUMINAIRES DESIGNATIONS SAME AS ABOVE"
+  },
+  {
+   "n": 43,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_043.png",
+   "symbol_text": null,
+   "description": "WALL MOUNTED - FLUORESCENT",
+   "notes": "Shared note: FLUORESCENT LIGHTING LUMINAIRES DESIGNATIONS SAME AS ABOVE"
+  },
+  {
+   "n": 44,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_044.png",
+   "symbol_text": null,
+   "description": "BARE STRIP - FLUORESCENT",
+   "notes": "Shared note: FLUORESCENT LIGHTING LUMINAIRES DESIGNATIONS SAME AS ABOVE"
+  },
+  {
+   "n": 45,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_045.png",
+   "symbol_text": null,
+   "description": "EMERGENCY LIGHTINGUNIT WITH SELF-CONTAINED BATTERY",
+   "notes": "Printed as \"LIGHTINGUNIT\" (sic) in source"
+  },
+  {
+   "n": 46,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_046.png",
+   "symbol_text": null,
+   "description": "SINGLE POLE TOGGLE SWITCH",
+   "notes": "a-INDICATES ASSOCIATED CONTROLLED FIXTURE; 3-INDICATES 3 WAY SWITCH"
+  },
+  {
+   "n": 47,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_047.png",
+   "symbol_text": null,
+   "description": "SWITCH AND SINGLE CONVENIENCE RECEPTACLE COMBINATION",
+   "notes": null
+  },
+  {
+   "n": 48,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_048.png",
+   "symbol_text": null,
+   "description": "SWITCH AND DUPLEX CONVENIENCE RECEPTACLE COMBINATION",
+   "notes": null
+  },
+  {
+   "n": 49,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_049.png",
+   "symbol_text": null,
+   "description": "RECEPTACLE-SINGLE CONVENIENCE, VERTICAL SLOTS, 120V, 20A, 3W, GROUNDED",
+   "notes": null
+  },
+  {
+   "n": 50,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_050.png",
+   "symbol_text": null,
+   "description": "RECEPTACLE-DUPLEX CONVENIENCE, VERTICAL SLOTS, 120V, 20A, 3W, GROUNDED",
+   "notes": null
+  },
+  {
+   "n": 51,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_051.png",
+   "symbol_text": null,
+   "description": "RECEPTACLE-SINGLE PHASE, HORIZONTAL SLOTS, 208V, 20A, 3W, GROUNDED",
+   "notes": null
+  },
+  {
+   "n": 52,
+   "section": "LIGHTING DRAWING SYMBOLS",
+   "sym_file": "sym/ap1000_p2_052.png",
+   "symbol_text": null,
+   "description": "HOME RUN TO PANELBOARD",
+   "notes": "(CKTS LP1-2,4,6, 4#12-3/4\"C) SAMPLE DESIGNATION"
+  },
+  {
+   "n": 53,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": "sym/ap1000_p2_053.png",
+   "symbol_text": null,
+   "description": "SPEAKER (FOLLOWING DESIGNATIONS IDENTIFY TYPE)",
+   "notes": "Base speaker symbol; designation letter placed at symbol identifies type (see A-G, M, N)"
+  },
+  {
+   "n": 54,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "A",
+   "description": "DIRECTIONAL TRUMPET TYPE SPEAKER",
+   "notes": null
+  },
+  {
+   "n": 55,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "B",
+   "description": "PAGING/TALK BACK SPEAKER",
+   "notes": null
+  },
+  {
+   "n": 56,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "C",
+   "description": "WIDE ANGLE TYPE SPEAKER",
+   "notes": null
+  },
+  {
+   "n": 57,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "D",
+   "description": "CORRIDOR TYPE SPEAKER",
+   "notes": null
+  },
+  {
+   "n": 58,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "E",
+   "description": "FLUSH, CEILING MOUNTED CONE SPEAKER ASSEMBLY WITH PROJECTING BAFFLE",
+   "notes": null
+  },
+  {
+   "n": 59,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "F",
+   "description": "FLUSH, WALL OR PANEL MOUNTED, CONE SPEAKER ASSEMBLY WITH FLUSH BAFFLE",
+   "notes": null
+  },
+  {
+   "n": 60,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "G",
+   "description": "SPECIAL PURPOSE LOUDSPEAKER",
+   "notes": null
+  },
+  {
+   "n": 61,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "M",
+   "description": "SPEAKER AMPLIFIER ASSEMBLY-INDOOR",
+   "notes": null
+  },
+  {
+   "n": 62,
+   "section": "COMMUNICATION DRAWING SYMBOLS - A. SPEAKERS",
+   "sym_file": null,
+   "symbol_text": "N",
+   "description": "SPEAKER AMPLIFIER ASSEMBLY-OUTDOOR",
+   "notes": null
+  },
+  {
+   "n": 63,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": "sym/ap1000_p2_063.png",
+   "symbol_text": null,
+   "description": "HANDSET STATION (FOLLOWING DESIGNATIONS IDENTIFY TYPE)",
+   "notes": "Base handset symbol; designation letters identify type (see WS, DS, FS, WP, SP)"
+  },
+  {
+   "n": 64,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": null,
+   "symbol_text": "WS",
+   "description": "WALL STATION WITH HANDSET & SPEAKER AMPLIFIER",
+   "notes": null
+  },
+  {
+   "n": 65,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": null,
+   "symbol_text": "DS",
+   "description": "DESK EDGE STATION WITH SUBSET, REMOTE HANDSET & SPEAKER AMPLIFIER",
+   "notes": null
+  },
+  {
+   "n": 66,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": null,
+   "symbol_text": "FS",
+   "description": "FLUSH PANEL STATION WITH SUBSET, REMOTE HANDSET & SPEAKER AMPLIFIER",
+   "notes": null
+  },
+  {
+   "n": 67,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": null,
+   "symbol_text": "WP",
+   "description": "WEATHERPROOF WALL STATION WITH HANDSET & SPEAKER AMPLIFIER",
+   "notes": null
+  },
+  {
+   "n": 68,
+   "section": "COMMUNICATION DRAWING SYMBOLS - B. HANDSETS",
+   "sym_file": null,
+   "symbol_text": "SP",
+   "description": "SOUNDPROOF WALL STATION WITH HANDSET & SPEAKER AMPLIFIER",
+   "notes": null
+  },
+  {
+   "n": 69,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_069.png",
+   "symbol_text": null,
+   "description": "DIRECT DISPATCH TELEPHONE",
+   "notes": null
+  },
+  {
+   "n": 70,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_070.png",
+   "symbol_text": null,
+   "description": "COMMERCIAL TELEPHONE",
+   "notes": null
+  },
+  {
+   "n": 71,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_071.png",
+   "symbol_text": null,
+   "description": "SEPARATE INTERCOM SYSTEM (DISPATCH OFFICE & CONTROL ROOM)",
+   "notes": null
+  },
+  {
+   "n": 72,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_072.png",
+   "symbol_text": null,
+   "description": "TELEPHONE SWITCHBOARD",
+   "notes": "Symbol: boxed \"T/S\""
+  },
+  {
+   "n": 73,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_073.png",
+   "symbol_text": null,
+   "description": "SOUND POWERED TELEPHONE JACK",
+   "notes": "Symbol tagged \"SP\""
+  },
+  {
+   "n": 74,
+   "section": "COMMUNICATION DRAWING SYMBOLS - C. TELEPHONE",
+   "sym_file": "sym/ap1000_p2_074.png",
+   "symbol_text": null,
+   "description": "PRIVATE AUTOMATIC EXCHANGE SWITCHBOARD",
+   "notes": "Symbol: boxed \"PAX\""
+  },
+  {
+   "n": 75,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_075.png",
+   "symbol_text": null,
+   "description": "GROUND CABLE",
+   "notes": null
+  },
+  {
+   "n": 76,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_076.png",
+   "symbol_text": null,
+   "description": "GROUND CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 77,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_077.png",
+   "symbol_text": null,
+   "description": "GROUND ROD",
+   "notes": null
+  },
+  {
+   "n": 78,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_078.png",
+   "symbol_text": null,
+   "description": "FOUNDATION PILE WITH GROUND CONNECTION",
+   "notes": null
+  },
+  {
+   "n": 79,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_079.png",
+   "symbol_text": null,
+   "description": "GROUND TEST BOX",
+   "notes": null
+  },
+  {
+   "n": 80,
+   "section": "GROUNDING DRAWING SYMBOLS - A. BELOW GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_080.png",
+   "symbol_text": null,
+   "description": "GROUND CABLE RISER AT GRADE FOR FUTURE EXTENSION",
+   "notes": null
+  },
+  {
+   "n": 81,
+   "section": "GROUNDING DRAWING SYMBOLS - B. ABOVE GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_081.png",
+   "symbol_text": null,
+   "description": "GROUND CABLE EXPOSED",
+   "notes": null
+  },
+  {
+   "n": 82,
+   "section": "GROUNDING DRAWING SYMBOLS - B. ABOVE GRADE SYSTEMS",
+   "sym_file": "sym/ap1000_p2_082.png",
+   "symbol_text": null,
+   "description": "CABLE RUN CONCEALED",
+   "notes": null
+  }
+ ]
+}
