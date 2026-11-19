@@ -199,7 +199,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.png) · symbols [txt](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.txt) / [json](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) · [pipe lines](lines/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) · [text](text/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json) · [connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7_symbols_lines.jpg) · [text](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7_text.jpg) · [connections on the drawing](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.jpg) · [explained connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7_explained.png)
-- Review fixes (17 November 2026): pump actuators; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: none.
 
 ### 2. RHR · Residual heat removal system (Surry FSAR)
@@ -242,7 +242,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_CSS%20%28APR1400%29.png) · symbols [txt](symbols/pseudo_CSS%20%28APR1400%29.txt) / [json](symbols/pseudo_CSS%20%28APR1400%29.json) · [pipe lines](lines/pseudo_CSS%20%28APR1400%29.json) · [text](text/pseudo_CSS%20%28APR1400%29.json) · [connectivity](pseudo_CSS%20%28APR1400%29.json)
 - Images: [symbols + pipe lines](overlays/pseudo_CSS%20%28APR1400%29_symbols_lines.jpg) · [text](overlays/pseudo_CSS%20%28APR1400%29_text.jpg) · [connections on the drawing](pseudo_CSS%20%28APR1400%29.jpg) · [explained connectivity](pseudo_CSS%20%28APR1400%29_explained.png)
-- Review fixes (17 November 2026): pump actuators, heat exchanger boxes tightened, dotted CCW lines added; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, heat exchanger boxes tightened, dotted CCW lines added, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 unlink, 4 no-join symbols.
   Flow transmitter 71 (FT 345D) was joined to valve 44 because their boxes touch; both sit on the riser, with no pipe between them.
 - Accepted check flags:
@@ -301,7 +301,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_SI%20%28APR1400%29.png) · symbols [txt](symbols/pseudo_SI%20%28APR1400%29.txt) / [json](symbols/pseudo_SI%20%28APR1400%29.json) · [pipe lines](lines/pseudo_SI%20%28APR1400%29.json) · [text](text/pseudo_SI%20%28APR1400%29.json) · [connectivity](pseudo_SI%20%28APR1400%29.json)
 - Images: [symbols + pipe lines](overlays/pseudo_SI%20%28APR1400%29_symbols_lines.jpg) · [text](overlays/pseudo_SI%20%28APR1400%29_text.jpg) · [connections on the drawing](pseudo_SI%20%28APR1400%29.jpg) · [explained connectivity](pseudo_SI%20%28APR1400%29_explained.png)
-- Review fixes (17 November 2026): pump actuators, line annotations synchronised with the verified pipe set; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: none.
   Added: the branch to the reactor cavity, the outlet of valve 92 to its junction (9 px), the branches from SCP 1 / SCP 2 and to SCP / CSP 1 and 2, and the pipe between V957 and V523 on the shutdown line, all drawn but not labeled. Removed: a piece of the AB/RCB boundary (dash-dot) labeled as pipe.
 
@@ -520,7 +520,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW%20%28Vogtle%29.png) · symbols [txt](symbols/pseudo_AFW%20%28Vogtle%29.txt) / [json](symbols/pseudo_AFW%20%28Vogtle%29.json) · [pipe lines](lines/pseudo_AFW%20%28Vogtle%29.json) · [text](text/pseudo_AFW%20%28Vogtle%29.json) · [connectivity](pseudo_AFW%20%28Vogtle%29.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW%20%28Vogtle%29_symbols_lines.jpg) · [text](overlays/pseudo_AFW%20%28Vogtle%29_text.jpg) · [connections on the drawing](pseudo_AFW%20%28Vogtle%29.jpg) · [explained connectivity](pseudo_AFW%20%28Vogtle%29_explained.png)
-- Review fixes (17 November 2026): nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 added line, 1 removed line, 5 crossing decisions, 1 no-join symbol.
   - crossings (1253.7,1973.9), (1591,2017.1), (1518,2402.8), (1518,2478.1), (1674,2475) not connected
   - 6 lines dropped / 7 added: corner joins and overshoot trims
@@ -548,6 +548,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.png) · symbols [txt](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.txt) / [json](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.json) · [pipe lines](lines/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.json) · [text](text/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.json) · [connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2_symbols_lines.jpg) · [text](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2_text.jpg) · [connections on the drawing](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.jpg) · [explained connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2_explained.png)
+- Review fixes (19 November 2026): lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 added line, 1 crossing decision.
   - crossing (1701.6,1236.2) not connected (X crossover)
   - add [2571,2095,2571,2140]: check valve MS-132 (2) joined to turbine AFPT-2 (25), overlapping boxes, line drawn
@@ -560,7 +561,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.png) · symbols [txt](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.txt) / [json](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.json) · [pipe lines](lines/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.json) · [text](text/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.json) · [connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3_symbols_lines.jpg) · [text](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3_text.jpg) · [connections on the drawing](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.jpg) · [explained connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3_explained.png)
-- Review fixes (17 November 2026): pump actuators, line annotations synchronised with the verified pipe set; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 added line, 3 removed lines, 1 crossing decision, 1 unlink.
   - the AF-30 branch starts at the corner (1482,1257); the labelled line ran on to the AF-15 box and joined AF-15 to it, which the drawing does not show: line replaced by the part from the corner
   - the AF-23 -> AF-27 pipe turns its corner (1482,1540) inside the AF-16 box (51), which made AF-16 look connected to it; AF-16 is not on that pipe. The pipe from the AF-23 tee (1482,1431) to AF-27 is given as one added segment drawn diagonally (shortcut around the AF-16 box), the vertical part above the tee is kept
@@ -605,7 +606,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.png) · symbols [txt](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.txt) / [json](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.json) · [pipe lines](lines/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.json) · [text](text/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.json) · [connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6_symbols_lines.jpg) · [text](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6_text.jpg) · [connections on the drawing](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.jpg) · [explained connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6_explained.png)
-- Review fixes (17 November 2026): pump actuators; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: none.
 
 ### 33. AFW · Davis-Besse reliability analysis, p8 (Davis-Besse AFW reliability analysis)
@@ -616,7 +617,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.png) · symbols [txt](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.txt) / [json](symbols/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.json) · [pipe lines](lines/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.json) · [text](text/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.json) · [connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.json)
 - Images: [symbols + pipe lines](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8_symbols_lines.jpg) · [text](overlays/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8_text.jpg) · [connections on the drawing](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.jpg) · [explained connectivity](pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8_explained.png)
-- Review fixes (17 November 2026): pump actuators; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 crossing decision.
   - crossing (1184,1374), TO CST line x vertical joining the AF-17 and AF18 recirc lines, set connected: this page draws non-connected crossings as hops (e.g. (1843,1484)), and the two locked-open recirc lines have no other outlet
 - Accepted check flags:
@@ -973,7 +974,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_Instrument%20Air%20%28APR1400%29.png) · symbols [txt](symbols/pseudo_Instrument%20Air%20%28APR1400%29.txt) / [json](symbols/pseudo_Instrument%20Air%20%28APR1400%29.json) · [pipe lines](lines/pseudo_Instrument%20Air%20%28APR1400%29.json) · [text](text/pseudo_Instrument%20Air%20%28APR1400%29.json) · [connectivity](pseudo_Instrument%20Air%20%28APR1400%29.json)
 - Images: [symbols + pipe lines](overlays/pseudo_Instrument%20Air%20%28APR1400%29_symbols_lines.jpg) · [text](overlays/pseudo_Instrument%20Air%20%28APR1400%29_text.jpg) · [connections on the drawing](pseudo_Instrument%20Air%20%28APR1400%29.jpg) · [explained connectivity](pseudo_Instrument%20Air%20%28APR1400%29_explained.png)
-- Review fixes (17 November 2026): pump actuators, line annotations synchronised with the verified pipe set; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 1 added line.
   - added the 16 px pipe between the closed loop surge tank TK03 (57) and valve V2216 (44)
 - Accepted check flags:
@@ -1075,7 +1076,7 @@ To report an error, give the page and the symbol numbers, for example "SCS (APR1
 
 - Data: [drawing](images/pseudo_SCS2_APR1400.png) · symbols [txt](symbols/pseudo_SCS2_APR1400.txt) / [json](symbols/pseudo_SCS2_APR1400.json) · [pipe lines](lines/pseudo_SCS2_APR1400.json) · [text](text/pseudo_SCS2_APR1400.json) · [connectivity](pseudo_SCS2_APR1400.json)
 - Images: [symbols + pipe lines](overlays/pseudo_SCS2_APR1400_symbols_lines.jpg) · [text](overlays/pseudo_SCS2_APR1400_text.jpg) · [connections on the drawing](pseudo_SCS2_APR1400.jpg) · [explained connectivity](pseudo_SCS2_APR1400_explained.png)
-- Review fixes (17 November 2026): pump actuators, line annotations synchronised with the verified pipe set, heat exchanger boxes tightened, dotted CCW lines added; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
+- Review fixes (17 and 19 November 2026): pump actuators, line annotations synchronised with the verified pipe set, heat exchanger boxes tightened, dotted CCW lines added, lock marks taken out of the valve boxes; details in [`../review_2026_11/fixes.json`](../review_2026_11/README.md).
 - Manual edits: 4 no-join symbols.
   - dropped 2 dashed signal lines labelled as pipes (between ESF-SIAS/ESF-CSAS START boxes, x=690 and x=1662)
   - added the 'SHUTDOWN COOLING LINE LOOP 1/2' inlet lines (drawn, not labelled) to valves 50 and 33

@@ -411,8 +411,9 @@ Each symbol gets two labels:
    valves, and pumps whose driver is not shown), `UNSPEC` (an operator is drawn but its type can be identified neither from
    the symbol nor from the drawing text), `TURBINE` / `DIESEL` / `MOTOR` (pump drivers); `-` = not applicable.
 
-A valve and its actuator, lock mark and tag circle are one box (see the labeling rules in [`../README.md`](../README.md)),
-so the actuator is a property of the valve box. A solid (black) body means normally closed; this is written in `note`.
+A valve, its actuator and its tag circle are one box, and a lock mark (LO / LC) next to it is text (see the labeling
+rules in [`../README.md`](../README.md)), so the actuator is a property of the valve box. A solid (black) body means
+normally closed; this is written in `note`.
 
 `ft_component_type` is derived from class + actuator with the component codes of the Generic PWR SAPHIRE model
 basic-event list: `MOV`, `AOV`, `SOV`, `HOV`, `XVM` (manual valve), `CKV`, `SRV`, `MDP`, `TDP`, `EDP`, `PMP`, `HTX`, `TNK`,

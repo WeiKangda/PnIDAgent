@@ -518,6 +518,102 @@
     ],
     "note": "motor-operated butterfly valve, with its motor operator (S115) on a stem to the left",
     "reason": "a valve and its actuator are one box"
+   },
+   {
+    "id": 43,
+    "bbox": [
+     2027.0,
+     1903.0,
+     2063.0,
+     1955.0
+    ],
+    "box": [
+     2027.0,
+     1903.0,
+     2059.0,
+     1955.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 37,
+    "bbox": [
+     1820.0,
+     1542.0,
+     1852.0,
+     1596.0
+    ],
+    "box": [
+     1825.0,
+     1542.0,
+     1852.0,
+     1596.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 46,
+    "bbox": [
+     1574.0,
+     1236.0,
+     1606.0,
+     1291.0
+    ],
+    "box": [
+     1583.0,
+     1236.0,
+     1606.0,
+     1291.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 68,
+    "bbox": [
+     901.0,
+     2662.0,
+     954.0,
+     2692.0
+    ],
+    "box": [
+     901.0,
+     2666.0,
+     954.0,
+     2692.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 61,
+    "bbox": [
+     1402.0,
+     2654.0,
+     1456.0,
+     2700.0
+    ],
+    "box": [
+     1402.0,
+     2659.0,
+     1456.0,
+     2700.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 63,
+    "bbox": [
+     1401.0,
+     2591.0,
+     1455.0,
+     2634.0
+    ],
+    "box": [
+     1401.0,
+     2598.0,
+     1455.0,
+     2634.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
    }
   ],
   "add_solid": [
@@ -532,7 +628,7 @@
    }
   ],
   "notes": [],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes).",
   "manual_edits": {
    "no_join": [
     55
@@ -912,9 +1008,73 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 16,
+    "bbox": [
+     1282.0,
+     1964.0,
+     1357.0,
+     2040.0
+    ],
+    "box": [
+     1282.0,
+     1968.0,
+     1357.0,
+     2040.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 29,
+    "bbox": [
+     767.0,
+     496.0,
+     836.0,
+     558.0
+    ],
+    "box": [
+     767.0,
+     500.0,
+     836.0,
+     558.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 26,
+    "bbox": [
+     881.0,
+     932.0,
+     956.0,
+     1002.0
+    ],
+    "box": [
+     881.0,
+     943.0,
+     956.0,
+     1002.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 15,
+    "bbox": [
+     1272.0,
+     810.0,
+     1349.0,
+     880.0
+    ],
+    "box": [
+     1272.0,
+     817.0,
+     1349.0,
+     880.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes).",
   "line_sync": {
    "drop_removed_lines": [],
    "adopt_added_lines": [
@@ -981,9 +1141,25 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 18,
+    "bbox": [
+     519.0,
+     773.0,
+     572.0,
+     852.0
+    ],
+    "box": [
+     523.0,
+     773.0,
+     572.0,
+     852.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes)."
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
   "relabel": [
@@ -998,9 +1174,25 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 4,
+    "bbox": [
+     720.0,
+     929.0,
+     821.0,
+     1020.0
+    ],
+    "box": [
+     720.0,
+     929.0,
+     821.0,
+     995.0
+    ],
+    "reason": "the lock mark 'L.O.' is text, not part of the valve box (labeling rules): bottom edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes)."
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8": {
   "relabel": [
@@ -1027,9 +1219,41 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 16,
+    "bbox": [
+     800.0,
+     863.0,
+     873.0,
+     929.0
+    ],
+    "box": [
+     800.0,
+     873.0,
+     873.0,
+     929.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 20,
+    "bbox": [
+     1199.0,
+     738.0,
+     1277.0,
+     810.0
+    ],
+    "box": [
+     1199.0,
+     748.0,
+     1277.0,
+     810.0
+    ],
+    "reason": "the box reached into the lock mark 'L.O', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes)."
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": {
   "relabel": [
@@ -1822,9 +2046,89 @@
      1459
     ],
     "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 66,
+    "bbox": [
+     947.0,
+     2161.0,
+     1019.0,
+     2232.0
+    ],
+    "box": [
+     947.0,
+     2161.0,
+     1008.0,
+     2232.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 54,
+    "bbox": [
+     1566.0,
+     2083.0,
+     1606.0,
+     2114.0
+    ],
+    "box": [
+     1576.0,
+     2083.0,
+     1606.0,
+     2114.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 18,
+    "bbox": [
+     1102.0,
+     1218.0,
+     1153.0,
+     1249.0
+    ],
+    "box": [
+     1116.0,
+     1218.0,
+     1153.0,
+     1249.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     1761.0,
+     1435.0,
+     1792.0,
+     1466.0
+    ],
+    "box": [
+     1761.0,
+     1435.0,
+     1792.0,
+     1454.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): bottom edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 13,
+    "bbox": [
+     1161.0,
+     1436.0,
+     1192.0,
+     1466.0
+    ],
+    "box": [
+     1161.0,
+     1436.0,
+     1192.0,
+     1453.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): bottom edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, heat exchanger boxes tightened, dotted CCW lines added).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, heat exchanger boxes tightened, dotted CCW lines added, lock marks taken out of the valve boxes).",
   "move_lines": [
    {
     "seg": [
@@ -1900,6 +2204,21 @@
      1555.0
     ],
     "reason": "outlet riser of HE02A starts at its corner, outside the tightened box"
+   },
+   {
+    "seg": [
+     1019.0,
+     2227.0,
+     1978.0,
+     2227.0
+    ],
+    "new": [
+     1008.0,
+     2227.0,
+     1978.0,
+     2227.0
+    ],
+    "reason": "ends at the edge of the valve box without the lock mark"
    }
   ],
   "add_dashed": [
@@ -2444,9 +2763,57 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 34,
+    "bbox": [
+     1214.0,
+     2230.0,
+     1256.0,
+     2282.0
+    ],
+    "box": [
+     1227.0,
+     2230.0,
+     1256.0,
+     2282.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 33,
+    "bbox": [
+     698.0,
+     2493.0,
+     741.0,
+     2544.0
+    ],
+    "box": [
+     711.0,
+     2493.0,
+     741.0,
+     2544.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 36,
+    "bbox": [
+     696.0,
+     2233.0,
+     741.0,
+     2284.0
+    ],
+    "box": [
+     711.0,
+     2233.0,
+     741.0,
+     2284.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes).",
   "line_sync": {
    "drop_removed_lines": [
     {
@@ -2687,9 +3054,57 @@
      1782
     ],
     "reason": "the box held the CCW lines, their arrows and labels and the inlet arrow; now the heat exchanger outline only"
+   },
+   {
+    "id": 23,
+    "bbox": [
+     1816.0,
+     1749.0,
+     1859.0,
+     1787.0
+    ],
+    "box": [
+     1816.0,
+     1749.0,
+     1859.0,
+     1773.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): bottom edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 28,
+    "bbox": [
+     1333.0,
+     2553.0,
+     1379.0,
+     2587.0
+    ],
+    "box": [
+     1348.0,
+     2553.0,
+     1379.0,
+     2587.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 25,
+    "bbox": [
+     1006.0,
+     1615.0,
+     1064.0,
+     1649.0
+    ],
+    "box": [
+     1013.0,
+     1615.0,
+     1064.0,
+     1649.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, heat exchanger boxes tightened, dotted CCW lines added).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, heat exchanger boxes tightened, dotted CCW lines added, lock marks taken out of the valve boxes).",
   "line_sync": {
    "drop_removed_lines": [
     {
@@ -3126,9 +3541,217 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 85,
+    "bbox": [
+     1672.0,
+     2321.0,
+     1775.0,
+     2426.0
+    ],
+    "box": [
+     1672.0,
+     2321.0,
+     1753.0,
+     2426.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 84,
+    "bbox": [
+     1403.0,
+     2324.0,
+     1503.0,
+     2426.0
+    ],
+    "box": [
+     1403.0,
+     2324.0,
+     1484.0,
+     2426.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 87,
+    "bbox": [
+     562.0,
+     2576.0,
+     659.0,
+     2679.0
+    ],
+    "box": [
+     562.0,
+     2576.0,
+     642.0,
+     2679.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 88,
+    "bbox": [
+     1618.0,
+     880.0,
+     1705.0,
+     966.0
+    ],
+    "box": [
+     1618.0,
+     880.0,
+     1684.0,
+     966.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 83,
+    "bbox": [
+     968.0,
+     2320.0,
+     1066.0,
+     2423.0
+    ],
+    "box": [
+     968.0,
+     2320.0,
+     1048.0,
+     2423.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 89,
+    "bbox": [
+     1350.0,
+     879.0,
+     1439.0,
+     966.0
+    ],
+    "box": [
+     1350.0,
+     879.0,
+     1417.0,
+     966.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 90,
+    "bbox": [
+     911.0,
+     876.0,
+     1003.0,
+     963.0
+    ],
+    "box": [
+     911.0,
+     876.0,
+     981.0,
+     963.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 82,
+    "bbox": [
+     699.0,
+     2323.0,
+     796.0,
+     2426.0
+    ],
+    "box": [
+     699.0,
+     2323.0,
+     779.0,
+     2426.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 91,
+    "bbox": [
+     644.0,
+     879.0,
+     735.0,
+     966.0
+    ],
+    "box": [
+     644.0,
+     879.0,
+     713.0,
+     966.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 86,
+    "bbox": [
+     1879.0,
+     2324.0,
+     1978.0,
+     2428.0
+    ],
+    "box": [
+     1879.0,
+     2324.0,
+     1959.0,
+     2428.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 81,
+    "bbox": [
+     561.0,
+     2323.0,
+     658.0,
+     2426.0
+    ],
+    "box": [
+     561.0,
+     2323.0,
+     641.0,
+     2426.0
+    ],
+    "reason": "the lock mark 'LO.FL' is text, not part of the valve box (labeling rules): right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 38,
+    "bbox": [
+     885.0,
+     1691.0,
+     923.0,
+     1736.0
+    ],
+    "box": [
+     897.0,
+     1691.0,
+     923.0,
+     1736.0
+    ],
+    "reason": "the lock mark 'LO' is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 4,
+    "bbox": [
+     1797.0,
+     1017.0,
+     1848.0,
+     1060.0
+    ],
+    "box": [
+     1807.0,
+     1017.0,
+     1848.0,
+     1060.0
+    ],
+    "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes).",
   "line_sync": {
    "drop_removed_lines": [
     {
@@ -5953,5 +6576,42 @@
    ]
   },
   "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+ },
+ "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2": {
+  "status_note": "Re-verified 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (lock marks taken out of the valve boxes).",
+  "relabel": [
+   {
+    "id": 7,
+    "bbox": [
+     1164.0,
+     482.0,
+     1301.0,
+     598.0
+    ],
+    "box": [
+     1213.0,
+     482.0,
+     1291.0,
+     598.0
+    ],
+    "reason": "the lock mark 'L.O.' is text, not part of the valve box (labeling rules): left and right edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 9,
+    "bbox": [
+     2058.0,
+     481.0,
+     2200.0,
+     597.0
+    ],
+    "box": [
+     2114.0,
+     481.0,
+     2193.0,
+     597.0
+    ],
+    "reason": "the lock mark 'L.O.' is text, not part of the valve box (labeling rules): left and right edge moved in to the valve (image orientation)"
+   }
+  ]
  }
 }

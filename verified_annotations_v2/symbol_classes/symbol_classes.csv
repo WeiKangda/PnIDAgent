@@ -955,16 +955,16 @@ pseudo_AFW (Vogtle),33,1225.0,1533.0,1256.0,1585.0,VLV_GATE,NONE,XVM,,locked ope
 pseudo_AFW (Vogtle),34,1745.0,1409.0,1800.0,1442.0,VLV_GATE,NONE,XVM,,locked closed (LC)
 pseudo_AFW (Vogtle),35,1835.0,2196.0,1871.0,2248.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),36,1714.0,1011.0,1745.0,1065.0,VLV_GATE,NONE,XVM,,locked open (LO)
-pseudo_AFW (Vogtle),37,1820.0,1542.0,1852.0,1596.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_AFW (Vogtle),37,1825.0,1542.0,1852.0,1596.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),38,1320.0,1121.0,1398.0,1179.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),39,1104.0,1837.0,1138.0,1890.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),40,1899.0,1664.0,1969.0,1781.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),41,387.0,1519.0,423.0,1567.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),42,811.0,1111.0,912.0,1173.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW (Vogtle),43,2027.0,1903.0,2063.0,1955.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_AFW (Vogtle),43,2027.0,1903.0,2059.0,1955.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),44,970.0,1112.0,1051.0,1170.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),45,940.0,1526.0,979.0,1583.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Vogtle),46,1574.0,1236.0,1606.0,1291.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_AFW (Vogtle),46,1583.0,1236.0,1606.0,1291.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_AFW (Vogtle),47,674.0,2067.0,767.0,2131.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),48,1313.0,2718.0,1353.0,2772.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),49,956.0,2189.0,988.0,2244.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
@@ -978,13 +978,13 @@ pseudo_AFW (Vogtle),56,508.0,1521.0,542.0,1567.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),57,1261.0,2722.0,1300.0,2770.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW (Vogtle),58,1223.0,1810.0,1285.0,1912.0,PUMP,MOTOR,MDP,,motor-driven AFW pump
 pseudo_AFW (Vogtle),59,1401.0,2534.0,1454.0,2572.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
-pseudo_AFW (Vogtle),60,1402.0,2654.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),60,1402.0,2659.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),61,1662.0,2394.0,1705.0,2453.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW (Vogtle),62,1401.0,2591.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),62,1401.0,2598.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),63,901.0,2598.0,955.0,2630.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),64,1825.0,1816.0,1897.0,1918.0,PUMP,MOTOR,MDP,,motor-driven AFW pump
 pseudo_AFW (Vogtle),65,344.0,1369.0,422.0,1422.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW (Vogtle),66,901.0,2662.0,954.0,2692.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),66,901.0,2666.0,954.0,2692.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),67,900.0,2534.0,955.0,2568.0,VLV_BUTTERFLY,NONE,XVM,,"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),68,599.0,1109.0,706.0,1169.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW (Vogtle),69,704.0,2521.0,902.0,2709.0,TANK,-,TNK,,condensate storage tank (CST)
@@ -1050,9 +1050,9 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,3,1449.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,4,2624.0,2248.0,2702.0,2337.0,OTHER,-,,,"silencer on the turbine exhaust (S in a box, labelled SILENCER)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,5,2373.0,1631.0,2450.0,1776.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,6,1815.0,1511.0,1940.0,1580.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,7,1164.0,482.0,1301.0,598.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,7,1213.0,482.0,1291.0,598.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,8,2373.0,1506.0,2459.0,1636.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,9,2058.0,481.0,2200.0,597.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,9,2114.0,481.0,2193.0,597.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,10,1053.0,2251.0,1169.0,2340.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,11,2363.0,1277.0,2455.0,1376.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,12,957.0,1655.0,1047.0,1783.0,VLV_GATE,NONE,XVM,,
@@ -1085,8 +1085,8 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,11,2209
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,12,990.0,496.0,1060.0,557.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,13,1531.0,1228.0,1603.0,1286.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,14,1442.0,1079.0,1514.0,1141.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,15,1272.0,810.0,1349.0,880.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,16,1282.0,1964.0,1357.0,2040.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,15,1272.0,817.0,1349.0,880.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,16,1282.0,1968.0,1357.0,2040.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,17,1139.0,1679.0,1209.0,1748.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,18,1365.0,1398.0,1437.0,1463.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,19,1131.0,1106.0,1204.0,1171.0,VLV_CHECK,NONE,CKV,,
@@ -1096,10 +1096,10 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,22,794.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,23,2095.0,1645.0,2173.0,1709.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,24,1927.0,1644.0,2003.0,1707.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,25,1449.0,1653.0,1520.0,1718.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,26,881.0,932.0,956.0,1002.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,26,881.0,943.0,956.0,1002.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,27,1868.0,1305.0,1935.0,1375.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,28,1360.0,807.0,1438.0,877.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,29,767.0,496.0,836.0,558.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,29,767.0,500.0,836.0,558.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,30,1026.0,1577.0,1095.0,1750.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,31,1372.0,1967.0,1451.0,2038.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,32,1527.0,1502.0,1606.0,1575.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
@@ -1204,7 +1204,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,14,959.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,15,1699.0,1620.0,1787.0,1738.0,VLV_CHECK,NONE,CKV,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,16,223.0,1019.0,407.0,1125.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,17,493.0,941.0,632.0,1033.0,VLV_GATE,MOTOR,MOV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,18,519.0,773.0,572.0,852.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,18,523.0,773.0,572.0,852.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,19,1389.0,1044.0,1564.0,1136.0,VLV_GATE,MOTOR,MOV,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,20,992.0,1621.0,1113.0,1807.0,PUMP,NONE,PMP,,make-up pump (driver not shown)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,21,1367.0,1591.0,1486.0,1759.0,PUMP,NONE,PMP,,make-up pump (driver not shown)
@@ -1217,7 +1217,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,0,706.0
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,1,1573.0,1029.0,1679.0,1106.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,2,1196.0,1346.0,1291.0,1425.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,3,1409.0,1577.0,1523.0,1654.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,4,720.0,929.0,821.0,1020.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,4,720.0,929.0,821.0,995.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,5,1674.0,1320.0,1782.0,1395.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,6,2154.0,889.0,2262.0,976.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,7,608.0,929.0,711.0,995.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
@@ -1254,11 +1254,11 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,12,1463
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,13,1470.0,901.0,1571.0,1074.0,VLV_GATE,MOTOR,MOV,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,14,1749.0,909.0,1823.0,1086.0,VLV_GATE,MOTOR,MOV,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,15,1293.0,1338.0,1367.0,1406.0,VLV_GATE,NONE,XVM,,"solid body, locked closed (L.C.)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,16,800.0,863.0,873.0,929.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,16,800.0,873.0,873.0,929.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,17,913.0,420.0,982.0,480.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,18,1061.0,1622.0,1131.0,1693.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,19,2037.0,1597.0,2116.0,1661.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,20,1199.0,738.0,1277.0,810.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,20,1199.0,748.0,1277.0,810.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,21,1377.0,1599.0,1449.0,1664.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,22,1298.0,1919.0,1371.0,1986.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,23,711.0,867.0,787.0,931.0,VLV_CHECK,NONE,CKV,,
@@ -1913,14 +1913,14 @@ pseudo_CSS (APR1400),7,507.0,1050.0,524.0,1079.0,VLV_GATE,NONE,XVM,,
 pseudo_CSS (APR1400),8,1457.0,1806.0,1475.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),9,2056.0,1806.0,2075.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),10,988.0,2090.0,1007.0,2121.0,VLV_CHECK,NONE,CKV,,
-pseudo_CSS (APR1400),11,1761.0,1435.0,1792.0,1466.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
+pseudo_CSS (APR1400),11,1761.0,1435.0,1792.0,1454.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_CSS (APR1400),12,557.0,1944.0,592.0,1975.0,VLV_GATE,NONE,XVM,,"locked closed (LC), handwheel, solid body"
-pseudo_CSS (APR1400),13,1161.0,1436.0,1192.0,1466.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
+pseudo_CSS (APR1400),13,1161.0,1436.0,1192.0,1453.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_CSS (APR1400),14,1149.0,1806.0,1168.0,1837.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),15,1412.0,1360.0,1455.0,1391.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),16,1434.0,1697.0,1478.0,1728.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),17,1436.0,1424.0,1454.0,1455.0,VLV_CHECK,NONE,CKV,,
-pseudo_CSS (APR1400),18,1102.0,1218.0,1153.0,1249.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
+pseudo_CSS (APR1400),18,1116.0,1218.0,1153.0,1249.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),19,2011.0,1360.0,2055.0,1391.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),20,884.0,2067.0,903.0,2098.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),21,2035.0,1424.0,2054.0,1455.0,VLV_CHECK,NONE,CKV,,
@@ -1956,7 +1956,7 @@ pseudo_CSS (APR1400),50,1415.0,1875.0,1476.0,1947.0,VLV_GATE,MOTOR,MOV,,motor-op
 pseudo_CSS (APR1400),51,1287.0,1754.0,1351.0,1822.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),52,1707.0,1888.0,1768.0,1958.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),53,1707.0,1961.0,1768.0,2031.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_CSS (APR1400),54,1566.0,2083.0,1606.0,2114.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_CSS (APR1400),54,1576.0,2083.0,1606.0,2114.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_CSS (APR1400),55,1588.0,2047.0,1617.0,2083.0,VLV_CHECK,NONE,CKV,,
 pseudo_CSS (APR1400),56,2014.0,1961.0,2076.0,2031.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),57,2016.0,1875.0,2076.0,1945.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
@@ -1968,7 +1968,7 @@ pseudo_CSS (APR1400),62,1069.0,840.0,1133.0,909.0,VLV_GATE,MOTOR,MOV,,motor-oper
 pseudo_CSS (APR1400),63,1253.0,772.0,1315.0,844.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),64,699.0,1943.0,759.0,2015.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),65,840.0,1848.0,903.0,1919.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_CSS (APR1400),66,947.0,2161.0,1019.0,2232.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_CSS (APR1400),66,947.0,2161.0,1008.0,2232.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),67,1107.0,1960.0,1168.0,2030.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),68,583.0,1575.0,600.0,1586.0,ORIFICE,-,ORF,,
 pseudo_CSS (APR1400),69,574.0,1893.0,591.0,1904.0,ORIFICE,-,ORF,,
@@ -2727,10 +2727,10 @@ pseudo_Instrument Air (APR1400),29,711.0,927.0,740.0,978.0,VLV_CHECK,NONE,CKV,,
 pseudo_Instrument Air (APR1400),30,712.0,1279.0,741.0,1330.0,VLV_GATE,NONE,XVM,,
 pseudo_Instrument Air (APR1400),31,1226.0,1201.0,1255.0,1252.0,VLV_GATE,NONE,XVM,,
 pseudo_Instrument Air (APR1400),32,769.0,807.0,821.0,837.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_Instrument Air (APR1400),33,698.0,2493.0,741.0,2544.0,VLV_GATE,NONE,XVM,,locked open (LO)
-pseudo_Instrument Air (APR1400),34,1214.0,2230.0,1256.0,2282.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_Instrument Air (APR1400),33,711.0,2493.0,741.0,2544.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_Instrument Air (APR1400),34,1227.0,2230.0,1256.0,2282.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_Instrument Air (APR1400),35,960.0,2573.0,1011.0,2602.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
-pseudo_Instrument Air (APR1400),36,696.0,2233.0,741.0,2284.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_Instrument Air (APR1400),36,711.0,2233.0,741.0,2284.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_Instrument Air (APR1400),37,1227.0,2499.0,1256.0,2550.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_Instrument Air (APR1400),38,395.0,2791.0,451.0,2820.0,VLV_GATE,NONE,XVM,,
 pseudo_Instrument Air (APR1400),39,998.0,2174.0,1050.0,2204.0,VLV_CHECK,NONE,CKV,,
@@ -3068,12 +3068,12 @@ pseudo_SCS2_APR1400,19,1870.0,1161.0,1942.0,1240.0,VLV_GLOBE,MOTOR,MOV,,motor-op
 pseudo_SCS2_APR1400,20,787.0,2167.0,808.0,2202.0,VLV_CHECK,NONE,CKV,,
 pseudo_SCS2_APR1400,21,1220.0,2003.0,1291.0,2080.0,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,22,862.0,2097.0,948.0,2162.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,23,1816.0,1749.0,1859.0,1787.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
+pseudo_SCS2_APR1400,23,1816.0,1749.0,1859.0,1773.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_SCS2_APR1400,24,1306.0,2133.0,1379.0,2212.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,25,1006.0,1615.0,1064.0,1649.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
+pseudo_SCS2_APR1400,25,1013.0,1615.0,1064.0,1649.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_SCS2_APR1400,26,1721.0,2444.0,1793.0,2524.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,27,1042.0,707.0,1063.0,741.0,VLV_CHECK,NONE,CKV,,
-pseudo_SCS2_APR1400,28,1333.0,2553.0,1379.0,2587.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
+pseudo_SCS2_APR1400,28,1348.0,2553.0,1379.0,2587.0,VLV_GATE,NONE,XVM,,"locked open (LO), handwheel"
 pseudo_SCS2_APR1400,29,1541.0,1582.0,1624.0,1647.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,30,733.0,2348.0,807.0,2425.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,31,1754.0,1692.0,1776.0,1726.0,VLV_CHECK,NONE,CKV,,
@@ -3144,7 +3144,7 @@ pseudo_SI (APR1400),0,1000.0,1781.0,1025.0,1825.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),1,1704.0,1784.0,1729.0,1828.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),2,1823.0,938.0,1848.0,982.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),3,733.0,1020.0,757.0,1061.0,VLV_CHECK,NONE,CKV,,
-pseudo_SI (APR1400),4,1797.0,1017.0,1848.0,1060.0,VLV_GATE,NONE,XVM,,locked open (LO)
+pseudo_SI (APR1400),4,1807.0,1017.0,1848.0,1060.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_SI (APR1400),5,731.0,1785.0,755.0,1829.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),6,1378.0,1263.0,1424.0,1314.0,INSTR,-,,,flow transmitter (FT)
 pseudo_SI (APR1400),7,897.0,1785.0,922.0,1827.0,VLV_CHECK,NONE,CKV,,
@@ -3178,7 +3178,7 @@ pseudo_SI (APR1400),34,1168.0,1687.0,1194.0,1733.0,VLV_GLOBE,NONE,XVM,,locked op
 pseudo_SI (APR1400),35,1917.0,2578.0,1960.0,2621.0,VLV_GATE,NONE,XVM,,locked open (LO)
 pseudo_SI (APR1400),36,1706.0,1019.0,1731.0,1063.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),37,1168.0,1781.0,1193.0,1823.0,VLV_CHECK,NONE,CKV,,
-pseudo_SI (APR1400),38,885.0,1691.0,923.0,1736.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
+pseudo_SI (APR1400),38,897.0,1691.0,923.0,1736.0,VLV_GLOBE,NONE,XVM,,locked open (LO)
 pseudo_SI (APR1400),39,735.0,772.0,759.0,814.0,VLV_CHECK,NONE,CKV,,
 pseudo_SI (APR1400),40,1695.0,2206.0,1753.0,2249.0,VLV_GATE,NONE,XVM,,"locked open (LO), bellows-seal bonnet"
 pseudo_SI (APR1400),41,617.0,2497.0,641.0,2540.0,VLV_CHECK,NONE,CKV,,
@@ -3221,17 +3221,17 @@ pseudo_SI (APR1400),77,1765.0,1659.0,1785.0,1685.0,ORIFICE,-,ORF,,"restriction o
 pseudo_SI (APR1400),78,1498.0,1660.0,1517.0,1686.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
 pseudo_SI (APR1400),79,1051.0,1657.0,1083.0,1683.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
 pseudo_SI (APR1400),80,777.0,1660.0,809.0,1687.0,ORIFICE,-,ORF,,"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
-pseudo_SI (APR1400),81,561.0,2323.0,658.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),82,699.0,2323.0,796.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),83,968.0,2320.0,1066.0,2423.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),84,1403.0,2324.0,1503.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),85,1672.0,2321.0,1775.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),86,1879.0,2324.0,1978.0,2428.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),87,562.0,2576.0,659.0,2679.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),88,1618.0,880.0,1705.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),89,1350.0,879.0,1439.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),90,911.0,876.0,1003.0,963.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
-pseudo_SI (APR1400),91,644.0,879.0,735.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),81,561.0,2323.0,641.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),82,699.0,2323.0,779.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),83,968.0,2320.0,1048.0,2423.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),84,1403.0,2324.0,1484.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),85,1672.0,2321.0,1753.0,2426.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),86,1879.0,2324.0,1959.0,2428.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),87,562.0,2576.0,642.0,2679.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),88,1618.0,880.0,1684.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),89,1350.0,879.0,1417.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),90,911.0,876.0,981.0,963.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
+pseudo_SI (APR1400),91,644.0,879.0,713.0,966.0,VLV_GATE,MOTOR,MOV,,motor-operated valve with its tag circle
 pseudo_SI (APR1400),92,681.8,1456.7,757.7,1549.2,VLV_GLOBE,MOTOR,MOV,,motor-operated globe valve (dot at the body centre) with its tag circle
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",0,716.0,1140.0,739.0,1183.0,VLV_GATE,NONE,XVM,,manual valve (XV)
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",1,1715.0,1462.0,1749.0,1505.0,VLV_GATE,MOTOR,MOV,,"motor-operated valve (MOV), operator box on the side"

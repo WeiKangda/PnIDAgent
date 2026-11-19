@@ -23,7 +23,7 @@ re-optimized and verified again page by page:
 |---|---|---|
 | Pages | 65 | 65 |
 | Symbol boxes | 3522 | 3483 |
-| Total symbol box area (px²) | 32.0 M | 27.5 M (-14%) |
+| Total symbol box area (px²) | 32.0 M | 27.4 M (-14%) |
 | Pipe line segments | 5441 | 6381 (of them 50 dashed) |
 | Line segments running into a symbol box | 1016 | 13 |
 | Text boxes | 6064 | 6064 (median box area 76% of v1) |
@@ -50,9 +50,13 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 ## Labeling rules (v2)
 
 - One box per symbol, tight around the symbol's ink.
-- A valve together with its actuator (M, solenoid, diaphragm) and LO/LC mark is one box.
+- A valve together with its actuator (M, solenoid, diaphragm) is one box. Lock marks next to a valve (LO, LC, LO.FL,
+  LC.FL, L.O., L.C.) are text, not part of the symbol: they get a text box, and the valve box is not extended to hold them.
 - A valve and the numbered tag circle drawn on a leader from it are one box (e.g. SCS2 (APR1400), RCS-POSRV (APR1400)).
   Instrument circles that stand on their own get their own box.
+- The pilot of a pilot-operated safety relief valve, the square marked P drawn above each POSRV together with the three
+  short legs under it, is a symbol of its own (`OTHER`), not part of the valve box; the line from it to the valve and the
+  pilot lines that continue below its legs are pipes (RCS-POSRV (APR1400)).
 - A pump and its variable frequency drive (VFD) are one box (Power conversion system (NuScale)).
 - Labelled equipment blocks (heat exchangers, coolers, chillers drawn as a rectangle with a name) are boxed
   (CCWS (APR1400)).
@@ -92,7 +96,10 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 ## Review fixes (November 2026)
 
 An external review of the SCS (APR1400) page found boxes, lines and labels that did not follow these rules; the page
-and the same kinds of problems on the other 64 pages were fixed: see [`review_2026_11/`](review_2026_11/README.md).
+and the same kinds of problems on the other 64 pages were fixed: see [`review_2026_11/`](review_2026_11/README.md). On
+19 November 2026 the 40 valve boxes that had been drawn around or into their LO/LC lock mark were moved in to the
+valve, as the rules above say (SI, CSS, Instrument Air and SCS2 (APR1400), AFW (Vogtle), Davis-Besse reliability
+analysis p2, p3, p6, p7 and p8).
 
 ## Connectivity
 

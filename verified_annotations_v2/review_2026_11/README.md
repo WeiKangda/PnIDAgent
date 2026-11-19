@@ -56,6 +56,37 @@ manual edits use the new ids):
 - SCS (APR1400): 21 is now the containment penetration.
 - Added boxes get the next id: Davis-Besse p1 52 (check valve AF-15).
 
+## Lock marks (19 November 2026)
+
+A difficulty self-test of the RCS-POSRV (APR1400) page found that the labeling rules said a valve box holds its LO/LC lock
+mark, while the annotations treat the mark as text. Of the 203 lock marks on 17 pages (LO, LC, LO.FL, LC.FL, L.O., L.C.),
+25 lay inside a valve box drawn around them, 15 more were cut by a box edge that reached 7 to 14 px past the valve toward
+the mark, and the other 163 lay outside the valve box or only touched it. The rules in [`../README.md`](../README.md) now
+say that a lock mark is text and that the valve box is not extended to hold it, and the 40 boxes were moved in to the
+valve (`relabel` with a new `box` in `fixes.json`):
+
+| Page | Box drawn around the mark | Box edge into the mark |
+|---|---|---|
+| SI (APR1400) | 81-91 (motor valves with tag circles, LO.FL), 38 (LO) | 4 |
+| CSS (APR1400) | 11, 13, 18, 54 (LO), 66 (LO.FL) | |
+| Instrument Air (APR1400) | 33, 34, 36 | |
+| SCS2 (APR1400) | 23, 28 | 25 |
+| AFW (Vogtle) | | 37, 43, 46, 60, 62, 66 |
+| AFW (Davis-Besse reliability analysis) p2 | 7, 9 | |
+| AFW (Davis-Besse reliability analysis) p3 | | 15, 16, 26, 29 |
+| AFW (Davis-Besse reliability analysis) p6 | | 18 |
+| AFW (Davis-Besse reliability analysis) p7 | 4 | |
+| AFW (Davis-Besse reliability analysis) p8 | | 16, 20 |
+
+Box ids are those of the release; `fixes.json` uses the ids before the review, where Vogtle 60, 62 and 66 are 61, 63 and 68.
+Only the edge on the mark's side moved, to the valve's ink plus the margin the box has on the opposite side (on
+Davis-Besse p2 the box was also wide on the other side, and both side edges moved to the valve). The mark keeps its text
+box. After the fix no valve box holds a lock mark: 119 marks lie clear of every box, and 84 touch or overlap a valve box
+because they are written against the valve, 2 of them by half or more (written inside the outline of a Davis-Besse
+valve). On CSS, the pipe that left box 66 through its old edge now starts at the new edge. Classes, actuators and the
+connected symbol pairs are unchanged, and both checks below give the same result as before. The rule for the pilot box
+(`OTHER`) drawn above each POSRV of RCS-POSRV (APR1400), which the annotations already follow, was added at the same time.
+
 ## Files
 
 - `fixes.json`: every change, per page, with the reason: `remove_boxes`, `add_boxes`, `relabel` (class, actuator, a
