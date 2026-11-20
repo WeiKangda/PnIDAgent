@@ -128,8 +128,9 @@ rules:
 | Davis-Besse reliability analysis p9 | the same kind of crossing, not raised by a review but found when its self-test was checked: the plain crosses at (2257,1258) and (2484,1260) of the FW459 / FW460 / FW448 valve station were set connected | the two crossing decisions removed: not connected, as the rule says |
 | Davis-Besse reliability analysis p9 | 11 valve boxes reached past the valve into the tag next to it (FW-32, FW142, FW154, FW162, FW-102, FW440, SV-1, CD169 and CD170, SP7A, SP7B) or into the lock mark L.O.; check valve 21 and connector 23 also held a few pixels of the pipe | the edges moved in to the ink (boxes 1, 4, 6, 10, 13, 19, 20, 21, 23, 25, 32, 33); the two pipes extended to the new edges |
 | Davis-Besse reliability analysis p9 | the two valves of the legend (NORMALLY OPEN, NORMALLY CLOSED) are not boxed and the handwritten initials in the revision block are transcribed `###`, two conventions the labeling rules did not state | two lines added to the labeling rules (`../README.md`) |
+| Davis-Besse reliability analysis p6 | not raised by a review but found by the same tight-ink audit before the page was submitted: 14 symbol boxes reached into the tag next to the valve (MU-199, MU-190, MU-209, MU-198, MU-33, DH132, DH130, DH129, H.P.-59) or into the lock mark L.O., or held a piece of the pipe above the valve or below the pump | the edges moved in to the ink (boxes 0-5, 7, 10, 11, 13, 14, 20, 22, 23); the five pipes that ended at a moved edge extended to it |
 
 Numbers: symbol boxes 3483 -> 3491, pipe line segments 6381 -> 6383, connections (symbol pairs) 7223 -> 7223 (Vogtle
 100 -> 110; p8 stays at 75: the two flow elements replace 4 pairs by 6, and the crossing removes 2; p9 58 -> 48). The
-connectivity checks give no flag on the three pages.
+connectivity checks give no flag on the four pages.
 

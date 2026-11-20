@@ -1255,9 +1255,310 @@
      852.0
     ],
     "reason": "the box reached into the lock mark 'L.O.', which is text, not part of the valve box (labeling rules): left edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 0,
+    "bbox": [
+     993.0,
+     1981.0,
+     1054.0,
+     2085.0
+    ],
+    "box": [
+     993.0,
+     1991.0,
+     1048.0,
+     2085.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the top edge held 10 px of the pipe and the right edge reached into the tag MU-199; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 1,
+    "bbox": [
+     976.0,
+     1840.0,
+     1054.0,
+     1942.0
+    ],
+    "box": [
+     976.0,
+     1851.0,
+     1054.0,
+     1942.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the top edge held 11 px of the pipe; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 2,
+    "bbox": [
+     1395.0,
+     1386.0,
+     1459.0,
+     1481.0
+    ],
+    "box": [
+     1395.0,
+     1395.0,
+     1454.0,
+     1481.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the top edge held 9 px of the pipe and the right edge reached into the tag MU-190; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 3,
+    "bbox": [
+     1358.0,
+     1833.0,
+     1429.0,
+     1919.0
+    ],
+    "box": [
+     1358.0,
+     1840.0,
+     1429.0,
+     1919.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the top edge held 7 px of the pipe; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 4,
+    "bbox": [
+     1178.0,
+     2422.0,
+     1246.0,
+     2524.0
+    ],
+    "box": [
+     1178.0,
+     2422.0,
+     1242.0,
+     2524.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the right edge reached into the tag MU-209; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 5,
+    "bbox": [
+     667.0,
+     1073.0,
+     750.0,
+     1125.0
+    ],
+    "box": [
+     667.0,
+     1073.0,
+     750.0,
+     1122.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the bottom edge reached into the tag DH132; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 7,
+    "bbox": [
+     1375.0,
+     1985.0,
+     1433.0,
+     2072.0
+    ],
+    "box": [
+     1375.0,
+     1985.0,
+     1427.0,
+     2072.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the right edge reached into the tag MU-198; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 10,
+    "bbox": [
+     1009.0,
+     1394.0,
+     1078.0,
+     1487.0
+    ],
+    "box": [
+     1012.0,
+     1399.0,
+     1078.0,
+     1487.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the left edge reached into the lock mark L.O. and the top edge held 5 px of the pipe; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     1101.0,
+     1173.0,
+     1197.0,
+     1230.0
+    ],
+    "box": [
+     1101.0,
+     1173.0,
+     1197.0,
+     1227.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the bottom edge reached into the tag DH130; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 13,
+    "bbox": [
+     1701.0,
+     1519.0,
+     1790.0,
+     1625.0
+    ],
+    "box": [
+     1701.0,
+     1519.0,
+     1787.0,
+     1625.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the right edge reached into the tag H.P.-59; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 14,
+    "bbox": [
+     959.0,
+     1175.0,
+     1067.0,
+     1233.0
+    ],
+    "box": [
+     959.0,
+     1175.0,
+     1067.0,
+     1227.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the bottom edge reached into the tag DH129; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 20,
+    "bbox": [
+     992.0,
+     1621.0,
+     1113.0,
+     1807.0
+    ],
+    "box": [
+     992.0,
+     1621.0,
+     1113.0,
+     1784.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the bottom edge held 23 px of the pipe below the discharge nozzle; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 22,
+    "bbox": [
+     1083.0,
+     2549.0,
+     1240.0,
+     2647.0
+    ],
+    "box": [
+     1087.0,
+     2549.0,
+     1240.0,
+     2647.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the left edge lay 4 px left of the actuator, next to the text F.O.; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 23,
+    "bbox": [
+     1565.0,
+     2394.0,
+     1799.0,
+     2530.0
+    ],
+    "box": [
+     1565.0,
+     2394.0,
+     1794.0,
+     2530.0
+    ],
+    "reason": "tight-ink audit before submission, after the ALE review of p9 (2026-11-20): the right edge reached into the tag MU-33; edge moved in to the symbol ink (one box per symbol, tight around its ink)"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes)."
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes). Changed 2026-11-20 before submission, with the tight-ink audit asked by the ALE review of p9: 14 symbol boxes whose edge reached into a tag or a lock mark or held a piece of the pipe moved in to the ink, and the five pipes that ended at a moved edge extended to it.",
+  "move_lines": [
+   {
+    "seg": [
+     1018.0,
+     1981.0,
+     1018.0,
+     1942.0
+    ],
+    "new": [
+     1018.0,
+     1991.0,
+     1018.0,
+     1942.0
+    ],
+    "reason": "extended to the top edge of valve 0, moved in to the valve"
+   },
+   {
+    "seg": [
+     1018.0,
+     1840.0,
+     1018.0,
+     1807.0
+    ],
+    "new": [
+     1018.0,
+     1851.0,
+     1018.0,
+     1784.0
+    ],
+    "reason": "extended to the top edge of check valve 1 and the bottom edge of pump 20, both moved in"
+   },
+   {
+    "seg": [
+     1425.5,
+     1386.0,
+     1425.5,
+     1136.0
+    ],
+    "new": [
+     1425.5,
+     1395.0,
+     1425.5,
+     1136.0
+    ],
+    "reason": "extended to the top edge of valve 2, moved in to the valve"
+   },
+   {
+    "seg": [
+     1397.1,
+     1759.0,
+     1397.1,
+     1833.3
+    ],
+    "new": [
+     1397.1,
+     1759.0,
+     1397.1,
+     1840.0
+    ],
+    "reason": "extended to the top edge of check valve 3, moved in to the valve"
+   },
+   {
+    "seg": [
+     1048.5,
+     1394.0,
+     1048.5,
+     1320.0
+    ],
+    "new": [
+     1048.5,
+     1399.0,
+     1048.5,
+     1320.0
+    ],
+    "reason": "extended to the top edge of valve 10, moved in to the valve"
+   }
+  ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
   "relabel": [

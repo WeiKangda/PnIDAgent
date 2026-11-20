@@ -1192,30 +1192,30 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,32,438.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,33,1950.0,236.0,2141.0,625.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,34,322.0,2309.0,513.0,2696.0,TANK,-,TNK,,deaerator storage tank
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,35,1965.0,2308.0,2158.0,2709.0,TANK,-,TNK,,deaerator storage tank
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,0,993.0,1981.0,1054.0,2085.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,1,976.0,1840.0,1054.0,1942.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,2,1395.0,1386.0,1459.0,1481.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,3,1358.0,1833.0,1429.0,1919.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,4,1178.0,2422.0,1246.0,2524.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,5,667.0,1073.0,750.0,1125.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,0,993.0,1991.0,1048.0,2085.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,1,976.0,1851.0,1054.0,1942.0,VLV_CHECK,NONE,CKV,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,2,1395.0,1395.0,1454.0,1481.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,3,1358.0,1840.0,1429.0,1919.0,VLV_CHECK,NONE,CKV,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,4,1178.0,2422.0,1242.0,2524.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,5,667.0,1073.0,750.0,1122.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,6,1816.0,897.0,1912.0,970.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,7,1375.0,1985.0,1433.0,2072.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,7,1375.0,1985.0,1427.0,2072.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,8,797.0,1068.0,891.0,1117.0,VLV_GATE,NONE,XVM,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,9,1178.0,2689.0,1246.0,2789.0,VLV_GATE,NONE,XVM,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,10,1009.0,1394.0,1078.0,1487.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,11,1101.0,1173.0,1197.0,1230.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,10,1012.0,1399.0,1078.0,1487.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,11,1101.0,1173.0,1197.0,1227.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,12,1710.0,2143.0,1797.0,2255.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,13,1701.0,1519.0,1790.0,1625.0,VLV_CHECK,NONE,CKV,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,14,959.0,1175.0,1067.0,1233.0,VLV_GATE,NONE,XVM,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,13,1701.0,1519.0,1787.0,1625.0,VLV_CHECK,NONE,CKV,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,14,959.0,1175.0,1067.0,1227.0,VLV_GATE,NONE,XVM,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,15,1699.0,1620.0,1787.0,1738.0,VLV_CHECK,NONE,CKV,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,16,223.0,1019.0,407.0,1125.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,17,493.0,941.0,632.0,1033.0,VLV_GATE,MOTOR,MOV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,18,523.0,773.0,572.0,852.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,19,1389.0,1044.0,1564.0,1136.0,VLV_GATE,MOTOR,MOV,,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,20,992.0,1621.0,1113.0,1807.0,PUMP,NONE,PMP,,make-up pump (driver not shown)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,20,992.0,1621.0,1113.0,1784.0,PUMP,NONE,PMP,,make-up pump (driver not shown)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,21,1367.0,1591.0,1486.0,1759.0,PUMP,NONE,PMP,,make-up pump (driver not shown)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,22,1083.0,2549.0,1240.0,2647.0,VLV_GATE,AIR,AOV,,fail open (F.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,23,1565.0,2394.0,1799.0,2530.0,VLV_GATE,AIR,AOV,yes,"piston (cylinder) operator, fail closed (F.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,22,1087.0,2549.0,1240.0,2647.0,VLV_GATE,AIR,AOV,,fail open (F.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,23,1565.0,2394.0,1794.0,2530.0,VLV_GATE,AIR,AOV,yes,"piston (cylinder) operator, fail closed (F.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,24,381.0,549.0,776.0,747.0,TANK,-,TNK,,"borated water storage tank, make-up tank"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,25,860.0,543.0,1246.0,746.0,TANK,-,TNK,,"borated water storage tank, make-up tank"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,26,1656.0,1033.0,2065.0,1233.0,REACTOR,-,,,
