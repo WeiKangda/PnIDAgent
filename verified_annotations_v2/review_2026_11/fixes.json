@@ -614,6 +614,30 @@
      2634.0
     ],
     "reason": "the box reached into the lock mark 'LO', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 59,
+    "bbox": [
+     1223.0,
+     1810.0,
+     1285.0,
+     1912.0
+    ],
+    "actuator": "NONE",
+    "note": "AFW pump 002; no driver drawn or named on the page",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the pump has no driver drawn or named on the page, so its actuator is NONE (actuators.csv)"
+   },
+   {
+    "id": 66,
+    "bbox": [
+     1825.0,
+     1816.0,
+     1897.0,
+     1918.0
+    ],
+    "actuator": "NONE",
+    "note": "AFW pump 003; no driver drawn or named on the page",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the pump has no driver drawn or named on the page, so its actuator is NONE (actuators.csv)"
    }
   ],
   "add_solid": [
@@ -628,7 +652,7 @@
    }
   ],
   "notes": [],
-  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes).",
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (nested valve-body boxes and the separate motor operator merged, interface bracket box removed, line annotations synchronised with the verified pipe set, lock marks taken out of the valve boxes). Changed 2026-11-20 after the ALE review: pumps 002 and 003 have no driver drawn or named (NONE); the four TO STEAM GENERATOR boxes and the two FROM STEAM GENERATOR arrows are boxed as off-page connectors.",
   "manual_edits": {
    "no_join": [
     55
@@ -756,7 +780,81 @@
      "reason": "drawn pipe piece of the connectivity review, on the drawing"
     }
    ]
-  }
+  },
+  "add_boxes": [
+   {
+    "bbox": [
+     628,
+     520,
+     753,
+     723
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: TO STEAM GENERATOR 4 INTAKE (box)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   },
+   {
+    "bbox": [
+     832,
+     520,
+     957,
+     723
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: TO STEAM GENERATOR 1 INTAKE (box)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   },
+   {
+    "bbox": [
+     974,
+     521,
+     1097,
+     723
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: TO STEAM GENERATOR 2 INTAKE (box)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   },
+   {
+    "bbox": [
+     1180,
+     521,
+     1304,
+     724
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: TO STEAM GENERATOR 3 INTAKE (box)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   },
+   {
+    "bbox": [
+     384,
+     743,
+     430,
+     1204
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: FROM STEAM GENERATOR 1 (arrow)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   },
+   {
+    "bbox": [
+     508,
+     742,
+     552,
+     1211
+    ],
+    "class": "OFFPAGE",
+    "actuator": "-",
+    "note": "off-page connector: FROM STEAM GENERATOR 2 (arrow)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the steam generator interface boxes and arrows are off-page connectors (classes.csv: off-page connector / system interface)"
+   }
+  ]
  },
  "pseudo_Control room HVAC_APR1400": {
   "remove_boxes": [
@@ -1251,9 +1349,112 @@
      810.0
     ],
     "reason": "the box reached into the lock mark 'L.O', which is text, not part of the valve box (labeling rules): top edge moved in to the valve (image orientation)"
+   },
+   {
+    "id": 34,
+    "bbox": [
+     1333.0,
+     481.0,
+     1497.0,
+     570.0
+    ],
+    "box": [
+     1333,
+     515,
+     1477,
+     567
+    ],
+    "note": "MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the box held the lettering above the connector; now tight to the pentagon"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes)."
+  "status_note": "Re-verified 2026-11-17 and 2026-11-19 after the review fixes in ../review_2026_11/fixes.json (pump actuators, lock marks taken out of the valve boxes). Changed 2026-11-20 after the ALE review: the MAKEUP FLOW connector box is tight to the pentagon, the flow elements of FT4521 and FT4522 are boxed as ORIFICE (the pipe stops at them), and the plain crossing at (1184,1374) is not connected.",
+  "add_boxes": [
+   {
+    "bbox": [
+     1996,
+     1012,
+     2026,
+     1063
+    ],
+    "class": "ORIFICE",
+    "actuator": "-",
+    "note": "flow element of FT4521",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the flow element on the pipe is a symbol (classes.csv: ORIFICE = orifice / flow element / venturi)"
+   },
+   {
+    "bbox": [
+     1993,
+     1598,
+     2030,
+     1649
+    ],
+    "class": "ORIFICE",
+    "actuator": "-",
+    "note": "flow element of FT4522",
+    "reason": "ALE DeepReview of the task, 2026-11-20: the flow element on the pipe is a symbol (classes.csv: ORIFICE = orifice / flow element / venturi)"
+   }
+  ],
+  "move_lines": [
+   {
+    "seg": [
+     1937.0,
+     1048.0,
+     2036.0,
+     1048.0
+    ],
+    "new": [
+     1937.0,
+     1048.0,
+     1996.0,
+     1048.0
+    ],
+    "reason": "stops at the new FT4521 flow element box"
+   },
+   {
+    "seg": [
+     1941.3,
+     1630.5,
+     2037.0,
+     1630.5
+    ],
+    "new": [
+     1941.3,
+     1630.5,
+     1993.0,
+     1630.5
+    ],
+    "reason": "stops at the new FT4522 flow element box"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     2026.0,
+     1048.0,
+     2036.0,
+     1048.0
+    ],
+    "reason": "the pipe continues on the other side of the FT4521 flow element box"
+   },
+   {
+    "seg": [
+     2030.0,
+     1630.5,
+     2037.0,
+     1630.5
+    ],
+    "reason": "the pipe continues on the other side of the FT4522 flow element box"
+   }
+  ],
+  "manual_edits": {
+   "crossing_decisions": []
+  },
+  "notes": [
+   "open end at the TO CST arrow (1112,1374): off-page destination",
+   "differences to v1: v1 had one box for AF9+AF15 (v2 33, 53); ST-201 (48) to AFP-1 (49) link now present",
+   "(1184,1374): plain crossing without a dot, not connected (the rule: crossing pipes are connected only where a filled dot is drawn); until 2026-11-20 the reference connected it, changed after the ALE review."
+  ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": {
   "relabel": [
@@ -1270,7 +1471,7 @@
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set).",
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators, line annotations synchronised with the verified pipe set). Changed 2026-11-20: the plain crosses at (2257,1258) and (2484,1260), drawn without a dot, are not connected, as the rule says (the same change as on p8 after its ALE review).",
   "line_sync": {
    "drop_removed_lines": [
     {
@@ -1348,7 +1549,19 @@
      "reason": "drawn pipe piece of the connectivity review, on the drawing"
     }
    ]
-  }
+  },
+  "manual_edits": {
+   "crossing_decisions": [
+    {
+     "x": 1266.0,
+     "y": 564.0,
+     "connected": false
+    }
+   ]
+  },
+  "notes": [
+   "(2257,1258) and (2484,1260): plain crosses without a dot in the FW459/FW460/FW448 valve station, not connected (the rule: crossing pipes are connected only where a filled dot is drawn); until 2026-11-20 the reference connected them as 4-way junctions, changed to follow the rule as on p8 after the ALE review of that page."
+  ]
  },
  "pseudo_Boron recovery system_(Surry) FSAR_p1": {
   "relabel": [

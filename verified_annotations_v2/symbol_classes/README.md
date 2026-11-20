@@ -1,6 +1,6 @@
 # Symbol classes (pre-labels, human review in progress)
 
-**Status: pre-labels.** Every one of the 3483 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
+**Status: pre-labels.** Every one of the 3491 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
 labeled by eye page by page and checked a second time class by class. A human review of every row is in progress;
 until it is done these labels are not verified. Rows marked `uncertain = yes` (52) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
@@ -376,7 +376,7 @@ Diesel / engine driver (pumps).
     or by a source document;
   - **B** (1785): the label rests on the symbol shape matching the legend PDF entry shown (or, for a symbol without a legend entry, on its drawn shape alone);
   - **C** (52): uncertain (`uncertain = yes`), check first.
-  3436 of the 3483 boxes are tied to a legend PDF entry; the other 47 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
+  3444 of the 3491 boxes are tied to a legend PDF entry; the other 47 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
   legend entry and rest on the drawing text and note shown in the tile. The tiles and the A / B / C counts are from before the review
   fixes of November 2026 ([`../review_2026_11/`](../review_2026_11/README.md)); where they differ, `symbol_classes.csv` holds the labels.
 

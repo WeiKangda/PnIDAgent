@@ -11755,10 +11755,10 @@
 "x1": 1285.0,
 "y1": 1912.0,
 "class": "PUMP",
-"actuator": "MOTOR",
-"ft_component_type": "MDP",
+"actuator": "NONE",
+"ft_component_type": "PMP",
 "uncertain": "",
-"note": "motor-driven AFW pump"
+"note": "AFW pump 002; no driver drawn or named on the page"
 },
 {
 "box_id": 59,
@@ -11827,10 +11827,10 @@
 "x1": 1897.0,
 "y1": 1918.0,
 "class": "PUMP",
-"actuator": "MOTOR",
-"ft_component_type": "MDP",
+"actuator": "NONE",
+"ft_component_type": "PMP",
 "uncertain": "",
-"note": "motor-driven AFW pump"
+"note": "AFW pump 003; no driver drawn or named on the page"
 },
 {
 "box_id": 65,
@@ -11915,6 +11915,78 @@
 "ft_component_type": "TDP",
 "uncertain": "",
 "note": "turbine-driven AFW pump with its turbine (dashed)"
+},
+{
+"box_id": 72,
+"x0": 628.0,
+"y0": 520.0,
+"x1": 753.0,
+"y1": 723.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: TO STEAM GENERATOR 4 INTAKE (box)"
+},
+{
+"box_id": 73,
+"x0": 832.0,
+"y0": 520.0,
+"x1": 957.0,
+"y1": 723.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: TO STEAM GENERATOR 1 INTAKE (box)"
+},
+{
+"box_id": 74,
+"x0": 974.0,
+"y0": 521.0,
+"x1": 1097.0,
+"y1": 723.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: TO STEAM GENERATOR 2 INTAKE (box)"
+},
+{
+"box_id": 75,
+"x0": 1180.0,
+"y0": 521.0,
+"x1": 1304.0,
+"y1": 724.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: TO STEAM GENERATOR 3 INTAKE (box)"
+},
+{
+"box_id": 76,
+"x0": 384.0,
+"y0": 743.0,
+"x1": 430.0,
+"y1": 1204.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: FROM STEAM GENERATOR 1 (arrow)"
+},
+{
+"box_id": 77,
+"x0": 508.0,
+"y0": 742.0,
+"x1": 552.0,
+"y1": 1211.0,
+"class": "OFFPAGE",
+"actuator": "-",
+"ft_component_type": "",
+"uncertain": "",
+"note": "off-page connector: FROM STEAM GENERATOR 2 (arrow)"
 }
 ],
 "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1": [
@@ -15319,14 +15391,14 @@
 {
 "box_id": 34,
 "x0": 1333.0,
-"y0": 481.0,
-"x1": 1497.0,
-"y1": 570.0,
+"y0": 515.0,
+"x1": 1477.0,
+"y1": 567.0,
 "class": "OFFPAGE",
 "actuator": "-",
 "ft_component_type": "",
 "uncertain": "",
-"note": ""
+"note": "MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)"
 },
 {
 "box_id": 35,
@@ -15555,6 +15627,30 @@
 "ft_component_type": "CKV",
 "uncertain": "",
 "note": ""
+},
+{
+"box_id": 54,
+"x0": 1996.0,
+"y0": 1012.0,
+"x1": 2026.0,
+"y1": 1063.0,
+"class": "ORIFICE",
+"actuator": "-",
+"ft_component_type": "ORF",
+"uncertain": "",
+"note": "flow element of FT4521"
+},
+{
+"box_id": 55,
+"x0": 1993.0,
+"y0": 1598.0,
+"x1": 2030.0,
+"y1": 1649.0,
+"class": "ORIFICE",
+"actuator": "-",
+"ft_component_type": "ORF",
+"uncertain": "",
+"note": "flow element of FT4522"
 }
 ],
 "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": [

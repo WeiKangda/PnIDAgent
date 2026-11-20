@@ -110,3 +110,23 @@ connected symbol pairs are unchanged, and both checks below give the same result
   now passes (the isolated operator box is merged), and the short dotted CCW legs at the heat exchangers of CSS and SCS2
   (APR1400) end next to the box and carry no connection (8 and 24 flags, listed in the pages' `notes`).
 - Every changed page was looked at in the redrawn images.
+
+## ALE reviews of the single-page tasks (20 November 2026)
+
+The automatic reviews of the ALE tasks built on AFW (Vogtle) and on Davis-Besse reliability analysis p8 found reference
+annotations that did not follow the labeling rules or the class definitions; p9 had the same crossing as p8. Fixed in
+`fixes.json` (ids before the review, as everywhere in that file):
+
+| Page | Finding | Fix |
+|---|---|---|
+| AFW (Vogtle) | pumps 002 and 003 labeled `MOTOR`, with no driver drawn or named on the page | `PUMP/NONE` (`actuators.csv`) |
+| AFW (Vogtle) | the four TO STEAM GENERATOR n INTAKE boxes and the two FROM STEAM GENERATOR arrows were not boxed, although `OFFPAGE` is an off-page connector / system interface | boxed as `OFFPAGE` (new boxes 72-77); the six pipes that ended at them now connect to them |
+| Davis-Besse reliability analysis p8 | the MAKEUP FLOW connector box (34) held the lettering above the pentagon | box tight to the pentagon |
+| Davis-Besse reliability analysis p8 | the flow elements on the lines of FT4521 and FT4522 were not boxed, although `ORIFICE` includes flow elements | boxed as `ORIFICE` (new boxes 54, 55); the pipe stops at them on both sides |
+| Davis-Besse reliability analysis p8 | the plain crossing at (1184,1374), drawn without a dot, was set connected | the crossing decision removed: not connected, as the rule says |
+| Davis-Besse reliability analysis p9 | the same kind of crossing, not raised by a review but found when its self-test was checked: the plain crosses at (2257,1258) and (2484,1260) of the FW459 / FW460 / FW448 valve station were set connected | the two crossing decisions removed: not connected, as the rule says |
+
+Numbers: symbol boxes 3483 -> 3491, pipe line segments 6381 -> 6383, connections (symbol pairs) 7223 -> 7223 (Vogtle
+100 -> 110; p8 stays at 75: the two flow elements replace 4 pairs by 6, and the crossing removes 2; p9 58 -> 48). The
+connectivity checks give no flag on the three pages.
+

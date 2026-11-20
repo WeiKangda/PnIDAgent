@@ -6866,7 +6866,7 @@
   {
    "box_id": 58,
    "class": "PUMP",
-   "actuator": "MOTOR",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -6908,7 +6908,7 @@
   {
    "box_id": 64,
    "class": "PUMP",
-   "actuator": "MOTOR",
+   "actuator": "NONE",
    "legend_symbol": 273,
    "legend_operator": null
   },
@@ -6959,6 +6959,48 @@
    "class": "PUMP",
    "actuator": "TURBINE",
    "legend_symbol": 276,
+   "legend_operator": null
+  },
+  {
+   "box_id": 72,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
+   "legend_operator": null
+  },
+  {
+   "box_id": 73,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
+   "legend_operator": null
+  },
+  {
+   "box_id": 74,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
+   "legend_operator": null
+  },
+  {
+   "box_id": 75,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
+   "legend_operator": null
+  },
+  {
+   "box_id": 76,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
+   "legend_operator": null
+  },
+  {
+   "box_id": 77,
+   "class": "OFFPAGE",
+   "actuator": "-",
+   "legend_symbol": 90,
    "legend_operator": null
   }
  ],
@@ -9089,6 +9131,20 @@
    "class": "VLV_CHECK",
    "actuator": "NONE",
    "legend_symbol": 203,
+   "legend_operator": null
+  },
+  {
+   "box_id": 54,
+   "class": "ORIFICE",
+   "actuator": "-",
+   "legend_symbol": 332,
+   "legend_operator": null
+  },
+  {
+   "box_id": 55,
+   "class": "ORIFICE",
+   "actuator": "-",
+   "legend_symbol": 332,
    "legend_operator": null
   }
  ],

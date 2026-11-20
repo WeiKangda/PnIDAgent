@@ -30,7 +30,7 @@ PRESSURIZER,Pressurizer,equipment,1
 FILTER,Filter / strainer / adsorber / separator,equipment,109
 DEMIN,Demineralizer / ion exchanger,equipment,10
 DRYER,Air dryer,equipment,5
-ORIFICE,Orifice / flow element / venturi,equipment,103
+ORIFICE,Orifice / flow element / venturi,equipment,105
 HEATER,Electric heater,equipment,4
 SPARGER,Spray nozzle / sparger,equipment,21
 SUMP,Sump,equipment,1
@@ -47,6 +47,6 @@ INVERTER,Inverter / UPS,electrical,6
 SWITCH,Switch / disconnect / transfer switch,electrical,5
 PANEL,Distribution panel / MCC / switchgear box,electrical,7
 PENETRATION,"Containment penetration (box on the containment boundary, e.g. 'PC')",other,18
-OFFPAGE,Off-page connector / system interface,other,52
+OFFPAGE,Off-page connector / system interface,other,58
 BLOCK,Labelled equipment block (named by its text),other,18
 OTHER,Other,other,20
