@@ -61,6 +61,9 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 - Labelled equipment blocks (heat exchangers, coolers, chillers drawn as a rectangle with a name) are boxed
   (CCWS (APR1400)).
 - A dashed frame drawn around several valves is not a symbol: each valve inside gets its own box (AFW (Haddam Neck)).
+- Symbols drawn in a legend to explain the notation (e.g. the two valves next to the words NORMALLY OPEN and NORMALLY
+  CLOSED on the Davis-Besse reliability analysis pages) are not symbols of the system: they get no box and no
+  connection. The words of the legend are text.
 - Lines follow pipe centerlines and stop at the edge of a symbol box. A box that holds 3 or more other boxes (a tank with
   spargers inside) is not cut.
 - Dashed, dash-dot and dotted lines are not labeled when they are signal lines (e.g. from an ESF-SIAS START box or a
@@ -73,6 +76,8 @@ The drawings themselves are the sheets of `datasets/yolo_pseudo_v2` (the same im
 - An equipment box ends at the outline of the equipment: the arrows, labels and CCW lines drawn next to a heat
   exchanger are outside its box.
 - No line is added where the drawing shows none (e.g. between the filter, coils and fan inside an HVAC unit housing).
+- Handwriting that cannot be read (e.g. initials in a revision block) gets a text box like any other text line; its
+  transcription is `###`.
 
 ## How it was made
 
