@@ -30,7 +30,7 @@ PRESSURIZER,Pressurizer,equipment,1
 FILTER,Filter / strainer / adsorber / separator,equipment,109
 DEMIN,Demineralizer / ion exchanger,equipment,10
 DRYER,Air dryer,equipment,5
-ORIFICE,Orifice / flow element / venturi,equipment,105
+ORIFICE,Orifice / flow element / venturi,equipment,107
 HEATER,Electric heater,equipment,4
 SPARGER,Spray nozzle / sparger,equipment,21
 SUMP,Sump,equipment,1

@@ -22,9 +22,9 @@ re-optimized and verified again page by page:
 | | v1 | v2 |
 |---|---|---|
 | Pages | 65 | 65 |
-| Symbol boxes | 3522 | 3491 |
-| Total symbol box area (px²) | 32.0 M | 27.6 M (-14%) |
-| Pipe line segments | 5441 | 6383 (of them 50 dashed) |
+| Symbol boxes | 3522 | 3493 |
+| Total symbol box area (px²) | 32.0 M | 27.5 M (-14%) |
+| Pipe line segments | 5441 | 6386 (of them 50 dashed) |
 | Line segments running into a symbol box | 1016 | 13 |
 | Text boxes | 6064 | 6064 (median box area 76% of v1) |
 

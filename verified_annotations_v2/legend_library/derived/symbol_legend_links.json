@@ -7946,6 +7946,20 @@
    "actuator": "-",
    "legend_symbol": 345,
    "legend_operator": null
+  },
+  {
+   "box_id": 54,
+   "class": "ORIFICE",
+   "actuator": "-",
+   "legend_symbol": 332,
+   "legend_operator": null
+  },
+  {
+   "box_id": 55,
+   "class": "ORIFICE",
+   "actuator": "-",
+   "legend_symbol": 332,
+   "legend_operator": null
   }
  ],
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4": [

@@ -1,6 +1,6 @@
 # Symbol classes (pre-labels, human review in progress)
 
-**Status: pre-labels.** Every one of the 3491 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
+**Status: pre-labels.** Every one of the 3493 symbol boxes of [`../labels/`](../labels/) has a class and an actuator,
 labeled by eye page by page and checked a second time class by class. A human review of every row is in progress;
 until it is done these labels are not verified. Rows marked `uncertain = yes` (52) are drawn ambiguously and have no
 legend on their page; they are reviewed first.
@@ -20,7 +20,7 @@ a class that maps to several entries (e.g. `VLV_GATE`: open and closed gate valv
 The 51 classes are in five groups: 13 valves and dampers, 23 equipment, 1 instrument, 9 electrical, 5 other.
 46 of them occur in the 65 pages; the five that do not (`VLV_BALL`, `VLV_PLUG`, `VLV_NEEDLE`, `VLV_DIAPHRAGM`, `TRAP`)
 are kept in the list so the scheme stays complete. Five classes (`BLOCK`, `ENGINE`, `OTHER`, `PRESSURIZER`,
-`SUMP`) have no legend entry, and `OFFPAGE` has one for 46 of its 52 boxes; where there is none the image says so,
+`SUMP`) have no legend entry, and `OFFPAGE` has one for 52 of its 58 boxes; where there is none the image says so,
 and the class rests on the drawing text (see the `note` column and the evidence tiles).
 
 The legend PDFs are not in the repository; the entry images are cut from the evidence tiles in [`evidence/`](evidence/),
@@ -123,7 +123,7 @@ Diaphragm valve. No instance in the 65 pages, so no reference image.
 | [`FILTER`](#filter) | Filter / strainer / adsorber / separator | 109 |
 | [`DEMIN`](#demin) | Demineralizer / ion exchanger | 10 |
 | [`DRYER`](#dryer) | Air dryer | 5 |
-| [`ORIFICE`](#orifice) | Orifice / flow element / venturi | 103 (10 uncertain) |
+| [`ORIFICE`](#orifice) | Orifice / flow element / venturi | 107 (10 uncertain) |
 | [`HEATER`](#heater) | Electric heater | 4 |
 | [`SPARGER`](#sparger) | Spray nozzle / sparger | 21 |
 | [`SUMP`](#sump) | Sump | 1 |
@@ -288,7 +288,7 @@ Steam trap. No instance in the 65 pages, so no reference image.
 |---|---|---:|
 | [`RUPTURE_DISC`](#rupture_disc) | Rupture disc | 2 |
 | [`PENETRATION`](#penetration) | Containment penetration (box on the containment boundary, e.g. 'PC') | 18 |
-| [`OFFPAGE`](#offpage) | Off-page connector / system interface | 52 |
+| [`OFFPAGE`](#offpage) | Off-page connector / system interface | 58 |
 | [`BLOCK`](#block) | Labelled equipment block (named by its text) | 18 |
 | [`OTHER`](#other) | Other | 20 (9 uncertain) |
 
@@ -376,7 +376,7 @@ Diesel / engine driver (pumps).
     or by a source document;
   - **B** (1785): the label rests on the symbol shape matching the legend PDF entry shown (or, for a symbol without a legend entry, on its drawn shape alone);
   - **C** (52): uncertain (`uncertain = yes`), check first.
-  3444 of the 3491 boxes are tied to a legend PDF entry; the other 47 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
+  3446 of the 3493 boxes are tied to a legend PDF entry; the other 47 (BLOCK, ENGINE, OFFPAGE, OTHER, PRESSURIZER, SUMP) have no
   legend entry and rest on the drawing text and note shown in the tile. The tiles and the A / B / C counts are from before the review
   fixes of November 2026 ([`../review_2026_11/`](../review_2026_11/README.md)); where they differ, `symbol_classes.csv` holds the labels.
 

@@ -1,6 +1,6 @@
 # Symbol class check images (65 pages)
 
-Two kinds of check images for the 3491 symbol boxes of the 65 pages:
+Two kinds of check images for the 3493 symbol boxes of the 65 pages:
 - **Overview** (`overlay/`): the whole drawing, every box with its id and class tag (red = valve, blue = equipment, green = instrument, purple = electrical, orange = other); the panel on the right lists every id with class, actuator and fault-tree type. `*` = uncertain.
 - **Evidence** (`evidence/`): one tile per box (48 per image): the symbol as drawn, the AP1000 / APR1400 legend PDF entry it corresponds to (PDF page, entry number, printed description), the operator's legend entry, and the evidence written out (page legend, drawing text, source documents, note). Header colour = evidence level: A (green) confirmed by the drawing or a document, B (blue) legend symbol shape only, C (orange) uncertain, check first.
 
