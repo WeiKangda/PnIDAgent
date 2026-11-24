@@ -61,6 +61,8 @@ definitions and the per-box columns: [`symbol_classes/`](symbol_classes/README.m
   each symbol box is tied to.
 - `overlay/<page>.jpg`: symbols (red) and pipes (green) drawn on the page; `text_overlay/<page>.jpg`: text boxes (blue).
 - `stats.json`: per page, the numbers above.
+- `experiments/`: the experiments of the paper on this folder: the training / test split, the tasks with the files each
+  returns, the baselines with vision-language models, and the scoring scripts.
 
 ## Labeling rules
 
