@@ -1115,10 +1115,10 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,35,1620
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,36,2090.0,1071.0,2165.0,1137.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,37,1403.0,1161.0,1451.0,1227.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,38,1402.0,589.0,1544.0,641.0,OFFPAGE,-,,,MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,39,1400.0,1567.0,1455.0,1637.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,39,1404.0,1578.0,1449.0,1631.0,VLV_GATE,NONE,XVM,,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,40,938.0,1047.0,998.0,1085.0,FILTER,-,STR,,fine mesh strainer ST-257
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,41,1245.0,1685.0,1277.0,1748.0,FILTER,-,STR,,"coarse mesh strainer (ST-201, ST-206)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,42,1271.0,1662.0,1406.0,1768.0,PUMP,NONE,PMP,,AFW pump (driver not shown on this page)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,42,1293.0,1671.0,1406.0,1756.0,PUMP,NONE,PMP,,AFW pump (driver not shown on this page)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,43,1650.0,1303.0,1790.0,1374.0,VLV_GATE,MOTOR,MOV,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,44,1871.0,1419.0,2023.0,1492.0,VLV_GATE,MOTOR,MOV,,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,45,842.0,396.0,975.0,560.0,TANK,-,TNK,,"condensate storage tank (CST-1, CST-2)"
@@ -1126,7 +1126,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,46,1191
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,47,2351.0,903.0,2551.0,1293.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,48,2357.0,1483.0,2555.0,1877.0,STEAM_GEN,-,,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,49,1673.0,1970.0,1844.0,2033.0,OFFPAGE,-,,,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,50,1404.0,1221.0,1455.0,1313.0,VLV_CHECK,NONE,CKV,,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,50,1399.0,1223.0,1451.0,1293.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,51,1400.0,1493.0,1458.0,1577.0,VLV_CHECK,NONE,CKV,,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,52,1290.6,1096.3,1398.5,1181.5,PUMP,NONE,PMP,,AFW pump (driver not shown on this page)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,53,1248.5,1104.1,1284.5,1176.0,FILTER,-,STR,,"coarse mesh strainer (ST-201, ST-206)"

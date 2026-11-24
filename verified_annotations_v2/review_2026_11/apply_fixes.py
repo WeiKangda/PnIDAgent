@@ -206,6 +206,7 @@ def main():
         st["symbols_v2"] = len(new_yolo)
         st["symbol_area_v2"] = round(sum(float(l.split()[3]) * W * float(l.split()[4]) * H for l in new_yolo))
         st["lines_v2"] = len(solid) + len(dashed)     # lines_into_symbols_v2 is kept: added lines stop at the box edges
+        st["text_v2"] = len(json.load(open(f"{V}/text/{page}.json", encoding="utf-8"))["items"])   # text lines merged by a review
         print(f"{page}: {len(yolo)} -> {len(new_yolo)} symbols, {len(L['solid']) + len(L.get('dashed', []))} -> {len(solid) + len(dashed)} lines "
               f"({len(dashed)} dashed), {len(r['links'])} links")
 
