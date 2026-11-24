@@ -2485,9 +2485,448 @@
     "class": "PUMP",
     "actuator": "NONE",
     "reason": "no driver drawn or named on the drawing: NONE (actuators.csv); UNSPEC is for a drawn operator of unknown type"
+   },
+   {
+    "id": 0,
+    "bbox": [
+     1403.0,
+     988.0,
+     1499.0,
+     1129.0
+    ],
+    "box": [
+     1406.0,
+     1001.0,
+     1489.0,
+     1129.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the top edge lay 13 px above the operator circle and held part of the operator circle of FW440 (box 5), the left and right edges held 3 and 10 px of the pipe; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 1,
+    "bbox": [
+     1046.0,
+     1001.0,
+     1130.0,
+     1131.0
+    ],
+    "box": [
+     1052.0,
+     1014.0,
+     1130.0,
+     1131.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the top edge lay 13 px above the operator circle and held part of the operator circle of FW450 (box 6), the left edge held 6 px of the pipe; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 3,
+    "bbox": [
+     1220.0,
+     2363.0,
+     1274.0,
+     2443.0
+    ],
+    "box": [
+     1220.0,
+     2363.0,
+     1269.0,
+     2443.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW-85; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 4,
+    "bbox": [
+     1638.0,
+     1545.0,
+     1689.0,
+     1634.0
+    ],
+    "box": [
+     1638.0,
+     1545.0,
+     1684.0,
+     1634.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW-102; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 5,
+    "bbox": [
+     1477.0,
+     946.0,
+     1593.0,
+     1032.0
+    ],
+    "box": [
+     1477.0,
+     946.0,
+     1588.0,
+     1032.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW440; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 9,
+    "bbox": [
+     1103.0,
+     655.0,
+     1162.0,
+     737.0
+    ],
+    "box": [
+     1103.0,
+     655.0,
+     1158.0,
+     737.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW142; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 10,
+    "bbox": [
+     1170.0,
+     948.0,
+     1303.0,
+     1041.0
+    ],
+    "box": [
+     1170.0,
+     948.0,
+     1297.0,
+     1036.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW460 and the bottom edge held 5 px of the pipe; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 11,
+    "bbox": [
+     1240.0,
+     1190.0,
+     1300.0,
+     1281.0
+    ],
+    "box": [
+     1245.0,
+     1190.0,
+     1300.0,
+     1281.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the left edge reached into the tag FW106; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 12,
+    "bbox": [
+     1395.0,
+     440.0,
+     1450.0,
+     520.0
+    ],
+    "box": [
+     1395.0,
+     440.0,
+     1446.0,
+     520.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW162; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 13,
+    "bbox": [
+     1218.0,
+     1908.0,
+     1270.0,
+     1994.0
+    ],
+    "box": [
+     1218.0,
+     1908.0,
+     1265.0,
+     1994.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW-91; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 16,
+    "bbox": [
+     1245.0,
+     1387.0,
+     1292.0,
+     1481.0
+    ],
+    "box": [
+     1245.0,
+     1387.0,
+     1292.0,
+     1472.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the bottom edge held the top of check valve FW99 (box 29), whose diagonal starts at the corner of this valve; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 17,
+    "bbox": [
+     1393.0,
+     658.0,
+     1453.0,
+     739.0
+    ],
+    "box": [
+     1393.0,
+     658.0,
+     1449.0,
+     739.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW154; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 20,
+    "bbox": [
+     1551.0,
+     344.0,
+     1643.0,
+     410.0
+    ],
+    "box": [
+     1551.0,
+     353.0,
+     1643.0,
+     410.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the top edge held the bottom of the tag FW 156 above the valve; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 21,
+    "bbox": [
+     1209.0,
+     2253.0,
+     1278.0,
+     2339.0
+    ],
+    "box": [
+     1209.0,
+     2253.0,
+     1275.0,
+     2339.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached into the tag FW-86; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 23,
+    "bbox": [
+     810.0,
+     2060.0,
+     899.0,
+     2135.0
+    ],
+    "box": [
+     810.0,
+     2068.0,
+     899.0,
+     2121.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the top edge held the bottom of the tag CD170 above the valve and the bottom edge the lock mark L.O. below it; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 24,
+    "bbox": [
+     741.0,
+     2061.0,
+     825.0,
+     2121.0
+    ],
+    "box": [
+     744.0,
+     2061.0,
+     810.0,
+     2121.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the right edge reached 15 px into the left side of gate valve 23, where the diagonal of the check valve ends, and the left edge held 3 px of the pipe; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 26,
+    "bbox": [
+     899.0,
+     345.0,
+     996.0,
+     399.0
+    ],
+    "box": [
+     916.0,
+     345.0,
+     996.0,
+     399.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the left edge held 17 px of the pipe end and a pen dot left of the bar of the check valve; moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 27,
+    "bbox": [
+     1393.0,
+     548.0,
+     1543.0,
+     635.0
+    ],
+    "box": [
+     1393.0,
+     548.0,
+     1580.0,
+     635.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the box ended at the operator rectangle and cut off the stem and the T-shaped end drawn on its far side (the same element is inside the box of SP7B, box 31, and of SP7A and SP7B on p9); right edge widened to the T (a symbol cut by its box is widened to its ink)"
+   },
+   {
+    "id": 29,
+    "bbox": [
+     1237.0,
+     1466.0,
+     1289.0,
+     1547.0
+    ],
+    "box": [
+     1237.0,
+     1470.0,
+     1289.0,
+     1547.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the top edge held the bottom stroke of gate valve FW100 (box 16); moved in to the symbol ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 31,
+    "bbox": [
+     954.0,
+     525.0,
+     1152.0,
+     638.0
+    ],
+    "box": [
+     976.0,
+     549.0,
+     1152.0,
+     638.0
+    ],
+    "reason": "tight-ink audit after the self-test of the page (2026-11-24): the left edge held the letters VALVE) of the label (STARTUP CONTROL VALVE) and the top edge the arc of the leader from that label to the operator; edges moved in to the T-shaped end of the operator stem and the valve"
    }
   ],
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators)."
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (pump actuators). Changed 2026-11-24 after the self-test of the page, with the findings of the ALE reviews of p8, p9 and p3: the plain crosses at (1272,882) and (1270,1104), drawn without a dot, are not connected, as the rule says; 19 symbol boxes whose edge reached into a tag, a lock mark, a label, a leader or a neighbouring symbol or held a piece of the pipe moved in to the ink, and the box of startup control valve SP7A widened to the T-shaped end of its operator stem; the pipes that ended at a moved edge extended to it and the pipe between FW161 and SP7B added.",
+  "move_lines": [
+   {
+    "seg": [
+     1130.0,
+     1104.5,
+     1403.0,
+     1104.5
+    ],
+    "new": [
+     1130.0,
+     1104.5,
+     1406.0,
+     1104.5
+    ],
+    "reason": "follows the left edge of box 0, moved in to the symbol ink"
+   },
+   {
+    "seg": [
+     1499.0,
+     1103.5,
+     1564.0,
+     1103.5
+    ],
+    "new": [
+     1489.0,
+     1103.5,
+     1564.0,
+     1103.5
+    ],
+    "reason": "follows the right edge of box 0, moved in to the symbol ink"
+   },
+   {
+    "seg": [
+     976.0,
+     1104.5,
+     1046.0,
+     1104.5
+    ],
+    "new": [
+     976.0,
+     1104.5,
+     1052.0,
+     1104.5
+    ],
+    "reason": "follows the left edge of box 1, moved in to the symbol ink"
+   },
+   {
+    "seg": [
+     1270.5,
+     1190.0,
+     1270.5,
+     1041.0
+    ],
+    "new": [
+     1270.5,
+     1190.0,
+     1270.5,
+     1036.0
+    ],
+    "reason": "follows the bottom edge of box 10, moved in to the symbol ink"
+   },
+   {
+    "seg": [
+     396.0,
+     2101.8,
+     741.0,
+     2101.8
+    ],
+    "new": [
+     396.0,
+     2101.8,
+     744.0,
+     2101.8
+    ],
+    "reason": "follows the left edge of box 24, moved in to the symbol ink"
+   },
+   {
+    "seg": [
+     847.0,
+     379.0,
+     899.0,
+     379.0
+    ],
+    "new": [
+     847.0,
+     379.0,
+     916.0,
+     379.0
+    ],
+    "reason": "follows the left edge of box 26, moved in to the bar of the check valve"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     1128.0,
+     521.0,
+     1128.0,
+     549.0
+    ],
+    "reason": "the pipe from valve FW161 (box 15) down to startup control valve SP7B (box 31), whose box no longer reaches up to it"
+   }
+  ],
+  "manual_edits": {
+   "crossing_decisions": [
+    {
+     "x": 592.0,
+     "y": 2101.0,
+     "connected": false
+    }
+   ],
+   "add_no_join": [
+    27,
+    31
+   ]
+  },
+  "notes": [
+   "(1272,882) and (1270,1104): plain crosses without a dot in the FW459/FW460/FW448 valve station, not connected (the rule: crossing pipes are connected only where a filled dot is drawn); until 2026-11-24 the reference connected them as 4-way junctions, changed to follow the rule as on p8 after the ALE review of that page."
+  ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
   "relabel": [

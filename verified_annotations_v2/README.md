@@ -24,9 +24,9 @@ re-optimized and verified again page by page:
 | Pages | 65 | 65 |
 | Symbol boxes | 3522 | 3493 |
 | Total symbol box area (px²) | 32.0 M | 27.5 M (-14%) |
-| Pipe line segments | 5441 | 6388 (of them 50 dashed) |
+| Pipe line segments | 5441 | 6389 (of them 50 dashed) |
 | Line segments running into a symbol box | 1016 | 13 |
-| Text boxes | 6064 | 6062 (median box area 76% of v1) |
+| Text boxes | 6064 | 6061 (median box area 76% of v1) |
 
 The 13 remaining segments end a few pixels inside a box on pages edited by the reviewer (Turkey Point 5, Brain Wood 2,
 South Texas 2, Instrument Air 2, ST. LUCIE 1, Davis-Besse reliability analysis 1). `stats.json` has these numbers for
@@ -107,7 +107,11 @@ valve, as the rules above say (SI, CSS, Instrument Air and SCS2 (APR1400), AFW (
 analysis p2, p3, p6, p7 and p8). On 21 and 24 November 2026 the text layer of Davis-Besse reliability analysis p3 was
 corrected after ALE's reviews of that page: its title and the JOB NO line of its title block, each one line on the
 drawing, are one text line each; every text box holds the glyphs of its line and nothing else (101 boxes changed); two
-misread numbers were corrected; three symbol boxes that held a neighbour were tightened.
+misread numbers were corrected; three symbol boxes that held a neighbour were tightened. On 24 November 2026
+Davis-Besse reliability analysis p5, another version of p9's drawing, was checked the same way after its self-test:
+the two plain crossings of its FW459/FW460/FW448 valve station are not connected, as on p9; 20 symbol boxes were
+fitted to the ink; every text box holds the glyphs of its line and nothing else (84 boxes changed), four misread
+transcriptions were corrected and the JOB NO line of the title block is one text line.
 
 ## Connectivity
 

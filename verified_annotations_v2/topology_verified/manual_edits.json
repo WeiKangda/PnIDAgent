@@ -1809,23 +1809,17 @@
   "removed_lines": [],
   "crossing_decisions": [
    {
-    "x": 1272.0,
-    "y": 882.0,
-    "connected": true
-   },
-   {
-    "x": 1270.0,
-    "y": 1104.0,
-    "connected": true
-   },
-   {
     "x": 592.0,
     "y": 2101.0,
     "connected": false
    }
   ],
   "cuts": [],
-  "unlinks": []
+  "unlinks": [],
+  "no_join": [
+   27,
+   31
+  ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
   "added_lines": [],
