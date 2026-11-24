@@ -955,16 +955,16 @@ pseudo_AFW (Vogtle),33,1225.0,1533.0,1256.0,1585.0,VLV_GATE,NONE,open,LO,XVM,yes
 pseudo_AFW (Vogtle),34,1745.0,1409.0,1800.0,1442.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,locked closed (LC)
 pseudo_AFW (Vogtle),35,1835.0,2196.0,1871.0,2248.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),36,1714.0,1011.0,1745.0,1065.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
-pseudo_AFW (Vogtle),37,1820.0,1542.0,1852.0,1596.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
+pseudo_AFW (Vogtle),37,1825.0,1542.0,1852.0,1596.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
 pseudo_AFW (Vogtle),38,1320.0,1121.0,1398.0,1179.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW (Vogtle),39,1104.0,1837.0,1138.0,1890.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
 pseudo_AFW (Vogtle),40,1899.0,1664.0,1969.0,1781.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW (Vogtle),41,387.0,1519.0,423.0,1567.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW (Vogtle),42,811.0,1111.0,912.0,1173.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW (Vogtle),43,2027.0,1903.0,2063.0,1955.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
+pseudo_AFW (Vogtle),43,2027.0,1903.0,2059.0,1955.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
 pseudo_AFW (Vogtle),44,970.0,1112.0,1051.0,1170.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW (Vogtle),45,940.0,1526.0,979.0,1583.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW (Vogtle),46,1574.0,1236.0,1606.0,1291.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
+pseudo_AFW (Vogtle),46,1583.0,1236.0,1606.0,1291.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (LO)
 pseudo_AFW (Vogtle),47,674.0,2067.0,767.0,2131.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW (Vogtle),48,1313.0,2718.0,1353.0,2772.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW (Vogtle),49,956.0,2189.0,988.0,2244.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
@@ -976,72 +976,78 @@ pseudo_AFW (Vogtle),54,1600.0,2510.0,1709.0,2567.0,VLV_STOP_CHECK,MOTOR,open,,MO
 pseudo_AFW (Vogtle),55,1433.0,2193.0,1534.0,2249.0,VLV_BUTTERFLY,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #2 BUTTERFLY VALVE (7),"motor-operated butterfly valve, with its motor operator (S115) on a stem to the left"
 pseudo_AFW (Vogtle),56,508.0,1521.0,542.0,1567.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW (Vogtle),57,1261.0,2722.0,1300.0,2770.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW (Vogtle),58,1223.0,1810.0,1285.0,1912.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,motor-driven AFW pump
+pseudo_AFW (Vogtle),58,1223.0,1810.0,1285.0,1912.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump 002; no driver drawn or named on the page
 pseudo_AFW (Vogtle),59,1401.0,2534.0,1454.0,2572.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
-pseudo_AFW (Vogtle),60,1402.0,2654.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),60,1402.0,2659.0,1456.0,2700.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),61,1662.0,2394.0,1705.0,2453.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW (Vogtle),62,1401.0,2591.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),62,1401.0,2598.0,1455.0,2634.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),63,901.0,2598.0,955.0,2630.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
-pseudo_AFW (Vogtle),64,1825.0,1816.0,1897.0,1918.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,motor-driven AFW pump
+pseudo_AFW (Vogtle),64,1825.0,1816.0,1897.0,1918.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump 003; no driver drawn or named on the page
 pseudo_AFW (Vogtle),65,344.0,1369.0,422.0,1422.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW (Vogtle),66,901.0,2662.0,954.0,2692.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
+pseudo_AFW (Vogtle),66,901.0,2666.0,954.0,2692.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),67,900.0,2534.0,955.0,2568.0,VLV_BUTTERFLY,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #2 BUTTERFLY VALVE (7),"butterfly valve, locked open (LO) where marked (confirmed on review)"
 pseudo_AFW (Vogtle),68,599.0,1109.0,706.0,1169.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW (Vogtle),69,704.0,2521.0,902.0,2709.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,condensate storage tank (CST)
 pseudo_AFW (Vogtle),70,1200.0,2521.0,1381.0,2709.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,condensate storage tank (CST)
 pseudo_AFW (Vogtle),71,694.0,1760.0,1006.0,1940.0,PUMP_TURBINE_DRIVEN,TURBINE,n/a,,TDP,yes,,actuator label / note,,,AP1000 #52 TURBINE DRIVEN CENTRIFUGAL PUMP,turbine-driven AFW pump with its turbine (dashed)
+pseudo_AFW (Vogtle),72,628.0,520.0,753.0,723.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: TO STEAM GENERATOR 4 INTAKE (box)
+pseudo_AFW (Vogtle),73,832.0,520.0,957.0,723.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: TO STEAM GENERATOR 1 INTAKE (box)
+pseudo_AFW (Vogtle),74,974.0,521.0,1097.0,723.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: TO STEAM GENERATOR 2 INTAKE (box)
+pseudo_AFW (Vogtle),75,1180.0,521.0,1304.0,724.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: TO STEAM GENERATOR 3 INTAKE (box)
+pseudo_AFW (Vogtle),76,384.0,743.0,430.0,1204.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: FROM STEAM GENERATOR 1 (arrow)
+pseudo_AFW (Vogtle),77,508.0,742.0,552.0,1211.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #91 MATCH HEXAGON,off-page connector: FROM STEAM GENERATOR 2 (arrow)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,0,1396.0,671.0,1469.0,827.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,1,1748.0,1600.0,1822.0,1759.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,2,1493.0,1503.0,1573.0,1664.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,3,1413.0,1814.0,1489.0,1987.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,1,1748.0,1600.0,1822.0,1755.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,2,1493.0,1503.0,1566.0,1664.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,3,1413.0,1814.0,1489.0,1982.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,4,1488.0,921.0,1560.0,1086.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,5,2151.0,1499.0,2224.0,1663.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,5,2151.0,1499.0,2224.0,1659.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,6,1372.0,1024.0,1443.0,1086.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,7,1219.0,1218.0,1291.0,1281.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,7,1223.0,1229.0,1291.0,1281.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,8,958.0,1523.0,1026.0,1689.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,9,1027.0,443.0,1100.0,500.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,10,1297.0,1351.0,1365.0,1408.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,11,1856.0,1017.0,1927.0,1081.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,12,1217.0,1415.0,1286.0,1475.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,12,1222.0,1426.0,1282.0,1475.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,13,2024.0,1017.0,2098.0,1082.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,14,1462.0,1176.0,1534.0,1232.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,15,1742.0,918.0,1813.0,1089.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,15,1742.0,918.0,1813.0,1085.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,16,2032.0,1592.0,2108.0,1655.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,17,2143.0,911.0,2218.0,1081.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,17,2143.0,911.0,2218.0,1078.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,18,1383.0,1599.0,1452.0,1663.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,19,809.0,888.0,882.0,947.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,20,1463.0,1447.0,1538.0,1519.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,21,947.0,958.0,1019.0,1121.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,19,809.0,891.0,882.0,947.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,20,1463.0,1460.0,1538.0,1519.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,21,947.0,958.0,1016.0,1112.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,22,915.0,445.0,983.0,505.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,23,1060.0,1052.0,1132.0,1117.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,24,1071.0,1625.0,1140.0,1692.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,25,1199.0,765.0,1276.0,826.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,26,721.0,884.0,795.0,947.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,26,721.0,884.0,795.0,943.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,27,1218.0,1917.0,1290.0,1982.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,28,1862.0,1592.0,1937.0,1652.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,29,1802.0,1252.0,1870.0,1321.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,29,1802.0,1252.0,1863.0,1321.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,30,1659.0,1364.0,1725.0,1433.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,31,917.0,671.0,985.0,733.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,32,691.0,445.0,760.0,506.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,33,1289.0,755.0,1365.0,823.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,32,691.0,450.0,760.0,506.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,33,1289.0,755.0,1365.0,819.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,34,1308.0,1914.0,1378.0,1982.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,35,1145.0,680.0,1267.0,738.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,35,1148.0,680.0,1267.0,738.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,36,1549.0,767.0,1685.0,824.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,37,1332.0,1514.0,1387.0,1582.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,38,1333.0,1107.0,1387.0,1178.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,39,1328.0,506.0,1489.0,588.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,39,1331.0,539.0,1470.0,588.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,40,743.0,348.0,899.0,509.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK","condensate storage tank (CST-1, CST-2)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,41,1116.0,331.0,1241.0,496.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK","condensate storage tank (CST-1, CST-2)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,42,2287.0,850.0,2486.0,1240.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,43,2293.0,1429.0,2491.0,1823.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,44,1606.0,1916.0,1779.0,1977.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,45,1311.0,1438.0,1390.0,1520.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,45,1332.0,1450.0,1390.0,1520.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,46,1806.0,1367.0,1957.0,1438.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,47,1583.0,1249.0,1726.0,1321.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,48,1221.0,1007.0,1340.0,1129.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,47,1583.0,1252.0,1726.0,1321.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,48,1221.0,1045.0,1340.0,1129.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,49,1178.0,1048.0,1215.0,1121.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),"fine mesh strainer (ST-201, ST-206)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,50,1224.0,1617.0,1339.0,1709.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,51,1178.0,1614.0,1221.0,1694.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),"fine mesh strainer (ST-201, ST-206)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,50,1224.0,1617.0,1339.0,1703.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,51,1178.0,1631.0,1221.0,1694.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),"fine mesh strainer (ST-201, ST-206)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1,52,1337.0,1179.0,1382.0,1237.0,VLV_CHECK,NONE,n/a,,CKV,yes,,note,,,AP1000 #3 CHECK VALVE,check valve AF-15 below AF-9
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,0,1214.0,622.0,1293.0,737.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,1,2115.0,621.0,2200.0,738.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
@@ -1050,9 +1056,9 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,3,1449.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,4,2624.0,2248.0,2702.0,2337.0,OTHER,-,n/a,,,no,,class label,,other,,"silencer on the turbine exhaust (S in a box, labelled SILENCER)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,5,2373.0,1631.0,2450.0,1776.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,6,1815.0,1511.0,1940.0,1580.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,7,1164.0,482.0,1301.0,598.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,7,1213.0,482.0,1291.0,598.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,8,2373.0,1506.0,2459.0,1636.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,9,2058.0,481.0,2200.0,597.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,9,2114.0,481.0,2193.0,597.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,10,1053.0,2251.0,1169.0,2340.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,11,2363.0,1277.0,2455.0,1376.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,12,957.0,1655.0,1047.0,1783.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
@@ -1071,48 +1077,48 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,24,845.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,25,2406.0,1948.0,2576.0,2135.0,TURBINE,-,n/a,,,yes,,class label,,,APR1400 #1 TURBINE (SINGLE FLOW / DOUBLE FLOW),"AFW pump turbine (AFPT-1, AFPT-2)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2,26,2143.0,1362.0,2262.0,1451.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,0,1467.0,724.0,1542.0,881.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,1,1478.0,1869.0,1555.0,2043.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,2,1287.0,1273.0,1360.0,1335.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,3,1557.0,968.0,1630.0,1142.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,4,1811.0,972.0,1881.0,1143.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,5,2214.0,1552.0,2289.0,1716.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,6,1813.0,1653.0,1888.0,1819.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,1,1478.0,1869.0,1555.0,2037.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,2,1292.0,1287.0,1360.0,1335.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,3,1557.0,987.0,1630.0,1142.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,4,1811.0,972.0,1881.0,1139.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,5,2214.0,1552.0,2289.0,1709.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,6,1813.0,1653.0,1888.0,1808.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,7,1923.0,1071.0,1995.0,1135.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,8,1559.0,1567.0,1641.0,1719.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,9,1006.0,1014.0,1092.0,1174.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,8,1562.0,1567.0,1633.0,1708.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,9,1020.0,1014.0,1088.0,1162.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,10,1101.0,494.0,1177.0,551.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,11,2209.0,965.0,2284.0,1135.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,12,990.0,496.0,1060.0,557.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,13,1531.0,1228.0,1603.0,1286.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,13,1531.0,1228.0,1603.0,1276.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,14,1442.0,1079.0,1514.0,1141.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,15,1272.0,810.0,1349.0,880.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,16,1282.0,1964.0,1357.0,2040.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,15,1272.0,817.0,1349.0,880.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,16,1282.0,1968.0,1357.0,2040.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,17,1139.0,1679.0,1209.0,1748.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,18,1365.0,1398.0,1437.0,1463.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,18,1365.0,1410.0,1433.0,1460.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,19,1131.0,1106.0,1204.0,1171.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,20,1725.0,1416.0,1792.0,1488.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,21,991.0,722.0,1059.0,786.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,22,794.0,937.0,869.0,1003.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,21,991.0,722.0,1059.0,778.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,22,794.0,937.0,869.0,999.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,23,2095.0,1645.0,2173.0,1709.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,24,1927.0,1644.0,2003.0,1707.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,25,1449.0,1653.0,1520.0,1718.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,26,881.0,932.0,956.0,1002.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,27,1868.0,1305.0,1935.0,1375.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,28,1360.0,807.0,1438.0,877.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,29,767.0,496.0,836.0,558.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,30,1026.0,1577.0,1095.0,1750.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,31,1372.0,1967.0,1451.0,2038.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,32,1527.0,1502.0,1606.0,1575.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,33,1285.0,1453.0,1356.0,1532.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,25,1449.0,1653.0,1520.0,1712.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,26,881.0,943.0,956.0,1002.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,27,1868.0,1305.0,1929.0,1375.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,28,1360.0,807.0,1438.0,874.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,29,767.0,500.0,836.0,558.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,30,1026.0,1577.0,1095.0,1742.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,31,1372.0,1967.0,1444.0,2035.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,32,1531.0,1511.0,1606.0,1575.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,33,1290.0,1483.0,1356.0,1532.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,34,1218.0,732.0,1341.0,791.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,35,1620.0,819.0,1757.0,878.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,36,2090.0,1071.0,2165.0,1137.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,37,1398.0,1161.0,1457.0,1227.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,38,1402.0,548.0,1567.0,641.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,39,1400.0,1567.0,1455.0,1637.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,40,938.0,1041.0,998.0,1085.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),fine mesh strainer ST-257
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,41,1245.0,1673.0,1277.0,1748.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #32 STRAINER (S),"coarse mesh strainer (ST-201, ST-206)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,42,1271.0,1662.0,1406.0,1768.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,37,1403.0,1161.0,1451.0,1227.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,38,1402.0,589.0,1544.0,641.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,39,1404.0,1578.0,1449.0,1631.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,40,938.0,1047.0,998.0,1085.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),fine mesh strainer ST-257
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,41,1245.0,1685.0,1277.0,1748.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #32 STRAINER (S),"coarse mesh strainer (ST-201, ST-206)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,42,1293.0,1671.0,1406.0,1756.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,43,1650.0,1303.0,1790.0,1374.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,44,1871.0,1419.0,2023.0,1492.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,45,842.0,396.0,975.0,560.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,"condensate storage tank (CST-1, CST-2)"
@@ -1120,10 +1126,12 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,46,1191
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,47,2351.0,903.0,2551.0,1293.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,48,2357.0,1483.0,2555.0,1877.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,49,1673.0,1970.0,1844.0,2033.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,50,1395.0,1221.0,1455.0,1313.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,51,1385.0,1493.0,1491.0,1577.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,50,1399.0,1223.0,1451.0,1293.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,51,1400.0,1493.0,1458.0,1577.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,52,1290.6,1096.3,1398.5,1181.5,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,AFW pump (driver not shown on this page)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,53,1248.5,1104.1,1284.5,1176.0,STRAINER,-,n/a,,STR,yes,,note,,,AP1000 #30 FILTER (PIPING) (S),"coarse mesh strainer (ST-201, ST-206)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,54,2057.0,1092.0,2083.0,1122.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),flow element of FT4521
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3,55,2049.0,1664.0,2093.0,1696.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),flow element of FT4522
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,0,826.0,176.0,1030.0,609.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,1,2455.0,183.0,2658.0,612.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4,2,1244.0,467.0,1324.0,585.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
@@ -1186,30 +1194,30 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,32,438.
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,33,1950.0,236.0,2141.0,625.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,34,322.0,2309.0,513.0,2696.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK",deaerator storage tank
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5,35,1965.0,2308.0,2158.0,2709.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,deaerator storage tank
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,0,993.0,1981.0,1054.0,2085.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,1,976.0,1840.0,1054.0,1942.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,2,1395.0,1386.0,1459.0,1481.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,3,1358.0,1833.0,1429.0,1919.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,4,1178.0,2422.0,1246.0,2524.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,5,667.0,1073.0,750.0,1125.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,0,993.0,1991.0,1048.0,2085.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,1,976.0,1851.0,1054.0,1942.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,2,1395.0,1395.0,1454.0,1481.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,3,1358.0,1840.0,1429.0,1919.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,4,1178.0,2422.0,1242.0,2524.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,5,667.0,1073.0,750.0,1122.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,6,1816.0,897.0,1912.0,970.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,7,1375.0,1985.0,1433.0,2072.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,7,1375.0,1985.0,1427.0,2072.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,8,797.0,1068.0,891.0,1117.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,9,1178.0,2689.0,1246.0,2789.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,10,1009.0,1394.0,1078.0,1487.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,11,1101.0,1173.0,1197.0,1230.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,10,1012.0,1399.0,1078.0,1487.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,11,1101.0,1173.0,1197.0,1227.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,12,1710.0,2143.0,1797.0,2255.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,13,1701.0,1519.0,1790.0,1625.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,14,959.0,1175.0,1067.0,1233.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,13,1701.0,1519.0,1787.0,1625.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,14,959.0,1175.0,1067.0,1227.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,15,1699.0,1620.0,1787.0,1738.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,16,223.0,1019.0,407.0,1125.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,17,493.0,941.0,632.0,1033.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,18,519.0,773.0,572.0,852.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,18,523.0,773.0,572.0,852.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,19,1389.0,1044.0,1564.0,1136.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,20,992.0,1621.0,1113.0,1807.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,make-up pump (driver not shown)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,20,992.0,1621.0,1113.0,1784.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,make-up pump (driver not shown)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,21,1367.0,1591.0,1486.0,1759.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,make-up pump (driver not shown)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,22,1083.0,2549.0,1240.0,2647.0,VLV_GATE,AIR,open,,AOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,fail open (F.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,23,1565.0,2394.0,1799.0,2530.0,VLV_GATE,AIR,open,,AOV,yes,yes,class label,legend match (automatic),uncertain,AP1000 #8 GATE VALVE,"piston (cylinder) operator, fail closed (F.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,22,1087.0,2549.0,1240.0,2647.0,VLV_GATE,AIR,open,,AOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,fail open (F.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,23,1565.0,2394.0,1794.0,2530.0,VLV_GATE,AIR,open,,AOV,yes,yes,class label,legend match (automatic),uncertain,AP1000 #8 GATE VALVE,"piston (cylinder) operator, fail closed (F.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,24,381.0,549.0,776.0,747.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK","borated water storage tank, make-up tank"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,25,860.0,543.0,1246.0,746.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK","borated water storage tank, make-up tank"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6,26,1656.0,1033.0,2065.0,1233.0,REACTOR,-,n/a,,,no,,class label,,,APR1400 #3 REACTOR VESSEL,
@@ -1217,7 +1225,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,0,706.0
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,1,1573.0,1029.0,1679.0,1106.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,2,1196.0,1346.0,1291.0,1425.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,3,1409.0,1577.0,1523.0,1654.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,4,720.0,929.0,821.0,1020.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,4,720.0,929.0,821.0,995.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,5,1674.0,1320.0,1782.0,1395.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,6,2154.0,889.0,2262.0,976.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7,7,608.0,929.0,711.0,995.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
@@ -1254,11 +1262,11 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,12,1463
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,13,1470.0,901.0,1571.0,1074.0,VLV_GATE,MOTOR,open,LO,MOV,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,14,1749.0,909.0,1823.0,1086.0,VLV_GATE,MOTOR,open,LO,MOV,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,15,1293.0,1338.0,1367.0,1406.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,16,800.0,863.0,873.0,929.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,16,800.0,873.0,873.0,929.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,17,913.0,420.0,982.0,480.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,18,1061.0,1622.0,1131.0,1693.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,19,2037.0,1597.0,2116.0,1661.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,20,1199.0,738.0,1277.0,810.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,20,1199.0,748.0,1277.0,810.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,21,1377.0,1599.0,1449.0,1664.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,22,1298.0,1919.0,1371.0,1986.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,23,711.0,867.0,787.0,931.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
@@ -1272,7 +1280,7 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,30,2036
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,31,1556.0,752.0,1695.0,812.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,32,1146.0,659.0,1270.0,719.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,33,1332.0,1099.0,1377.0,1161.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,34,1333.0,481.0,1497.0,570.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,34,1333.0,515.0,1477.0,567.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),MAKEUP FLOW off-page connector (the pentagon; the word MAKEUP above it is text)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,35,1117.0,303.0,1245.0,473.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK","condensate storage tank (CST-1, CST-2)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,36,2157.0,905.0,2235.0,1082.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,37,1601.0,1925.0,1778.0,1988.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
@@ -1292,44 +1300,46 @@ pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,50,1482
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,51,1460.8,1454.5,1531.7,1513.9,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,52,1337.1,1521.7,1374.5,1579.9,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,53,1331.3,1163.0,1379.5,1233.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,54,1996.0,1012.0,2026.0,1063.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),flow element of FT4521
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8,55,1993.0,1598.0,2030.0,1649.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),flow element of FT4522
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,0,2325.0,1156.0,2418.0,1288.0,VLV_GATE,MOTOR,closed,,MOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,1,2331.0,1467.0,2417.0,1581.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,1,2331.0,1467.0,2417.0,1577.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,2,2330.0,941.0,2419.0,1047.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,3,727.0,1847.0,777.0,1933.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,4,2634.0,1092.0,2717.0,1156.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,4,2634.0,1092.0,2717.0,1147.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,5,2233.0,1036.0,2353.0,1117.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,6,1471.0,988.0,1530.0,1068.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,6,1471.0,988.0,1523.0,1068.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,7,2853.0,1092.0,2941.0,1142.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,8,721.0,724.0,775.0,810.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,9,718.0,579.0,771.0,665.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,10,2630.0,1383.0,2712.0,1440.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,10,2630.0,1383.0,2712.0,1437.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,11,895.0,1200.0,976.0,1252.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,12,1351.0,1200.0,1440.0,1248.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,solid body (normally closed)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,13,2852.0,1386.0,2935.0,1439.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,13,2852.0,1386.0,2935.0,1436.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,14,1883.0,1231.0,1971.0,1281.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,15,2980.0,901.0,3035.0,986.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,16,2964.0,1544.0,3025.0,1639.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,17,2232.0,1392.0,2364.0,1480.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,18,1000.0,1190.0,1088.0,1256.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,19,1716.0,1629.0,1806.0,1678.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,20,2170.0,1230.0,2243.0,1293.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,21,2072.0,1220.0,2159.0,1293.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,19,1716.0,1629.0,1806.0,1674.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"solid body, locked closed (L.C.)"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,20,2170.0,1230.0,2243.0,1289.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,21,2078.0,1227.0,2159.0,1289.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,22,2971.0,1705.0,3116.0,1790.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,23,1220.0,290.0,1273.0,368.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,23,1220.0,290.0,1273.0,364.0,OFFPAGE,-,n/a,,,no,,class label,,,AP1000 #97 (description cut off — off-page continuation pennant symbol),
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,24,1225.0,715.0,1285.0,797.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,25,1221.0,786.0,1283.0,879.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,25,1226.0,786.0,1269.0,879.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,26,1808.0,1222.0,1889.0,1278.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,27,644.0,289.0,1036.0,483.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK",deaerator storage tank
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,28,620.0,1958.0,1027.0,2151.0,TANK,-,n/a,,TNK,yes,,class label,,,"APR1400 #12 PRESSURE VESSEL, VERTICAL OR HORIZONTAL TANK",deaerator storage tank
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,29,2734.0,417.0,3124.0,613.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,30,2743.0,1954.0,3139.0,2148.0,STEAM_GEN,-,n/a,,,no,,class label,,,APR1400 #2 STEAM GENERATOR,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,31,2005.0,1205.0,2043.0,1308.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),flow element FE 2657
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,32,2736.0,1385.0,2825.0,1573.0,VLV_GATE,AIR,closed,,AOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"startup control valve SP7A with a piston (cylinder) operator, solid body"
-pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,33,2737.0,963.0,2833.0,1143.0,VLV_GATE,AIR,closed,,AOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"startup control valve SP7B with a piston (cylinder) operator, solid body"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,32,2736.0,1385.0,2825.0,1569.0,VLV_GATE,AIR,closed,,AOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"startup control valve SP7A with a piston (cylinder) operator, solid body"
+pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,33,2737.0,963.0,2833.0,1140.0,VLV_GATE,AIR,closed,,AOV,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,"startup control valve SP7B with a piston (cylinder) operator, solid body"
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,34,2977.0,752.0,3121.0,834.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,35,1546.0,1162.0,1710.0,1282.0,PUMP_CENTRIFUGAL,NONE,n/a,,PMP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,startup feed pump (driver not shown)
 pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9,36,730.0,1698.0,891.0,1789.0,VLV_GATE,AIR,open,,AOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,valve FW-423 with a piston (cylinder) operator
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,0,1689.0,585.0,1782.0,681.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,"motor-driven AFW pump (P-504, P-141)"
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,0,1689.0,585.0,1782.0,681.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,"motor-driven AFW pump: the drawing marks its electrical power train (A-1 / A-2 next to the pump; page legend: A = alternating current), which only a motor driver uses"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,1,1927.0,1199.0,2003.0,1240.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,2,1262.0,1296.0,1335.0,1393.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,3,2043.0,461.0,2071.0,512.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,normally closed
@@ -1341,13 +1351,13 @@ pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,8,2508.0,51
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,9,978.0,1290.0,1060.0,1395.0,VLV_GATE,AIR,open,,AOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"pneumatic valve, fail open (FO)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,10,1467.0,616.0,1543.0,654.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,11,1983.0,568.0,2052.0,610.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,12,2246.0,1858.0,2323.0,1896.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,12,2251.0,1858.0,2323.0,1896.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,13,2767.0,1859.0,2817.0,1901.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,14,2762.0,2005.0,2813.0,2044.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,15,1557.0,782.0,1627.0,820.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,16,2312.0,965.0,2388.0,1004.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,17,2754.0,568.0,2804.0,608.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,18,1664.0,1847.0,1788.0,1977.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,"motor-driven AFW pump (P-504, P-141)"
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,18,1682.0,1877.0,1766.0,1979.0,PUMP_CENTRIFUGAL,MOTOR,n/a,,MDP,yes,,symbol (centrifugal casing),,,AP1000 #49 CENTRIFUGAL PUMP,"motor-driven AFW pump: the drawing marks its electrical power train (A-1 / A-2 next to the pump; page legend: A = alternating current), which only a motor driver uses"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,19,2761.0,718.0,2810.0,759.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,20,1915.0,569.0,1962.0,610.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,21,1902.0,1859.0,1953.0,1898.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
@@ -1366,10 +1376,10 @@ pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,33,2249.0,5
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,34,1818.0,570.0,1889.0,612.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),cavitating venturi
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,35,2219.0,908.0,2294.0,1004.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,36,2524.0,2030.0,2602.0,2127.0,VLV_GATE,EH,open,,HOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"electro-hydraulic valve, fail closed (FC)"
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,37,1807.0,1201.0,1899.0,1248.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),"cavitating venturi (as the page legend and #26, #34)"
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,37,1813.0,1201.0,1899.0,1248.0,ORIFICE,-,n/a,,ORF,no,,class label,,,AP1000 #17 CAVITATING VENTURI OR FLOW NOZZLE (4) (N),"cavitating venturi (as the page legend and #26, #34)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,38,1115.0,1648.0,1158.0,1684.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,AP1000 #3 CHECK VALVE,
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,39,1555.0,694.0,1624.0,731.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,40,2528.0,1798.0,2611.0,1903.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,40,2528.0,1798.0,2611.0,1898.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,41,1472.0,694.0,1546.0,733.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,42,1249.0,650.0,1286.0,733.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,AP1000 #8 GATE VALVE,locked closed (L.C.)
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,43,2115.0,1443.0,2192.0,1484.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,AP1000 #8 GATE VALVE,locked open (L.O.)
@@ -1383,7 +1393,7 @@ pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,50,1157.0,8
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,51,2165.0,515.0,2238.0,607.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,52,809.0,580.0,1023.0,860.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,"condensate storage tank (T-120, T-121)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,53,1303.0,560.0,1452.0,860.0,TANK,-,n/a,,TNK,yes,,class label,,,AP1000 #59 ATMOSPHERIC PRESSURE TANK,"condensate storage tank (T-120, T-121)"
-pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,54,1695.0,1168.0,1826.0,1260.0,PUMP_TURBINE_DRIVEN,TURBINE,n/a,,TDP,yes,,actuator label / note,,,AP1000 #52 TURBINE DRIVEN CENTRIFUGAL PUMP,turbine-driven AFW pump P-140 drawn as the turbine trapezoid only
+pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,54,1728.0,1169.0,1806.0,1260.0,PUMP_TURBINE_DRIVEN,TURBINE,n/a,,TDP,yes,,actuator label / note,,,AP1000 #52 TURBINE DRIVEN CENTRIFUGAL PUMP,turbine-driven AFW pump P-140 drawn as the turbine trapezoid only
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,55,2510.0,743.0,2585.0,837.0,VLV_GATE,EH,open,,HOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"electro-hydraulic valve, fail closed (FC)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,56,2209.0,1389.0,2272.0,1483.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
 pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation,57,2156.0,1801.0,2224.0,1893.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor valve, fail as is (FL)"
@@ -1913,14 +1923,14 @@ pseudo_CSS (APR1400),7,507.0,1050.0,524.0,1079.0,VLV_GATE,NONE,open,,XVM,yes,,cl
 pseudo_CSS (APR1400),8,1457.0,1806.0,1475.0,1837.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_CSS (APR1400),9,2056.0,1806.0,2075.0,1837.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_CSS (APR1400),10,988.0,2090.0,1007.0,2121.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
-pseudo_CSS (APR1400),11,1761.0,1435.0,1792.0,1466.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
+pseudo_CSS (APR1400),11,1761.0,1435.0,1792.0,1454.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
 pseudo_CSS (APR1400),12,557.0,1944.0,592.0,1975.0,VLV_GATE,NONE,closed,LC,XVM,yes,,class label,note and legend match,normal_position,APR1400 #35 GATE,"locked closed (LC), handwheel, solid body"
-pseudo_CSS (APR1400),13,1161.0,1436.0,1192.0,1466.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
+pseudo_CSS (APR1400),13,1161.0,1436.0,1192.0,1453.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
 pseudo_CSS (APR1400),14,1149.0,1806.0,1168.0,1837.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_CSS (APR1400),15,1412.0,1360.0,1455.0,1391.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),16,1434.0,1697.0,1478.0,1728.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),17,1436.0,1424.0,1454.0,1455.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
-pseudo_CSS (APR1400),18,1102.0,1218.0,1153.0,1249.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
+pseudo_CSS (APR1400),18,1116.0,1218.0,1153.0,1249.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),19,2011.0,1360.0,2055.0,1391.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_CSS (APR1400),20,884.0,2067.0,903.0,2098.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_CSS (APR1400),21,2035.0,1424.0,2054.0,1455.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
@@ -1956,7 +1966,7 @@ pseudo_CSS (APR1400),50,1415.0,1875.0,1476.0,1947.0,VLV_GATE,MOTOR,open,,MOV,yes
 pseudo_CSS (APR1400),51,1287.0,1754.0,1351.0,1822.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),52,1707.0,1888.0,1768.0,1958.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),53,1707.0,1961.0,1768.0,2031.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_CSS (APR1400),54,1566.0,2083.0,1606.0,2114.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
+pseudo_CSS (APR1400),54,1576.0,2083.0,1606.0,2114.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_CSS (APR1400),55,1588.0,2047.0,1617.0,2083.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_CSS (APR1400),56,2014.0,1961.0,2076.0,2031.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),57,2016.0,1875.0,2076.0,1945.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
@@ -1968,7 +1978,7 @@ pseudo_CSS (APR1400),62,1069.0,840.0,1133.0,909.0,VLV_GATE,MOTOR,open,,MOV,yes,,
 pseudo_CSS (APR1400),63,1253.0,772.0,1315.0,844.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),64,699.0,1943.0,759.0,2015.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),65,840.0,1848.0,903.0,1919.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_CSS (APR1400),66,947.0,2161.0,1019.0,2232.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_CSS (APR1400),66,947.0,2161.0,1008.0,2232.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),67,1107.0,1960.0,1168.0,2030.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_CSS (APR1400),68,583.0,1575.0,600.0,1586.0,ORIFICE,-,n/a,,ORF,no,,class label,,,APR1400 #86 RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE),
 pseudo_CSS (APR1400),69,574.0,1893.0,591.0,1904.0,ORIFICE,-,n/a,,ORF,no,,class label,,,APR1400 #86 RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE),
@@ -2727,10 +2737,10 @@ pseudo_Instrument Air (APR1400),29,711.0,927.0,740.0,978.0,VLV_CHECK,NONE,n/a,,C
 pseudo_Instrument Air (APR1400),30,712.0,1279.0,741.0,1330.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,APR1400 #35 GATE,
 pseudo_Instrument Air (APR1400),31,1226.0,1201.0,1255.0,1252.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,APR1400 #35 GATE,
 pseudo_Instrument Air (APR1400),32,769.0,807.0,821.0,837.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,APR1400 #35 GATE,solid body (normally closed)
-pseudo_Instrument Air (APR1400),33,698.0,2493.0,741.0,2544.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
-pseudo_Instrument Air (APR1400),34,1214.0,2230.0,1256.0,2282.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
+pseudo_Instrument Air (APR1400),33,711.0,2493.0,741.0,2544.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
+pseudo_Instrument Air (APR1400),34,1227.0,2230.0,1256.0,2282.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_Instrument Air (APR1400),35,960.0,2573.0,1011.0,2602.0,VLV_GATE,NONE,closed,,XVM,yes,,class label,note and legend match,normal_position,APR1400 #35 GATE,solid body (normally closed)
-pseudo_Instrument Air (APR1400),36,696.0,2233.0,741.0,2284.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
+pseudo_Instrument Air (APR1400),36,711.0,2233.0,741.0,2284.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_Instrument Air (APR1400),37,1227.0,2499.0,1256.0,2550.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_Instrument Air (APR1400),38,395.0,2791.0,451.0,2820.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,APR1400 #35 GATE,
 pseudo_Instrument Air (APR1400),39,998.0,2174.0,1050.0,2204.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
@@ -3068,12 +3078,12 @@ pseudo_SCS2_APR1400,19,1870.0,1161.0,1942.0,1240.0,VLV_GLOBE,MOTOR,open,,MOV,yes
 pseudo_SCS2_APR1400,20,787.0,2167.0,808.0,2202.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SCS2_APR1400,21,1220.0,2003.0,1291.0,2080.0,VLV_GLOBE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,motor-operated globe valve (dot at the body centre) with its tag circle
 pseudo_SCS2_APR1400,22,862.0,2097.0,948.0,2162.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,23,1816.0,1749.0,1859.0,1787.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
+pseudo_SCS2_APR1400,23,1816.0,1749.0,1859.0,1773.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
 pseudo_SCS2_APR1400,24,1306.0,2133.0,1379.0,2212.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SCS2_APR1400,25,1006.0,1615.0,1064.0,1649.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
+pseudo_SCS2_APR1400,25,1013.0,1615.0,1064.0,1649.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_SCS2_APR1400,26,1721.0,2444.0,1793.0,2524.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,27,1042.0,707.0,1063.0,741.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
-pseudo_SCS2_APR1400,28,1333.0,2553.0,1379.0,2587.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
+pseudo_SCS2_APR1400,28,1348.0,2553.0,1379.0,2587.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), handwheel"
 pseudo_SCS2_APR1400,29,1541.0,1582.0,1624.0,1647.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,30,733.0,2348.0,807.0,2425.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_SCS2_APR1400,31,1754.0,1692.0,1776.0,1726.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
@@ -3144,7 +3154,7 @@ pseudo_SI (APR1400),0,1000.0,1781.0,1025.0,1825.0,VLV_CHECK,NONE,n/a,,CKV,yes,,c
 pseudo_SI (APR1400),1,1704.0,1784.0,1729.0,1828.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SI (APR1400),2,1823.0,938.0,1848.0,982.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SI (APR1400),3,733.0,1020.0,757.0,1061.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
-pseudo_SI (APR1400),4,1797.0,1017.0,1848.0,1060.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
+pseudo_SI (APR1400),4,1807.0,1017.0,1848.0,1060.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_SI (APR1400),5,731.0,1785.0,755.0,1829.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SI (APR1400),6,1378.0,1263.0,1424.0,1314.0,INSTR,-,n/a,,,no,,class label,,,APR1400 #6 LOCALLY MOUNTED DEVICE NOT ON INSTRUMENT PANEL OR ASSEMBLY,flow transmitter (FT)
 pseudo_SI (APR1400),7,897.0,1785.0,922.0,1827.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
@@ -3178,7 +3188,7 @@ pseudo_SI (APR1400),34,1168.0,1687.0,1194.0,1733.0,VLV_GLOBE,NONE,open,LO,XVM,ye
 pseudo_SI (APR1400),35,1917.0,2578.0,1960.0,2621.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,locked open (LO)
 pseudo_SI (APR1400),36,1706.0,1019.0,1731.0,1063.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SI (APR1400),37,1168.0,1781.0,1193.0,1823.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
-pseudo_SI (APR1400),38,885.0,1691.0,923.0,1736.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
+pseudo_SI (APR1400),38,897.0,1691.0,923.0,1736.0,VLV_GLOBE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,locked open (LO)
 pseudo_SI (APR1400),39,735.0,772.0,759.0,814.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
 pseudo_SI (APR1400),40,1695.0,2206.0,1753.0,2249.0,VLV_GATE,NONE,open,LO,XVM,yes,,class label,note and legend match,,APR1400 #35 GATE,"locked open (LO), bellows-seal bonnet"
 pseudo_SI (APR1400),41,617.0,2497.0,641.0,2540.0,VLV_CHECK,NONE,n/a,,CKV,yes,,class label,,,APR1400 #52 CHECK (IDENTIFY CONTROLLED CLOSURE CHECK VALVES AND TILTING ,
@@ -3221,17 +3231,17 @@ pseudo_SI (APR1400),77,1765.0,1659.0,1785.0,1685.0,ORIFICE,-,n/a,,ORF,no,,class 
 pseudo_SI (APR1400),78,1498.0,1660.0,1517.0,1686.0,ORIFICE,-,n/a,,ORF,no,,class label,,,APR1400 #86 RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE),"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
 pseudo_SI (APR1400),79,1051.0,1657.0,1083.0,1683.0,ORIFICE,-,n/a,,ORF,no,,class label,,,APR1400 #86 RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE),"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
 pseudo_SI (APR1400),80,777.0,1660.0,809.0,1687.0,ORIFICE,-,n/a,,ORF,no,,class label,,,APR1400 #86 RESTRICTION ORIFICE (SINGLE OR MULTI-STAGE),"restriction orifice (short bar between two long bars, APR1400 legend restriction orifice), as #59"
-pseudo_SI (APR1400),81,561.0,2323.0,658.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),82,699.0,2323.0,796.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),83,968.0,2320.0,1066.0,2423.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),84,1403.0,2324.0,1503.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),85,1672.0,2321.0,1775.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),86,1879.0,2324.0,1978.0,2428.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),87,562.0,2576.0,659.0,2679.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),88,1618.0,880.0,1705.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),89,1350.0,879.0,1439.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),90,911.0,876.0,1003.0,963.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
-pseudo_SI (APR1400),91,644.0,879.0,735.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),81,561.0,2323.0,641.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),82,699.0,2323.0,779.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),83,968.0,2320.0,1048.0,2423.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),84,1403.0,2324.0,1484.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),85,1672.0,2321.0,1753.0,2426.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),86,1879.0,2324.0,1959.0,2428.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),87,562.0,2576.0,642.0,2679.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),88,1618.0,880.0,1684.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),89,1350.0,879.0,1417.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),90,911.0,876.0,981.0,963.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
+pseudo_SI (APR1400),91,644.0,879.0,713.0,966.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #35 GATE,motor-operated valve with its tag circle
 pseudo_SI (APR1400),92,681.8,1456.7,757.7,1549.2,VLV_GLOBE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,APR1400 #36 GLOBE (ARROW INDICATES VALVE BODY ORIENTATION. THIS ARROW SH,motor-operated globe valve (dot at the body centre) with its tag circle
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",0,716.0,1140.0,739.0,1183.0,VLV_GATE,NONE,open,,XVM,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,manual valve (XV)
 "pseudo_SI (Surry)_NUREG-CR-4550 Vol.3 Part1 Analysis of Core Damage Frequency_Surry, Un",1,1715.0,1462.0,1749.0,1505.0,VLV_GATE,MOTOR,open,,MOV,yes,,class label,legend match (automatic),,AP1000 #8 GATE VALVE,"motor-operated valve (MOV), operator box on the side"

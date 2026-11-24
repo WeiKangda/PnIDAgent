@@ -1781,32 +1781,13 @@
   "unlinks": []
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3": {
-  "added_lines": [
-   [
-    1482.0,
-    1431.0,
-    1527.0,
-    1540.0
-   ]
-  ],
+  "added_lines": [],
   "removed_lines": [
    [
-    1455.0,
+    1451.0,
     1257.5,
     1531.0,
     1257.5
-   ],
-   [
-    1482.0,
-    1493.0,
-    1482.0,
-    1257.5
-   ],
-   [
-    1491.0,
-    1540.0,
-    1527.0,
-    1540.0
    ]
   ],
   "crossing_decisions": [
@@ -1817,12 +1798,9 @@
    }
   ],
   "cuts": [],
-  "unlinks": [
-   [
-    51,
-    1482,
-    1470
-   ]
+  "unlinks": [],
+  "no_join": [
+   9
   ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4": {

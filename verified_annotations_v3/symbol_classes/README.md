@@ -1,6 +1,6 @@
 # Symbol classes
 
-A class for every one of the 3483 symbol boxes of [`../labels/`](../labels/) (same boxes, same ids), with the
+A class for every one of the 3493 symbol boxes of [`../labels/`](../labels/) (same boxes, same ids), with the
 operator of valves, dampers and pumps, the normal position of valves and dampers, the fault-tree component type, and
 whether the component is typically modeled in a PRA.
 
@@ -155,7 +155,7 @@ All classes at a glance: the most-cited legend symbol of each of the 57 classes 
 | [`AIR_SEPARATOR`](#air_separator) | Air separator assembly | yes | yes | 1 |
 | [`DEMIN`](#demin) | Demineralizer / ion exchanger | yes | yes | 10 |
 | [`DRYER`](#dryer) | Air dryer | yes | yes | 5 |
-| [`ORIFICE`](#orifice) | Orifice / flow element / venturi | yes | no | 103 (10 uncertain) |
+| [`ORIFICE`](#orifice) | Orifice / flow element / venturi | yes | no | 107 (10 uncertain) |
 | [`HEATER`](#heater) | Electric heater | yes | yes | 4 |
 | [`SPRAY`](#spray) | Spray: spray nozzle, spray header, sparger | yes | yes | 21 |
 | [`SUMP`](#sump) | Sump | no | yes | 1 |
@@ -344,7 +344,7 @@ All classes at a glance: the most-cited legend symbol of each of the 57 classes 
 |---|---|---|---|---:|
 | [`RUPTURE_DISC`](#rupture_disc) | Rupture disc | yes | no | 2 |
 | [`PENETRATION`](#penetration) | Containment penetration (box on the containment boundary, e.g. 'PC') | yes | no | 18 |
-| [`OFFPAGE`](#offpage) | Off-page connector / system interface | yes | no | 52 |
+| [`OFFPAGE`](#offpage) | Off-page connector / system interface | yes | no | 58 |
 | [`BLOCK`](#block) | Labelled equipment block (named by its text) | no | no | 18 |
 | [`OTHER`](#other) | Other | no | no | 20 (9 uncertain) |
 
@@ -377,8 +377,8 @@ diesel) and `UNSPEC` show examples as drawn. `NONE` (no operator drawn) and `-` 
 
 | actuator | definition | boxes |
 |---|---|---:|
-| `NONE` | No operator drawn and none named on the drawing (manual / check / self-acting valve, pump whose driver is not shown) | 1496 |
-| `MOTOR` | Motor operator or motor driver, drawn (M) or named on the drawing (e.g. MOTOR DRIVEN, MD, an MOV / MDP tag) | 527 |
+| `NONE` | No operator drawn and none named on the drawing (manual / check / self-acting valve, pump whose driver is not shown) | 1498 |
+| `MOTOR` | Motor operator or motor driver, drawn (M) or named on the drawing (e.g. MOTOR DRIVEN, MD, an MOV / MDP tag) | 525 |
 | `AIR` | Air / pneumatic operator (diaphragm or piston) | 209 |
 | `SOLENOID` | Solenoid operator | 7 |
 | `HYDRAULIC` | Hydraulic operator | 1 |
@@ -386,7 +386,7 @@ diesel) and `UNSPEC` show examples as drawn. `NONE` (no operator drawn) and `-` 
 | `UNSPEC` | Operator drawn, type neither identifiable from the symbol nor named on the drawing | 16 |
 | `TURBINE` | Turbine driver (pumps), drawn or named on the drawing (e.g. TURBINE DRIVEN, TD) | 23 |
 | `DIESEL` | Diesel / engine driver (pumps), drawn or named on the drawing | 8 |
-| `-` | Not applicable (not a valve, damper or pump) | 1136 |
+| `-` | Not applicable (not a valve, damper or pump) | 1146 |
 
 #### MOTOR (actuator)
 
@@ -439,7 +439,7 @@ diesel) and `UNSPEC` show examples as drawn. `NONE` (no operator drawn) and `-` 
 | `legend_entry` | the legend entry the box is tied to (`../legend_library/`) |
 | `note` | the labelers' note |
 
-Counts: normal position `open` 1269, `closed` 357, `not shown` 15, `unknown` 4; locked `LO` 155, `LC` 20; `pra_modeled = no` 417.
+Counts: normal position `open` 1269, `closed` 357, `not shown` 15, `unknown` 4; locked `LO` 155, `LC` 20; `pra_modeled = no` 427.
 
 ## How the class is decided
 

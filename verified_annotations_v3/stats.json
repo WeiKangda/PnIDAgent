@@ -120,19 +120,19 @@
   "pra_modeled_symbols": 144
  },
  "pseudo_AFW (Vogtle)": {
-  "symbols": 72,
-  "symbol_area": 336973,
+  "symbols": 78,
+  "symbol_area": 477750,
   "pipe_lines": 132,
   "dashed_pipe_lines": 0,
   "text_lines": 177,
-  "connections": 100,
+  "connections": 110,
   "normally_closed": 3,
   "pra_modeled_symbols": 72
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1": {
   "symbols": 53,
-  "symbol_area": 542746,
-  "pipe_lines": 78,
+  "symbol_area": 518855,
+  "pipe_lines": 79,
   "dashed_pipe_lines": 0,
   "text_lines": 113,
   "connections": 75,
@@ -141,7 +141,7 @@
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2": {
   "symbols": 27,
-  "symbol_area": 561731,
+  "symbol_area": 547579,
   "pipe_lines": 43,
   "dashed_pipe_lines": 0,
   "text_lines": 64,
@@ -150,12 +150,12 @@
   "pra_modeled_symbols": 24
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3": {
-  "symbols": 54,
-  "symbol_area": 561978,
-  "pipe_lines": 77,
+  "symbols": 56,
+  "symbol_area": 521292,
+  "pipe_lines": 81,
   "dashed_pipe_lines": 0,
-  "text_lines": 134,
-  "connections": 75,
+  "text_lines": 132,
+  "connections": 77,
   "normally_closed": 12,
   "pra_modeled_symbols": 48
  },
@@ -181,7 +181,7 @@
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
   "symbols": 27,
-  "symbol_area": 489568,
+  "symbol_area": 478820,
   "pipe_lines": 41,
   "dashed_pipe_lines": 0,
   "text_lines": 68,
@@ -191,7 +191,7 @@
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7": {
   "symbols": 25,
-  "symbol_area": 597250,
+  "symbol_area": 594725,
   "pipe_lines": 32,
   "dashed_pipe_lines": 0,
   "text_lines": 69,
@@ -200,18 +200,18 @@
   "pra_modeled_symbols": 20
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8": {
-  "symbols": 54,
-  "symbol_area": 556488,
-  "pipe_lines": 82,
+  "symbols": 56,
+  "symbol_area": 551287,
+  "pipe_lines": 84,
   "dashed_pipe_lines": 0,
   "text_lines": 136,
-  "connections": 75,
+  "connections": 77,
   "normally_closed": 8,
   "pra_modeled_symbols": 48
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9": {
   "symbols": 37,
-  "symbol_area": 557988,
+  "symbol_area": 551238,
   "pipe_lines": 48,
   "dashed_pipe_lines": 0,
   "text_lines": 99,
@@ -221,7 +221,7 @@
  },
  "pseudo_AFW_(San Onofre) AFW Design Review and Reliability Evaluation": {
   "symbols": 60,
-  "symbol_area": 340592,
+  "symbol_area": 327199,
   "pipe_lines": 93,
   "dashed_pipe_lines": 0,
   "text_lines": 108,
@@ -381,7 +381,7 @@
  },
  "pseudo_CSS (APR1400)": {
   "symbols": 72,
-  "symbol_area": 289121,
+  "symbol_area": 286821,
   "pipe_lines": 131,
   "dashed_pipe_lines": 16,
   "text_lines": 182,
@@ -521,7 +521,7 @@
  },
  "pseudo_Instrument Air (APR1400)": {
   "symbols": 72,
-  "symbol_area": 404064,
+  "symbol_area": 401960,
   "pipe_lines": 87,
   "dashed_pipe_lines": 0,
   "text_lines": 125,
@@ -591,7 +591,7 @@
  },
  "pseudo_SCS2_APR1400": {
   "symbols": 73,
-  "symbol_area": 389538,
+  "symbol_area": 388188,
   "pipe_lines": 133,
   "dashed_pipe_lines": 16,
   "text_lines": 214,
@@ -611,7 +611,7 @@
  },
  "pseudo_SI (APR1400)": {
   "symbols": 93,
-  "symbol_area": 597203,
+  "symbol_area": 575354,
   "pipe_lines": 147,
   "dashed_pipe_lines": 0,
   "text_lines": 222,

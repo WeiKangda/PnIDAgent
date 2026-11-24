@@ -1,6 +1,6 @@
 # Symbol class check images (65 pages)
 
-One overview per page for the 3483 symbol boxes: the whole drawing, every box with its id and class tag (red = valve or damper, blue = equipment, green = instrument, purple = electrical, orange = other). NC = normally closed, LO / LC = locked open / closed. Use it to find a box id on the drawing.
+One overview per page for the 3493 symbol boxes: the whole drawing, every box with its id and class tag (red = valve or damper, blue = equipment, green = instrument, purple = electrical, orange = other). NC = normally closed, LO / LC = locked open / closed. Use it to find a box id on the drawing.
 
 | No. | Page | Symbols | Overview |
 |---|---|---|---|
@@ -16,15 +16,15 @@ One overview per page for the 3483 symbol boxes: the whole drawing, every box wi
 | 10 | AFW (Seabrook) | 47 | [overview](overlay/pseudo_AFW%20%28Seabrook%29.jpg) |
 | 11 | AFW (South Texas) | 60 | [overview](overlay/pseudo_AFW%20%28South%20Texas%29.jpg) |
 | 12 | AFW (Turkey Point) | 174 | [overview](overlay/pseudo_AFW%20%28Turkey%20Point%29.jpg) |
-| 13 | AFW (Vogtle) | 72 | [overview](overlay/pseudo_AFW%20%28Vogtle%29.jpg) |
+| 13 | AFW (Vogtle) | 78 | [overview](overlay/pseudo_AFW%20%28Vogtle%29.jpg) |
 | 14 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p1 | 53 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p1.jpg) |
 | 15 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p2 | 27 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p2.jpg) |
-| 16 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3 | 54 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.jpg) |
+| 16 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p3 | 56 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p3.jpg) |
 | 17 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p4 | 26 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p4.jpg) |
 | 18 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5 | 36 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p5.jpg) |
 | 19 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6 | 27 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p6.jpg) |
 | 20 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p7 | 25 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p7.jpg) |
-| 21 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8 | 54 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.jpg) |
+| 21 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p8 | 56 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p8.jpg) |
 | 22 | AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p9 | 37 | [overview](overlay/pseudo_AFW_%28DAVIS-BESSE%29%20AFW%20system%20Reliability%20Analysis_Final%20Report_p9.jpg) |
 | 23 | AFW_(San Onofre) AFW Design Review and Reliability Evaluation | 60 | [overview](overlay/pseudo_AFW_%28San%20Onofre%29%20AFW%20Design%20Review%20and%20Reliability%20Evaluation.jpg) |
 | 24 | AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat | 76 | [overview](overlay/pseudo_AFW_0520_R325C_CE%20Technology%20Cross%20Training%20R325C_Chapter%2011.5%20Auxiliary%20Feedwat.jpg) |

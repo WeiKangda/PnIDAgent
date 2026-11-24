@@ -42,7 +42,7 @@ MOISTURE_SEPARATOR,Moisture separator,equipment,yes,yes,12
 AIR_SEPARATOR,Air separator assembly,equipment,yes,yes,1
 DEMIN,Demineralizer / ion exchanger,equipment,yes,yes,10
 DRYER,Air dryer,equipment,yes,yes,5
-ORIFICE,Orifice / flow element / venturi,equipment,yes,no,103
+ORIFICE,Orifice / flow element / venturi,equipment,yes,no,107
 HEATER,Electric heater,equipment,yes,yes,4
 SPRAY,"Spray: spray nozzle, spray header, sparger",equipment,yes,yes,21
 SUMP,Sump,equipment,no,yes,1
@@ -59,6 +59,6 @@ INVERTER,Inverter / UPS,electrical,yes,yes,6
 SWITCH,Switch / disconnect / transfer switch,electrical,yes,yes,5
 PANEL,Distribution panel / MCC / switchgear box,electrical,yes,yes,7
 PENETRATION,"Containment penetration (box on the containment boundary, e.g. 'PC')",other,yes,no,18
-OFFPAGE,Off-page connector / system interface,other,yes,no,52
+OFFPAGE,Off-page connector / system interface,other,yes,no,58
 BLOCK,Labelled equipment block (named by its text),other,no,no,18
 OTHER,Other,other,no,no,20

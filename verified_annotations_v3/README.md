@@ -20,13 +20,13 @@ a person's decision are listed in [`symbol_classes/review.xlsx`](symbol_classes/
 | | |
 |---|---:|
 | Pages | 65 |
-| Symbol boxes | 3483 |
+| Symbol boxes | 3493 |
 | Symbol classes | 63 (56 occur on the pages) |
 | Valves and dampers normally closed | 357 |
 | Symbols of components typically modeled in a PRA | 3066 |
-| Pipe line segments | 6381 (50 dashed) |
-| Text lines | 6064 |
-| Connections (pairs of symbols joined by pipes) | 7223 |
+| Pipe line segments | 6388 (50 dashed) |
+| Text lines | 6062 |
+| Connections (pairs of symbols joined by pipes) | 7237 |
 
 `stats.json` has these numbers for every page.
 
@@ -35,10 +35,10 @@ a person's decision are listed in [`symbol_classes/review.xlsx`](symbol_classes/
 | group | classes (boxes) |
 |---|---|
 | Valves and dampers | `VLV_GATE` 1298, `VLV_GLOBE` 132, `VLV_BUTTERFLY` 92, `VLV_BALL` 0, `VLV_PLUG` 0, `VLV_NEEDLE` 0, `VLV_DIAPHRAGM` 0, `VLV_ANGLE` 5, `VLV_3WAY` 9, `VLV_CHECK` 494, `VLV_STOP_CHECK` 37, `VLV_SAFETY_RELIEF` 39, `VLV_PILOT_RELIEF` 12, `VLV_VACUUM_BREAKER` 0, `VLV_REGULATOR` 2, `DAMPER_MOTOR` 0, `DAMPER_PNEUMATIC` 27, `DAMPER_EH` 30, `DAMPER_NO_OPERATOR` 15 |
-| Equipment | `PUMP_CENTRIFUGAL` 113, `PUMP_TURBINE_DRIVEN` 22, `PUMP_VERTICAL` 13, `COMPRESSOR` 12, `FAN` 48, `TURBINE` 22, `TANK` 76, `HX` 124, `CONDENSER` 11, `COIL` 40, `CHILLER` 11, `HUMIDIFIER` 4, `AHU` 9, `STEAM_GEN` 73, `REACTOR` 1, `PRESSURIZER` 1, `FILTER` 68, `STRAINER` 16, `CARBON_ADSORBER` 12, `MOISTURE_SEPARATOR` 12, `AIR_SEPARATOR` 1, `DEMIN` 10, `DRYER` 5, `ORIFICE` 103, `HEATER` 4, `SPRAY` 21, `SUMP` 1, `TRAP` 0, `ENGINE` 1 |
+| Equipment | `PUMP_CENTRIFUGAL` 113, `PUMP_TURBINE_DRIVEN` 22, `PUMP_VERTICAL` 13, `COMPRESSOR` 12, `FAN` 48, `TURBINE` 22, `TANK` 76, `HX` 124, `CONDENSER` 11, `COIL` 40, `CHILLER` 11, `HUMIDIFIER` 4, `AHU` 9, `STEAM_GEN` 73, `REACTOR` 1, `PRESSURIZER` 1, `FILTER` 68, `STRAINER` 16, `CARBON_ADSORBER` 12, `MOISTURE_SEPARATOR` 12, `AIR_SEPARATOR` 1, `DEMIN` 10, `DRYER` 5, `ORIFICE` 107, `HEATER` 4, `SPRAY` 21, `SUMP` 1, `TRAP` 0, `ENGINE` 1 |
 | Instruments | `INSTR` 78 |
 | Electrical | `BREAKER` 181, `TRANSFORMER` 37, `GENERATOR` 10, `MOTOR` 17, `BATTERY` 3, `CHARGER` 3, `INVERTER` 6, `SWITCH` 5, `PANEL` 7 |
-| Other | `RUPTURE_DISC` 2, `PENETRATION` 18, `OFFPAGE` 52, `BLOCK` 18, `OTHER` 20 |
+| Other | `RUPTURE_DISC` 2, `PENETRATION` 18, `OFFPAGE` 58, `BLOCK` 18, `OTHER` 20 |
 
 Valves keep one class per body symbol, with the operator in `actuator` (`MOTOR`, `AIR`, `SOLENOID`, `HYDRAULIC`, `EH`,
 `NONE`, `UNSPEC`), so a fault-tree component type (MOV, AOV, SOV, HOV, CKV, XVM, SRV, PORV, VBV, ...) follows from class +
@@ -65,13 +65,20 @@ definitions and the per-box columns: [`symbol_classes/`](symbol_classes/README.m
 ## Labeling rules
 
 - One box per symbol, tight around the symbol's ink.
-- A valve together with its actuator (M, solenoid, diaphragm) and LO/LC mark is one box.
+- A valve together with its actuator (M, solenoid, diaphragm) is one box. Lock marks next to a valve (LO, LC, LO.FL,
+  LC.FL, L.O., L.C.) are text, not part of the symbol: they get a text box, and the valve box is not extended to hold them.
 - A valve and the numbered tag circle drawn on a leader from it are one box (e.g. SCS2 (APR1400), RCS-POSRV (APR1400)).
   Instrument circles that stand on their own get their own box.
+- The pilot of a pilot-operated safety relief valve, the square marked P drawn above each POSRV together with the three
+  short legs under it, is a symbol of its own (`OTHER`), not part of the valve box; the line from it to the valve and the
+  pilot lines that continue below its legs are pipes (RCS-POSRV (APR1400)).
 - A pump and its variable frequency drive (VFD) are one box (Power conversion system (NuScale)).
 - Labelled equipment blocks (heat exchangers, coolers, chillers drawn as a rectangle with a name) are boxed
   (CCWS (APR1400)).
 - A dashed frame drawn around several valves is not a symbol: each valve inside gets its own box (AFW (Haddam Neck)).
+- Symbols drawn in a legend to explain the notation (e.g. the two valves next to the words NORMALLY OPEN and NORMALLY
+  CLOSED on the Davis-Besse reliability analysis pages) are not symbols of the system: they get no box and no
+  connection. The words of the legend are text.
 - Marks drawn on a pipe are not symbols: code-class break marks (e.g. "1|2" with its leader), flow arrows, interface
   brackets. A containment penetration drawn as a box on the containment boundary **is** a symbol (`PENETRATION`).
 - An equipment box ends at the outline of the equipment: the arrows, labels and CCW lines drawn next to a heat
@@ -88,6 +95,8 @@ definitions and the per-box columns: [`symbol_classes/`](symbol_classes/README.m
   RCS-POSRV (APR1400), the dotted CCW supply and return lines of the heat exchangers and the dotted lines to and from
   other systems (IRWST, CSS, DVI, external emergency injection) on SCS, SCS2 and CSS (APR1400).
 - No line is added where the drawing shows none (e.g. between the filter, coils and fan inside an HVAC unit housing).
+- Handwriting that cannot be read (e.g. initials in a revision block) gets a text box like any other text line; its
+  transcription is `###`.
 
 ## How it was made
 
