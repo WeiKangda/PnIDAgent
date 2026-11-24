@@ -171,10 +171,10 @@
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p5": {
   "symbols": 36,
-  "symbol_area": 546595,
-  "pipe_lines": 46,
+  "symbol_area": 528400,
+  "pipe_lines": 47,
   "dashed_pipe_lines": 0,
-  "text_lines": 95,
+  "text_lines": 94,
   "connections": 57,
   "normally_closed": 5,
   "pra_modeled_symbols": 32

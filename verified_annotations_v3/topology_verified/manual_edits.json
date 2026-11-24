@@ -1837,7 +1837,11 @@
    }
   ],
   "cuts": [],
-  "unlinks": []
+  "unlinks": [],
+  "no_join": [
+   27,
+   31
+  ]
  },
  "pseudo_AFW_(DAVIS-BESSE) AFW system Reliability Analysis_Final Report_p6": {
   "added_lines": [],

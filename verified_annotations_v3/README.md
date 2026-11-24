@@ -24,8 +24,8 @@ a person's decision are listed in [`symbol_classes/review.xlsx`](symbol_classes/
 | Symbol classes | 63 (56 occur on the pages) |
 | Valves and dampers normally closed | 357 |
 | Symbols of components typically modeled in a PRA | 3066 |
-| Pipe line segments | 6388 (50 dashed) |
-| Text lines | 6062 |
+| Pipe line segments | 6389 (50 dashed) |
+| Text lines | 6061 |
 | Connections (pairs of symbols joined by pipes) | 7237 |
 
 `stats.json` has these numbers for every page.
