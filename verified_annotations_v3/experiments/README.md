@@ -5,7 +5,7 @@ task returns and the scripts that score them.
 
 Every experiment uses this folder at the git tag **`v3-freeze-2026-11-24`**. At that tag the symbol boxes, pipe lines,
 text and connectivity are final. The symbol classes may still change through the review of
-[`symbol_classes/review.xlsx`](../symbol_classes/review.xlsx) (task 8); only the classification experiments depend on
+[`symbol_classes/review.xlsx`](../symbol_classes/review.xlsx) (task 7); only the classification experiments depend on
 them, and they are run after that review.
 
 ## Data
@@ -36,7 +36,7 @@ Totals: 65 pages, 3,493 symbols, 6,389 annotated pipe line segments (6,464 in th
 
 ## Tasks
 
-The paper's tables need the results of tasks 1 to 6. Tasks 7 to 9 are facts and decisions for the text. Task 10 is a
+The paper's tables need the results of tasks 1 to 5. Tasks 6 to 8 are facts and decisions for the text. Task 9 is a
 baseline with an open-weight vision-language model.
 
 ### 1. Retrain the symbol detector on this release
@@ -66,7 +66,7 @@ Upload as assets of a GitHub release of this repository (files above 100 MB cann
 
 - `pipe_probability_maps.zip`: the U-Net pipe probability of every page as an 8-bit PNG of the page size (training pages
   out of fold, test pages the mean of the two fold models);
-- all model weights (task 6).
+- all model weights (task 5).
 
 ### 2. Base detector fine-tuned on the training pages
 
@@ -80,22 +80,7 @@ detector instead of on a re-scorer). Return `test_predictions_finetuned.json` an
 deduplicated readings in the format of `text/<page>.json` (with a `score` per item) in
 `experiments/results/text_ocr/text/<page>.json`.
 
-### 4. Ablations of the re-scorer
-
-Each run removes one component from the final model of task 1 and returns its test predictions as
-`experiments/results/symbol_detection/ablations/<name>.json`:
-
-| name | change |
-|---|---|
-| `no_attention` | each candidate scored alone from the same inputs |
-| `no_text` | without text tokens |
-| `no_pipe` | without pipe tokens |
-| `imagenet_encoder` | crop encoder initialized from ImageNet, without the pretraining |
-| `one_pass` | one pass instead of two |
-| `base_candidates` | candidates from the base detector only |
-| `seed1` | the full model with a second random seed |
-
-### 5. The whole pipeline on the test pages
+### 4. The whole pipeline on the test pages
 
 Run text, lines, symbols and graph assembly on the 25 test pages with the models of tasks 1 and 3 and keep every
 intermediate output, in `experiments/results/pipeline/<page>/`: `text.json`, `lines.json` (pipe segments, format of
@@ -103,30 +88,30 @@ intermediate output, in `experiments/results/pipeline/<page>/`: `text.json`, `li
 `topology_verified/<page>.json`) and `graph_llm.json` (node ids, categories, captions; links as pairs). These outputs give
 the end-to-end row of the graph table, the stage figure and the JSON example of the paper.
 
-### 6. Release: weights, code and one entry point
+### 5. Release: weights, code and one entry point
 
 - All final weights as release assets: base detector, tile and large-equipment detectors (each fold and the full model),
-  crop encoder, pipe U-Nets, re-scorers (each fold and seed).
+  crop encoder, pipe U-Nets, re-scorers (each fold).
 - The code without absolute paths: the paths go into one config file or command-line arguments.
-- One entry point that runs the whole pipeline on a page image and writes the files of task 5.
+- One entry point that runs the whole pipeline on a page image and writes the files of task 4.
 - A `README.md` with the environment (Python, CUDA, package versions) and the command that reproduces each result of
-  tasks 1 to 5.
+  tasks 1 to 4.
 
-### 7. Two facts for the paper
+### 6. Two facts for the paper
 
 - The teacher detectors that pseudo-labeled the training data of the base detector, and its initial checkpoint (one or
   two sentences).
 - Who did which part of the annotation work (the independent connectivity audit, the second review of the classes, the
   legend library), with what background, and which AI tools were used and how (the journal asks for this disclosure).
 
-### 8. Review of the symbol classes
+### 7. Review of the symbol classes
 
 [`symbol_classes/review.xlsx`](../symbol_classes/review.xlsx): one sheet per kind of decision (fan or pump, normal
 position, finer class from the legend match alone, class OTHER, uncertain), each row with a crop of the symbol on its
 drawing, the proposal and empty columns for the decision. Its `README` sheet explains the columns. Return the filled
 workbook as `experiments/review/review_decisions.xlsx`; the decisions are then applied to `symbol_classes/`.
 
-### 9. Seven plain crossings
+### 8. Seven plain crossings
 
 Seven crossings on the pages of the Davis-Besse reliability analysis are drawn without a dot. This drawing marks
 non-connected crossings with a hop, so the connectivity treats these seven as connected (a decision from the function of
@@ -143,7 +128,7 @@ the system). Images in [`review/crossings/`](review/crossings/), one per crossin
 Confirm each from the system it belongs to, or say which are not connected and why, in
 `experiments/review/crossings.md`.
 
-### 10. Baseline with an open-weight vision-language model
+### 9. Baseline with an open-weight vision-language model
 
 The baselines with vision-language models are described in [`llm_baselines.md`](llm_baselines.md). The closed models run
 through their APIs; this task is the same baselines with an open-weight model on a local GPU.
