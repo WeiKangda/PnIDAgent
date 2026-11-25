@@ -9193,7 +9193,7 @@
 {
 "box_id": 19,
 "x0": 467.0,
-"y0": 1042.0,
+"y0": 1056.0,
 "x1": 513.0,
 "y1": 1141.0,
 "class": "VLV_GATE",
@@ -9373,7 +9373,7 @@
 {
 "box_id": 34,
 "x0": 1304.0,
-"y0": 1169.0,
+"y0": 1178.0,
 "x1": 1350.0,
 "y1": 1251.0,
 "class": "VLV_CHECK",
@@ -9506,8 +9506,8 @@
 "box_id": 45,
 "x0": 1932.0,
 "y0": 2364.0,
-"x1": 2023.0,
-"y1": 2414.0,
+"x1": 2010.0,
+"y1": 2407.0,
 "class": "VLV_GATE",
 "actuator": "NONE",
 "ft_component_type": "XVM",
@@ -9865,7 +9865,7 @@
 {
 "box_id": 75,
 "x0": 1818.0,
-"y0": 1160.0,
+"y0": 1171.0,
 "x1": 1867.0,
 "y1": 1244.0,
 "class": "VLV_CHECK",
@@ -9937,8 +9937,8 @@
 {
 "box_id": 81,
 "x0": 532.0,
-"y0": 1041.0,
-"x1": 579.0,
+"y0": 1055.0,
+"x1": 577.0,
 "y1": 1139.0,
 "class": "VLV_GATE",
 "actuator": "NONE",
@@ -10225,7 +10225,7 @@
 {
 "box_id": 105,
 "x0": 660.0,
-"y0": 1176.0,
+"y0": 1186.0,
 "x1": 708.0,
 "y1": 1259.0,
 "class": "VLV_CHECK",
@@ -10236,9 +10236,9 @@
 },
 {
 "box_id": 106,
-"x0": 1567.0,
-"y0": 509.0,
-"x1": 1627.0,
+"x0": 1574.0,
+"y0": 517.0,
+"x1": 1620.0,
 "y1": 598.0,
 "class": "VLV_CHECK",
 "actuator": "NONE",
@@ -10309,7 +10309,7 @@
 {
 "box_id": 112,
 "x0": 1690.0,
-"y0": 1032.0,
+"y0": 1040.0,
 "x1": 1737.0,
 "y1": 1124.0,
 "class": "VLV_GATE",
@@ -10416,7 +10416,7 @@
 },
 {
 "box_id": 121,
-"x0": 1127.0,
+"x0": 1165.0,
 "y0": 1569.0,
 "x1": 1231.0,
 "y1": 1638.0,
@@ -10453,7 +10453,7 @@
 {
 "box_id": 124,
 "x0": 1628.0,
-"y0": 1032.0,
+"y0": 1042.0,
 "x1": 1671.0,
 "y1": 1125.0,
 "class": "VLV_GATE",
@@ -10502,8 +10502,8 @@
 "box_id": 128,
 "x0": 976.0,
 "y0": 783.0,
-"x1": 1030.0,
-"y1": 880.0,
+"x1": 1028.0,
+"y1": 865.0,
 "class": "VLV_CHECK",
 "actuator": "NONE",
 "ft_component_type": "CKV",
@@ -10513,7 +10513,7 @@
 {
 "box_id": 129,
 "x0": 1760.0,
-"y0": 1032.0,
+"y0": 1039.0,
 "x1": 1805.0,
 "y1": 1123.0,
 "class": "VLV_GATE",
@@ -10524,7 +10524,7 @@
 },
 {
 "box_id": 130,
-"x0": 511.0,
+"x0": 523.0,
 "y0": 1577.0,
 "x1": 589.0,
 "y1": 1647.0,
@@ -10620,10 +10620,10 @@
 },
 {
 "box_id": 138,
-"x0": 510.0,
+"x0": 516.0,
 "y0": 789.0,
-"x1": 570.0,
-"y1": 906.0,
+"x1": 566.0,
+"y1": 873.0,
 "class": "VLV_CHECK",
 "actuator": "NONE",
 "ft_component_type": "CKV",
@@ -10692,7 +10692,7 @@
 },
 {
 "box_id": 144,
-"x0": 777.0,
+"x0": 813.0,
 "y0": 1332.0,
 "x1": 884.0,
 "y1": 1371.0,
@@ -10700,11 +10700,11 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 145,
-"x0": 777.0,
+"x0": 813.0,
 "y0": 1385.0,
 "x1": 884.0,
 "y1": 1424.0,
@@ -10712,11 +10712,11 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 146,
-"x0": 1403.0,
+"x0": 1457.0,
 "y0": 1324.0,
 "x1": 1526.0,
 "y1": 1363.0,
@@ -10724,11 +10724,11 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 147,
-"x0": 1419.0,
+"x0": 1457.0,
 "y0": 1377.0,
 "x1": 1526.0,
 "y1": 1416.0,
@@ -10736,11 +10736,11 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 148,
-"x0": 1931.0,
+"x0": 1972.0,
 "y0": 1316.0,
 "x1": 2043.0,
 "y1": 1356.0,
@@ -10748,11 +10748,11 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 149,
-"x0": 1920.0,
+"x0": 1972.0,
 "y0": 1369.0,
 "x1": 2044.0,
 "y1": 1409.0,
@@ -10760,7 +10760,7 @@
 "actuator": "NONE",
 "ft_component_type": "XVM",
 "uncertain": "",
-"note": "one box holds two valves in series (confirmed on review)"
+"note": ""
 },
 {
 "box_id": 150,
@@ -10959,7 +10959,7 @@
 "x0": 1167.0,
 "y0": 1315.0,
 "x1": 1208.0,
-"y1": 1335.0,
+"y1": 1344.0,
 "class": "ORIFICE",
 "actuator": "-",
 "ft_component_type": "ORF",
@@ -10980,10 +10980,10 @@
 },
 {
 "box_id": 168,
-"x0": 406.9,
+"x0": 415.0,
 "y0": 2900.0,
-"x1": 544.8,
-"y1": 2984.4,
+"x1": 549.0,
+"y1": 2981.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",
@@ -10992,10 +10992,10 @@
 },
 {
 "box_id": 169,
-"x0": 701.6,
-"y0": 2894.8,
-"x1": 846.4,
-"y1": 2981.0,
+"x0": 717.0,
+"y0": 2898.0,
+"x1": 848.0,
+"y1": 2979.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",
@@ -11004,10 +11004,10 @@
 },
 {
 "box_id": 170,
-"x0": 1022.2,
-"y0": 2898.2,
-"x1": 1165.2,
-"y1": 2979.2,
+"x0": 1033.0,
+"y0": 2896.0,
+"x1": 1166.0,
+"y1": 2979.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",
@@ -11016,10 +11016,10 @@
 },
 {
 "box_id": 171,
-"x0": 1334.1,
-"y0": 2896.5,
-"x1": 1473.7,
-"y1": 2981.0,
+"x0": 1340.0,
+"y0": 2896.0,
+"x1": 1472.0,
+"y1": 2979.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",
@@ -11028,10 +11028,10 @@
 },
 {
 "box_id": 172,
-"x0": 1647.7,
-"y0": 2889.6,
-"x1": 1785.6,
-"y1": 2974.1,
+"x0": 1652.0,
+"y0": 2888.0,
+"x1": 1785.0,
+"y1": 2971.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",
@@ -11040,10 +11040,10 @@
 },
 {
 "box_id": 173,
-"x0": 1954.5,
-"y0": 2884.5,
-"x1": 2088.9,
-"y1": 2974.1,
+"x0": 1961.0,
+"y0": 2886.0,
+"x1": 2092.0,
+"y1": 2969.0,
 "class": "STEAM_GEN",
 "actuator": "-",
 "ft_component_type": "",

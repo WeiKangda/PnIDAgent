@@ -7267,15 +7267,6 @@
     },
     {
      "seg": [
-      1188.5,
-      1335.0,
-      1189.0,
-      1388.0
-     ],
-     "reason": "drawn pipe piece of the connectivity review, on the drawing"
-    },
-    {
-     "seg": [
       1703.0,
       1333.0,
       1704.0,
@@ -7285,7 +7276,1055 @@
     }
    ]
   },
-  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set)."
+  "status_note": "Re-verified 2026-11-17 after the review fixes in ../review_2026_11/fixes.json (line annotations synchronised with the verified pipe set). Changed 2026-11-25 after a tight-ink audit with the findings of the self-tests and ALE reviews of the Davis-Besse pages: 27 symbol boxes fitted to the ink (the flow arrows beside the six CST suction valves and below check valve 138, the signal arrows at two motor valves, dashes of the segment boundaries, pipe corners, the cut-off third plate of a recirculation orifice, the steam lines and outline ends of the six lower steam generators); the pipes that ended at a moved edge extended to it and the pipe pieces that the boxes no longer cover added; the three plain crosses of the turbine steam manifolds are not connected, as the rule says.",
+  "relabel": [
+   {
+    "id": 19,
+    "bbox": [
+     467.0,
+     1042.0,
+     513.0,
+     1141.0
+    ],
+    "box": [
+     467.0,
+     1056.0,
+     513.0,
+     1141.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held a dash of the TD-P1 segment boundary drawn across the pipe above the valve; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 34,
+    "bbox": [
+     1304.0,
+     1169.0,
+     1350.0,
+     1251.0
+    ],
+    "box": [
+     1304.0,
+     1178.0,
+     1350.0,
+     1251.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held the corner of the discharge pipe that comes in from the left above the valve; moved in to the top bar of the check valve (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 45,
+    "bbox": [
+     1932.0,
+     2364.0,
+     2023.0,
+     2414.0
+    ],
+    "box": [
+     1932.0,
+     2364.0,
+     2010.0,
+     2407.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the right edge held 13 px of the pipe and the bottom edge the dash of the segment boundary that touches the valve; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 75,
+    "bbox": [
+     1818.0,
+     1160.0,
+     1867.0,
+     1244.0
+    ],
+    "box": [
+     1818.0,
+     1171.0,
+     1867.0,
+     1244.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held the corner of the discharge pipe that comes in from the left above the valve; moved in to the top bar of the check valve (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 81,
+    "bbox": [
+     532.0,
+     1041.0,
+     579.0,
+     1139.0
+    ],
+    "box": [
+     532.0,
+     1055.0,
+     577.0,
+     1139.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held a dash of the TD-P1 segment boundary drawn across the pipe above the valve, the right edge 2 px of margin; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 105,
+    "bbox": [
+     660.0,
+     1176.0,
+     708.0,
+     1259.0
+    ],
+    "box": [
+     660.0,
+     1186.0,
+     708.0,
+     1259.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held the corner of the discharge pipe that comes in from the left above the valve; moved in to the top bar of the check valve (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 106,
+    "bbox": [
+     1567.0,
+     509.0,
+     1627.0,
+     598.0
+    ],
+    "box": [
+     1574.0,
+     517.0,
+     1620.0,
+     598.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the two dashes of the segment boundary drawn across the pipe above the valve; edges moved in to the check valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 112,
+    "bbox": [
+     1690.0,
+     1032.0,
+     1737.0,
+     1124.0
+    ],
+    "box": [
+     1690.0,
+     1040.0,
+     1737.0,
+     1124.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held a dash of the TD-P3 segment boundary drawn across the pipe above the valve; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 121,
+    "bbox": [
+     1127.0,
+     1569.0,
+     1231.0,
+     1638.0
+    ],
+    "box": [
+     1165.0,
+     1569.0,
+     1231.0,
+     1638.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held the arrowhead of the signal arrow drawn to the motor operator (a mark, not part of the valve); moved in to the operator box (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 124,
+    "bbox": [
+     1628.0,
+     1032.0,
+     1671.0,
+     1125.0
+    ],
+    "box": [
+     1628.0,
+     1042.0,
+     1671.0,
+     1125.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held a dash of the TD-P3 segment boundary drawn across the pipe above the valve; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 128,
+    "bbox": [
+     976.0,
+     783.0,
+     1030.0,
+     880.0
+    ],
+    "box": [
+     976.0,
+     783.0,
+     1028.0,
+     865.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the bottom edge held the two dashes of the segment boundary drawn across the pipe below the valve; moved in to the check valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 129,
+    "bbox": [
+     1760.0,
+     1032.0,
+     1805.0,
+     1123.0
+    ],
+    "box": [
+     1760.0,
+     1039.0,
+     1805.0,
+     1123.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the top edge held a dash of the TD-P3 segment boundary drawn across the pipe above the valve; moved in to the valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 130,
+    "bbox": [
+     511.0,
+     1577.0,
+     589.0,
+     1647.0
+    ],
+    "box": [
+     523.0,
+     1577.0,
+     589.0,
+     1647.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held the tip of the signal arrow drawn to the motor operator (a mark, not part of the valve); moved in to the operator box (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 138,
+    "bbox": [
+     510.0,
+     789.0,
+     570.0,
+     906.0
+    ],
+    "box": [
+     516.0,
+     789.0,
+     566.0,
+     873.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe below the valve and the two dashes of the segment boundary beside it; edges moved in to the check valve ink (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 144,
+    "bbox": [
+     777.0,
+     1332.0,
+     884.0,
+     1371.0
+    ],
+    "box": [
+     813.0,
+     1332.0,
+     884.0,
+     1371.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve); left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 145,
+    "bbox": [
+     777.0,
+     1385.0,
+     884.0,
+     1424.0
+    ],
+    "box": [
+     813.0,
+     1385.0,
+     884.0,
+     1424.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve); left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 146,
+    "bbox": [
+     1403.0,
+     1324.0,
+     1526.0,
+     1363.0
+    ],
+    "box": [
+     1457.0,
+     1324.0,
+     1526.0,
+     1363.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve) and the corner of the CST4 suction pipe; left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 147,
+    "bbox": [
+     1419.0,
+     1377.0,
+     1526.0,
+     1416.0
+    ],
+    "box": [
+     1457.0,
+     1377.0,
+     1526.0,
+     1416.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve); left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 148,
+    "bbox": [
+     1931.0,
+     1316.0,
+     2043.0,
+     1356.0
+    ],
+    "box": [
+     1972.0,
+     1316.0,
+     2043.0,
+     1356.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve); left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 149,
+    "bbox": [
+     1920.0,
+     1369.0,
+     2044.0,
+     1409.0
+    ],
+    "box": [
+     1972.0,
+     1369.0,
+     2044.0,
+     1409.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box held the flow arrow drawn on the pipe beside the valve (an arrowhead on the pipe, not a second valve) and the corner of the CST3 suction pipe; left edge moved in to the valve body (one box per symbol, tight around its ink)",
+    "note": ""
+   },
+   {
+    "id": 166,
+    "bbox": [
+     1167.0,
+     1315.0,
+     1208.0,
+     1335.0
+    ],
+    "box": [
+     1167.0,
+     1315.0,
+     1208.0,
+     1344.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the box cut off the third plate of the orifice (the plate nearest the Recirc arrow), which the boxes of the other two recirculation orifices (165, 167) hold; bottom edge widened to the plate (a symbol cut by its box is widened to its ink) (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 168,
+    "bbox": [
+     406.9,
+     2900.0,
+     544.8,
+     2984.4
+    ],
+    "box": [
+     415.0,
+     2900.0,
+     549.0,
+     2981.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 8 px of the steam line, which ran into the box up to the outline, the right edge cut 4 px off the end of the outline, the bottom edge had 3 px of margin; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 169,
+    "bbox": [
+     701.6,
+     2894.8,
+     846.4,
+     2981.0
+    ],
+    "box": [
+     717.0,
+     2898.0,
+     848.0,
+     2979.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 15 px of the steam line, which ran into the box up to the outline, the right edge cut 2 px off the end of the outline; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 170,
+    "bbox": [
+     1022.2,
+     2898.2,
+     1165.2,
+     2979.2
+    ],
+    "box": [
+     1033.0,
+     2896.0,
+     1166.0,
+     2979.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 11 px of the steam line, which ran into the box up to the outline, the right edge cut 1 px off the end of the outline; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 171,
+    "bbox": [
+     1334.1,
+     2896.5,
+     1473.7,
+     2981.0
+    ],
+    "box": [
+     1340.0,
+     2896.0,
+     1472.0,
+     2979.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 6 px of the steam line, which ran into the box up to the outline; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 172,
+    "bbox": [
+     1647.7,
+     2889.6,
+     1785.6,
+     2974.1
+    ],
+    "box": [
+     1652.0,
+     2888.0,
+     1785.0,
+     2971.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 4 px of the steam line, which ran into the box up to the outline, the bottom edge had 3 px of margin; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   },
+   {
+    "id": 173,
+    "bbox": [
+     1954.5,
+     2884.5,
+     2088.9,
+     2974.1
+    ],
+    "box": [
+     1961.0,
+     2886.0,
+     2092.0,
+     2969.0
+    ],
+    "reason": "tight-ink audit (2026-11-25): the left edge held 6 px of the steam line, which ran into the box up to the outline, the right edge cut 3 px off the end of the outline, the bottom edge had 5 px of margin; edges fitted to the steam generator outline (one box per symbol, tight around its ink)"
+   }
+  ],
+  "move_lines": [
+   {
+    "seg": [
+     489.6,
+     998.1,
+     489.6,
+     1042.0
+    ],
+    "new": [
+     489.6,
+     998.1,
+     489.6,
+     1056.0
+    ],
+    "reason": "follows the top edge of box 19, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     555.4,
+     966.4,
+     555.4,
+     1041.0
+    ],
+    "new": [
+     555.4,
+     966.4,
+     555.4,
+     1055.0
+    ],
+    "reason": "follows the top edge of box 81, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     1712.6,
+     860.0,
+     1713.3,
+     1032.0
+    ],
+    "new": [
+     1712.6,
+     860.0,
+     1713.3,
+     1040.0
+    ],
+    "reason": "follows the top edge of box 112, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     1646.5,
+     998.1,
+     1646.5,
+     1030.0
+    ],
+    "new": [
+     1646.5,
+     998.1,
+     1646.5,
+     1042.0
+    ],
+    "reason": "follows the top edge of box 124, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     1780.5,
+     1032.0,
+     1780.5,
+     1017.4
+    ],
+    "new": [
+     1780.5,
+     1039.0,
+     1780.5,
+     1017.4
+    ],
+    "reason": "follows the top edge of box 129, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     1237.7,
+     1171.7,
+     1304.0,
+     1171.7
+    ],
+    "new": [
+     1237.7,
+     1171.7,
+     1333.5,
+     1171.7
+    ],
+    "reason": "the discharge pipe runs on to its corner above check valve 34, now outside the box"
+   },
+   {
+    "seg": [
+     1749.6,
+     1164.6,
+     1818.0,
+     1164.6
+    ],
+    "new": [
+     1749.6,
+     1164.6,
+     1844.5,
+     1164.6
+    ],
+    "reason": "the discharge pipe runs on to its corner above check valve 75, now outside the box"
+   },
+   {
+    "seg": [
+     592.7,
+     1182.3,
+     660.0,
+     1181.9
+    ],
+    "new": [
+     592.7,
+     1182.3,
+     688.0,
+     1181.9
+    ],
+    "reason": "the discharge pipe runs on to its corner above check valve 105, now outside the box"
+   },
+   {
+    "seg": [
+     1599.8,
+     487.8,
+     1599.8,
+     509.0
+    ],
+    "new": [
+     1599.8,
+     487.8,
+     1599.8,
+     517.0
+    ],
+    "reason": "follows the top edge of box 106, moved in to the check valve ink"
+   },
+   {
+    "seg": [
+     1002.5,
+     880.0,
+     1002.5,
+     951.4
+    ],
+    "new": [
+     1002.5,
+     865.0,
+     1002.5,
+     951.4
+    ],
+    "reason": "follows the bottom edge of box 128, moved in to the check valve ink"
+   },
+   {
+    "seg": [
+     540.6,
+     906.0,
+     540.6,
+     962.6
+    ],
+    "new": [
+     540.6,
+     873.0,
+     540.6,
+     962.6
+    ],
+    "reason": "follows the bottom edge of box 138, moved in to the check valve ink (the pipe runs through the flow arrow)"
+   },
+   {
+    "seg": [
+     728.0,
+     1344.2,
+     777.0,
+     1348.5
+    ],
+    "new": [
+     728.0,
+     1344.2,
+     813.0,
+     1350.5
+    ],
+    "reason": "follows the left edge of box 144, moved in to the valve body (the pipe runs through the flow arrow)"
+   },
+   {
+    "seg": [
+     777.0,
+     1404.5,
+     763.4,
+     1404.5
+    ],
+    "new": [
+     813.0,
+     1404.5,
+     763.4,
+     1404.5
+    ],
+    "reason": "follows the left edge of box 145, moved in to the valve body (the pipe runs through the flow arrow)"
+   },
+   {
+    "seg": [
+     1371.0,
+     1335.8,
+     1403.0,
+     1335.8
+    ],
+    "new": [
+     1371.0,
+     1335.8,
+     1405.6,
+     1335.8
+    ],
+    "reason": "the CST4 suction pipe runs on to the vertical pipe at x 1405.6, no longer inside box 146"
+   },
+   {
+    "seg": [
+     1405.6,
+     1363.0,
+     1405.6,
+     1396.2
+    ],
+    "new": [
+     1405.6,
+     1335.8,
+     1405.6,
+     1396.2
+    ],
+    "reason": "the vertical pipe left of valves 146 and 147, drawn from the CST4 suction pipe down to the corner at 147; box 146 no longer covers its upper part"
+   },
+   {
+    "seg": [
+     1888.0,
+     1328.8,
+     1931.0,
+     1328.8
+    ],
+    "new": [
+     1888.0,
+     1328.8,
+     1923.4,
+     1328.8
+    ],
+    "reason": "the CST4 suction pipe ends at the vertical pipe at x 1923.4; the pipe to valve 148 is the added line at y 1335"
+   },
+   {
+    "seg": [
+     1923.4,
+     1328.8,
+     1923.4,
+     1369.0
+    ],
+    "new": [
+     1923.4,
+     1328.8,
+     1923.4,
+     1388.0
+    ],
+    "reason": "the vertical pipe runs down to its corner at valve 149, no longer inside box 149"
+   },
+   {
+    "seg": [
+     2023.0,
+     2384.1,
+     2052.6,
+     2384.1
+    ],
+    "new": [
+     2010.0,
+     2384.1,
+     2052.6,
+     2384.1
+    ],
+    "reason": "follows the right edge of box 45, moved in to the valve ink"
+   },
+   {
+    "seg": [
+     391.4,
+     2939.6,
+     415.5,
+     2939.6
+    ],
+    "new": [
+     391.4,
+     2939.6,
+     415.0,
+     2939.6
+    ],
+    "reason": "ends at the left edge of box 168, fitted to the steam generator outline"
+   },
+   {
+    "seg": [
+     689.6,
+     2941.3,
+     718.9,
+     2941.3
+    ],
+    "new": [
+     689.6,
+     2941.3,
+     717.0,
+     2941.3
+    ],
+    "reason": "ends at the left edge of box 169, fitted to the steam generator outline"
+   },
+   {
+    "seg": [
+     1008.4,
+     2939.6,
+     1034.2,
+     2939.6
+    ],
+    "new": [
+     1008.4,
+     2939.6,
+     1033.0,
+     2939.6
+    ],
+    "reason": "ends at the left edge of box 170, fitted to the steam generator outline"
+   },
+   {
+    "seg": [
+     1316.9,
+     2936.2,
+     1337.5,
+     2936.2
+    ],
+    "new": [
+     1316.9,
+     2936.2,
+     1340.0,
+     2936.2
+    ],
+    "reason": "ends at the left edge of box 171, fitted to the steam generator outline"
+   },
+   {
+    "seg": [
+     1630.5,
+     2932.7,
+     1652.9,
+     2932.7
+    ],
+    "new": [
+     1630.5,
+     2932.7,
+     1652.0,
+     2932.7
+    ],
+    "reason": "ends at the left edge of box 172, fitted to the steam generator outline"
+   },
+   {
+    "seg": [
+     1933.8,
+     2925.8,
+     1959.7,
+     2925.8
+    ],
+    "new": [
+     1933.8,
+     2925.8,
+     1961.0,
+     2925.8
+    ],
+    "reason": "ends at the left edge of box 173, fitted to the steam generator outline"
+   }
+  ],
+  "add_solid": [
+   {
+    "seg": [
+     1333.5,
+     1171.7,
+     1333.5,
+     1178.0
+    ],
+    "reason": "the short drop of the discharge pipe from its corner into the top of check valve 34"
+   },
+   {
+    "seg": [
+     1844.5,
+     1164.6,
+     1844.5,
+     1171.0
+    ],
+    "reason": "the short drop of the discharge pipe from its corner into the top of check valve 75"
+   },
+   {
+    "seg": [
+     688.0,
+     1181.9,
+     688.0,
+     1186.0
+    ],
+    "reason": "the short drop of the discharge pipe from its corner into the top of check valve 105"
+   },
+   {
+    "seg": [
+     1405.6,
+     1343.0,
+     1457.0,
+     1343.0
+    ],
+    "reason": "the pipe from the CST4 suction tee through the flow arrow to valve 146, whose box no longer covers it"
+   },
+   {
+    "seg": [
+     1418.0,
+     1395.5,
+     1457.0,
+     1395.5
+    ],
+    "reason": "the pipe through the flow arrow to valve 147 (the adopted line [1399, 1395.5, 1418, 1395.5] ended at the old box edge)"
+   },
+   {
+    "seg": [
+     1923.4,
+     1335.0,
+     1972.0,
+     1335.0
+    ],
+    "reason": "the pipe from the CST4 suction tee through the flow arrow to valve 148, whose box no longer covers it"
+   },
+   {
+    "seg": [
+     1923.4,
+     1388.0,
+     1972.0,
+     1388.0
+    ],
+    "reason": "the pipe from the corner through the flow arrow to valve 149, whose box no longer covers it"
+   },
+   {
+    "seg": [
+     1188.5,
+     1344.0,
+     1189.0,
+     1388.0
+    ],
+    "reason": "the pipe from orifice 166 down to the Recirc arrow, from the new bottom edge of the box (until 2026-11-25 the line [1188.5, 1335, 1189, 1388] adopted from added_lines; it cannot be moved through line_sync, so it is removed from added_lines and added here)"
+   }
+  ],
+  "manual_edits": {
+   "crossing_decisions": [
+    {
+     "x": 539.5,
+     "y": 929.7,
+     "connected": false
+    },
+    {
+     "x": 766.0,
+     "y": 927.0,
+     "connected": false
+    },
+    {
+     "x": 567.9,
+     "y": 2053.5,
+     "connected": false
+    },
+    {
+     "x": 634.6,
+     "y": 2073.6,
+     "connected": false
+    },
+    {
+     "x": 568.0,
+     "y": 2074.5,
+     "connected": true
+    },
+    {
+     "x": 555.4,
+     "y": 998.1,
+     "connected": false
+    },
+    {
+     "x": 1195.4,
+     "y": 998.1,
+     "connected": false
+    },
+    {
+     "x": 1195.4,
+     "y": 1017.4,
+     "connected": false
+    },
+    {
+     "x": 1132.0,
+     "y": 1017.4,
+     "connected": false
+    },
+    {
+     "x": 1646.5,
+     "y": 1017.4,
+     "connected": false
+    },
+    {
+     "x": 1712.9,
+     "y": 1017.4,
+     "connected": false
+    },
+    {
+     "x": 1487.0,
+     "y": 883.9,
+     "connected": false
+    },
+    {
+     "x": 1208.3,
+     "y": 2053.4,
+     "connected": false
+    },
+    {
+     "x": 1276.3,
+     "y": 2053.4,
+     "connected": false
+    },
+    {
+     "x": 1276.3,
+     "y": 2066.9,
+     "connected": false
+    },
+    {
+     "x": 1729.5,
+     "y": 2096.0,
+     "connected": false
+    },
+    {
+     "x": 568.1,
+     "y": 2053.4,
+     "connected": false
+    },
+    {
+     "x": 631.2,
+     "y": 2053.4,
+     "connected": false
+    },
+    {
+     "x": 631.2,
+     "y": 2066.9,
+     "connected": false
+    },
+    {
+     "x": 546.3,
+     "y": 2092.5,
+     "connected": false
+    },
+    {
+     "x": 566.6,
+     "y": 1656.4,
+     "connected": false
+    }
+   ],
+   "fine_regions": [
+    [
+     400,
+     900,
+     1860,
+     1030
+    ],
+    [
+     480,
+     2040,
+     2070,
+     2135
+    ],
+    [
+     556,
+     1640,
+     577,
+     1668
+    ]
+   ],
+   "removed_lines": [
+    [
+     527.7,
+     2070.3,
+     529.6,
+     2116.3
+    ],
+    [
+     529.6,
+     2116.3,
+     546.3,
+     2116.3
+    ],
+    [
+     527.9,
+     2074.4,
+     546.3,
+     2074.4
+    ],
+    [
+     818.5,
+     2380.3,
+     818.5,
+     2440.0
+    ],
+    [
+     1405.6,
+     1335.8,
+     1405.6,
+     1396.2
+    ]
+   ],
+   "remove_added_lines": [
+    [
+     1188.5,
+     1335.0,
+     1189.0,
+     1388.0
+    ]
+   ]
+  },
+  "notes": [
+   "(566.6,1656.4), (1211,1657) and (1726.5,1653): plain crosses without a dot where the steam supply pipe of each pump turbine (from motor valves 130, 121 and 74) crosses the header of its three steam check valves, not connected (the rule: crossing pipes are connected only where a filled dot is drawn); until 2026-11-25 the reference connected them as manifold 4-ways (the page marks non-connections with hops, and the three steam lines feed each turbine), changed to follow the rule as on Davis-Besse p8, p9 and p5. The first lies 9 px below the box of valve 130: a fine region makes it a crossing of the two pipes, and its decision is set explicitly (the dot test reads the valve bar above it as a dot)."
+  ]
  },
  "pseudo_AFW_0520_R325C_CE Technology Cross Training R325C_Chapter 11.5 Auxiliary Feedwat": {
   "line_sync": {
